@@ -1,10 +1,11 @@
 import Author from './Author'
-import { Credits, OriginalHeroes } from './Types'
+import { Credits, OriginalHeroes } from '../Types'
 
 export default interface ClassMod {
     name: string
+    shortDescription: string
     similarity?: OriginalHeroes
-    image: string
+    hero: string
     sources: {
         name: 'Steam' | 'Nexus'
         link: string

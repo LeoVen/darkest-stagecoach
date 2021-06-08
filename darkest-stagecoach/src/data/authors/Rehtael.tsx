@@ -1,4 +1,4 @@
-import Author from '../../Author'
+import Author from '../Author'
 
 export const Rehtael: Author = {
     name: 'Rehtael',

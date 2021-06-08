@@ -1,10 +1,11 @@
-import ClassMod from '../../ClassMod'
+import ClassMod from '../ClassMod'
 import { MarvinSeo } from '../authors/MarvinSeo'
 import LamiaPortrait from '../../assets/img/hero/LamiaPortrait.png'
 
 export const Lamia: ClassMod = {
     name: 'Lamia',
-    image: LamiaPortrait,
+    shortDescription: 'Beauty is remembered forever...',
+    hero: LamiaPortrait,
     sources: [
         {
             name: 'Steam',

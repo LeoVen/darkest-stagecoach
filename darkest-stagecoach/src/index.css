@@ -29,10 +29,12 @@ a *:hover {
     cursor: url('assets/cursor/pointer.png'), auto;
 }
 
-.MuiPaper-root:hover, .MuiPaper-root *:hover {
+.paper-with-shadow:hover,
+.paper-with-shadow *:hover {
     cursor: url('assets/cursor/pointer.png'), auto;
 }
 
-.MuiPaper-root:hover {
-    box-shadow: 0px 3px 5px -1px #D3552E, 0px 5px 8px 0px #D3552E, 0px 1px 14px 0px #D3552E;
+.paper-with-shadow:hover {
+    box-shadow: 0px 3px 5px -1px #5e3124, 0px 5px 8px 0px #5e3124,
+        0px 1px 14px 0px #5e3124;
 }
