@@ -2,11 +2,11 @@ import ClassMod from '../../ClassMod'
 import { MoonKanin } from '../authors/MoonKanin'
 import { Rehtael } from '../authors/Rehtael'
 import { Shay } from '../authors/Shay'
-import ChoirHunterHero from '../../assets/img/hero/ChoirHunterHero.jpg'
+import ChoirHunterPortrait from '../../assets/img/hero/ChoirHunterPortrait.png'
 
 export const ChoirHunter: ClassMod = {
     name: 'Choir Hunter',
-    image: ChoirHunterHero,
+    image: ChoirHunterPortrait,
     sources: [
         {
             name: 'Steam',

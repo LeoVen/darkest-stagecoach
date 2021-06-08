@@ -45,19 +45,20 @@ function App() {
                         Darkest Stagecoach
                     </Typography>
                     <Typography variant='subtitle1'>
-                        A place to explore class mods for the Darkest Dungeon game
+                        A place to explore class mods for the <a href="https://www.darkestdungeon.com/">Darkest Dungeon</a> game
                     </Typography>
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {AllClasses.map(hero => {
                         return (
                             <Paper
-                                elevation={2}
-                                style={{ margin: '1em', padding: '1em' }}>
+                                key={hero.name}
+                                elevation={5}
+                                style={{ margin: '1em', padding: '1em', display: 'flex', alignItems: 'center', width: '300px' }}>
+                                <img src={hero.image} style={{margin: '1em', maxWidth: 'calc(100vw - 6em)'}}/>
                                 <Typography variant='h2'>
                                     {hero.name}
                                 </Typography>
-                                <img src={hero.image} style={{margin: '1em', maxWidth: 'calc(100vw - 6em)'}}/>
                             </Paper>
                         )
                     })}
