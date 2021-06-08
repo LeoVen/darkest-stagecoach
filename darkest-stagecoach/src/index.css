@@ -17,7 +17,15 @@ a {
     text-decoration: none;
 }
 
+a * {
+    color: #d3552e;
+}
+
 a:hover {
+    cursor: url('assets/cursor/pointer.png'), auto;
+}
+
+a *:hover {
     cursor: url('assets/cursor/pointer.png'), auto;
 }
 
