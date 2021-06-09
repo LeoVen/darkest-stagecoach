@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dc52935f.chunk.css",
+    "main.js": "/static/js/main.44a6908a.chunk.js",
+    "main.js.map": "/static/js/main.44a6908a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.00bd62e1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.00bd62e1.js.map",
+    "static/js/2.675ff681.chunk.js": "/static/js/2.675ff681.chunk.js",
+    "static/js/2.675ff681.chunk.js.map": "/static/js/2.675ff681.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.dc52935f.chunk.css.map": "/static/css/main.dc52935f.chunk.css.map",
+    "static/js/2.675ff681.chunk.js.LICENSE.txt": "/static/js/2.675ff681.chunk.js.LICENSE.txt",
+    "static/media/ChoirHunterPortrait.eb59448f.png": "/static/media/ChoirHunterPortrait.eb59448f.png",
+    "static/media/JanissaryPortrait.c5d759ba.png": "/static/media/JanissaryPortrait.c5d759ba.png",
+    "static/media/LamiaPortrait.8ad8502a.png": "/static/media/LamiaPortrait.8ad8502a.png",
+    "static/media/index.css": "/static/media/arrow.c52ab38d.png",
+    "static/media/iconClose.a5423acd.png": "/static/media/iconClose.a5423acd.png",
+    "static/media/logo.7365b069.png": "/static/media/logo.7365b069.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00bd62e1.js",
+    "static/js/2.675ff681.chunk.js",
+    "static/css/main.dc52935f.chunk.css",
+    "static/js/main.44a6908a.chunk.js"
+  ]
+}
