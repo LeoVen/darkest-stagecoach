@@ -28,7 +28,10 @@ export const Header = () => (
             <Typography variant="h1">Darkest Stagecoach</Typography>
             <Typography variant="subtitle1" style={{ marginTop: '0.5em' }}>
                 A place to explore class mods for the{' '}
-                <a href="https://www.darkestdungeon.com/" target="_blank">
+                <a
+                    href="https://www.darkestdungeon.com/"
+                    target="_blank"
+                    rel="noreferrer">
                     Darkest Dungeon
                 </a>{' '}
                 game
@@ -37,7 +40,8 @@ export const Header = () => (
         <div>
             <a
                 href="https://github.com/LeoVen/darkest-stagecoach"
-                target="_blank">
+                target="_blank"
+                rel="noreferrer">
                 <FontAwesomeIcon icon={faGithub} size={'2x'} />
             </a>
         </div>

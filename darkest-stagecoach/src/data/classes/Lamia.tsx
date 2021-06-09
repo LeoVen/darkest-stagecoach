@@ -5,7 +5,7 @@ import LamiaPortrait from '../../assets/img/hero/LamiaPortrait.png'
 export const Lamia: ClassMod = {
     name: 'Lamia',
     description: 'Beauty is remembered forever...',
-    hero: LamiaPortrait,
+    portrait: LamiaPortrait,
     sources: [
         {
             name: 'Steam',

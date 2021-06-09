@@ -6,5 +6,5 @@ export const ModalWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 80vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 `

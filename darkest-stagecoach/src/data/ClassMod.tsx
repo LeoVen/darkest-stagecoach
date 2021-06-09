@@ -5,7 +5,7 @@ export default interface ClassMod {
     name: string
     description: string
     similarity?: OriginalHeroes
-    hero: string
+    portrait: string
     sources: {
         name: 'Steam' | 'Nexus'
         link: string

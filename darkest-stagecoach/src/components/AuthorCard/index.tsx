@@ -34,8 +34,12 @@ export const AuthorCard: React.FunctionComponent<AuthorCardProps> = ({
     return (
         <AuthorCardMain>
             <AuthorCardRow>
-                <Typography variant="subtitle1">
-                    <a onClick={handleOpenModal}>{author.name}</a>
+                <Typography
+                    className="anchor"
+                    variant="subtitle1"
+                    onClick={handleOpenModal}
+                    style={{ display: 'inline-block' }}>
+                    {author.name}
                 </Typography>
                 <Modal open={open} onClose={handleCloseModal}>
                     <ModalWrapper>

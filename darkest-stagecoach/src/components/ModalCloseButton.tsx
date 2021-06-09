@@ -7,7 +7,7 @@ interface ModalCloseButtonProps {
 
 export function ModalCloseButton(props: ModalCloseButtonProps) {
     return (
-        <a onClick={props.onClick}>
+        <span className="anchor" onClick={props.onClick}>
             <img
                 src={iconClose}
                 alt="Icon Close"
@@ -19,6 +19,6 @@ export function ModalCloseButton(props: ModalCloseButtonProps) {
                     height: '32px'
                 }}
             />
-        </a>
+        </span>
     )
 }

@@ -3,9 +3,8 @@ import styled from 'styled-components'
 
 export const AuthorInfoMain = styled(Paper)`
     padding: 1em;
-    border-top: 1px solid #cccccc;
     width: 70vw;
-    max-width: 500px;
+    max-width: 800px;
 `
 
 export const AuthorInfoLinkList = styled.div`

@@ -16,7 +16,11 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
                 padding: '2em'
             }}>
             <ClassCardBanner>
-                <img src={classMod.hero} style={{ margin: '0 1em 1em 0' }} />
+                <img
+                    src={classMod.portrait}
+                    alt="Hero Portrait"
+                    style={{ margin: '0 1em 1em 0' }}
+                />
                 <Typography variant="h2" style={{ margin: '0 0 0.5em 0' }}>
                     {classMod.name}
                 </Typography>

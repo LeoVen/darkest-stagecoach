@@ -10,7 +10,6 @@ import { AllClasses } from './data'
 import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
-import iconClose from './assets/img/iconClose.png'
 import { ModalCloseButton } from './components/ModalCloseButton'
 import { ModalWrapper } from './styles'
 
@@ -93,12 +92,12 @@ function App() {
                                         width: '300px'
                                     }}>
                                     <img
-                                        src={hero.hero}
+                                        src={hero.portrait}
                                         style={{
                                             margin: '1em',
                                             maxWidth: 'calc(100vw - 6em)'
                                         }}
-                                        alt="Hero Image"
+                                        alt="Hero Portrait"
                                     />
                                     <Typography variant="h3">
                                         {hero.name}
