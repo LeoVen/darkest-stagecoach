@@ -32,14 +32,22 @@ const theme = createMuiTheme({
         },
         subtitle1: {
             fontFamily: 'Mate SC',
+            fontSize: '1.2em',
             color: '#CCCCCC',
             wordWrap: 'break-word'
         },
         subtitle2: {
             fontFamily: 'Mate SC',
+            fontSize: '1.1em',
             color: '#CCCCCC',
             wordWrap: 'break-word',
             marginBottom: '20px'
+        },
+        body1: {
+            fontFamily: 'Mate SC',
+            fontSize: '1em',
+            color: '#CCCCCC',
+            wordWrap: 'break-word'
         }
     },
     palette: {

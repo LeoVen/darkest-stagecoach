@@ -1,7 +1,12 @@
-import { Paper, Typography } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import Author from '../../data/Author'
 import { Credits } from '../../Types'
-import './index.css'
+import {
+    AuthorCardMain,
+    AuthorCardRow,
+    AuthorCardCreditList,
+    AuthorCardCreditItem
+} from './styles'
 
 interface AuthorCardProps {
     author: Author
@@ -13,18 +18,19 @@ export const AuthorCard: React.FunctionComponent<AuthorCardProps> = ({
     credits
 }) => {
     return (
-        <div>
-            <Typography variant="subtitle1">{author.name}</Typography>
-            <div>
-                {credits.map(credit => {
-                    ;<a>{credit}</a>
-                })}
-            </div>
-            <div>
-                {author.links.map(link => {
-                    return <a href={link.link}>{link.name}</a>
-                })}
-            </div>
-        </div>
+        <AuthorCardMain>
+            <AuthorCardRow>
+                <Typography variant="subtitle1">{author.name}</Typography>
+                <AuthorCardCreditList>
+                    {credits.map(credit => {
+                        return (
+                            <AuthorCardCreditItem variant="body1">
+                                {credit}
+                            </AuthorCardCreditItem>
+                        )
+                    })}
+                </AuthorCardCreditList>
+            </AuthorCardRow>
+        </AuthorCardMain>
     )
 }

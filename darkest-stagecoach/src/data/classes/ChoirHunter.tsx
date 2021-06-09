@@ -17,7 +17,7 @@ export const ChoirHunter: ClassMod = {
     authors: [
         {
             author: Shay,
-            credits: ['Sounds']
+            credits: ['Sound']
         },
         {
             author: MoonKanin,

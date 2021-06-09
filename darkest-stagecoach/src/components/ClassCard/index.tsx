@@ -1,7 +1,7 @@
 import { Paper, Typography } from '@material-ui/core'
 import ClassMod from '../../data/ClassMod'
 import { AuthorCard } from '../AuthorCard'
-import './index.css'
+import { ClassCardBanner } from './styles'
 
 interface ClassCardProps {
     classMod: ClassMod
@@ -15,29 +15,18 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
             style={{
                 padding: '2em'
             }}>
-            <div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    marginBottom: '10px'
-                }}>
-                <img
-                    src={classMod.hero}
-                    style={{
-                        maxWidth: 'calc(100vw - 6em)',
-                        margin: '0 1em 1em 0'
-                    }}
-                />
+            <ClassCardBanner>
+                <img src={classMod.hero} style={{ margin: '0 1em 1em 0' }} />
                 <Typography variant="h2">{classMod.name}</Typography>
-            </div>
+            </ClassCardBanner>
             <Typography variant="subtitle2">
                 {classMod.shortDescription}
             </Typography>
             <div>
-                <div>{'TODO'}</div>
                 <div>
-                    <Typography variant="h3">Creators</Typography>
+                    <Typography variant="h3" style={{ marginBottom: '0.2em' }}>
+                        Creators
+                    </Typography>
                     {classMod.authors.map(auth => (
                         <AuthorCard
                             author={auth.author}
