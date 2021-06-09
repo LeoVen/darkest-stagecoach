@@ -1,10 +1,10 @@
 import ClassMod from '../ClassMod'
-import { MarvinSeo } from '../authors/MarvinSeo'
+import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 import LamiaPortrait from '../../assets/img/hero/LamiaPortrait.png'
 
 export const Lamia: ClassMod = {
     name: 'Lamia',
-    shortDescription: 'Beauty is remembered forever...',
+    description: 'Beauty is remembered forever...',
     hero: LamiaPortrait,
     sources: [
         {
@@ -14,7 +14,7 @@ export const Lamia: ClassMod = {
     ],
     authors: [
         {
-            author: MarvinSeo,
+            author: Author_MarvinSeo,
             credits: ['All']
         }
     ]

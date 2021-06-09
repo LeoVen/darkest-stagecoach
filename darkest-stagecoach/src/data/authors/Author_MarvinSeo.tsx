@@ -1,6 +1,6 @@
 import Author from '../Author'
 
-export const MarvinSeo: Author = {
+export const Author_MarvinSeo: Author = {
     name: 'Marvin Seo',
     links: [
         {

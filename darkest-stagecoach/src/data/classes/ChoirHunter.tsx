@@ -1,12 +1,12 @@
 import ClassMod from '../ClassMod'
-import { MoonKanin } from '../authors/MoonKanin'
-import { Rehtael } from '../authors/Rehtael'
-import { Shay } from '../authors/Shay'
+import { Author_MoonKanin } from '../authors/Author_MoonKanin'
+import { Author_Rehtael } from '../authors/Author_Rehtael'
+import { Author_Shay } from '../authors/Author_Shay'
 import ChoirHunterPortrait from '../../assets/img/hero/ChoirHunterPortrait.png'
 
 export const ChoirHunter: ClassMod = {
     name: 'Choir Hunter',
-    shortDescription: 'A wandering sister in search of knowledge.',
+    description: 'A wandering sister in search of knowledge.',
     hero: ChoirHunterPortrait,
     sources: [
         {
@@ -16,15 +16,15 @@ export const ChoirHunter: ClassMod = {
     ],
     authors: [
         {
-            author: Shay,
+            author: Author_Shay,
             credits: ['Sound']
         },
         {
-            author: MoonKanin,
+            author: Author_MoonKanin,
             credits: ['Concept', 'Art', 'Animation', 'Writing', 'Design']
         },
         {
-            author: Rehtael,
+            author: Author_Rehtael,
             credits: ['Design', 'Scripting', 'Trailer']
         }
     ]

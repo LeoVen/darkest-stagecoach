@@ -9,7 +9,7 @@ export type Credits = Array<
     | 'Testing'
     | 'Trailer'
     | 'Writing'
-    | 'Other'
+    | string
 >
 
 export type OriginalHeroes =

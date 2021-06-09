@@ -1,6 +1,6 @@
 import Author from '../Author'
 
-export const VoidSlime: Author = {
+export const Author_VoidSlime: Author = {
     name: 'Void Slime',
     links: [
         {
