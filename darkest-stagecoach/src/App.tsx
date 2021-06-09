@@ -11,6 +11,8 @@ import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import iconClose from './assets/img/iconClose.png'
+import { ModalCloseButton } from './components/ModalCloseButton'
+import { ModalWrapper } from './styles'
 
 const theme = createMuiTheme({
     typography: {
@@ -108,28 +110,16 @@ function App() {
                                         selectedHero.name === hero.name
                                     }
                                     onClose={handleCloseModal}>
-                                    <div
+                                    <ModalWrapper
                                         style={{
-                                            position: 'absolute',
-                                            top: '50%',
-                                            left: '50%',
-                                            transform: 'translate(-50%, -50%)',
                                             width: '80vw',
                                             maxWidth: '1280px'
                                         }}>
-                                        <a onClick={handleCloseModal}>
-                                            <img
-                                                src={iconClose}
-                                                alt="Icon Close"
-                                                style={{
-                                                    position: 'absolute',
-                                                    top: '1em',
-                                                    right: '1em'
-                                                }}
-                                            />
-                                        </a>
+                                        <ModalCloseButton
+                                            onClick={handleCloseModal}
+                                        />
                                         <ClassCard classMod={hero} />
-                                    </div>
+                                    </ModalWrapper>
                                 </Modal>
                             </>
                         )

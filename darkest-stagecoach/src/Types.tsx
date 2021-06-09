@@ -6,6 +6,7 @@ export type Credits = Array<
     | 'Design'
     | 'Scripting'
     | 'Sound'
+    | 'Testing'
     | 'Trailer'
     | 'Writing'
     | 'Other'
