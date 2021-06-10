@@ -48,9 +48,11 @@ export const AuthorCard: React.FunctionComponent<AuthorCardProps> = ({
                     </ModalWrapper>
                 </Modal>
                 <AuthorCardCreditList>
-                    {credits.map(credit => {
+                    {credits.map((credit, i) => {
                         return (
-                            <AuthorCardCreditItem variant="body1">
+                            <AuthorCardCreditItem
+                                variant="body1"
+                                key={`${credit}-${i}`}>
                                 {credit}
                             </AuthorCardCreditItem>
                         )

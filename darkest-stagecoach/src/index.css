@@ -51,6 +51,18 @@ a *:hover {
     cursor: url('assets/cursor/pointer.png'), auto;
 }
 
+.cursor-pointer * {
+    cursor: url('assets/cursor/pointer.png'), auto !important;
+}
+
+/* Stupid overrides */
+.MuiAccordionSummary-root:hover:not(.Mui-disabled) {
+    cursor: url('assets/cursor/pointer.png'), auto !important;
+}
+.MuiAccordionSummary-content.Mui-expanded {
+    margin: 0 !important;
+}
+
 .paper-with-shadow:hover,
 .paper-with-shadow *:hover {
     cursor: url('assets/cursor/pointer.png'), auto;

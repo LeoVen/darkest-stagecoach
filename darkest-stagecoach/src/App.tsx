@@ -1,63 +1,12 @@
 import React from 'react'
-import {
-    createMuiTheme,
-    Modal,
-    Paper,
-    ThemeProvider,
-    Typography
-} from '@material-ui/core'
+import { Modal, Paper, ThemeProvider, Typography } from '@material-ui/core'
 import { AllClasses } from './data'
 import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import { ModalCloseButton } from './components/ModalCloseButton'
 import { ModalWrapper } from './styles'
-
-const theme = createMuiTheme({
-    typography: {
-        h1: {
-            fontFamily: 'Mate SC',
-            fontSize: '2.5em',
-            color: '#CCCCCC',
-            marginRight: '1em'
-        },
-        h2: {
-            fontFamily: 'Mate SC',
-            fontSize: '2em',
-            color: '#CCCCCC'
-        },
-        h3: {
-            fontFamily: 'Mate SC',
-            fontSize: '1.5em',
-            color: '#CCCCCC'
-        },
-        subtitle1: {
-            fontFamily: 'Mate SC',
-            fontSize: '1.2em',
-            color: '#CCCCCC',
-            wordWrap: 'break-word'
-        },
-        subtitle2: {
-            fontFamily: 'Mate SC',
-            fontSize: '1.1em',
-            color: '#CCCCCC',
-            wordWrap: 'break-word',
-            marginBottom: '20px'
-        },
-        body1: {
-            fontFamily: 'Mate SC',
-            fontSize: '1em',
-            color: '#CCCCCC',
-            wordWrap: 'break-word'
-        }
-    },
-    palette: {
-        background: {
-            default: '#2F3129',
-            paper: '#272822'
-        }
-    }
-})
+import { THEME } from './theme'
 
 function App() {
     const [selectedHero, setSelectedHero] =
@@ -72,8 +21,8 @@ function App() {
     }
 
     return (
-        <ThemeProvider theme={theme}>
-            <div style={{ backgroundColor: theme.palette.background.default }}>
+        <ThemeProvider theme={THEME}>
+            <div style={{ backgroundColor: THEME.palette.background.default }}>
                 <Header />
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {AllClasses.map(hero => {

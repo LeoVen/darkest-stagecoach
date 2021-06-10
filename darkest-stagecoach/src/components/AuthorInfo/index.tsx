@@ -18,9 +18,10 @@ export const AuthorInfo: React.FunctionComponent<AuthorInfoProps> = ({
             </Typography>
             <Typography variant="body1">
                 <AuthorInfoLinkList>
-                    {author.links.map(link => {
+                    {author.links.map((link, i) => {
                         return (
                             <a
+                                key={`${link.name}-${i}`}
                                 href={link.link}
                                 target="_blank"
                                 rel="noreferrer"
