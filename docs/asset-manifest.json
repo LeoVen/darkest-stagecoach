@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/darkest-stagecoach/static/css/main.18ba5be7.chunk.css",
-    "main.js": "/darkest-stagecoach/static/js/main.44a6908a.chunk.js",
-    "main.js.map": "/darkest-stagecoach/static/js/main.44a6908a.chunk.js.map",
+    "main.css": "/darkest-stagecoach/static/css/main.bff867ca.chunk.css",
+    "main.js": "/darkest-stagecoach/static/js/main.3ca83c84.chunk.js",
+    "main.js.map": "/darkest-stagecoach/static/js/main.3ca83c84.chunk.js.map",
     "runtime-main.js": "/darkest-stagecoach/static/js/runtime-main.0cc808d7.js",
     "runtime-main.js.map": "/darkest-stagecoach/static/js/runtime-main.0cc808d7.js.map",
-    "static/js/2.7ae6807a.chunk.js": "/darkest-stagecoach/static/js/2.7ae6807a.chunk.js",
-    "static/js/2.7ae6807a.chunk.js.map": "/darkest-stagecoach/static/js/2.7ae6807a.chunk.js.map",
+    "static/js/2.dee266b0.chunk.js": "/darkest-stagecoach/static/js/2.dee266b0.chunk.js",
+    "static/js/2.dee266b0.chunk.js.map": "/darkest-stagecoach/static/js/2.dee266b0.chunk.js.map",
     "index.html": "/darkest-stagecoach/index.html",
-    "static/css/main.18ba5be7.chunk.css.map": "/darkest-stagecoach/static/css/main.18ba5be7.chunk.css.map",
-    "static/js/2.7ae6807a.chunk.js.LICENSE.txt": "/darkest-stagecoach/static/js/2.7ae6807a.chunk.js.LICENSE.txt",
+    "static/css/main.bff867ca.chunk.css.map": "/darkest-stagecoach/static/css/main.bff867ca.chunk.css.map",
+    "static/js/2.dee266b0.chunk.js.LICENSE.txt": "/darkest-stagecoach/static/js/2.dee266b0.chunk.js.LICENSE.txt",
     "static/media/ChoirHunterPortrait.eb59448f.png": "/darkest-stagecoach/static/media/ChoirHunterPortrait.eb59448f.png",
+    "static/media/CourtesanPortrait.571c43e8.png": "/darkest-stagecoach/static/media/CourtesanPortrait.571c43e8.png",
     "static/media/JanissaryPortrait.c5d759ba.png": "/darkest-stagecoach/static/media/JanissaryPortrait.c5d759ba.png",
     "static/media/LamiaPortrait.8ad8502a.png": "/darkest-stagecoach/static/media/LamiaPortrait.8ad8502a.png",
+    "static/media/RevenantPortrait.e1e6660a.png": "/darkest-stagecoach/static/media/RevenantPortrait.e1e6660a.png",
     "static/media/index.css": "/darkest-stagecoach/static/media/arrow.c52ab38d.png",
     "static/media/iconClose.a5423acd.png": "/darkest-stagecoach/static/media/iconClose.a5423acd.png",
     "static/media/logo.7365b069.png": "/darkest-stagecoach/static/media/logo.7365b069.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0cc808d7.js",
-    "static/js/2.7ae6807a.chunk.js",
-    "static/css/main.18ba5be7.chunk.css",
-    "static/js/main.44a6908a.chunk.js"
+    "static/js/2.dee266b0.chunk.js",
+    "static/css/main.bff867ca.chunk.css",
+    "static/js/main.3ca83c84.chunk.js"
   ]
 }
