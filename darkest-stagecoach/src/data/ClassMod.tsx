@@ -3,7 +3,7 @@ import { Credits, OriginalHeroes } from '../Types'
 
 export default interface ClassMod {
     name: string
-    description: string
+    description?: string
     similarity?: OriginalHeroes
     portrait: string
     sources: {
