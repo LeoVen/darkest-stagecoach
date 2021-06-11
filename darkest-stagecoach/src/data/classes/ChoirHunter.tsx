@@ -6,7 +6,7 @@ import ChoirHunterPortrait from '../../assets/img/hero/ChoirHunterPortrait.png'
 
 export const ChoirHunter: ClassMod = {
     name: 'Choir Hunter',
-    description: 'A wandering sister in search of knowledge.',
+    description: ['A wandering sister in search of knowledge.'],
     portrait: ChoirHunterPortrait,
     sources: [
         {

@@ -5,6 +5,7 @@ import { Commandant } from './classes/Commandant'
 import { Janissary } from './classes/Janissary'
 import { Courtesan } from './classes/Courtesan'
 import { Revenant } from './classes/Revenant'
+import { Thrall } from './classes/Thrall'
 
 export const AllClasses: ClassMod[] = [
     ChoirHunter,
@@ -12,5 +13,6 @@ export const AllClasses: ClassMod[] = [
     Courtesan,
     Janissary,
     Lamia,
-    Revenant
+    Revenant,
+    Thrall
 ]

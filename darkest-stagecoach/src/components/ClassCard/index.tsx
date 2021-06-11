@@ -40,7 +40,11 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
                     {classMod.name}
                 </Typography>
             </ClassCardBanner>
-            <Typography variant="subtitle2">{classMod.description}</Typography>
+            <Typography variant="subtitle2">
+                {classMod.description?.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                ))}
+            </Typography>
             <Accordion
                 expanded={accordion === 0}
                 onChange={handleAccordionChange(0)}>

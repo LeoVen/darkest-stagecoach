@@ -6,6 +6,10 @@ export const Author_MarvinSeo: Author = {
         {
             name: 'Steam',
             link: 'https://steamcommunity.com/profiles/76561198043173112'
+        },
+        {
+            name: 'Patreon',
+            link: 'https://www.patreon.com/MarvinBensonSeo'
         }
     ]
 }

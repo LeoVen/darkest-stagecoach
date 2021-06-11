@@ -25,11 +25,10 @@ function App() {
             <div style={{ backgroundColor: THEME.palette.background.default }}>
                 <Header />
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    {AllClasses.map(hero => {
+                    {AllClasses.map((hero, i) => {
                         return (
-                            <>
+                            <div key={`${hero.name}-${i}`}>
                                 <Paper
-                                    key={hero.name}
                                     className="paper-with-shadow"
                                     elevation={5}
                                     onClick={() => handleOpenModal(hero)}
@@ -66,10 +65,13 @@ function App() {
                                         <ModalCloseButton
                                             onClick={handleCloseModal}
                                         />
-                                        <ClassCard classMod={hero} />
+                                        <ClassCard
+                                            key={`${hero.name}-card-${i}`}
+                                            classMod={hero}
+                                        />
                                     </ModalWrapper>
                                 </Modal>
-                            </>
+                            </div>
                         )
                     })}
                 </div>
