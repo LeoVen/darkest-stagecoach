@@ -1,14 +1,27 @@
+:root {
+    font-size: 16px;
+    --bg-primary: #2f3129;
+    --bg-secondary: #272822;
+    --accent-primary: #d3552e;
+    --accent-secondary: #5e3124;
+    --font-primary: #cccccc;
+    --cursor-default: url('assets/cursor/arrow.png'), auto;
+    --cursor-pointer: url('assets/cursor/pointer.png'), auto;
+}
+
 * {
-    cursor: url('assets/cursor/arrow.png'), auto;
+    cursor: var(--cursor-default);
 }
 
 /* Custom scroll bar */
 *::-webkit-scrollbar {
     width: 4px;
-    color: rgb(47, 49, 41);
+}
+*::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
 }
 *::-webkit-scrollbar-thumb {
-    background-color: #d3552e;
+    background: var(--accent-primary);
     border-radius: 10px;
 }
 
@@ -19,58 +32,48 @@ body {
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(47, 49, 41);
+    background-color: var(--bg-primary);
 }
 
 a {
-    color: #d3552e;
+    color: var(--accent-primary);
     text-decoration: none;
 }
 a * {
-    color: #d3552e;
+    color: var(--accent-primary);
 }
 a:hover {
-    cursor: url('assets/cursor/pointer.png'), auto;
+    cursor: var(--cursor-pointer);
 }
 a *:hover {
-    cursor: url('assets/cursor/pointer.png'), auto;
+    cursor: var(--cursor-pointer);
 }
 
 /* Overrides to look like an <a> tag */
 .anchor {
-    color: #d3552e !important;
+    color: var(--accent-primary) !important;
     text-decoration: none;
 }
 .anchor * {
-    color: #d3552e !important;
+    color: var(--accent-primary) !important;
 }
 .anchor:hover {
-    cursor: url('assets/cursor/pointer.png'), auto;
+    cursor: var(--cursor-pointer);
 }
 .anchor *:hover {
-    cursor: url('assets/cursor/pointer.png'), auto;
+    cursor: var(--cursor-pointer);
 }
 
 .cursor-pointer * {
-    cursor: url('assets/cursor/pointer.png'), auto !important;
+    cursor: var(--cursor-pointer) !important;
 }
 
 /* Stupid overrides */
 .MuiAccordionSummary-root:hover:not(.Mui-disabled) {
-    cursor: url('assets/cursor/pointer.png'), auto !important;
+    cursor: var(--cursor-pointer) !important;
 }
 .MuiAccordionSummary-content.Mui-expanded {
     margin: 0 !important;
-}
-
-.paper-with-shadow:hover,
-.paper-with-shadow *:hover {
-    cursor: url('assets/cursor/pointer.png'), auto;
-}
-
-.paper-with-shadow:hover {
-    box-shadow: 0px 3px 5px -1px #5e3124, 0px 5px 8px 0px #5e3124,
-        0px 1px 14px 0px #5e3124;
 }
 
 *:focus {

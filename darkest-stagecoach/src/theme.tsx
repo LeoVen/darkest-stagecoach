@@ -15,7 +15,7 @@ export const THEME = createMuiTheme({
         },
         MuiButtonBase: {
             root: {
-                cursor: "url('assets/cursor/pointer.png'), auto"
+                cursor: '--var(--cursor-pointer)'
             }
         }
     },
@@ -23,43 +23,43 @@ export const THEME = createMuiTheme({
         h1: {
             fontFamily: 'Mate SC',
             fontSize: '2.5em',
-            color: '#CCCCCC',
+            color: 'var(--font-primary)',
             marginRight: '1em'
         },
         h2: {
             fontFamily: 'Mate SC',
             fontSize: '2em',
-            color: '#CCCCCC'
+            color: 'var(--font-primary)'
         },
         h3: {
             fontFamily: 'Mate SC',
             fontSize: '1.5em',
-            color: '#CCCCCC'
+            color: 'var(--font-primary)'
         },
         subtitle1: {
             fontFamily: 'Mate SC',
             fontSize: '1.2em',
-            color: '#CCCCCC',
+            color: 'var(--font-primary)',
             wordWrap: 'break-word'
         },
         subtitle2: {
             fontFamily: 'Mate SC',
             fontSize: '1.1em',
-            color: '#CCCCCC',
+            color: 'var(--font-primary)',
             wordWrap: 'break-word',
             marginBottom: '20px'
         },
         body1: {
             fontFamily: 'Mate SC',
             fontSize: '1em',
-            color: '#CCCCCC',
+            color: 'var(--font-primary)',
             wordWrap: 'break-word'
         }
     },
     palette: {
         background: {
-            default: '#2F3129',
-            paper: '#272822'
+            default: 'var(--bg-primary)',
+            paper: 'var(--bg-secondary)'
         }
     }
 })

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Modal, Paper, ThemeProvider, Typography } from '@material-ui/core'
+import { Modal, ThemeProvider, Typography } from '@material-ui/core'
 import { AllClasses } from './data'
 import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import { ModalCloseButton } from './components/ModalCloseButton'
-import { ModalWrapper } from './styles'
+import { HeroCard, ModalWrapper } from './styles'
 import { THEME } from './theme'
 
 function App() {
@@ -28,17 +28,9 @@ function App() {
                     {AllClasses.map((hero, i) => {
                         return (
                             <div key={`${hero.name}-${i}`}>
-                                <Paper
-                                    className="paper-with-shadow"
+                                <HeroCard
                                     elevation={5}
-                                    onClick={() => handleOpenModal(hero)}
-                                    style={{
-                                        margin: '1em',
-                                        padding: '1em',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        width: '300px'
-                                    }}>
+                                    onClick={() => handleOpenModal(hero)}>
                                     <img
                                         src={hero.portrait}
                                         style={{
@@ -50,7 +42,7 @@ function App() {
                                     <Typography variant="h3">
                                         {hero.name}
                                     </Typography>
-                                </Paper>
+                                </HeroCard>
                                 <Modal
                                     open={
                                         selectedHero !== null &&
