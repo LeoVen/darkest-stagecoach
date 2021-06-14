@@ -1,0 +1,14 @@
+[package]
+name = "mod-reader"
+description = "Reads a directory and looks for mod files to generate data for class mods"
+version = "0.1.0"
+authors = ["LeoVen <leonardo.vencovsky@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+humansize = "1"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = { version = "0.1.5", features = ["fs"] }
+futures = "0.3.13"
