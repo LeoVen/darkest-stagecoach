@@ -8,6 +8,18 @@ export const ChoirHunter: ClassMod = {
     name: 'Choir Hunter',
     description: ['A wandering sister in search of knowledge.'],
     portrait: ChoirHunterPortrait,
+    religious: true,
+    transform: false,
+    resistances: {
+        stun: 0.4,
+        blight: 0.3,
+        bleed: 0.25,
+        disease: 0.3,
+        move: 0.3,
+        debuff: 0.4,
+        deathBlow: 0.67,
+        trap: 0.25
+    },
     sources: [
         {
             name: 'Steam',

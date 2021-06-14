@@ -8,6 +8,8 @@ export const Courtesan: ClassMod = {
         'The Courtesan at last has arrived at the Hamlet! This backline support specializes in keeping her allies alive and debuffing foes whilst in human form. But when one needs damage rather than healing, she can transform into a potent backline, laying waste to enemies with short, but highly potent DoT.'
     ],
     portrait: CourtesanPortrait,
+    religious: false,
+    transform: false,
     sources: [
         {
             name: 'Steam',
