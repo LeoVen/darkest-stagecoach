@@ -32,6 +32,7 @@ pub struct ArmourStats {
     dodge: f32,
     prot: f32,
     hp: f32,
+    speed: f32,
 }
 
 #[derive(Debug, Default)]
@@ -42,17 +43,19 @@ pub struct ClassStats {
 
 #[derive(Debug, Default)]
 pub struct ClassInfo {
+    pub failed: bool,
     pub file_name: String,
     pub res: ClassResistances,
     pub stats: ClassStats,
 }
 
-pub async fn read_directory(path: PathBuf) -> io::Result<Vec<ClassInfo>> {
+pub async fn read_directory(path: PathBuf) -> io::Result<(Vec<ClassInfo>, usize)> {
     let mut meta_queue = FuturesUnordered::new();
     meta_queue.push(metadata(path));
     let mut entry_queue = FuturesUnordered::new();
     let mut parse_queue = FuturesUnordered::new();
-    let mut result = Vec::new();
+    let mut result = vec![];
+    let mut failed: usize = 0;
 
     loop {
         select! {
@@ -74,14 +77,18 @@ pub async fn read_directory(path: PathBuf) -> io::Result<Vec<ClassInfo>> {
             },
             class_info = parse_queue.select_next_some() => {
                 if let Some(class_info) = class_info? {
-                    result.push(class_info);
+                    if !class_info.failed {
+                        result.push(class_info);
+                    } else {
+                        failed += 1;
+                    }
                 }
             },
             complete => break,
         }
     }
 
-    Ok(result)
+    Ok((result, failed))
 }
 
 async fn metadata(path: PathBuf) -> io::Result<(PathBuf, Metadata)> {
@@ -110,11 +117,6 @@ async fn filter_file(path: PathBuf) -> io::Result<Option<PathBuf>> {
     Ok(None)
 }
 
-lazy_static! {
-    static ref RE_RESIST: Regex = Regex::new(r"resistances: (.+)\n").unwrap();
-    static ref RE_ARMOUR: Regex = Regex::new(r"").unwrap();
-}
-
 async fn get_contents(file_name: PathBuf, data: String) -> Option<ClassInfo> {
     let mut result = ClassInfo::default();
     result.file_name = file_name
@@ -124,9 +126,20 @@ async fn get_contents(file_name: PathBuf, data: String) -> Option<ClassInfo> {
         .unwrap_or_default()
         .to_string();
     if &result.file_name == &String::default() {
-        return None;
+        result.failed = true;
+        return Some(result);
     }
-    for cap in RE_RESIST.captures_iter(&data) {
+    result = resistances(result, &data).await?;
+    result = gears(result, &data).await?;
+    Some(result)
+}
+
+lazy_static! {
+    static ref RE_RESIST: Regex = Regex::new(r"resistances: (.+)\n*").unwrap();
+}
+
+async fn resistances(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+    for cap in RE_RESIST.captures_iter(data) {
         // .stun 40% .poison 20% .bleed 30% .disease 30% .move 40% .debuff 40% .death_blow 67% .trap 20%
         let values = &cap[1];
         let mut keys = vec![];
@@ -135,7 +148,7 @@ async fn get_contents(file_name: PathBuf, data: String) -> Option<ClassInfo> {
             if i % 2 == 0 {
                 keys.push(split);
             } else {
-                if split.ends_with('%') {
+                if split.ends_with("\r") {
                     vals.push(&split[..split.len() - 1]);
                 } else {
                     vals.push(split);
@@ -148,14 +161,14 @@ async fn get_contents(file_name: PathBuf, data: String) -> Option<ClassInfo> {
         }
         for (key, val) in keys.into_iter().zip(vals) {
             match key {
-                ".stun" => result.res.stun = to_pct(val),
-                ".poison" => result.res.blight = to_pct(val),
-                ".bleed" => result.res.bleed = to_pct(val),
-                ".disease" => result.res.disease = to_pct(val),
-                ".move" => result.res.shuffle = to_pct(val),
-                ".debuff" => result.res.debuff = to_pct(val),
-                ".death_blow" => result.res.death_blow = to_pct(val),
-                ".trap" => result.res.trap = to_pct(val),
+                ".stun" => result.res.stun = parse_value(val),
+                ".poison" => result.res.blight = parse_value(val),
+                ".bleed" => result.res.bleed = parse_value(val),
+                ".disease" => result.res.disease = parse_value(val),
+                ".move" => result.res.shuffle = parse_value(val),
+                ".debuff" => result.res.debuff = parse_value(val),
+                ".death_blow" => result.res.death_blow = parse_value(val),
+                ".trap" => result.res.trap = parse_value(val),
                 _ => {}
             }
         }
@@ -163,9 +176,69 @@ async fn get_contents(file_name: PathBuf, data: String) -> Option<ClassInfo> {
     Some(result)
 }
 
-fn to_pct(val: &str) -> f32 {
-    print!("{} ", val);
-    val.parse::<f32>().unwrap_or(1.0) / 100.0
+lazy_static! {
+    static ref RE_WEAPON: Regex = Regex::new(r"weapon: .name .+? (\..+)\n*").unwrap();
+    static ref RE_ARMOUR: Regex = Regex::new(r"armour: .name .+? (\..+)\n*").unwrap();
+}
+
+async fn gears(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+    for (i, cap) in RE_WEAPON.captures_iter(data).enumerate() {
+        // .atk 0% .dmg 8 12 .crit 0% .spd 7
+        let values = &cap[1]
+            .split(".upgradeRequirementCode")
+            .next()
+            .unwrap()
+            .trim();
+        let mut count = 0;
+        for (j, split) in values.split_whitespace().enumerate() {
+            match j {
+                1 => result.stats.weapon[i].accuracy = parse_value(split),
+                3 => result.stats.weapon[i].damage[0] = parse_value(split),
+                4 => result.stats.weapon[i].damage[1] = parse_value(split),
+                6 => result.stats.weapon[i].crit = parse_value(split),
+                8 => result.stats.weapon[i].speed = parse_value(split),
+                _ => {}
+            }
+            count += 1;
+        }
+        if count != 9 {
+            return None;
+        }
+    }
+    for (i, cap) in RE_ARMOUR.captures_iter(data).enumerate() {
+        // .def 10% .prot 0 .hp 23 .spd 0
+        let values = &cap[1]
+            .split(".upgradeRequirementCode")
+            .next()
+            .unwrap()
+            .trim();
+        let mut count = 0;
+        for (j, split) in values.split_whitespace().enumerate() {
+            match j {
+                1 => result.stats.armour[i].dodge = parse_value(split),
+                3 => result.stats.armour[i].prot = parse_value(split),
+                5 => result.stats.armour[i].hp = parse_value(split),
+                7 => result.stats.armour[i].speed = parse_value(split),
+                _ => {}
+            }
+            count += 1;
+        }
+        if count != 8 {
+            return None;
+        }
+    }
+    Some(result)
+}
+
+fn parse_value(val: &str) -> f32 {
+    if val.ends_with('%') {
+        val[..val.len() - 1]
+            .parse::<f32>()
+            .unwrap_or_else(|_| 9999.0)
+            / 100.0
+    } else {
+        val.parse::<f32>().unwrap_or_else(|_| 99.0)
+    }
 }
 
 fn main() {
@@ -180,11 +253,16 @@ fn main() {
 
     let rt = tokio::runtime::Runtime::new().unwrap();
     match rt.block_on(async { read_directory(path.clone()).await }) {
-        Ok(classes) => {
+        Ok((classes, failed)) => {
             for class_info in classes.iter() {
-                println!("{:<30} : {:?}", class_info.file_name, class_info.res);
+                println!(
+                    "{:<15} : {:?}",
+                    class_info.file_name.split('.').next().unwrap(),
+                    class_info.stats.armour[4]
+                );
             }
             println!("Found: {} classes", classes.len());
+            println!("{} classes failed to be parsed", failed);
         }
         Err(e) => eprintln!("{}", e),
     }
