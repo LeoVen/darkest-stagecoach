@@ -10,13 +10,13 @@ use tokio_stream::wrappers::ReadDirStream;
 use crate::parse::get_contents;
 use crate::types::*;
 
-pub async fn read_directory(path: PathBuf) -> io::Result<(Vec<ClassInfo>, usize)> {
+pub async fn read_directory(path: PathBuf) -> io::Result<Vec<ClassInfo>> {
     let mut meta_queue = FuturesUnordered::new();
     meta_queue.push(metadata(path));
     let mut entry_queue = FuturesUnordered::new();
     let mut parse_queue = FuturesUnordered::new();
+    let mut imgage_queue = FuturesUnordered::new();
     let mut result = vec![];
-    let mut failed: usize = 0;
 
     loop {
         select! {
@@ -39,17 +39,22 @@ pub async fn read_directory(path: PathBuf) -> io::Result<(Vec<ClassInfo>, usize)
             class_info = parse_queue.select_next_some() => {
                 if let Some(class_info) = class_info? {
                     if !class_info.failed {
-                        result.push(class_info);
+                        imgage_queue.push(get_image_path(class_info));
                     } else {
-                        failed += 1;
+                        result.push(class_info);
                     }
                 }
             },
+            class_info = imgage_queue.select_next_some() => {
+                if let Ok(class_info) = class_info {
+                    result.push(class_info);
+                }
+            }
             complete => break,
         }
     }
 
-    Ok((result, failed))
+    Ok(result)
 }
 
 async fn metadata(path: PathBuf) -> io::Result<(PathBuf, Metadata)> {
@@ -76,4 +81,25 @@ async fn filter_file(path: PathBuf) -> io::Result<Option<PathBuf>> {
         }
     }
     Ok(None)
+}
+
+async fn get_image_path(mut class_info: ClassInfo) -> io::Result<ClassInfo> {
+    let mut path = class_info.info_path.clone();
+
+    let _ = path.pop();
+
+    if let Some(name) = class_info.info_name.split('.').next() {
+        path.push(name.to_string() + "_A");
+        path.push(name.to_string() + "_portrait_roster.png");
+        if path.is_file() {
+            class_info.image_name = path.file_name().unwrap().to_str().unwrap().to_string();
+            class_info.image_path = path;
+        } else {
+            class_info.failed = true;
+        }
+        Ok(class_info)
+    } else {
+        class_info.failed = true;
+        Ok(class_info)
+    }
 }

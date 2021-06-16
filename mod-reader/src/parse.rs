@@ -8,18 +8,19 @@ use crate::utils::parse_value;
 
 pub async fn get_contents(path: PathBuf, data: String) -> Option<ClassInfo> {
     let mut result = ClassInfo::default();
-    result.file_name = path
+    result.info_name = path
         .file_name()
         .unwrap_or_default()
         .to_str()
         .unwrap_or_default()
         .to_string();
-    result.name = file_to_name(&result.file_name);
-    if result.file_name == String::default() {
+    result.name = file_to_name(&result.info_name);
+    if result.info_name == String::default() {
         result.failed = true;
         return Some(result);
     }
     result.steam_id = get_steam_id(path.to_str().unwrap_or_default().to_string());
+    result.info_path = path;
     result = resistances(result, &data)?;
     result = gears(result, &data)?;
     Some(result)

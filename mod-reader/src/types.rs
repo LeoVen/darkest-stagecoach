@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 #[derive(Debug, Default)]
 pub struct ClassResistances {
     pub stun: f32,
@@ -37,7 +39,10 @@ pub struct ClassInfo {
     pub failed: bool,
     pub steam_id: String,
     pub name: String,
-    pub file_name: String,
+    pub info_name: String,
+    pub info_path: PathBuf,
+    pub image_name: String,
+    pub image_path: PathBuf,
     pub res: ClassResistances,
     pub stats: ClassStats,
 }

@@ -4,10 +4,13 @@ pub mod files;
 pub mod parse;
 pub mod types;
 pub mod utils;
+pub mod writer;
 
+use std::fs;
 use std::path::PathBuf;
 
 use crate::files::read_directory;
+use crate::writer::write_classes;
 
 macro_rules! time_it {
     ($expr:expr) => {{
@@ -22,26 +25,28 @@ fn main() {
 }
 
 fn main_() {
-    fn get_path() -> PathBuf {
-        let args = std::env::args().into_iter().nth(1);
-        let folder =
-            args.expect("Expected one positional argument containing a file or folder path.");
-        PathBuf::from(folder)
-    }
+    let mut args = std::env::args().into_iter();
+    let input = args
+        .nth(1)
+        .expect("Expected positional argument containing a file or folder path to be read.");
 
-    let path = get_path();
+    let input = fs::canonicalize(PathBuf::from(input)).expect("Failed to get input path");
+    let img_output = fs::canonicalize(PathBuf::from(
+        "../darkest-stagecoach/src/assets/img/portraits",
+    ))
+    .expect("Failed to get image output path");
+    let src_output = fs::canonicalize(PathBuf::from("../darkest-stagecoach/src/data/classes"))
+        .expect("Failed to get files output path");
+
+    println!(
+        "Reading From: {:?}\nOutputing Images To: {:?}\nOutputing Files To: {:?}",
+        input, img_output, src_output
+    );
 
     let rt = tokio::runtime::Runtime::new().unwrap();
-    match rt.block_on(async { read_directory(path.clone()).await }) {
-        Ok((classes, failed)) => {
-            for class_info in classes.iter() {
-                println!(
-                    "{:<20} {:>10} : {:?}",
-                    class_info.name, class_info.steam_id, class_info.stats.armour[4]
-                );
-            }
-            println!("Found: {} classes", classes.len());
-            println!("{} classes failed to be parsed", failed);
+    match rt.block_on(async { read_directory(input).await }) {
+        Ok(classes) => {
+            write_classes(classes, img_output, src_output);
         }
         Err(e) => eprintln!("{}", e),
     }
