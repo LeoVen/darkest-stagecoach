@@ -10,7 +10,9 @@ import ClassMod from '../../data/ClassMod'
 import { AuthorCard } from '../AuthorCard'
 import { ClassCardBanner } from './styles'
 import { ArrowDownIcon } from '../ArrowDownIcon'
-import { StatsSection } from '../StatsSection'
+import { ResistancesSection } from '../Resistances'
+import { BaseStats } from '../BaseStats'
+import { ModSources } from '../ModSources'
 
 interface ClassCardProps {
     classMod: ClassMod
@@ -29,7 +31,7 @@ const AccordionTemplate: React.FunctionComponent<{
         <Accordion
             expanded={expanded}
             onChange={handleAccordionChange}
-            style={{ backgroundColor: 'var(--bg-primary)' }}>
+            style={{ backgroundColor: 'var(--bg-secondary)' }}>
             <AccordionSummary
                 className="cursor-pointer"
                 expandIcon={<ArrowDownIcon />}>
@@ -66,7 +68,8 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
     return (
         <Paper
             style={{
-                padding: '2em'
+                padding: '2em',
+                backgroundColor: 'var(--bg-primary)'
             }}>
             <ClassCardBanner>
                 <img
@@ -87,22 +90,7 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
                 expanded={accordion[0]}
                 title={'Sources'}
                 handleAccordionChange={handleAccordionChange(0)}>
-                <div style={{ width: '100%' }}>
-                    <Typography variant="subtitle2">
-                        You can find this class mod in the following places
-                    </Typography>
-                    <div style={{ paddingLeft: '1em' }}>
-                        {classMod.sources.map((src, i) => (
-                            <a
-                                key={`${src.name}-${i}`}
-                                href={src.link}
-                                target="_blank"
-                                rel="noreferrer">
-                                {src.name}
-                            </a>
-                        ))}
-                    </div>
-                </div>
+                <ModSources sources={classMod.sources} />
             </AccordionTemplate>
             <AccordionTemplate
                 expanded={accordion[1]}
@@ -120,9 +108,15 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
             </AccordionTemplate>
             <AccordionTemplate
                 expanded={accordion[2]}
-                title={'Resistances'}
+                title={'Base Stats'}
                 handleAccordionChange={handleAccordionChange(2)}>
-                <StatsSection res={classMod.resistances} />
+                <BaseStats stats={classMod.stats} />
+            </AccordionTemplate>
+            <AccordionTemplate
+                expanded={accordion[3]}
+                title={'Resistances'}
+                handleAccordionChange={handleAccordionChange(3)}>
+                <ResistancesSection res={classMod.resistances} />
             </AccordionTemplate>
         </Paper>
     )

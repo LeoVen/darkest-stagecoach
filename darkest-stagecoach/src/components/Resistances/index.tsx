@@ -1,6 +1,11 @@
 import React from 'react'
 import { Resistances, ResistancesIcon } from '../../Types'
-import { MainSection, ResRowIconText, ResRowSection } from './styles'
+import {
+    MainSection,
+    StatsSection,
+    ResRowIconText,
+    ResRowSection
+} from './styles'
 import { ResistanceIcon } from '../ResistanceIcon'
 import { Typography } from '@material-ui/core'
 
@@ -15,13 +20,11 @@ export const TextColors = {
     trap: '#8860B2'
 }
 
-interface StatsSectionProps {
+interface Props {
     res?: Resistances
 }
 
-export const StatsSection: React.FunctionComponent<StatsSectionProps> = ({
-    res
-}) => {
+export const ResistancesSection: React.FunctionComponent<Props> = ({ res }) => {
     if (res === undefined) {
         return <Typography variant="body1">Unavailable</Typography>
     }
@@ -94,6 +97,7 @@ export const StatsSection: React.FunctionComponent<StatsSectionProps> = ({
         color: string
     }) => (
         <Typography
+            key={data.name}
             variant="body1"
             component="span"
             style={{ fontWeight: 'bold' }}>
@@ -114,8 +118,10 @@ export const StatsSection: React.FunctionComponent<StatsSectionProps> = ({
 
     return (
         <MainSection>
-            <div>{first.map(template)}</div>
-            <div>{second.map(template)}</div>
+            <StatsSection>
+                <div>{first.map(template)}</div>
+                <div>{second.map(template)}</div>
+            </StatsSection>
         </MainSection>
     )
 }

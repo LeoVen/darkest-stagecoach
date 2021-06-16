@@ -23,6 +23,25 @@ export type Resistances = {
     trap: number
 }
 
+export type GearStats = {
+    armours: [ArmourStats, ArmourStats, ArmourStats, ArmourStats, ArmourStats]
+    weapons: [WeaponStats, WeaponStats, WeaponStats, WeaponStats, WeaponStats]
+}
+
+export type ArmourStats = {
+    dodge: number
+    prot: number
+    hp: number
+    speed: number
+}
+
+export type WeaponStats = {
+    accuracy: number
+    damage: [number, number]
+    crit: number
+    speed: number
+}
+
 export type ResistancesIcon =
     | 'stun'
     | 'blight'
@@ -52,64 +71,3 @@ export type OriginalHeroes =
     | 'Plague Doctor'
     | 'Shieldbreaker'
     | 'Vestal'
-
-export type StatIcon =
-    | 'bleed'
-    | 'blight'
-    | 'breakGuard'
-    | 'buff'
-    | 'buffPlus'
-    | 'debuff'
-    | 'debuffPlus'
-    | 'guard'
-    | 'mark'
-    | 'move'
-    | 'restoration'
-    | 'riposte'
-    | 'stealth'
-    | 'stress'
-    | 'stun'
-
-export type Synergy = {
-    name:
-        | 'Bleed'
-        | 'Blight'
-        | 'Stun'
-        | 'Buff'
-        | 'Debuff'
-        | 'Guard'
-        | 'Riposte'
-        | 'Healing'
-        | 'Stress Healing'
-        | 'Stealth'
-        | string
-    icon: StatIcon
-}
-
-export type StatusEffect =
-    | 'Bleed'
-    | 'Blight'
-    | 'Stun'
-    | 'Debuff'
-    | 'Mark'
-    | 'Move'
-    | 'Buff'
-    | 'Guard'
-    | 'Riposte'
-    | 'Restoration'
-    | 'Aegis'
-    | 'Break Guard'
-    | 'Armor Piercing'
-    | 'Bypass Guard'
-    | 'Add Stealth'
-    | 'Bypass Stealth'
-    | 'Transfer Blight'
-    | 'Transfer Bleed'
-
-export type BonusDamage =
-    | 'Bleed'
-    | 'Blight'
-    | 'Mark'
-    | 'Stun'
-    | 'Buff'
-    | 'Debuff'

@@ -1,5 +1,5 @@
 import Author from './Author'
-import { Credits, OriginalHeroes, Resistances, Synergy } from '../Types'
+import { Credits, GearStats, OriginalHeroes, Resistances } from '../Types'
 
 export default interface ClassMod {
     name: string
@@ -9,10 +9,20 @@ export default interface ClassMod {
     religious: boolean
     transform: boolean
     resistances?: Resistances
+    stats?: GearStats
     sources: {
-        name: 'Steam' | 'Nexus'
+        name: string
         link: string
     }[]
+    authors: {
+        author: Author
+        credits: Credits
+    }[]
+}
+
+export interface ClassModInfo {
+    name: string
+    dataId: string
     authors: {
         author: Author
         credits: Credits
