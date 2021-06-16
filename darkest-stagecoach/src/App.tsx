@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, ThemeProvider, Typography } from '@material-ui/core'
+import { Fade, Modal, ThemeProvider, Typography } from '@material-ui/core'
 import { AllClasses } from './data'
 import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
@@ -49,19 +49,27 @@ function App() {
                                         selectedHero.name === hero.name
                                     }
                                     onClose={handleCloseModal}>
-                                    <ModalWrapper
-                                        style={{
-                                            width: '80vw',
-                                            maxWidth: '1280px'
-                                        }}>
-                                        <ModalCloseButton
-                                            onClick={handleCloseModal}
-                                        />
-                                        <ClassCard
-                                            key={`${hero.name}-card-${i}`}
-                                            classMod={hero}
-                                        />
-                                    </ModalWrapper>
+                                    <Fade
+                                        in={
+                                            selectedHero !== null &&
+                                            selectedHero.name === hero.name
+                                        }
+                                        timeout={400}
+                                        exit={false}>
+                                        <ModalWrapper
+                                            style={{
+                                                width: '80vw',
+                                                maxWidth: '1280px'
+                                            }}>
+                                            <ModalCloseButton
+                                                onClick={handleCloseModal}
+                                            />
+                                            <ClassCard
+                                                key={`${hero.name}-card-${i}`}
+                                                classMod={hero}
+                                            />
+                                        </ModalWrapper>
+                                    </Fade>
                                 </Modal>
                             </div>
                         )

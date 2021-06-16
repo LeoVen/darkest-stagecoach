@@ -3,12 +3,11 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
-    Paper,
     Typography
 } from '@material-ui/core'
 import ClassMod from '../../data/ClassMod'
 import { AuthorCard } from '../AuthorCard'
-import { ClassCardBanner } from './styles'
+import { MainModal, ClassCardBanner } from './styles'
 import { ArrowDownIcon } from '../ArrowDownIcon'
 import { ResistancesSection } from '../Resistances'
 import { BaseStats } from '../BaseStats'
@@ -66,11 +65,7 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
         }
 
     return (
-        <Paper
-            style={{
-                padding: '2em',
-                backgroundColor: 'var(--bg-primary)'
-            }}>
+        <MainModal>
             <ClassCardBanner>
                 <img
                     src={classMod.portrait}
@@ -118,6 +113,6 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
                 handleAccordionChange={handleAccordionChange(3)}>
                 <ResistancesSection res={classMod.resistances} />
             </AccordionTemplate>
-        </Paper>
+        </MainModal>
     )
 }

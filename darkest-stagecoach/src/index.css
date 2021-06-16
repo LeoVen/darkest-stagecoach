@@ -19,7 +19,7 @@
     width: 4px;
 }
 *::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
 }
 *::-webkit-scrollbar-thumb {
     background: var(--accent-primary);
