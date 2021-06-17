@@ -1,36 +1,15 @@
-use std::path::PathBuf;
-
 use lazy_static::lazy_static;
 use regex::Regex;
+use tokio::io;
 
 use crate::types::*;
 use crate::utils::parse_value;
-
-pub async fn get_contents(path: PathBuf, data: String) -> Option<ClassInfo> {
-    let mut result = ClassInfo::default();
-    result.info_name = path
-        .file_name()
-        .unwrap_or_default()
-        .to_str()
-        .unwrap_or_default()
-        .to_string();
-    result.name = file_to_name(&result.info_name);
-    if result.info_name == String::default() {
-        result.failed = true;
-        return Some(result);
-    }
-    result.steam_id = get_steam_id(path.to_str().unwrap_or_default().to_string());
-    result.info_path = path;
-    result = resistances(result, &data)?;
-    result = gears(result, &data)?;
-    Some(result)
-}
 
 lazy_static! {
     static ref RE_RESIST: Regex = Regex::new(r"resistances: (.+)\n*").unwrap();
 }
 
-fn resistances(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+pub fn resistances(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
     for cap in RE_RESIST.captures_iter(data) {
         // .stun 40% .poison 20% .bleed 30% .disease 30% .move 40% .debuff 40% .death_blow 67% .trap 20%
         let values = &cap[1];
@@ -71,7 +50,7 @@ lazy_static! {
     static ref RE_ARMOUR: Regex = Regex::new(r"armour: .name .+? (\..+)\n*").unwrap();
 }
 
-pub fn gears(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+pub fn stats(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
     for (i, cap) in RE_WEAPON.captures_iter(data).enumerate() {
         // .atk 0% .dmg 8 12 .crit 0% .spd 7
         let values = &cap[1]
@@ -124,7 +103,7 @@ lazy_static! {
     static ref RE_STEAM_ID: Regex = Regex::new(r"262060/(\d+)/").unwrap();
 }
 
-fn get_steam_id(mut path: String) -> String {
+pub fn get_steam_id(mut path: String) -> String {
     // C:\Program Files (x86)\Steam\steamapps\workshop\content\262060\2472629364\heroes\commandant
     path = path.replace('\\', "/");
     for cap in RE_STEAM_ID.captures_iter(&path) {
@@ -135,7 +114,28 @@ fn get_steam_id(mut path: String) -> String {
     Default::default()
 }
 
-fn file_to_name(file_name: &str) -> String {
+pub async fn get_image_path(mut class_info: ClassInfo) -> io::Result<ClassInfo> {
+    let mut path = class_info.info_path.clone();
+
+    let _ = path.pop();
+
+    if let Some(name) = class_info.info_name.split('.').next() {
+        path.push(name.to_string() + "_A");
+        path.push(name.to_string() + "_portrait_roster.png");
+        if path.is_file() {
+            class_info.image_name = path.file_name().unwrap().to_str().unwrap().to_string();
+            class_info.image_path = path;
+        } else {
+            class_info.failed = true;
+        }
+        Ok(class_info)
+    } else {
+        class_info.failed = true;
+        Ok(class_info)
+    }
+}
+
+pub fn file_to_name(file_name: &str) -> String {
     let file = file_name.split('.').next();
     if file.is_none() || file_name.is_empty() {
         return Default::default();

@@ -1,7 +1,7 @@
 //! Automatically reads the specified directory and gets all the information about class mods
 
-pub mod files;
 pub mod parse;
+pub mod reader;
 pub mod types;
 pub mod utils;
 pub mod writer;
@@ -9,7 +9,7 @@ pub mod writer;
 use std::fs;
 use std::path::PathBuf;
 
-use crate::files::read_directory;
+use crate::reader::read_directory;
 use crate::writer::write_classes;
 
 macro_rules! time_it {
@@ -25,7 +25,7 @@ fn main() {
 }
 
 fn main_() {
-    let mut args = std::env::args().into_iter();
+    let mut args = std::env::args();
     let input = args
         .nth(1)
         .expect("Expected positional argument containing a file or folder path to be read.");
