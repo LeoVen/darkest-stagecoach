@@ -99,6 +99,6 @@ export type SortingKeys = 'name' | StatsNames | ResistancesNames
 
 export type SortBy = {
     key: SortingKeys
-    sortDirection: -1 | 1
+    sortDirection: number
     levelRef: number
 }

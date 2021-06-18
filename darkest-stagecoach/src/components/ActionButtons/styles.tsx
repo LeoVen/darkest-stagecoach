@@ -37,6 +37,11 @@ export const SortItemsContainer = styled.div`
     flex-wrap: wrap;
 `
 
+export const InnerItem = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const SortItem = styled.div`
     ${(props: { selected: boolean }) =>
         props.selected

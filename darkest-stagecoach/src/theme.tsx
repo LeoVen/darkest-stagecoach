@@ -36,6 +36,13 @@ export const THEME = createMuiTheme({
             fontSize: '1.5em',
             color: 'var(--font-primary)'
         },
+        h4: {
+            fontFamily: 'Mate SC',
+            fontSize: '1.2em',
+            color: 'var(--font-primary)',
+            wordWrap: 'break-word',
+            marginTop: '1.5rem'
+        },
         subtitle1: {
             fontFamily: 'Mate SC',
             fontSize: '1.2em',

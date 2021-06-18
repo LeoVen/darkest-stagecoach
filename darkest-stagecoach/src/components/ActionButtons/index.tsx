@@ -5,6 +5,7 @@ import { ClassModFilter, SortBy, SortingKeys } from '../../Types'
 import {
     BottomButton,
     BottomFilterSection,
+    InnerItem,
     MainModal,
     SortItem,
     SortItemsContainer
@@ -12,7 +13,12 @@ import {
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons'
+import {
+    faFilter,
+    faSort,
+    faSortUp,
+    faSortDown
+} from '@fortawesome/free-solid-svg-icons'
 
 interface FilterProps {
     filter: ClassModFilter
@@ -44,31 +50,62 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
         let newSort: SortBy = {
             key: sortKey,
             levelRef: 0 /* TODO */,
-            sortDirection: 1 /* TODO */
+            sortDirection:
+                sort.key === sortKey
+                    ? sort.sortDirection * -1
+                    : sort.sortDirection
         }
         onSortChange(newSort)
     }
 
+    const sortIcon = (sortDirection: number) => {
+        return sortDirection < 0 ? (
+            <div style={{ marginRight: '4px' }}>
+                <FontAwesomeIcon icon={faSortDown} size={'1x'} />
+            </div>
+        ) : (
+            <div style={{ marginRight: '4px' }}>
+                <FontAwesomeIcon icon={faSortUp} size={'1x'} />
+            </div>
+        )
+    }
+
     const sortItemTemplate = (value: [string, SortingKeys]) => {
+        let selected = sort.key === value[1]
         return (
             <SortItem
                 key={value[0]}
-                selected={sort.key === value[1]}
+                selected={selected}
                 className="cursor-pointer"
                 onClick={() => handleSortByKeyChange(value[1])}>
-                {value[0]}
+                <InnerItem>
+                    {selected ? sortIcon(sort.sortDirection) : <></>}
+                    {value[0]}
+                </InnerItem>
             </SortItem>
         )
     }
 
-    const sortItems: [string, SortingKeys][] = [
-        ['Name', 'name'],
+    const sortDefault: [string, SortingKeys][] = [['Name', 'name']]
+
+    const sortBaseStats: [string, SortingKeys][] = [
         ['MAX HP', 'maxHp'],
         ['DODGE', 'dodge'],
         ['SPD', 'speed'],
         ['ACC MOD', 'accuracy'],
         ['CRIT', 'crit'],
         ['DMG', 'damage']
+    ]
+
+    const sortResistances: [string, SortingKeys][] = [
+        ['Stun', 'stun'],
+        ['Blight', 'blight'],
+        ['Disease', 'disease'],
+        ['Death Blow', 'deathBlow'],
+        ['Move', 'move'],
+        ['Bleed', 'bleed'],
+        ['Debuff', 'debuff'],
+        ['Trap', 'trap']
     ]
 
     return (
@@ -114,7 +151,15 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                                 Sort
                             </Typography>
                             <SortItemsContainer>
-                                {sortItems.map(sortItemTemplate)}
+                                {sortDefault.map(sortItemTemplate)}
+                            </SortItemsContainer>
+                            <Typography variant="h4">Base Stats</Typography>
+                            <SortItemsContainer>
+                                {sortBaseStats.map(sortItemTemplate)}
+                            </SortItemsContainer>
+                            <Typography variant="h4">Resistances</Typography>
+                            <SortItemsContainer>
+                                {sortResistances.map(sortItemTemplate)}
                             </SortItemsContainer>
                         </MainModal>
                     </ModalWrapper>
