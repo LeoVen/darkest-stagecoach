@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/blackguard_portrait_roster.png'
 export const Class_Blackguard: ClassMod = {
     name: 'Blackguard',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.2, blight: 0.1, bleed: 2, disease: 0.6, move: 0.2, debuff: 0.1, deathBlow: 0.5, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Blackguard: ClassMod = {
         }
     ],
 }
-    

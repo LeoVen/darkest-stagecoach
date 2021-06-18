@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/omenseeker_portrait_roster.png'
 export const Class_Omenseeker: ClassMod = {
     name: 'Omenseeker',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.2, blight: 0.4, bleed: 0.4, disease: 0.3, move: 0.3, debuff: 0.5, deathBlow: 0.67, trap: 0.3},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Omenseeker: ClassMod = {
         }
     ],
 }
-    

@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/bluesman_bet_portrait_roster.pn
 export const Class_BluesmanBet: ClassMod = {
     name: 'BluesmanBet',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.4, blight: 0.3, bleed: 0.3, disease: 0.3, move: 0.2, debuff: 0.3, deathBlow: 0.67, trap: 0},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_BluesmanBet: ClassMod = {
         }
     ],
 }
-    

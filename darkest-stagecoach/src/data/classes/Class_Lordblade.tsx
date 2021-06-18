@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/lordblade_portrait_roster.png'
 export const Class_Lordblade: ClassMod = {
     name: 'Lordblade',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.2, blight: 0.5, bleed: 0.3, disease: 0.3, move: 0.2, debuff: 0.3, deathBlow: 0.67, trap: 0.5},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Lordblade: ClassMod = {
         }
     ],
 }
-    

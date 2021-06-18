@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/seraph_portrait_roster.png'
 export const Class_Seraph: ClassMod = {
     name: 'Seraph',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.4, blight: 0.1, bleed: 0.5, disease: 0.2, move: 0.4, debuff: 0.3, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Seraph: ClassMod = {
         }
     ],
 }
-    

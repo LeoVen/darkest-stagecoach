@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/wolfknight_portrait_roster.png'
 export const Class_Wolfknight: ClassMod = {
     name: 'Wolfknight',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.4, blight: 0.4, bleed: 0.4, disease: 0.3, move: 0.4, debuff: 0.3, deathBlow: 0.67, trap: 0.2},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Wolfknight: ClassMod = {
         }
     ],
 }
-    

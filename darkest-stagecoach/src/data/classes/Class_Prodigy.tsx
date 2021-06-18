@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/prodigy_portrait_roster.png'
 export const Class_Prodigy: ClassMod = {
     name: 'Prodigy',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.5, blight: 0.3, bleed: 0.3, disease: 0.5, move: 0.1, debuff: 0.5, deathBlow: 0.67, trap: 0.3},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Prodigy: ClassMod = {
         }
     ],
 }
-    

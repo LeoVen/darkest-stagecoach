@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/zenith_portrait_roster.png'
 export const Class_Zenith: ClassMod = {
     name: 'Zenith',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.1, blight: 0.2, bleed: 0.2, disease: 0.1, move: 0.2, debuff: 0.2, deathBlow: 0.66, trap: 0.5},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Zenith: ClassMod = {
         }
     ],
 }
-    

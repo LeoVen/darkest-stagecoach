@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/cleric_errant_portrait_roster.p
 export const Class_ClericErrant: ClassMod = {
     name: 'ClericErrant',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.5, blight: 0.3, bleed: 0.2, disease: 0.3, move: 0.4, debuff: 0.3, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_ClericErrant: ClassMod = {
         }
     ],
 }
-    

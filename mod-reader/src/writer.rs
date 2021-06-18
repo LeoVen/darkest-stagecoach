@@ -7,6 +7,8 @@ use std::{
 
 use crate::types::*;
 
+const WRITE_OVERRIDE: bool = true;
+
 pub fn write_classes(classes: Vec<ClassInfo>, img_output: PathBuf, src_output: PathBuf) {
     let classes = filter_duplicates(classes);
     println!("After: {}", classes.len());
@@ -32,7 +34,7 @@ pub fn write_classes(classes: Vec<ClassInfo>, img_output: PathBuf, src_output: P
 pub fn write_data_file(class_info: &ClassInfo, src_output: &dyn AsRef<Path>) {
     let mut file_output = src_output.as_ref().to_path_buf();
     file_output.push("Class_".to_string() + &(class_info.name.to_string() + ".tsx"));
-    if !Path::new(&file_output).is_file() {
+    if WRITE_OVERRIDE || !Path::new(&file_output).is_file() {
         if let Ok(mut file) = File::create(&file_output) {
             match file.write_all(make_code(class_info).as_bytes()) {
                 Ok(_) => {}
@@ -115,13 +117,17 @@ pub fn make_index(filtered: &[ClassInfo]) {
                 );
             }
 
-            result += "export const AllClasses: ClassMod[] = [";
+            result += "\nexport const AllClasses: ClassMod[] = [\n";
 
-            for class_info in filtered.iter() {
-                result += &format!("Class_{},\n", class_info.name);
+            for (i, class_info) in filtered.iter().enumerate() {
+                if filtered.len() - 1 == i {
+                    result += &format!("    Class_{}\n", class_info.name);
+                } else {
+                    result += &format!("    Class_{},\n", class_info.name);
+                }
             }
 
-            result += "]";
+            result += "]\n";
 
             let _ = file.write_all(result.as_bytes());
         }
@@ -156,8 +162,7 @@ export const Class_{name}: ClassMod = {{
             link: '{steam_link}'
         }}
     ],
-}}
-    ",
+}}",
         image = class_info.image_name,
         name = class_info.name,
         armours = format!("{},\n{},\n{},\n{},\n{}", a[0], a[1], a[2], a[3], a[4]),

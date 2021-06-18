@@ -48,9 +48,17 @@ pub fn resistances(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
 lazy_static! {
     static ref RE_WEAPON: Regex = Regex::new(r"weapon: .name .+? (\..+)\n*").unwrap();
     static ref RE_ARMOUR: Regex = Regex::new(r"armour: .name .+? (\..+)\n*").unwrap();
+    static ref RE_RELIGS: Regex = Regex::new(r"non-religious").unwrap();
 }
 
 pub fn stats(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+    // Check if it is religous
+    match RE_RELIGS.captures_iter(data).count() {
+        0 => result.religious = true,
+        1 => result.religious = false,
+        t => eprintln!("Error, found non-religious {} times", t),
+    }
+
     for (i, cap) in RE_WEAPON.captures_iter(data).enumerate() {
         // .atk 0% .dmg 8 12 .crit 0% .spd 7
         let values = &cap[1]

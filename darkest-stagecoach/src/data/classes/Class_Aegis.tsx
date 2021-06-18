@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/aegis_portrait_roster.png'
 export const Class_Aegis: ClassMod = {
     name: 'Aegis',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.6, blight: 0.4, bleed: 0.1, disease: 0.2, move: 0.6, debuff: 0.4, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Aegis: ClassMod = {
         }
     ],
 }
-    

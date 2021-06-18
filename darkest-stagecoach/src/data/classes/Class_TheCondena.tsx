@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/the_condena_portrait_roster.png
 export const Class_TheCondena: ClassMod = {
     name: 'TheCondena',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.45, blight: 0.15, bleed: 0.45, disease: 0.3, move: 0.15, debuff: 0.3, deathBlow: 0.67, trap: 0},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_TheCondena: ClassMod = {
         }
     ],
 }
-    

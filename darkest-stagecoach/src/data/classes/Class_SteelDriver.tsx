@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/steel_driver_portrait_roster.pn
 export const Class_SteelDriver: ClassMod = {
     name: 'SteelDriver',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.3, blight: 0.2, bleed: 0.4, disease: 0.2, move: 0.5, debuff: 0.3, deathBlow: 0.67, trap: 0.4},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_SteelDriver: ClassMod = {
         }
     ],
 }
-    

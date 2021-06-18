@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/warrior_of_sunlight_portrait_ro
 export const Class_WarriorOfSunlight: ClassMod = {
     name: 'WarriorOfSunlight',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.4, blight: 0.2, bleed: 0.5, disease: 0.3, move: 0.3, debuff: 0.4, deathBlow: 0.67, trap: 0.2},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_WarriorOfSunlight: ClassMod = {
         }
     ],
 }
-    

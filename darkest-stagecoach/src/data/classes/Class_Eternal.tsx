@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/eternal_portrait_roster.png'
 export const Class_Eternal: ClassMod = {
     name: 'Eternal',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.2, blight: 0.1, bleed: 0.6, disease: 0.6, move: 0.2, debuff: 0.6, deathBlow: 0.72, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Eternal: ClassMod = {
         }
     ],
 }
-    

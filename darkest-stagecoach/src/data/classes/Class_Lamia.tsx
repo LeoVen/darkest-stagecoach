@@ -30,4 +30,3 @@ export const Class_Lamia: ClassMod = {
         }
     ],
 }
-    

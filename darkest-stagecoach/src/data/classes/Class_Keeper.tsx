@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/keeper_portrait_roster.png'
 export const Class_Keeper: ClassMod = {
     name: 'Keeper',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.5, blight: 0.3, bleed: 0.1, disease: 0.4, move: 0.3, debuff: 0.4, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Keeper: ClassMod = {
         }
     ],
 }
-    

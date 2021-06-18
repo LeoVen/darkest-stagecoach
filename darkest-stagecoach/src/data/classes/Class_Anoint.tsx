@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/anoint_portrait_roster.png'
 export const Class_Anoint: ClassMod = {
     name: 'Anoint',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.6, blight: 0.2, bleed: 0.3, disease: 0.2, move: 0.1, debuff: 0.6, deathBlow: 0.7, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Anoint: ClassMod = {
         }
     ],
 }
-    

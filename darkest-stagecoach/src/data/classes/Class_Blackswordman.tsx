@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/blackswordman_portrait_roster.p
 export const Class_Blackswordman: ClassMod = {
     name: 'Blackswordman',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.6, blight: 0.3, bleed: 0.3, disease: 0.2, move: 0.3, debuff: 0.1, deathBlow: 0.75, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Blackswordman: ClassMod = {
         }
     ],
 }
-    

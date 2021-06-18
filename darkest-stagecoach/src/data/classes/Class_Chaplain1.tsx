@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/chaplain1_portrait_roster.png'
 export const Class_Chaplain1: ClassMod = {
     name: 'Chaplain1',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.3, blight: 0.4, bleed: 0.4, disease: 0.3, move: 0.4, debuff: 0.2, deathBlow: 0.67, trap: 0.2},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Chaplain1: ClassMod = {
         }
     ],
 }
-    

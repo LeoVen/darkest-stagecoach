@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/JoanofArc_portrait_roster.png'
 export const Class_JoanofArc: ClassMod = {
     name: 'JoanofArc',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.3, blight: 0.2, bleed: 0.2, disease: 0.5, move: 0.2, debuff: 0.4, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_JoanofArc: ClassMod = {
         }
     ],
 }
-    

@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/dragonslayers_portrait_roster.p
 export const Class_Dragonslayers: ClassMod = {
     name: 'Dragonslayers',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.3, blight: 0.3, bleed: 0.3, disease: 0.3, move: 0.3, debuff: 0.3, deathBlow: 0.67, trap: 0.1},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Dragonslayers: ClassMod = {
         }
     ],
 }
-    

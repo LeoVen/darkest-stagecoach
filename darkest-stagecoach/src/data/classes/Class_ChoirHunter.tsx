@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/choir_hunter_portrait_roster.pn
 export const Class_ChoirHunter: ClassMod = {
     name: 'ChoirHunter',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.4, blight: 0.3, bleed: 0.25, disease: 0.3, move: 0.3, debuff: 0.4, deathBlow: 0.67, trap: 0.25},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_ChoirHunter: ClassMod = {
         }
     ],
 }
-    

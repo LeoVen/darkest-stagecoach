@@ -5,7 +5,7 @@ import portrait from '../../assets/img/portraits/spacemarine1_portrait_roster.pn
 export const Class_Spacemarine1: ClassMod = {
     name: 'Spacemarine1',
     portrait: portrait,
-    religious: false,
+    religious: true,
     resistances: {stun: 0.5, blight: 0.3, bleed: 0.4, disease: 0.3, move: 0.55, debuff: 0.5, deathBlow: 0.67, trap: 0.05},
     stats: {
         armours: [
@@ -30,4 +30,3 @@ export const Class_Spacemarine1: ClassMod = {
         }
     ],
 }
-    
