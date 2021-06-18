@@ -1,31 +1,52 @@
 import React from 'react'
 import { Fade, Modal, ThemeProvider, Typography } from '@material-ui/core'
-import { AllClasses } from './data'
 import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import { ModalCloseButton } from './components/ModalCloseButton'
 import { HeroCard, ModalWrapper } from './styles'
 import { THEME } from './theme'
+import { ActionButtons } from './components/ActionButtons'
+import { ClassModFilter, SortBy } from './Types'
+import { sortClassMods } from './Util'
+import { classModIndex, ClassModIndex } from './data/ClassModIndex'
 
 function App() {
+    const [classMods, setClassMods] = React.useState<string[]>(
+        Array.from(ClassModIndex().keys())
+    )
     const [selectedHero, setSelectedHero] =
         React.useState<ClassMod | null>(null)
+    const [filter, setFilter] = React.useState<ClassModFilter>({})
+    const [sort, setSort] = React.useState<SortBy>({
+        key: 'name',
+        sortDirection: 1,
+        levelRef: 0
+    })
 
     const handleOpenModal = (classMod: ClassMod) => {
         setSelectedHero(classMod)
     }
-
     const handleCloseModal = () => {
         setSelectedHero(null)
+    }
+    const handleSortChange = (sortBy: SortBy) => {
+        setClassMods(sortClassMods(classMods, sortBy))
+        setSort(sortBy)
     }
 
     return (
         <ThemeProvider theme={THEME}>
             <div style={{ backgroundColor: THEME.palette.background.default }}>
                 <Header />
+                <ActionButtons
+                    filter={filter}
+                    sort={sort}
+                    onSortChange={sortBy => handleSortChange(sortBy)}
+                />
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    {AllClasses.map((hero, i) => {
+                    {classMods.map((heroKey, i) => {
+                        let hero = classModIndex.get(heroKey) as ClassMod
                         return (
                             <div key={`${hero.name}-${i}`}>
                                 <HeroCard

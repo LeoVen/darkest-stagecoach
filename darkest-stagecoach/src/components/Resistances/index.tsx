@@ -1,5 +1,5 @@
 import React from 'react'
-import { Resistances, ResistancesIcon } from '../../Types'
+import { Resistances, ResistancesNames } from '../../Types'
 import {
     MainSection,
     StatsSection,
@@ -30,7 +30,7 @@ export const ResistancesSection: React.FunctionComponent<Props> = ({ res }) => {
     }
 
     let data: {
-        icon: ResistancesIcon
+        icon: ResistancesNames
         name: string
         value: number
         color: string
@@ -91,7 +91,7 @@ export const ResistancesSection: React.FunctionComponent<Props> = ({ res }) => {
     let second = data.slice(-half)
 
     const template = (data: {
-        icon: ResistancesIcon
+        icon: ResistancesNames
         name: string
         value: number
         color: string

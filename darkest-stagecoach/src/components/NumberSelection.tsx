@@ -26,7 +26,7 @@ export function NumberSelection(props: NumberSelectionProps) {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                {props.index}
+                {props.index + 1}
             </div>
         </Typography>
     )

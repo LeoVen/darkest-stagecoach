@@ -42,7 +42,7 @@ export type WeaponStats = {
     speed: number
 }
 
-export type ResistancesIcon =
+export type ResistancesNames =
     | 'stun'
     | 'blight'
     | 'bleed'
@@ -51,6 +51,15 @@ export type ResistancesIcon =
     | 'debuff'
     | 'deathBlow'
     | 'trap'
+
+export type StatsNames =
+    | 'maxHp'
+    | 'dodge'
+    | 'prot'
+    | 'speed'
+    | 'accuracy'
+    | 'crit'
+    | 'damage'
 
 export type OriginalHeroes =
     | 'Abomination'
@@ -71,3 +80,25 @@ export type OriginalHeroes =
     | 'Plague Doctor'
     | 'Shieldbreaker'
     | 'Vestal'
+
+export type ClassModFilter = {
+    religious?: boolean
+    baseStats?: {
+        levelReference?: number
+        maxHp?: [number, number]
+        dodge?: [number, number]
+        prot?: [number, number]
+        speed?: [number, number]
+        accuracy?: [number, number]
+        crit?: [number, number]
+        damage?: [number, number]
+    }
+}
+
+export type SortingKeys = 'name' | StatsNames | ResistancesNames
+
+export type SortBy = {
+    key: SortingKeys
+    sortDirection: -1 | 1
+    levelRef: number
+}

@@ -6,15 +6,15 @@ import move from '../assets/img/stats/move.png'
 import debuff from '../assets/img/stats/debuff.png'
 import deathBlow from '../assets/img/stats/deathBlow.png'
 import trap from '../assets/img/stats/trap.png'
-import { ResistancesIcon } from '../Types'
+import { ResistancesNames } from '../Types'
 import { CSSProperties } from 'react'
 
 interface ResistanceIconProps {
-    icon: ResistancesIcon
+    icon: ResistancesNames
     style?: CSSProperties
 }
 
-const iconMap: Record<ResistancesIcon, string> = {
+const iconMap: Record<ResistancesNames, string> = {
     stun: stun,
     blight: blight,
     bleed: bleed,

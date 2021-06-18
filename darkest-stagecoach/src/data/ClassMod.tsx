@@ -6,15 +6,15 @@ export default interface ClassMod {
     description?: string[]
     similarity?: OriginalHeroes
     portrait: string
-    religious: boolean
-    transform: boolean
+    religious?: boolean
+    transform?: boolean
     resistances?: Resistances
     stats?: GearStats
     sources: {
         name: string
         link: string
     }[]
-    authors: {
+    authors?: {
         author: Author
         credits: Credits
     }[]

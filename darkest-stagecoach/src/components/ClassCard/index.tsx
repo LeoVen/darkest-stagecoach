@@ -92,13 +92,17 @@ export const ClassCard: React.FunctionComponent<ClassCardProps> = ({
                 title={'Creators'}
                 handleAccordionChange={handleAccordionChange(1)}>
                 <div style={{ width: '100%' }}>
-                    {classMod.authors.map((auth, i) => (
-                        <AuthorCard
-                            key={`${auth.author.name}-${i}`}
-                            author={auth.author}
-                            credits={auth.credits}
-                        />
-                    ))}
+                    {classMod.authors === undefined ? (
+                        <Typography variant="body1">Unavailable</Typography>
+                    ) : (
+                        classMod.authors.map((auth, i) => (
+                            <AuthorCard
+                                key={`${auth.author.name}-${i}`}
+                                author={auth.author}
+                                credits={auth.credits}
+                            />
+                        ))
+                    )}
                 </div>
             </AccordionTemplate>
             <AccordionTemplate
