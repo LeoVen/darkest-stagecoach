@@ -83,6 +83,7 @@ export type OriginalHeroes =
 
 export type ClassModFilter = {
     religious?: boolean
+    transform?: boolean
     baseStats?: {
         levelReference?: number
         maxHp?: [number, number]
