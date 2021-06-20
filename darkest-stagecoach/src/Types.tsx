@@ -103,3 +103,8 @@ export type SortBy = {
     sortDirection: number
     levelRef: number
 }
+
+// Bad, Ok, Good
+export type Position = -1 | 0 | 1
+
+export type PreferredPositions = [Position, Position, Position, Position]

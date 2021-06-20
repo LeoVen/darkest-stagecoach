@@ -8,7 +8,7 @@ import { HeroCard, ModalWrapper } from './styles'
 import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
 import { ClassModFilter, SortBy } from './Types'
-import { sortClassMods } from './Util'
+import { sortClassMods } from './Sorting'
 import { classModIndex, ClassModIndex } from './data/ClassModIndex'
 
 function App() {

@@ -1,5 +1,11 @@
 import Author from './Author'
-import { Credits, GearStats, OriginalHeroes, Resistances } from '../Types'
+import {
+    Credits,
+    GearStats,
+    OriginalHeroes,
+    PreferredPositions,
+    Resistances
+} from '../Types'
 
 export default interface ClassMod {
     name: string
@@ -8,8 +14,9 @@ export default interface ClassMod {
     portrait: string
     religious?: boolean
     transform?: boolean
-    resistances?: Resistances
-    stats?: GearStats
+    resistances: Resistances
+    stats: GearStats
+    position?: PreferredPositions
     sources: {
         name: string
         link: string
