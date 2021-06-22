@@ -20,7 +20,7 @@ export const BottomFilterSection = styled(Button)`
     }
 `
 
-export const MainModal = styled(Paper)`
+export const SortItemsDrawerContent = styled.div`
     padding: 2em;
     background-color: var(--bg-primary);
 `
@@ -38,6 +38,8 @@ export const SortItemsContainer = styled.div`
 `
 
 export const InnerItem = styled.div`
+    ${(props: { selected: boolean }) =>
+        props.selected ? 'padding: 0 14px 0 0;' : 'padding: 0 14px 0 14px;'}
     display: flex;
     align-items: center;
 `
@@ -51,6 +53,7 @@ export const SortItem = styled.div`
     color: var(--font-primary);
     padding: 0.5rem;
     margin: 4px;
+    user-select: none;
 
     &:hover {
         background-color: var(--bg-secondary);

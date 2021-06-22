@@ -1,14 +1,13 @@
 import React from 'react'
-import { Fade, Modal } from '@material-ui/core'
-import { ModalWrapper } from '../../styles'
+import { Drawer } from '@material-ui/core'
 import { ClassModFilter, SortBy, SortingKeys } from '../../Types'
 import {
     BottomButton,
     BottomFilterSection,
     InnerItem,
-    MainModal,
     SortItem,
-    SortItemsContainer
+    SortItemsContainer,
+    SortItemsDrawerContent
 } from './styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Typography } from '@material-ui/core'
@@ -49,7 +48,7 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     const handleSortByKeyChange = (sortKey: SortingKeys) => {
         let newSort: SortBy = {
             key: sortKey,
-            levelRef: 0 /* TODO */,
+            levelRef: 4 /* TODO */,
             sortDirection:
                 sort.key === sortKey
                     ? sort.sortDirection * -1
@@ -78,7 +77,7 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 selected={selected}
                 className="cursor-pointer"
                 onClick={() => handleSortByKeyChange(value[1])}>
-                <InnerItem>
+                <InnerItem selected={selected}>
                     {selected ? sortIcon(sort.sortDirection) : <></>}
                     {value[0]}
                 </InnerItem>
@@ -120,51 +119,40 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                     <FontAwesomeIcon icon={faSort} size={'1x'} />
                 </BottomFilterSection>
             </BottomButton>
-            <Modal open={modalFilterOpen} onClose={handleCloseFilterModal}>
-                <Fade in={modalFilterOpen} timeout={400} exit={false}>
-                    <ModalWrapper
-                        style={{
-                            width: '80vw',
-                            maxWidth: '1280px'
-                        }}>
-                        <MainModal>
-                            <ModalCloseButton
-                                onClick={handleCloseFilterModal}
-                            />
-                            <Typography variant="h2">Filter</Typography>
-                        </MainModal>
-                    </ModalWrapper>
-                </Fade>
-            </Modal>
-            <Modal open={modalSortOpen} onClose={handleCloseSortModal}>
-                <Fade in={modalSortOpen} timeout={400} exit={false}>
-                    <ModalWrapper
-                        style={{
-                            width: '80vw',
-                            maxWidth: '720px'
-                        }}>
-                        <MainModal>
-                            <ModalCloseButton onClick={handleCloseSortModal} />
-                            <Typography
-                                variant="h2"
-                                style={{ margin: '0 1em 1em 0' }}>
-                                Sort
-                            </Typography>
-                            <SortItemsContainer>
-                                {sortDefault.map(sortItemTemplate)}
-                            </SortItemsContainer>
-                            <Typography variant="h4">Base Stats</Typography>
-                            <SortItemsContainer>
-                                {sortBaseStats.map(sortItemTemplate)}
-                            </SortItemsContainer>
-                            <Typography variant="h4">Resistances</Typography>
-                            <SortItemsContainer>
-                                {sortResistances.map(sortItemTemplate)}
-                            </SortItemsContainer>
-                        </MainModal>
-                    </ModalWrapper>
-                </Fade>
-            </Modal>
+            <Drawer
+                open={modalFilterOpen}
+                onClose={handleCloseFilterModal}
+                anchor="bottom">
+                <ModalCloseButton onClick={handleCloseFilterModal} />
+                <SortItemsDrawerContent>
+                    <ModalCloseButton onClick={handleCloseFilterModal} />
+                    <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
+                        Filters
+                    </Typography>
+                </SortItemsDrawerContent>
+            </Drawer>
+            <Drawer
+                open={modalSortOpen}
+                onClose={handleCloseSortModal}
+                anchor="bottom">
+                <ModalCloseButton onClick={handleCloseSortModal} />
+                <SortItemsDrawerContent>
+                    <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
+                        Sort
+                    </Typography>
+                    <SortItemsContainer>
+                        {sortDefault.map(sortItemTemplate)}
+                    </SortItemsContainer>
+                    <Typography variant="h4">Base Stats</Typography>
+                    <SortItemsContainer>
+                        {sortBaseStats.map(sortItemTemplate)}
+                    </SortItemsContainer>
+                    <Typography variant="h4">Resistances</Typography>
+                    <SortItemsContainer>
+                        {sortResistances.map(sortItemTemplate)}
+                    </SortItemsContainer>
+                </SortItemsDrawerContent>
+            </Drawer>
         </>
     )
 }

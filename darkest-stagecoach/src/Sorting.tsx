@@ -8,10 +8,16 @@ var sortingState: SortBy = {
     sortDirection: 1
 }
 
+const defaultSort = (lhs: number, rhs: number, other: () => number): number => {
+    let result = (lhs - rhs) * sortingState.sortDirection
+    if (result === 0.0) return other()
+    return result
+}
+
 const sortByName = (a: string, b: string) => {
     let classA = classModIndex.get(a) as ClassMod
     let classB = classModIndex.get(b) as ClassMod
-    return classA.name.localeCompare(classB.name)
+    return classA.name.localeCompare(classB.name) * sortingState.sortDirection
 }
 
 const sortByHp = (a: string, b: string) => {
@@ -20,7 +26,7 @@ const sortByHp = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.armours[idx].hp
     let rhs = classB.stats.armours[idx].hp
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByDodge = (a: string, b: string) => {
@@ -29,7 +35,7 @@ const sortByDodge = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.armours[idx].dodge
     let rhs = classB.stats.armours[idx].dodge
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByProt = (a: string, b: string) => {
@@ -38,7 +44,7 @@ const sortByProt = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.armours[idx].prot
     let rhs = classB.stats.armours[idx].prot
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortBySpeed = (a: string, b: string) => {
@@ -47,7 +53,7 @@ const sortBySpeed = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.armours[idx].speed + classA.stats.weapons[idx].speed
     let rhs = classB.stats.armours[idx].speed + classB.stats.weapons[idx].speed
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByAccuracy = (a: string, b: string) => {
@@ -56,7 +62,7 @@ const sortByAccuracy = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.weapons[idx].accuracy
     let rhs = classB.stats.weapons[idx].accuracy
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByCrit = (a: string, b: string) => {
@@ -65,7 +71,7 @@ const sortByCrit = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.weapons[idx].crit
     let rhs = classB.stats.weapons[idx].crit
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByDamage = (a: string, b: string) => {
@@ -74,7 +80,7 @@ const sortByDamage = (a: string, b: string) => {
     let idx = sortingState.levelRef
     let lhs = classA.stats.weapons[idx].damage[1]
     let rhs = classB.stats.weapons[idx].damage[1]
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByStun = (a: string, b: string) => {
@@ -82,7 +88,7 @@ const sortByStun = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.stun
     let rhs = classB.resistances.stun
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByBlight = (a: string, b: string) => {
@@ -90,7 +96,7 @@ const sortByBlight = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.blight
     let rhs = classB.resistances.blight
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByDisease = (a: string, b: string) => {
@@ -98,7 +104,7 @@ const sortByDisease = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.disease
     let rhs = classB.resistances.disease
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByDeathBlow = (a: string, b: string) => {
@@ -106,7 +112,7 @@ const sortByDeathBlow = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.deathBlow
     let rhs = classB.resistances.deathBlow
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByMove = (a: string, b: string) => {
@@ -114,7 +120,7 @@ const sortByMove = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.move
     let rhs = classB.resistances.move
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByBleed = (a: string, b: string) => {
@@ -122,7 +128,7 @@ const sortByBleed = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.bleed
     let rhs = classB.resistances.bleed
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByDebuff = (a: string, b: string) => {
@@ -130,7 +136,7 @@ const sortByDebuff = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.debuff
     let rhs = classB.resistances.debuff
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortByTrap = (a: string, b: string) => {
@@ -138,7 +144,7 @@ const sortByTrap = (a: string, b: string) => {
     let classB = classModIndex.get(b) as ClassMod
     let lhs = classA.resistances.trap
     let rhs = classB.resistances.trap
-    return (lhs - rhs) * sortingState.sortDirection
+    return defaultSort(lhs, rhs, () => sortByName(a, b))
 }
 
 const sortFuncMap: Record<SortingKeys, (a: string, b: string) => number> = {

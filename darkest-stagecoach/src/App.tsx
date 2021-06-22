@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import { ModalCloseButton } from './components/ModalCloseButton'
-import { HeroCard, ModalWrapper } from './styles'
+import { ClassCardsContainer, HeroCard, ModalWrapper } from './styles'
 import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
 import { ClassModFilter, SortBy } from './Types'
@@ -44,7 +44,7 @@ function App() {
                     sort={sort}
                     onSortChange={sortBy => handleSortChange(sortBy)}
                 />
-                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                <ClassCardsContainer>
                     {classMods.map((heroKey, i) => {
                         let hero = classModIndex.get(heroKey) as ClassMod
                         return (
@@ -95,7 +95,7 @@ function App() {
                             </div>
                         )
                     })}
-                </div>
+                </ClassCardsContainer>
             </div>
         </ThemeProvider>
     )

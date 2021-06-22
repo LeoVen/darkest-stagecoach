@@ -10,8 +10,14 @@ export const ModalWrapper = styled.div`
     overflow-y: auto;
 `
 
+export const ClassCardsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+`
+
 export const HeroCard = styled(Paper)`
-    margin: 1em;
     padding: 1em;
     display: flex;
     align-items: center;
