@@ -12,6 +12,7 @@ import { ArrowDownIcon } from '../ArrowDownIcon'
 import { ResistancesSection } from '../Resistances'
 import { BaseStats } from '../BaseStats'
 import { ModSources } from '../ModSources'
+import { SynergyIcons } from '../SynergyIcon'
 
 interface ClassCardProps {
     classMod: ClassMod

@@ -4,19 +4,26 @@ import { Header } from './components/Header'
 import ClassMod from './data/ClassMod'
 import { ClassCard } from './components/ClassCard'
 import { ModalCloseButton } from './components/ModalCloseButton'
-import { ClassCardsContainer, HeroCard, ModalWrapper } from './styles'
+import {
+    BottomIcons,
+    ClassCardsContainer,
+    HeroCard,
+    ModalWrapper
+} from './styles'
 import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
 import { ClassModFilter, SortBy } from './Types'
 import { sortClassMods } from './Sorting'
 import { classModIndex, ClassModIndex } from './data/ClassModIndex'
+import { SynergyIcons } from './components/SynergyIcon'
 
 function App() {
     const [classMods, setClassMods] = React.useState<string[]>(
         Array.from(ClassModIndex().keys())
     )
-    const [selectedHero, setSelectedHero] =
-        React.useState<ClassMod | null>(null)
+    const [selectedHero, setSelectedHero] = React.useState<ClassMod | null>(
+        null
+    )
     const [filter, setFilter] = React.useState<ClassModFilter>({})
     const [sort, setSort] = React.useState<SortBy>({
         key: 'name',
@@ -48,7 +55,9 @@ function App() {
                     {classMods.map((heroKey, i) => {
                         let hero = classModIndex.get(heroKey) as ClassMod
                         return (
-                            <div key={`${hero.name}-${i}`}>
+                            <div
+                                key={`${hero.name}-${i}`}
+                                style={{ position: 'relative' }}>
                                 <HeroCard
                                     elevation={5}
                                     onClick={() => handleOpenModal(hero)}>
@@ -64,6 +73,9 @@ function App() {
                                         {hero.name}
                                     </Typography>
                                 </HeroCard>
+                                <BottomIcons>
+                                    <SynergyIcons synergies={hero.synergy} />
+                                </BottomIcons>
                                 <Modal
                                     open={
                                         selectedHero !== null &&

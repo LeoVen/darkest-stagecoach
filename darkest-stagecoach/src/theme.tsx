@@ -17,6 +17,12 @@ export const THEME = createMuiTheme({
             root: {
                 cursor: '--var(--cursor-pointer)'
             }
+        },
+        MuiTooltip: {
+            tooltip: {
+                fontFamily: 'Mate SC',
+                fontSize: '0.8rem'
+            }
         }
     },
     typography: {

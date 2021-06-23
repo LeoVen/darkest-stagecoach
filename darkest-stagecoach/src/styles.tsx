@@ -15,6 +15,7 @@ export const ClassCardsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2rem;
+    margin: 1rem;
 `
 
 export const HeroCard = styled(Paper)`
@@ -33,4 +34,10 @@ export const HeroCard = styled(Paper)`
     & *:hover {
         cursor: var(--cursor-pointer);
     }
+`
+
+export const BottomIcons = styled.div`
+    position: absolute;
+    right: 1rem;
+    bottom: 2px;
 `

@@ -5,6 +5,7 @@ export const BottomButton = styled(Paper)`
     position: fixed;
     right: calc(1rem + ${(props: { index: number }) => props.index * 80}px);
     bottom: 1rem;
+    z-index: 2;
 `
 
 export const BottomFilterSection = styled(Button)`

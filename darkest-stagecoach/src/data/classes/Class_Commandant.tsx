@@ -13,6 +13,17 @@ export const Class_Commandant: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    synergy: [
+        'buff',
+        'mark',
+        'reflect',
+        'debuff',
+        'guardBreak',
+        'bleed',
+        'move',
+        'stun',
+        'deStealth'
+    ],
     resistances: {
         stun: 0.4,
         blight: 0.4,

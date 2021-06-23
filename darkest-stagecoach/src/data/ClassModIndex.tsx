@@ -63,12 +63,14 @@ import { Class_Lordblade } from './classes/Class_Lordblade'
 import { Class_Lucia } from './classes/Class_Lucia'
 import { Class_Mambo } from './classes/Class_Mambo'
 import { Class_Mender } from './classes/Class_Mender'
+import { Class_Milkmaid } from './classes/Class_Milkmaid'
 import { Class_Minstrel } from './classes/Class_Minstrel'
 import { Class_Monk } from './classes/Class_Monk'
 import { Class_NbbOwlwing } from './classes/Class_NbbOwlwing'
 import { Class_Offering } from './classes/Class_Offering'
 import { Class_Omenseeker } from './classes/Class_Omenseeker'
 import { Class_Paladin } from './classes/Class_Paladin'
+import { Class_Philomath } from './classes/Class_Philomath'
 import { Class_Prince } from './classes/Class_Prince'
 import { Class_Prodigy } from './classes/Class_Prodigy'
 import { Class_Rescuer } from './classes/Class_Rescuer'
@@ -88,6 +90,7 @@ import { Class_Spacemarine1 } from './classes/Class_Spacemarine1'
 import { Class_Stargazer } from './classes/Class_Stargazer'
 import { Class_SteelDriver } from './classes/Class_SteelDriver'
 import { Class_Succubus } from './classes/Class_Succubus'
+import { Class_Tactician } from './classes/Class_Tactician'
 import { Class_TheCondena } from './classes/Class_TheCondena'
 import { Class_Thorn } from './classes/Class_Thorn'
 import { Class_Thrall } from './classes/Class_Thrall'
@@ -178,12 +181,14 @@ export function ClassModIndex(): Map<string, ClassMod> {
         ['Class_Lucia', Class_Lucia],
         ['Class_Mambo', Class_Mambo],
         ['Class_Mender', Class_Mender],
+        ['Class_Milkmaid', Class_Milkmaid],
         ['Class_Minstrel', Class_Minstrel],
         ['Class_Monk', Class_Monk],
         ['Class_NbbOwlwing', Class_NbbOwlwing],
         ['Class_Offering', Class_Offering],
         ['Class_Omenseeker', Class_Omenseeker],
         ['Class_Paladin', Class_Paladin],
+        ['Class_Philomath', Class_Philomath],
         ['Class_Prince', Class_Prince],
         ['Class_Prodigy', Class_Prodigy],
         ['Class_Rescuer', Class_Rescuer],
@@ -203,6 +208,7 @@ export function ClassModIndex(): Map<string, ClassMod> {
         ['Class_Stargazer', Class_Stargazer],
         ['Class_SteelDriver', Class_SteelDriver],
         ['Class_Succubus', Class_Succubus],
+        ['Class_Tactician', Class_Tactician],
         ['Class_TheCondena', Class_TheCondena],
         ['Class_Thorn', Class_Thorn],
         ['Class_Thrall', Class_Thrall],

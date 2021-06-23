@@ -4,7 +4,8 @@ import {
     GearStats,
     OriginalHeroes,
     PreferredPositions,
-    Resistances
+    Resistances,
+    Synergy
 } from '../Types'
 
 export default interface ClassMod {
@@ -14,9 +15,10 @@ export default interface ClassMod {
     portrait: string
     religious?: boolean
     transform?: boolean
+    synergy?: Synergy[]
+    position?: PreferredPositions
     resistances: Resistances
     stats: GearStats
-    position?: PreferredPositions
     sources: {
         name: string
         link: string

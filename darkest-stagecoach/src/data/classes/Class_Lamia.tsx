@@ -8,6 +8,16 @@ export const Class_Lamia: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: true,
+    synergy: [
+        'heal',
+        'stress',
+        'debuff',
+        'move',
+        'cure',
+        'guardBreak',
+        'blight',
+        'stun'
+    ],
     resistances: {
         stun: 0.2,
         blight: 0.6,

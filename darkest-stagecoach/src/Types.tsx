@@ -114,16 +114,20 @@ export type Position = -1 | 0 | 1
 export type PreferredPositions = [Position, Position, Position, Position]
 
 export type Synergy =
-    | 'bleed,'
-    | 'blight,'
-    | 'stun,'
-    | 'buff,'
-    | 'debuff,'
-    | 'pull,'
-    | 'mark,'
-    | 'heal,'
-    | 'stress,'
-    | 'block,'
-    | 'riposte,'
-    | 'guard,'
-    | 'stealth'
+    | 'bleed' // Causes dot bleed
+    | 'blight' // Causes dot blight
+    | 'stun' // Stuns enemy
+    | 'buff' // Buffs ally
+    | 'debuff' // Debuffs enemy
+    | 'mark' // Marks enemy
+    | 'move' // Move enemy (push/pull/shuffle)
+    | 'heal' // Heal ally or adds restoration
+    | 'stress' // Stress heal ally or cure horor
+    | 'block' // Gives block
+    | 'riposte' // Activates riposte
+    | 'guard' // Guards ally
+    | 'guardBreak' // Breaks enemy guard
+    | 'stealth' // Activates stealth
+    | 'deStealth' // Bypass or de-stealth enemy
+    | 'cure' // Cure blight/bleed
+    | 'reflect' // Adds damage reflection

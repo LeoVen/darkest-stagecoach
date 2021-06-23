@@ -17,6 +17,7 @@ export const Class_Janissary: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    synergy: ['debuff', 'stress', 'buff', 'guard', 'riposte'],
     resistances: {
         stun: 0.4,
         blight: 0.3,
