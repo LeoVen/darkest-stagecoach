@@ -51,8 +51,8 @@ pub struct ClassInfo {
 
 impl Display for ClassResistances {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{stun: {}, blight: {}, bleed: {}, disease: {}, move: {}, debuff: {}, deathBlow: {}, trap: {}}}",
-            self.stun,self.blight, self.bleed, self.disease, self.shuffle, self.debuff, self.death_blow, self.trap)
+        write!(f, "{{\n{s:<8}stun: {},\n{s:<8}blight: {},\n{s:<8}bleed: {},\n{s:<8}disease: {},\n{s:<8}move: {},\n{s:<8}debuff: {},\n{s:<8}deathBlow: {},\n{s:<8}trap: {}\n    }}",
+            self.stun,self.blight, self.bleed, self.disease, self.shuffle, self.debuff, self.death_blow, self.trap, s = "")
     }
 }
 
@@ -60,7 +60,7 @@ impl Display for ArmourStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "{{dodge: {}, prot: {}, hp: {}, speed: {}}}",
+            "{{ dodge: {}, prot: {}, hp: {}, speed: {} }}",
             self.dodge, self.prot, self.hp, self.speed
         )
     }
@@ -70,7 +70,7 @@ impl Display for WeaponStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "{{accuracy: {}, damage: {:?}, crit: {}, speed: {}}}",
+            "{{ accuracy: {}, damage: {:?}, crit: {}, speed: {} }}",
             self.accuracy, self.damage, self.crit, self.speed
         )
     }

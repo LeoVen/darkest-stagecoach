@@ -139,8 +139,7 @@ pub fn make_code(class_info: &ClassInfo) -> String {
     let a = &class_info.stats.armour;
     let w = &class_info.stats.weapon;
     format!(
-        r"
-import ClassMod from '../ClassMod'
+        r"import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/{image}'
 
 export const Class_{name}: ClassMod = {{
@@ -154,19 +153,36 @@ export const Class_{name}: ClassMod = {{
         ],
         weapons: [
             {weapons}
-        ],
+        ]
     }},
     sources: [
         {{
             name: 'Steam',
             link: '{steam_link}'
         }}
-    ],
-}}",
+    ]
+}}
+",
         image = class_info.image_name,
         name = class_info.name,
-        armours = format!("{},\n{},\n{},\n{},\n{}", a[0], a[1], a[2], a[3], a[4]),
-        weapons = format!("{}\n,{}\n,{}\n,{}\n,{}", w[0], w[1], w[2], w[3], w[4]),
+        armours = format!(
+            "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
+            a[0],
+            a[1],
+            a[2],
+            a[3],
+            a[4],
+            s = ""
+        ),
+        weapons = format!(
+            "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
+            w[0],
+            w[1],
+            w[2],
+            w[3],
+            w[4],
+            s = ""
+        ),
         resistances = class_info.res,
         religious = class_info.religious,
         steam_link = steam_link(&class_info.steam_id)
