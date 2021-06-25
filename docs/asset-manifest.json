@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/darkest-stagecoach/static/css/main.5fc69877.chunk.css",
-    "main.js": "/darkest-stagecoach/static/js/main.f10f91be.chunk.js",
-    "main.js.map": "/darkest-stagecoach/static/js/main.f10f91be.chunk.js.map",
+    "main.js": "/darkest-stagecoach/static/js/main.0d3783c7.chunk.js",
+    "main.js.map": "/darkest-stagecoach/static/js/main.0d3783c7.chunk.js.map",
     "runtime-main.js": "/darkest-stagecoach/static/js/runtime-main.0cc808d7.js",
     "runtime-main.js.map": "/darkest-stagecoach/static/js/runtime-main.0cc808d7.js.map",
-    "static/js/2.ca006b45.chunk.js": "/darkest-stagecoach/static/js/2.ca006b45.chunk.js",
-    "static/js/2.ca006b45.chunk.js.map": "/darkest-stagecoach/static/js/2.ca006b45.chunk.js.map",
+    "static/js/2.74763da0.chunk.js": "/darkest-stagecoach/static/js/2.74763da0.chunk.js",
+    "static/js/2.74763da0.chunk.js.map": "/darkest-stagecoach/static/js/2.74763da0.chunk.js.map",
     "index.html": "/darkest-stagecoach/index.html",
     "static/css/main.5fc69877.chunk.css.map": "/darkest-stagecoach/static/css/main.5fc69877.chunk.css.map",
-    "static/js/2.ca006b45.chunk.js.LICENSE.txt": "/darkest-stagecoach/static/js/2.ca006b45.chunk.js.LICENSE.txt",
+    "static/js/2.74763da0.chunk.js.LICENSE.txt": "/darkest-stagecoach/static/js/2.74763da0.chunk.js.LICENSE.txt",
     "static/media/2andb_portrait_roster.a3cbfa64.png": "/darkest-stagecoach/static/media/2andb_portrait_roster.a3cbfa64.png",
     "static/media/JoanofArc_portrait_roster.ef1117ad.png": "/darkest-stagecoach/static/media/JoanofArc_portrait_roster.ef1117ad.png",
     "static/media/acolyte_portrait_roster.9b6f38ab.png": "/darkest-stagecoach/static/media/acolyte_portrait_roster.9b6f38ab.png",
@@ -49,6 +49,7 @@
     "static/media/grove_tender_portrait_roster.4ab4bbb6.png": "/darkest-stagecoach/static/media/grove_tender_portrait_roster.4ab4bbb6.png",
     "static/media/harbinger_portrait_roster.a996818b.png": "/darkest-stagecoach/static/media/harbinger_portrait_roster.a996818b.png",
     "static/media/harlot_portrait_roster.d890342f.png": "/darkest-stagecoach/static/media/harlot_portrait_roster.d890342f.png",
+    "static/media/heal.a1f1df47.png": "/darkest-stagecoach/static/media/heal.a1f1df47.png",
     "static/media/heiress_portrait_roster.8aa6d6e9.png": "/darkest-stagecoach/static/media/heiress_portrait_roster.8aa6d6e9.png",
     "static/media/herald_portrait_roster.28c537ba.png": "/darkest-stagecoach/static/media/herald_portrait_roster.28c537ba.png",
     "static/media/hollow_knight_portrait_roster.5cab999a.png": "/darkest-stagecoach/static/media/hollow_knight_portrait_roster.5cab999a.png",
@@ -71,11 +72,13 @@
     "static/media/lucia_portrait_roster.d53a3748.png": "/darkest-stagecoach/static/media/lucia_portrait_roster.d53a3748.png",
     "static/media/mambo_portrait_roster.25ac2b46.png": "/darkest-stagecoach/static/media/mambo_portrait_roster.25ac2b46.png",
     "static/media/mender_portrait_roster.49a760d5.png": "/darkest-stagecoach/static/media/mender_portrait_roster.49a760d5.png",
+    "static/media/milkmaid_portrait_roster.127acf36.png": "/darkest-stagecoach/static/media/milkmaid_portrait_roster.127acf36.png",
     "static/media/minstrel_portrait_roster.62cab93f.png": "/darkest-stagecoach/static/media/minstrel_portrait_roster.62cab93f.png",
     "static/media/monk_portrait_roster.f16a7476.png": "/darkest-stagecoach/static/media/monk_portrait_roster.f16a7476.png",
     "static/media/nbb_owlwing_portrait_roster.afb0aa49.png": "/darkest-stagecoach/static/media/nbb_owlwing_portrait_roster.afb0aa49.png",
     "static/media/offering_portrait_roster.81514080.png": "/darkest-stagecoach/static/media/offering_portrait_roster.81514080.png",
     "static/media/omenseeker_portrait_roster.5e34a5ac.png": "/darkest-stagecoach/static/media/omenseeker_portrait_roster.5e34a5ac.png",
+    "static/media/philomath_portrait_roster.690ef3fa.png": "/darkest-stagecoach/static/media/philomath_portrait_roster.690ef3fa.png",
     "static/media/prodigy_portrait_roster.38f01a9c.png": "/darkest-stagecoach/static/media/prodigy_portrait_roster.38f01a9c.png",
     "static/media/rescuer_portrait_roster.843c482a.png": "/darkest-stagecoach/static/media/rescuer_portrait_roster.843c482a.png",
     "static/media/revenant_portrait_roster.e1e6660a.png": "/darkest-stagecoach/static/media/revenant_portrait_roster.e1e6660a.png",
@@ -93,6 +96,7 @@
     "static/media/spacemarine1_portrait_roster.72a20d8b.png": "/darkest-stagecoach/static/media/spacemarine1_portrait_roster.72a20d8b.png",
     "static/media/steel_driver_portrait_roster.67528728.png": "/darkest-stagecoach/static/media/steel_driver_portrait_roster.67528728.png",
     "static/media/succubus_portrait_roster.7158d1c9.png": "/darkest-stagecoach/static/media/succubus_portrait_roster.7158d1c9.png",
+    "static/media/tactician_portrait_roster.3ce92b3a.png": "/darkest-stagecoach/static/media/tactician_portrait_roster.3ce92b3a.png",
     "static/media/the_condena_portrait_roster.ebadc106.png": "/darkest-stagecoach/static/media/the_condena_portrait_roster.ebadc106.png",
     "static/media/thorn_portrait_roster.d50ae49e.png": "/darkest-stagecoach/static/media/thorn_portrait_roster.d50ae49e.png",
     "static/media/thrall_portrait_roster.06f9e596.png": "/darkest-stagecoach/static/media/thrall_portrait_roster.06f9e596.png",
@@ -117,8 +121,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.0cc808d7.js",
-    "static/js/2.ca006b45.chunk.js",
+    "static/js/2.74763da0.chunk.js",
     "static/css/main.5fc69877.chunk.css",
-    "static/js/main.f10f91be.chunk.js"
+    "static/js/main.0d3783c7.chunk.js"
   ]
 }
