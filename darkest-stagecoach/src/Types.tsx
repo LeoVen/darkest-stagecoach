@@ -104,14 +104,7 @@ export type SortBy = {
     levelRef: number
 }
 
-// Bad, Ok, Good
-// Assuming 7 total skills:
-// Bad :   0 skills in that position
-// Ok  : 1-3 skills in that position
-// Good: 4-N skills in that position
-export type Position = -1 | 0 | 1
-
-export type PreferredPositions = [Position, Position, Position, Position]
+export type PreferredPositions = [number, number, number, number]
 
 export type Synergy =
     | 'bleed' // Causes dot bleed

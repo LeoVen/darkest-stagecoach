@@ -17,6 +17,7 @@ export default interface ClassMod {
     transform?: boolean
     synergy?: Synergy[]
     position?: PreferredPositions
+    totalSkills?: number
     resistances: Resistances
     stats: GearStats
     sources: {

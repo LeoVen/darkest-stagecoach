@@ -108,6 +108,47 @@ pub fn stats(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
 }
 
 lazy_static! {
+    static ref RE_LAUNCH: Regex = Regex::new(r"combat_skill.+\.level 0.+\.launch (\d+)").unwrap();
+}
+
+pub fn launch(mut result: ClassInfo, data: &str) -> Option<ClassInfo> {
+    let mut total = 0;
+    for cap in RE_LAUNCH.captures_iter(data) {
+        total += 1;
+        for (i, v) in get_positions(&cap[1]).iter().enumerate() {
+            result.pos[i] += v;
+        }
+    }
+    if total != 7 {
+        eprintln!(
+            "Warning: class {} has more than 7 skills ({})",
+            result.name, total
+        );
+    } else if total != 7 {
+        eprintln!("Warning: class {} found only {} skills", result.name, total);
+    }
+    result.total_skills = total;
+    Some(result)
+}
+
+fn get_positions(data: &str) -> [u8; 4] {
+    let mut result = [0; 4];
+    if data.contains('1') {
+        result[0] += 1;
+    }
+    if data.contains('2') {
+        result[1] += 1;
+    }
+    if data.contains('3') {
+        result[2] += 1;
+    }
+    if data.contains('4') {
+        result[3] += 1;
+    }
+    result
+}
+
+lazy_static! {
     static ref RE_STEAM_ID: Regex = Regex::new(r"262060/(\d+)/").unwrap();
 }
 

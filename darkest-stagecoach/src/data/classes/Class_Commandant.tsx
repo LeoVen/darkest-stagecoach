@@ -34,6 +34,8 @@ export const Class_Commandant: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [4, 7, 7, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 24, speed: 0 },

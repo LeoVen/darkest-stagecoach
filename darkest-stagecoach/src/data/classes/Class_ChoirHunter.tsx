@@ -21,6 +21,8 @@ export const Class_ChoirHunter: ClassMod = {
         deathBlow: 0.67,
         trap: 0.25
     },
+    position: [2, 4, 6, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 19, speed: 0 },

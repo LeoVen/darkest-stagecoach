@@ -52,7 +52,7 @@ const iconDescription: Record<Synergy, string> = {
     cure: 'Cures bleed/blight',
     debuff: 'Debuffs enemy',
     deStealth: 'Bypass or de-stealth enemy',
-    guard: 'Guard all',
+    guard: 'Guard ally',
     guardBreak: 'Breaks enemy guard',
     heal: 'Heal ally HP',
     mark: 'Mark enemy',

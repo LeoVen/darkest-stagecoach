@@ -100,5 +100,6 @@ pub async fn get_contents(path: PathBuf, data: String) -> Option<ClassInfo> {
     result.info_path = path;
     result = resistances(result, &data)?;
     result = stats(result, &data)?;
+    result = launch(result, &data)?;
     Some(result)
 }

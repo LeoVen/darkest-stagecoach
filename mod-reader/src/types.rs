@@ -47,6 +47,8 @@ pub struct ClassInfo {
     pub religious: bool,
     pub res: ClassResistances,
     pub stats: ClassStats,
+    pub pos: [u8; 4],
+    pub total_skills: u8,
 }
 
 impl Display for ClassResistances {

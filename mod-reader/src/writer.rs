@@ -147,6 +147,8 @@ export const Class_{name}: ClassMod = {{
     portrait: portrait,
     religious: {religious},
     resistances: {resistances},
+    position: {pos:?},
+    totalSkills: {skills},
     stats: {{
         armours: [
             {armours}
@@ -165,6 +167,8 @@ export const Class_{name}: ClassMod = {{
 ",
         image = class_info.image_name,
         name = class_info.name,
+        pos = class_info.pos,
+        skills = class_info.total_skills,
         armours = format!(
             "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
             a[0],
