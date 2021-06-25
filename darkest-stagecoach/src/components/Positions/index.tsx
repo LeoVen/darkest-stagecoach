@@ -6,15 +6,19 @@ interface Props {
     totalSkills?: number
 }
 
-// Bad, Ok, Good
-// Assuming 7 total skills:
-// Bad :   0 skills in that position
-// Ok  : 1-3 skills in that position
-// Good: 4-N skills in that position
 export const circleColors = (ratio?: number) => {
     if (ratio === undefined) return '#444444'
+    else if (ratio <= 0.0) return '#b11900'
+    else if (ratio <= 2 / 7) return '#7f290b'
+    else if (ratio <= 4 / 7) return '#8e5b11'
+    return '#2a4416'
+}
+
+export const borderColors = (ratio?: number) => {
+    if (ratio === undefined) return '#000000'
     else if (ratio <= 0.0) return '#f40006'
-    else if (ratio <= 3 / 7) return '#f0ef5a'
+    else if (ratio <= 2 / 7) return '#e26826'
+    else if (ratio <= 4 / 7) return '#f0ef5a'
     return '#4fcb4f'
 }
 
@@ -30,6 +34,9 @@ const circle = (skills: number, total?: number) => {
         <>
             <Circle
                 color={circleColors(
+                    total === undefined ? undefined : skills / total
+                )}
+                border={borderColors(
                     total === undefined ? undefined : skills / total
                 )}
                 blur={ratio !== undefined && ratio === 1 ? true : false}>
