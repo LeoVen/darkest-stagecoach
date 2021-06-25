@@ -15,6 +15,8 @@ export const Class_Wanderer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [4, 5, 5, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 20, speed: 0 },

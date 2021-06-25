@@ -15,6 +15,8 @@ export const Class_Anoint: ClassMod = {
         deathBlow: 0.7,
         trap: 0.1
     },
+    position: [7, 7, 4, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 24, speed: 0 },

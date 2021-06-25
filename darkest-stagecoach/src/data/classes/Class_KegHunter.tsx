@@ -15,6 +15,8 @@ export const Class_KegHunter: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [5, 7, 5, 1],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 20, speed: 0 },

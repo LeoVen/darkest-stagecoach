@@ -15,6 +15,8 @@ export const Class_Ushiro: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [7, 7, 3, 3],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 20, speed: 0 },

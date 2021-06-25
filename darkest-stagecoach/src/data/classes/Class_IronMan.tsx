@@ -15,6 +15,8 @@ export const Class_IronMan: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [2, 6, 6, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.02, prot: 0, hp: 25, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Cook: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [3, 9, 9, 7],
+    totalSkills: 9,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 19, speed: 0 },

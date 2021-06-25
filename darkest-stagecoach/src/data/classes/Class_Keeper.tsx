@@ -15,6 +15,8 @@ export const Class_Keeper: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [4, 7, 7, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 25, speed: 0 },

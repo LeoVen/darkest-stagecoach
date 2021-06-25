@@ -15,6 +15,8 @@ export const Class_Wretch: ClassMod = {
         deathBlow: 0.67,
         trap: 0
     },
+    position: [5, 7, 5, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 33, speed: 0 },

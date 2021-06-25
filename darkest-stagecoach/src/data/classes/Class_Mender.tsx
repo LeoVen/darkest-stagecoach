@@ -15,6 +15,8 @@ export const Class_Mender: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [1, 2, 7, 7],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 21, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Forsaken: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [7, 7, 3, 1],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 30, speed: 0 },

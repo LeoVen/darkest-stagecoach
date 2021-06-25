@@ -15,6 +15,8 @@ export const Class_Veiled: ClassMod = {
         deathBlow: 0.67,
         trap: 0
     },
+    position: [3, 5, 12, 9],
+    totalSkills: 12,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 20, speed: 0 },

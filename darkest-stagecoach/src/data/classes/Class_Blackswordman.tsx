@@ -15,6 +15,8 @@ export const Class_Blackswordman: ClassMod = {
         deathBlow: 0.75,
         trap: 0.1
     },
+    position: [6, 7, 3, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 35, speed: 0 },

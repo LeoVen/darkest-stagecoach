@@ -15,6 +15,8 @@ export const Class_Vamp: ClassMod = {
         deathBlow: 0.8,
         trap: 0.1
     },
+    position: [7, 7, 4, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 23, speed: 0 },

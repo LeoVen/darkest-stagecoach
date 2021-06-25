@@ -15,6 +15,8 @@ export const Class_Minstrel: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [3, 17, 17, 15],
+    totalSkills: 17,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 15, speed: 0 },

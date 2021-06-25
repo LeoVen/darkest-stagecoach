@@ -15,6 +15,8 @@ export const Class_Prodigy: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [4, 5, 6, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 23, speed: 0 },

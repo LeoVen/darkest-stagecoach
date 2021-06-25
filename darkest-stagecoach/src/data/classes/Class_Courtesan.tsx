@@ -19,6 +19,8 @@ export const Class_Courtesan: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [3, 6, 8, 8],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 22, speed: 0 },

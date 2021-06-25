@@ -15,6 +15,8 @@ export const Class_TheCondena: ClassMod = {
         deathBlow: 0.67,
         trap: 0
     },
+    position: [8, 8, 0, 0],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0.02, prot: 0, hp: 30, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Tactician: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [8, 8, 7, 6],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 25, speed: 0 },

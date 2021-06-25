@@ -15,6 +15,8 @@ export const Class_Blackguard: ClassMod = {
         deathBlow: 0.5,
         trap: 0.1
     },
+    position: [7, 7, 4, 1],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 31, speed: 0 },

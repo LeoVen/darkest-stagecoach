@@ -15,6 +15,8 @@ export const Class_Librarian: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [2, 3, 6, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.12, prot: 0, hp: 16, speed: 0 },

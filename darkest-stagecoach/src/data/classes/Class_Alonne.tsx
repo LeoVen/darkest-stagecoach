@@ -15,6 +15,8 @@ export const Class_Alonne: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [5, 6, 7, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 30, speed: 0 },

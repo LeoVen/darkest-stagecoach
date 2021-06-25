@@ -15,6 +15,8 @@ export const Class_Duelist: ClassMod = {
         deathBlow: 0.5,
         trap: 0.1
     },
+    position: [7, 7, 3, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 20, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Herald: ClassMod = {
         deathBlow: 0.87,
         trap: 0
     },
+    position: [7, 7, 3, 1],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 30, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_ButcherBird: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [6, 6, 5, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.13, prot: 0, hp: 21, speed: 0 },

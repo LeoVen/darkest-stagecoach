@@ -15,6 +15,8 @@ export const Class_Stargazer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [4, 6, 8, 8],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 17, speed: 0 },

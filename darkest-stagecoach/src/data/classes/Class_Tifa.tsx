@@ -15,6 +15,8 @@ export const Class_Tifa: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [4, 7, 5, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 19, speed: 0 },

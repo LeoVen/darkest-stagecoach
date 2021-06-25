@@ -15,6 +15,8 @@ export const Class_ShieldMaiden: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [6, 6, 5, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0.05, hp: 32, speed: 0 },

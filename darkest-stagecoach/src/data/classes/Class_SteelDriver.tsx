@@ -15,6 +15,8 @@ export const Class_SteelDriver: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [6, 6, 5, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.02, prot: 0, hp: 31, speed: 0 },

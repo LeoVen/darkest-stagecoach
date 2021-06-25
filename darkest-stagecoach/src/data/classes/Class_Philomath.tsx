@@ -15,6 +15,8 @@ export const Class_Philomath: ClassMod = {
         deathBlow: 0.67,
         trap: 0.5
     },
+    position: [3, 6, 6, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.07, prot: 0, hp: 18, speed: 0 },

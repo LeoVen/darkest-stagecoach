@@ -15,6 +15,8 @@ export const Class_Slayer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [4, 6, 5, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 28, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Apostate: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [5, 7, 8, 8],
+    totalSkills: 9,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 24, speed: 0 },

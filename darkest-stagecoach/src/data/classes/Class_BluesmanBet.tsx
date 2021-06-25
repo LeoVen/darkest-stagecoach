@@ -15,6 +15,8 @@ export const Class_BluesmanBet: ClassMod = {
         deathBlow: 0.67,
         trap: 0
     },
+    position: [6, 7, 7, 6],
+    totalSkills: 8,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 20, speed: 0 },

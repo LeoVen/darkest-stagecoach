@@ -15,6 +15,8 @@ export const Class_Lordblade: ClassMod = {
         deathBlow: 0.67,
         trap: 0.5
     },
+    position: [3, 6, 6, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 18, speed: 0 },

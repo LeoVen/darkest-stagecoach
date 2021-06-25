@@ -15,6 +15,8 @@ export const Class_Watcher: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [3, 5, 7, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.06, prot: 0, hp: 22, speed: 0 },

@@ -28,6 +28,8 @@ export const Class_Lamia: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [3, 4, 7, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 19, speed: 0 },

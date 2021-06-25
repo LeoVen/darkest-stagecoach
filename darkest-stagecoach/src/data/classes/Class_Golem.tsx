@@ -15,6 +15,8 @@ export const Class_Golem: ClassMod = {
         deathBlow: 0,
         trap: 0.1
     },
+    position: [7, 7, 2, 0],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 37, speed: 0 },

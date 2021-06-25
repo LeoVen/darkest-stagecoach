@@ -15,6 +15,8 @@ export const Class_Cannoneer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [2, 5, 7, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 22, speed: 0 },

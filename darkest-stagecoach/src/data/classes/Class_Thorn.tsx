@@ -15,6 +15,8 @@ export const Class_Thorn: ClassMod = {
         deathBlow: 0.67,
         trap: -0.5
     },
+    position: [5, 7, 5, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 22, speed: 0 },

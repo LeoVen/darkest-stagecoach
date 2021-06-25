@@ -15,6 +15,8 @@ export const Class_Siexiled: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [6, 6, 5, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 30, speed: 0 },

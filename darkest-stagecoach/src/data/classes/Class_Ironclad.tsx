@@ -15,6 +15,8 @@ export const Class_Ironclad: ClassMod = {
         deathBlow: 0.67,
         trap: 0
     },
+    position: [6, 7, 4, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: -0.1, prot: 0.2, hp: 35, speed: 0 },

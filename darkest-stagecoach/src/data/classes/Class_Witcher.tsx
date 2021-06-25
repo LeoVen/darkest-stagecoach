@@ -15,6 +15,8 @@ export const Class_Witcher: ClassMod = {
         deathBlow: 0.75,
         trap: 0.5
     },
+    position: [7, 7, 6, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 25, speed: 0 },

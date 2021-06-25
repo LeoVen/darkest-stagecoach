@@ -15,6 +15,8 @@ export const Class_TwilightKnight: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [6, 7, 2, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 24, speed: 0 },

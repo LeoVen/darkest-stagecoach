@@ -15,6 +15,8 @@ export const Class_WarriorOfSunlight: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [5, 4, 4, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 29, speed: 0 },

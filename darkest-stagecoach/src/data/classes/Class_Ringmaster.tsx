@@ -15,6 +15,8 @@ export const Class_Ringmaster: ClassMod = {
         deathBlow: 0.75,
         trap: 0.3
     },
+    position: [4, 5, 4, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 18, speed: 0 },

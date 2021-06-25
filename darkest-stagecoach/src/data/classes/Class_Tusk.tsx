@@ -15,6 +15,8 @@ export const Class_Tusk: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [3, 6, 7, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 23, speed: 0 },

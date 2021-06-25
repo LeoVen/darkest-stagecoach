@@ -22,6 +22,8 @@ export const Class_WraithMs: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [2, 7, 6, 1],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 27, speed: 0 },

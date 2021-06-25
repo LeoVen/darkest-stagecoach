@@ -15,6 +15,8 @@ export const Class_Ronin: ClassMod = {
         deathBlow: 0.5,
         trap: 0.1
     },
+    position: [5, 5, 5, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 19, speed: 0 },

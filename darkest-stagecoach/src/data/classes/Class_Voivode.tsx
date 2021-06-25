@@ -15,6 +15,8 @@ export const Class_Voivode: ClassMod = {
         deathBlow: 0.67,
         trap: -0.6
     },
+    position: [4, 6, 6, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 23, speed: 0 },

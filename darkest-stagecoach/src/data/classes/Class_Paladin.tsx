@@ -15,6 +15,8 @@ export const Class_Paladin: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [7, 7, 4, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 27, speed: 0 },

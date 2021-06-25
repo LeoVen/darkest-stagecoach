@@ -15,6 +15,8 @@ export const Class_Succubus: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [5, 6, 6, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 15, speed: 0 },

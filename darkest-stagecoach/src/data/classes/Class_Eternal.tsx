@@ -15,6 +15,8 @@ export const Class_Eternal: ClassMod = {
         deathBlow: 0.72,
         trap: 0.1
     },
+    position: [3, 5, 5, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 18, speed: 0 },

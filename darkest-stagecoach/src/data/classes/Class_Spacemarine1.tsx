@@ -15,6 +15,8 @@ export const Class_Spacemarine1: ClassMod = {
         deathBlow: 0.67,
         trap: 0.05
     },
+    position: [6, 6, 3, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 33, speed: 0 },

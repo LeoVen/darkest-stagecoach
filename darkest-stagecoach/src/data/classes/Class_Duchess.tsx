@@ -15,6 +15,8 @@ export const Class_Duchess: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [6, 6, 4, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 31, speed: 0 },

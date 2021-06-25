@@ -15,6 +15,8 @@ export const Class_Mambo: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [2, 7, 7, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.01, prot: 0, hp: 23, speed: 0 },

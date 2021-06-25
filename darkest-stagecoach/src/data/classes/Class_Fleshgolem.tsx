@@ -15,6 +15,8 @@ export const Class_Fleshgolem: ClassMod = {
         deathBlow: -1,
         trap: 0
     },
+    position: [4, 4, 6, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.08, prot: 0, hp: 24, speed: 0 },

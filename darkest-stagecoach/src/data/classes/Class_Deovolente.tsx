@@ -15,6 +15,8 @@ export const Class_Deovolente: ClassMod = {
         deathBlow: 0.5,
         trap: 1
     },
+    position: [11, 14, 13, 10],
+    totalSkills: 15,
     stats: {
         armours: [
             { dodge: 0.15, prot: 0, hp: 16, speed: 0 },

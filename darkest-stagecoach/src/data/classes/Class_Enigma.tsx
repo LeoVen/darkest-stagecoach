@@ -15,6 +15,8 @@ export const Class_Enigma: ClassMod = {
         deathBlow: 0.67,
         trap: 0.5
     },
+    position: [2, 7, 7, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0.4, hp: 20, speed: 0 },

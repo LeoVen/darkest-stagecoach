@@ -15,6 +15,8 @@ export const Class_Seraph: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [7, 7, 5, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 26, speed: 0 },

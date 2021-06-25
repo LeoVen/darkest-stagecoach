@@ -15,6 +15,8 @@ export const Class_Heiress: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [1, 4, 6, 6],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.03, prot: 0, hp: 19, speed: 0 },

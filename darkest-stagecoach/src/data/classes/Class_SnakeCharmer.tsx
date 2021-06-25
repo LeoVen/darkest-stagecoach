@@ -15,6 +15,8 @@ export const Class_SnakeCharmer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [4, 5, 6, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 22, speed: 0 },

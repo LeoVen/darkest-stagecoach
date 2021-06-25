@@ -15,6 +15,8 @@ export const Class_Shrapnel: ClassMod = {
         deathBlow: 0.67,
         trap: -0.5
     },
+    position: [3, 3, 3, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 22, speed: 0 },

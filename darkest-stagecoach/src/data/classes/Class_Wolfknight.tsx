@@ -15,6 +15,8 @@ export const Class_Wolfknight: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [6, 6, 5, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 26, speed: 0 },

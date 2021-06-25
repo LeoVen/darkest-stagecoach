@@ -15,6 +15,8 @@ export const Class_Zenith: ClassMod = {
         deathBlow: 0.66,
         trap: 0.5
     },
+    position: [10, 13, 12, 9],
+    totalSkills: 14,
     stats: {
         armours: [
             { dodge: 0.12, prot: 0, hp: 18, speed: 0 },

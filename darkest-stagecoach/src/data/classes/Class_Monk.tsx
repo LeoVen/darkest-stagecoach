@@ -15,6 +15,8 @@ export const Class_Monk: ClassMod = {
         deathBlow: 0.67,
         trap: 0.2
     },
+    position: [6, 7, 5, 2],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0.1, hp: 19, speed: 0 },

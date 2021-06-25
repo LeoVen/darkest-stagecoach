@@ -15,6 +15,8 @@ export const Class_Falconer: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [4, 4, 6, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 23, speed: 0 },

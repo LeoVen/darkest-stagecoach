@@ -15,6 +15,8 @@ export const Class_HollowKnight: ClassMod = {
         deathBlow: 0.6,
         trap: 0
     },
+    position: [6, 5, 3, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 30, speed: 0 },

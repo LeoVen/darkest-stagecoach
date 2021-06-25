@@ -15,6 +15,8 @@ export const Class_Darkwraith: ClassMod = {
         deathBlow: 0.73,
         trap: 0.3
     },
+    position: [6, 6, 4, 3],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0, prot: 0, hp: 16, speed: 0 },

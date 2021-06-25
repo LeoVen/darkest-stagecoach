@@ -15,6 +15,8 @@ export const Class_Lucia: ClassMod = {
         deathBlow: 0.67,
         trap: 0.1
     },
+    position: [30, 30, 3, 3],
+    totalSkills: 30,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 20, speed: 0 },

@@ -15,6 +15,8 @@ export const Class_Beastmaster: ClassMod = {
         deathBlow: 0.67,
         trap: 0.4
     },
+    position: [4, 5, 4, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.1, prot: 0, hp: 21, speed: 0 },

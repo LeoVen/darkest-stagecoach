@@ -15,6 +15,8 @@ export const Class_Alchemist: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [4, 7, 6, 4],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.08, prot: 0, hp: 23, speed: 0 },

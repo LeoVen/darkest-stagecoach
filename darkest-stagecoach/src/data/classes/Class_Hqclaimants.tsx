@@ -15,6 +15,8 @@ export const Class_Hqclaimants: ClassMod = {
         deathBlow: 0.67,
         trap: 0.3
     },
+    position: [5, 7, 7, 5],
+    totalSkills: 7,
     stats: {
         armours: [
             { dodge: 0.05, prot: 0, hp: 30, speed: 0 },
