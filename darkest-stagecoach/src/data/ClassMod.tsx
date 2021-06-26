@@ -1,5 +1,7 @@
 import Author from './Author'
 import {
+    ClassModType,
+    ClassModTypeValue,
     Credits,
     GearStats,
     OriginalHeroes,
@@ -15,6 +17,7 @@ export default interface ClassMod {
     portrait: string
     religious?: boolean
     transform?: boolean
+    classType?: Record<ClassModType, ClassModTypeValue>
     synergy?: Synergy[]
     position?: PreferredPositions
     totalSkills?: number

@@ -5,6 +5,13 @@ export const Class_Golem: ClassMod = {
     name: 'Golem',
     portrait: portrait,
     religious: false,
+    transform: false,
+    classType: {
+        damage: 2,
+        healer: 0,
+        support: 1,
+        tank: 3
+    },
     resistances: {
         stun: 0.5,
         blight: 0,

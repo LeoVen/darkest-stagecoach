@@ -124,3 +124,16 @@ export type Synergy =
     | 'deStealth' // Bypass or de-stealth enemy
     | 'cure' // Cure blight/bleed
     | 'reflect' // Adds damage reflection
+    | 'moveSelf' // Moves self
+
+export type ClassModType =
+    | 'tank' // How good this class is at tanking damage
+    | 'support' // How good this class is at buffing, debuffing and stunning
+    | 'healer' // How good this class is at healing HP and stress
+    | 'damage' // How good this class is at dealing damage
+
+export type ClassModTypeValue =
+    | 0 // None
+    | 1 // Bad
+    | 2 // Ok
+    | 3 // Good

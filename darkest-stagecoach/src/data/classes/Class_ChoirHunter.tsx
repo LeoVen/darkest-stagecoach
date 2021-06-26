@@ -10,7 +10,13 @@ export const Class_ChoirHunter: ClassMod = {
     portrait: portrait,
     religious: true,
     transform: false,
-    synergy: ['bleed', 'heal', 'stun', 'buff', 'cure'],
+    classType: {
+        damage: 2,
+        healer: 1,
+        support: 2,
+        tank: 0
+    },
+    synergy: ['bleed', 'heal', 'stun', 'buff', 'cure', 'moveSelf'],
     resistances: {
         stun: 0.4,
         blight: 0.3,

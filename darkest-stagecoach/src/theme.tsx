@@ -21,7 +21,13 @@ export const THEME = createMuiTheme({
         MuiTooltip: {
             tooltip: {
                 fontFamily: 'Mate SC',
-                fontSize: '0.8rem'
+                fontSize: '0.8rem',
+                backgroundColor: 'var(--bg-primary)'
+            },
+            arrow: {
+                '&:before': {
+                    backgroundColor: 'var(--bg-primary)'
+                }
             }
         }
     },

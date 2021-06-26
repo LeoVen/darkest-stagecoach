@@ -16,7 +16,8 @@ export const Class_Lamia: ClassMod = {
         'cure',
         'guardBreak',
         'blight',
-        'stun'
+        'stun',
+        'moveSelf'
     ],
     resistances: {
         stun: 0.2,

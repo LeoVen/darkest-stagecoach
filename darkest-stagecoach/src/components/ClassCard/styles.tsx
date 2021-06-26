@@ -27,6 +27,12 @@ export const HeroCard = styled(Paper)`
     }
 `
 
+export const TopIcons = styled.div`
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+`
+
 export const BottomIcons = styled.div`
     position: absolute;
     right: 1rem;

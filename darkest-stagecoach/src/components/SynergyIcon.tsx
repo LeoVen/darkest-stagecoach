@@ -10,6 +10,7 @@ import guardBreak from '../assets/img/stats/guardBreak.png'
 import heal from '../assets/img/stats/heal.png'
 import mark from '../assets/img/stats/mark.png'
 import move from '../assets/img/stats/move.png'
+import moveSelf from '../assets/img/stats/moveSelf.png'
 import reflect from '../assets/img/stats/reflect.png'
 import riposte from '../assets/img/stats/riposte.png'
 import stealth from '../assets/img/stats/stealth.png'
@@ -37,6 +38,7 @@ const iconMap: Record<Synergy, string> = {
     heal: heal,
     mark: mark,
     move: move,
+    moveSelf: moveSelf,
     reflect: reflect,
     riposte: riposte,
     stealth: stealth,
@@ -57,6 +59,7 @@ const iconDescription: Record<Synergy, string> = {
     heal: 'Heal ally HP',
     mark: 'Mark enemy',
     move: 'Moves enemy',
+    moveSelf: 'Moves around party',
     reflect: 'Adds damage reflection',
     riposte: 'Activates riposte',
     stealth: 'Activates stealth',

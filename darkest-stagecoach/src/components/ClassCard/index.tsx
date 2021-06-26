@@ -3,10 +3,11 @@ import ClassMod from '../../data/ClassMod'
 import { classModIndex } from '../../data/ClassModIndex'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
+import { ClassTypeIcons } from '../ClassTypeIcons'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Positions } from '../Positions'
 import { SynergyIcons } from '../SynergyIcon'
-import { BottomIcons, HeroCard, ImageAndPositions } from './styles'
+import { BottomIcons, HeroCard, ImageAndPositions, TopIcons } from './styles'
 
 interface ClassCardProps {
     classKey: string
@@ -45,6 +46,11 @@ export const ClassCard = ({
                 </ImageAndPositions>
                 <Typography variant="h3">{classInfo.name}</Typography>
             </HeroCard>
+            <TopIcons>
+                {classInfo.classType === undefined ? null : (
+                    <ClassTypeIcons type={classInfo.classType} />
+                )}
+            </TopIcons>
             <BottomIcons>
                 <SynergyIcons synergies={classInfo.synergy} />
             </BottomIcons>
