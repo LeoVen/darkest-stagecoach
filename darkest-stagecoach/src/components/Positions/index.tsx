@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const circleColors = (ratio?: number) => {
-    if (ratio === undefined) return '#444444'
+    if (ratio === undefined) return 'var(--font-disabled)'
     else if (ratio <= 0.0) return '#b11900'
     else if (ratio <= 2 / 7) return '#7f290b'
     else if (ratio <= 4 / 7) return '#8e5b11'

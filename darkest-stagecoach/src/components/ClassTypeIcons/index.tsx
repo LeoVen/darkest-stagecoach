@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const ClassTypeIcons = ({ type }: Props) => {
-    const colorMap = ['#444444', '#cd7f32', '#c0c0c0', '#ffad00']
+    const colorMap = ['var(--font-disabled)', '#cd7f32', '#c0c0c0', '#ffad00']
     const textMap = ['#ffffff', '#cd7f32', '#c0c0c0', '#ffad00']
     const idxMap: ClassModType[] = ['damage', 'healer', 'support', 'tank']
     const sizeMap = ['17px', '20px', '20px', '20px']

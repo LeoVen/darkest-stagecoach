@@ -6,6 +6,7 @@
     --accent-secondary: #5e3124;
     --accent-hover: #ff6738;
     --font-primary: #cccccc;
+    --font-disabled: #444444;
     --cursor-default: url('assets/cursor/arrow.png'), auto;
     --cursor-pointer: url('assets/cursor/pointer.png'), auto;
 }

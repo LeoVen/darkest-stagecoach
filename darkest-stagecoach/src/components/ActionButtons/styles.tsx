@@ -1,4 +1,4 @@
-import { Button, Paper } from '@material-ui/core'
+import { Button, MenuItem, Paper } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const BottomButton = styled(Paper)`
@@ -21,7 +21,7 @@ export const BottomFilterSection = styled(Button)`
     }
 `
 
-export const SortItemsDrawerContent = styled.div`
+export const DrawerContent = styled.div`
     padding: 2em;
     background-color: var(--bg-primary);
 `
@@ -33,27 +33,19 @@ export const MainSection = styled.div`
     width: 100%;
 `
 
-export const SortItemsContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-`
-
 export const InnerItem = styled.div`
     ${(props: { selected: boolean }) =>
-        props.selected ? 'padding: 0 14px 0 0;' : 'padding: 0 14px 0 14px;'}
+        props.selected ? 'padding: 0;' : 'padding: 0 0 0 20px;'}
     display: flex;
     align-items: center;
 `
 
-export const SortItem = styled.div`
+export const SortItem = styled(MenuItem)`
     ${(props: { selected: boolean }) =>
         props.selected
-            ? 'border: var(--accent-primary) 1px solid; background-color: var(--bg-secondary);'
-            : 'border: var(--bg-primary) 1px solid; background-color: var(--bg-primary);'}
-    border-radius: 4px;
+            ? 'background-color: var(--bg-secondary);'
+            : 'background-color: var(--bg-primary);'}
     color: var(--font-primary);
-    padding: 0.5rem;
-    margin: 4px;
     user-select: none;
 
     &:hover {

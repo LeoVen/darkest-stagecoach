@@ -1,13 +1,12 @@
 import React from 'react'
-import { Drawer } from '@material-ui/core'
+import { Drawer, Menu, Divider, Button } from '@material-ui/core'
 import { ClassModFilter, SortBy, SortingKeys } from '../../Types'
 import {
     BottomButton,
     BottomFilterSection,
     InnerItem,
     SortItem,
-    SortItemsContainer,
-    SortItemsDrawerContent
+    DrawerContent
 } from './styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Typography } from '@material-ui/core'
@@ -16,8 +15,11 @@ import {
     faFilter,
     faSort,
     faSortUp,
-    faSortDown
+    faSortDown,
+    faPlus,
+    faMinus
 } from '@fortawesome/free-solid-svg-icons'
+import { LevelRefDisplay } from '../LevelRefDisplay'
 
 interface FilterProps {
     filter: ClassModFilter
@@ -31,7 +33,6 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     onSortChange
 }) => {
     const [modalFilterOpen, setModalFilterOpen] = React.useState<boolean>(false)
-    const [modalSortOpen, setModalSortOpen] = React.useState<boolean>(false)
 
     const handleOpenFilterModal = () => {
         setModalFilterOpen(true)
@@ -39,16 +40,11 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     const handleCloseFilterModal = () => {
         setModalFilterOpen(false)
     }
-    const handleOpenSortModal = () => {
-        setModalSortOpen(true)
-    }
-    const handleCloseSortModal = () => {
-        setModalSortOpen(false)
-    }
+
     const handleSortByKeyChange = (sortKey: SortingKeys) => {
         let newSort: SortBy = {
             key: sortKey,
-            levelRef: 4 /* TODO */,
+            levelRef: sort.levelRef,
             sortDirection:
                 sort.key === sortKey
                     ? sort.sortDirection * -1
@@ -57,13 +53,22 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
         onSortChange(newSort)
     }
 
+    const handleSortLevelRefChange = (delta: number) => {
+        let newSort: SortBy = {
+            key: sort.key,
+            levelRef: Math.min(Math.max(sort.levelRef + delta, 0), 4),
+            sortDirection: sort.sortDirection
+        }
+        onSortChange(newSort)
+    }
+
     const sortIcon = (sortDirection: number) => {
         return sortDirection < 0 ? (
-            <div style={{ marginRight: '4px' }}>
+            <div style={{ marginRight: '10px' }}>
                 <FontAwesomeIcon icon={faSortDown} size={'1x'} />
             </div>
         ) : (
-            <div style={{ marginRight: '4px' }}>
+            <div style={{ marginRight: '10px' }}>
                 <FontAwesomeIcon icon={faSortUp} size={'1x'} />
             </div>
         )
@@ -83,6 +88,16 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 </InnerItem>
             </SortItem>
         )
+    }
+
+    const [anchorSort, setAnchorSort] = React.useState<null | HTMLElement>(null)
+
+    const handleSortMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorSort(event.currentTarget)
+    }
+
+    const handleSortMenuClose = () => {
+        setAnchorSort(null)
     }
 
     const sortDefault: [string, SortingKeys][] = [['Name', 'name']]
@@ -114,44 +129,58 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                     <FontAwesomeIcon icon={faFilter} size={'1x'} />
                 </BottomFilterSection>
             </BottomButton>
-            <BottomButton className="cursor-pointer" index={1}>
-                <BottomFilterSection onClick={handleOpenSortModal}>
+
+            <BottomButton
+                className="cursor-pointer"
+                index={1}
+                aria-controls="sort-button"
+                aria-haspopup="true">
+                <BottomFilterSection onClick={handleSortMenuOpen}>
                     <FontAwesomeIcon icon={faSort} size={'1x'} />
                 </BottomFilterSection>
             </BottomButton>
+            <Menu
+                id="sort-button"
+                anchorEl={anchorSort}
+                keepMounted
+                open={Boolean(anchorSort)}
+                onClose={handleSortMenuClose}
+                transformOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+                <LevelRefDisplay current={sort.levelRef} />
+                <div key="level-ref" className="cursor-pointer">
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            color: 'var(--font-primary)'
+                        }}>
+                        <Button onClick={() => handleSortLevelRefChange(-1)}>
+                            <FontAwesomeIcon icon={faMinus} size={'1x'} />
+                        </Button>
+                        <div style={{ margin: '4px' }}>Level Ref</div>
+                        <Button onClick={() => handleSortLevelRefChange(1)}>
+                            <FontAwesomeIcon icon={faPlus} size={'1x'} />
+                        </Button>
+                    </div>
+                </div>
+                {sortBaseStats.map(sortItemTemplate)}
+                <Divider />
+                {sortResistances.map(sortItemTemplate)}
+                <Divider />
+                {sortDefault.map(sortItemTemplate)}
+            </Menu>
+
             <Drawer
                 open={modalFilterOpen}
                 onClose={handleCloseFilterModal}
                 anchor="bottom">
                 <ModalCloseButton onClick={handleCloseFilterModal} />
-                <SortItemsDrawerContent>
+                <DrawerContent>
                     <ModalCloseButton onClick={handleCloseFilterModal} />
                     <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
                         Filters
                     </Typography>
-                </SortItemsDrawerContent>
-            </Drawer>
-            <Drawer
-                open={modalSortOpen}
-                onClose={handleCloseSortModal}
-                anchor="bottom">
-                <ModalCloseButton onClick={handleCloseSortModal} />
-                <SortItemsDrawerContent>
-                    <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
-                        Sort
-                    </Typography>
-                    <SortItemsContainer>
-                        {sortDefault.map(sortItemTemplate)}
-                    </SortItemsContainer>
-                    <Typography variant="h4">Base Stats</Typography>
-                    <SortItemsContainer>
-                        {sortBaseStats.map(sortItemTemplate)}
-                    </SortItemsContainer>
-                    <Typography variant="h4">Resistances</Typography>
-                    <SortItemsContainer>
-                        {sortResistances.map(sortItemTemplate)}
-                    </SortItemsContainer>
-                </SortItemsDrawerContent>
+                </DrawerContent>
             </Drawer>
         </>
     )

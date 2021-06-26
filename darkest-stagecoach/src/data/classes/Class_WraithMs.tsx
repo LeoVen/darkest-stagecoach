@@ -12,6 +12,12 @@ export const Class_WraithMs: ClassMod = {
     religious: false,
     transform: false,
     synergy: ['stun', 'mark', 'bleed', 'move', 'debuff'],
+    classType: {
+        damage: 3,
+        healer: 0,
+        support: 1,
+        tank: 0
+    },
     resistances: {
         stun: 0.4,
         blight: 0.2,

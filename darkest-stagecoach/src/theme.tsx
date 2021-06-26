@@ -15,7 +15,12 @@ export const THEME = createMuiTheme({
         },
         MuiButtonBase: {
             root: {
-                cursor: '--var(--cursor-pointer)'
+                cursor: 'var(--cursor-pointer)'
+            }
+        },
+        MuiButton: {
+            label: {
+                color: 'var(--font-primary)'
             }
         },
         MuiTooltip: {
@@ -28,6 +33,11 @@ export const THEME = createMuiTheme({
                 '&:before': {
                     backgroundColor: 'var(--bg-primary)'
                 }
+            }
+        },
+        MuiMenu: {
+            list: {
+                padding: '0'
             }
         }
     },
