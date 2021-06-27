@@ -9,6 +9,7 @@ import { ClassModFilter, SortBy } from './Types'
 import { sortClassMods } from './Sorting'
 import { ClassModIndex } from './data/ClassModIndex'
 import { ClassCard } from './components/ClassCard'
+import { ScrollTopButton } from './components/ScrollTopButton'
 
 function App() {
     const [classMods, setClassMods] = React.useState<string[]>(
@@ -44,6 +45,7 @@ function App() {
                     sort={sort}
                     onSortChange={sortBy => handleSortChange(sortBy)}
                 />
+                <ScrollTopButton />
                 <ClassCardsContainer>
                     {classMods.map((classKey, i) =>
                         ClassCard({

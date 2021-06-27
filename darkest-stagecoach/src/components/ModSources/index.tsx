@@ -18,9 +18,11 @@ export const ModSources: React.FunctionComponent<ModSourcesProps> = ({
             </Typography>
             <ModSourceContainer>
                 {sources.map((src, i) => (
-                    <Typography variant="body1" component="span">
+                    <Typography
+                        key={`${src.name}-${i}`}
+                        variant="body1"
+                        component="span">
                         <a
-                            key={`${src.name}-${i}`}
                             style={{ marginLeft: '1rem' }}
                             href={src.link}
                             target="_blank"

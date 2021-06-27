@@ -15,6 +15,10 @@
     cursor: var(--cursor-default);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Custom scroll bar */
 *::-webkit-scrollbar {
     width: 4px;

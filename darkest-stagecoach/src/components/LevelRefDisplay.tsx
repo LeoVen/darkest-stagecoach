@@ -8,15 +8,16 @@ export const LevelRefDisplay = ({ current }: Props) => {
             style={{
                 width: '100%',
                 height: '20px',
-                backgroundColor: 'var(--bg-secondary)',
+                backgroundColor: 'var(--bg-primary)',
                 display: 'flex',
                 justifyContent: 'space-around',
                 overflow: 'visible',
                 position: 'relative',
-                padding: '2px'
+                padding: '8px 0 0 0'
             }}>
             {[0, 1, 2, 3, 4].map(i => (
                 <div
+                    key={`levelref-${i}`}
                     style={{
                         color:
                             i === current

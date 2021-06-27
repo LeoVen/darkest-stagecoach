@@ -129,6 +129,18 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                     <FontAwesomeIcon icon={faFilter} size={'1x'} />
                 </BottomFilterSection>
             </BottomButton>
+            <Drawer
+                open={modalFilterOpen}
+                onClose={handleCloseFilterModal}
+                anchor="bottom">
+                <ModalCloseButton onClick={handleCloseFilterModal} />
+                <DrawerContent>
+                    <ModalCloseButton onClick={handleCloseFilterModal} />
+                    <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
+                        Filters
+                    </Typography>
+                </DrawerContent>
+            </Drawer>
 
             <BottomButton
                 className="cursor-pointer"
@@ -147,18 +159,25 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 onClose={handleSortMenuClose}
                 transformOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
                 <LevelRefDisplay current={sort.levelRef} />
-                <div key="level-ref" className="cursor-pointer">
+                <div
+                    key="level-ref"
+                    className="cursor-pointer"
+                    style={{ backgroundColor: 'var(--bg-primary)' }}>
                     <div
                         style={{
                             display: 'flex',
                             alignItems: 'center',
                             color: 'var(--font-primary)'
                         }}>
-                        <Button onClick={() => handleSortLevelRefChange(-1)}>
+                        <Button
+                            onClick={() => handleSortLevelRefChange(-1)}
+                            style={{ padding: '1rem' }}>
                             <FontAwesomeIcon icon={faMinus} size={'1x'} />
                         </Button>
                         <div style={{ margin: '4px' }}>Level Ref</div>
-                        <Button onClick={() => handleSortLevelRefChange(1)}>
+                        <Button
+                            onClick={() => handleSortLevelRefChange(1)}
+                            style={{ padding: '1rem' }}>
                             <FontAwesomeIcon icon={faPlus} size={'1x'} />
                         </Button>
                     </div>
@@ -169,19 +188,6 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 <Divider />
                 {sortDefault.map(sortItemTemplate)}
             </Menu>
-
-            <Drawer
-                open={modalFilterOpen}
-                onClose={handleCloseFilterModal}
-                anchor="bottom">
-                <ModalCloseButton onClick={handleCloseFilterModal} />
-                <DrawerContent>
-                    <ModalCloseButton onClick={handleCloseFilterModal} />
-                    <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
-                        Filters
-                    </Typography>
-                </DrawerContent>
-            </Drawer>
         </>
     )
 }

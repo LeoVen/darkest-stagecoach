@@ -28,21 +28,20 @@ export const extraCss = (ratio: number) => {
     return '#4fcb4f'
 }
 
-const circle = (skills: number, total?: number) => {
+const circle = (idx: number, skills: number, total?: number) => {
     let ratio = total === undefined ? undefined : skills / total
     return (
-        <>
-            <Circle
-                color={circleColors(
-                    total === undefined ? undefined : skills / total
-                )}
-                border={borderColors(
-                    total === undefined ? undefined : skills / total
-                )}
-                blur={ratio !== undefined && ratio === 1 ? true : false}>
-                {skills}
-            </Circle>
-        </>
+        <Circle
+            key={`${idx}-positions`}
+            color={circleColors(
+                total === undefined ? undefined : skills / total
+            )}
+            border={borderColors(
+                total === undefined ? undefined : skills / total
+            )}
+            blur={ratio !== undefined && ratio === 1 ? true : false}>
+            {skills}
+        </Circle>
     )
 }
 
@@ -51,7 +50,7 @@ export const Positions = ({ pos, totalSkills }: Props) => {
 
     return (
         <MainSection>
-            {pos.map(v => circle(v, totalSkills as number))}
+            {pos.map((v, i) => circle(i, v, totalSkills as number))}
         </MainSection>
     )
 }

@@ -87,7 +87,7 @@ export const SynergyIcons = (props: { synergies?: Synergy[] }) => {
                 props.synergies
                     .sort((a, b) => a.localeCompare(b))
                     .map(s => {
-                        return <SynergyIcon icon={s} />
+                        return <SynergyIcon key={`${s}-synergy`} icon={s} />
                     })
             )}
         </div>

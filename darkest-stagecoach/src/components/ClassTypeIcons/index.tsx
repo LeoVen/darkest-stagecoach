@@ -23,6 +23,7 @@ export const ClassTypeIcons = ({ type }: Props) => {
     const template = (idx: number, value: ClassModTypeValue) => {
         return (
             <Tooltip
+                key={`${idx}-${idxMap[idx]}`}
                 title={
                     <>
                         <span style={{ color: textMap[value] }}>
