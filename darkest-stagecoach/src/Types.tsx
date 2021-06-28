@@ -81,19 +81,10 @@ export type OriginalHeroes =
     | 'Shieldbreaker'
     | 'Vestal'
 
-export type ClassModFilter = {
+export type FilterBy = {
     religious?: boolean
     transform?: boolean
-    baseStats?: {
-        levelReference?: number
-        maxHp?: [number, number]
-        dodge?: [number, number]
-        prot?: [number, number]
-        speed?: [number, number]
-        accuracy?: [number, number]
-        crit?: [number, number]
-        damage?: [number, number]
-    }
+    synergies?: Synergy[]
 }
 
 export type SortingKeys = 'name' | StatsNames | ResistancesNames

@@ -5,11 +5,12 @@ import ClassMod from './data/ClassMod'
 import { ClassCardsContainer } from './styles'
 import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
-import { ClassModFilter, SortBy } from './Types'
+import { FilterBy, SortBy } from './Types'
 import { sortClassMods } from './Sorting'
 import { ClassModIndex } from './data/ClassModIndex'
 import { ClassCard } from './components/ClassCard'
 import { ScrollTopButton } from './components/ScrollTopButton'
+import { filterClassMods } from './Filtering'
 
 function App() {
     const [classMods, setClassMods] = React.useState<string[]>(
@@ -18,7 +19,7 @@ function App() {
     const [selectedClass, setSelectedClass] = React.useState<
         ClassMod | undefined
     >(undefined)
-    const [filter, setFilter] = React.useState<ClassModFilter>({})
+    const [filter, setFilter] = React.useState<FilterBy>({})
     const [sort, setSort] = React.useState<SortBy>({
         key: 'name',
         sortDirection: 1,
@@ -35,6 +36,10 @@ function App() {
         setClassMods(sortClassMods(classMods, sortBy))
         setSort(sortBy)
     }
+    const handleFilterChange = (filterBy: FilterBy) => {
+        setClassMods(filterClassMods(classMods, filterBy))
+        setFilter(filterBy)
+    }
 
     return (
         <ThemeProvider theme={THEME}>
@@ -44,6 +49,7 @@ function App() {
                     filter={filter}
                     sort={sort}
                     onSortChange={sortBy => handleSortChange(sortBy)}
+                    onFilterChange={filterBy => handleFilterChange(filterBy)}
                 />
                 <ScrollTopButton />
                 <ClassCardsContainer>

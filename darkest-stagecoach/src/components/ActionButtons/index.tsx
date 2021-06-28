@@ -1,6 +1,6 @@
 import React from 'react'
 import { Drawer, Menu, Divider, Button } from '@material-ui/core'
-import { ClassModFilter, SortBy, SortingKeys } from '../../Types'
+import { FilterBy, SortBy, SortingKeys } from '../../Types'
 import {
     BottomButton,
     BottomFilterSection,
@@ -22,9 +22,10 @@ import {
 import { LevelRefDisplay } from '../LevelRefDisplay'
 
 interface FilterProps {
-    filter: ClassModFilter
+    filter: FilterBy
     sort: SortBy
     onSortChange: (sort: SortBy) => void
+    onFilterChange: (filter: FilterBy) => void
 }
 
 export const ActionButtons: React.FunctionComponent<FilterProps> = ({
@@ -157,7 +158,9 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 keepMounted
                 open={Boolean(anchorSort)}
                 onClose={handleSortMenuClose}
-                transformOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+                getContentAnchorEl={null}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
                 <LevelRefDisplay current={sort.levelRef} />
                 <div
                     key="level-ref"
