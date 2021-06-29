@@ -17,6 +17,7 @@ export default interface ClassMod {
     portrait: string
     religious?: boolean
     transform?: boolean
+    originalHero?: boolean
     classType?: Record<ClassModType, ClassModTypeValue>
     synergy?: Synergy[]
     position?: PreferredPositions

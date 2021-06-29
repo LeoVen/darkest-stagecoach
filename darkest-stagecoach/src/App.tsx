@@ -13,12 +13,6 @@ import { ScrollTopButton } from './components/ScrollTopButton'
 import { filterClassMods } from './Filtering'
 
 function App() {
-    const [classMods, setClassMods] = React.useState<string[]>(
-        Array.from(ClassModIndex().keys())
-    )
-    const [selectedClass, setSelectedClass] = React.useState<
-        ClassMod | undefined
-    >(undefined)
     const [filter, setFilter] = React.useState<FilterBy>({
         name: '',
         synergies: new Map()
@@ -28,6 +22,12 @@ function App() {
         sortDirection: 1,
         levelRef: 0
     })
+    const [classMods, setClassMods] = React.useState<string[]>(
+        Array.from(sortClassMods(Array.from(ClassModIndex().keys()), sort))
+    )
+    const [selectedClass, setSelectedClass] = React.useState<
+        ClassMod | undefined
+    >(undefined)
 
     const handleOpenModal = (classMod: ClassMod) => {
         setSelectedClass(classMod)
@@ -41,7 +41,10 @@ function App() {
     }
     const handleFilterChange = (filterBy: FilterBy) => {
         setClassMods(
-            filterClassMods(Array.from(ClassModIndex().keys()), filterBy)
+            sortClassMods(
+                filterClassMods(Array.from(ClassModIndex().keys()), filterBy),
+                sort
+            )
         )
         setFilter(filterBy)
     }

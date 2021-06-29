@@ -112,6 +112,24 @@ import { Class_Wraith } from './classes/Class_Wraith'
 import { Class_WraithMs } from './classes/Class_WraithMs'
 import { Class_Wretch } from './classes/Class_Wretch'
 import { Class_Zenith } from './classes/Class_Zenith'
+import { Class_Abomination } from './classes/Class_Abomination'
+import { Class_Antiquarian } from './classes/Class_Antiquarian'
+import { Class_Arbalest } from './classes/Class_Arbalest'
+import { Class_BountyHunter } from './classes/Class_BountyHunter'
+import { Class_Crusader } from './classes/Class_Crusader'
+import { Class_Flagellant } from './classes/Class_Flagellant'
+import { Class_GraveRobber } from './classes/Class_GraveRobber'
+import { Class_Hellion } from './classes/Class_Hellion'
+import { Class_Highwayman } from './classes/Class_Highwayman'
+import { Class_Houndmaster } from './classes/Class_Houndmaster'
+import { Class_Jester } from './classes/Class_Jester'
+import { Class_Leper } from './classes/Class_Leper'
+import { Class_ManAtArms } from './classes/Class_ManAtArms'
+import { Class_Musketeer } from './classes/Class_Musketeer'
+import { Class_Occultist } from './classes/Class_Occultist'
+import { Class_PlagueDoctor } from './classes/Class_PlagueDoctor'
+import { Class_Shieldbreaker } from './classes/Class_Shieldbreaker'
+import { Class_Vestal } from './classes/Class_Vestal'
 
 export const classModIndex = ClassModIndex()
 
@@ -229,6 +247,24 @@ export function ClassModIndex(): Map<string, ClassMod> {
         ['Class_Wraith', Class_Wraith],
         ['Class_WraithMs', Class_WraithMs],
         ['Class_Wretch', Class_Wretch],
-        ['Class_Zenith', Class_Zenith]
+        ['Class_Zenith', Class_Zenith],
+        ['Class_Abomination', Class_Abomination],
+        ['Class_Antiquarian', Class_Antiquarian],
+        ['Class_Arbalest', Class_Arbalest],
+        ['Class_BountyHunter', Class_BountyHunter],
+        ['Class_Crusader', Class_Crusader],
+        ['Class_Flagellant', Class_Flagellant],
+        ['Class_GraveRobber', Class_GraveRobber],
+        ['Class_Hellion', Class_Hellion],
+        ['Class_Highwayman', Class_Highwayman],
+        ['Class_Houndmaster', Class_Houndmaster],
+        ['Class_Jester', Class_Jester],
+        ['Class_Leper', Class_Leper],
+        ['Class_ManAtArms', Class_ManAtArms],
+        ['Class_Musketeer', Class_Musketeer],
+        ['Class_Occultist', Class_Occultist],
+        ['Class_PlagueDoctor', Class_PlagueDoctor],
+        ['Class_Shieldbreaker', Class_Shieldbreaker],
+        ['Class_Vestal', Class_Vestal]
     ])
 }

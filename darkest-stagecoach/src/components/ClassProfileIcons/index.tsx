@@ -49,7 +49,7 @@ export const ClassProfileIcons = ({ classInfo }: Props) => {
                 title={tooltipMap.get(type) as string}
                 placement="top"
                 arrow={true}>
-                <div>
+                <div style={{ marginBottom: '6px' }}>
                     <ProfileSvg
                         type={type}
                         width={'1rem'}

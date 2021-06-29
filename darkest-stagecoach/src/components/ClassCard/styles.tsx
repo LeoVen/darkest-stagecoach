@@ -33,6 +33,12 @@ export const TopIcons = styled.div`
     top: 1rem;
 `
 
+export const TopLeftIcons = styled.div`
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+`
+
 export const BottomIcons = styled.div`
     position: absolute;
     right: 1rem;

@@ -6,6 +6,7 @@ import { ClassModal } from '../ClassModal'
 import { ClassProfileIcons } from '../ClassProfileIcons'
 import { ClassTypeIcons } from '../ClassTypeIcons'
 import { ModalCloseButton } from '../ModalCloseButton'
+import { OriginalHeroIcon } from '../OriginalHeroIcon'
 import { Positions } from '../Positions'
 import { SynergyIcons } from '../SynergyIcon'
 import {
@@ -13,7 +14,8 @@ import {
     HeroCard,
     ImageAndIcons,
     ImageAndPositions,
-    TopIcons
+    TopIcons,
+    TopLeftIcons
 } from './styles'
 
 interface ClassCardProps {
@@ -55,6 +57,9 @@ export const ClassCard = ({
                     {classInfo.name}
                 </Typography>
             </HeroCard>
+            <TopLeftIcons>
+                {classInfo.originalHero ? <OriginalHeroIcon /> : null}
+            </TopLeftIcons>
             <TopIcons>
                 {classInfo.classType === undefined ? null : (
                     <ClassTypeIcons type={classInfo.classType} />
