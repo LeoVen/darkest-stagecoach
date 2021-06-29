@@ -20,6 +20,7 @@ import {
     faMinus
 } from '@fortawesome/free-solid-svg-icons'
 import { LevelRefDisplay } from '../LevelRefDisplay'
+import { FilterForm } from '../FilterForm'
 
 interface FilterProps {
     filter: FilterBy
@@ -31,15 +32,18 @@ interface FilterProps {
 export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     filter,
     sort,
-    onSortChange
+    onSortChange,
+    onFilterChange
 }) => {
     const [modalFilterOpen, setModalFilterOpen] = React.useState<boolean>(false)
+    const [filterCache, setFilterCache] = React.useState<FilterBy>(filter)
 
     const handleOpenFilterModal = () => {
         setModalFilterOpen(true)
     }
     const handleCloseFilterModal = () => {
         setModalFilterOpen(false)
+        onFilterChange(filterCache)
     }
 
     const handleSortByKeyChange = (sortKey: SortingKeys) => {
@@ -61,6 +65,15 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
             sortDirection: sort.sortDirection
         }
         onSortChange(newSort)
+    }
+
+    const handleFilterChange = (filterBy: FilterBy) => {
+        setFilterCache({
+            name: filterBy.name,
+            religious: filterBy.religious,
+            synergies: filterBy.synergies,
+            transform: filterBy.transform
+        })
     }
 
     const sortIcon = (sortDirection: number) => {
@@ -92,11 +105,9 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     }
 
     const [anchorSort, setAnchorSort] = React.useState<null | HTMLElement>(null)
-
     const handleSortMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorSort(event.currentTarget)
     }
-
     const handleSortMenuClose = () => {
         setAnchorSort(null)
     }
@@ -140,6 +151,11 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                     <Typography variant="h2" style={{ margin: '0 1em 1em 0' }}>
                         Filters
                     </Typography>
+                    <FilterForm
+                        filterBy={filterCache}
+                        filterChange={handleFilterChange}
+                        onSubmit={handleCloseFilterModal}
+                    />
                 </DrawerContent>
             </Drawer>
 

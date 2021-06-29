@@ -2,6 +2,16 @@ import { createMuiTheme } from '@material-ui/core'
 
 export const THEME = createMuiTheme({
     overrides: {
+        MuiFormLabel: {
+            root: {
+                color: 'var(--accent-primary)'
+            }
+        },
+        MuiInput: {
+            root: {
+                color: 'var(--accent-primary)'
+            }
+        },
         MuiAccordionSummary: {
             root: {
                 padding: '0'

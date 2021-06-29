@@ -37,7 +37,9 @@ function App() {
         setSort(sortBy)
     }
     const handleFilterChange = (filterBy: FilterBy) => {
-        setClassMods(filterClassMods(classMods, filterBy))
+        setClassMods(
+            filterClassMods(Array.from(ClassModIndex().keys()), filterBy)
+        )
         setFilter(filterBy)
     }
 

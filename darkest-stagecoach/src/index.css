@@ -7,6 +7,8 @@
     --accent-hover: #ff6738;
     --font-primary: #cccccc;
     --font-disabled: #444444;
+    --selected-red: #b11900;
+    --selected-green: #00d7a2;
     --cursor-default: url('assets/cursor/arrow.png'), auto;
     --cursor-pointer: url('assets/cursor/pointer.png'), auto;
 }
