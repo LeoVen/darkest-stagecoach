@@ -85,7 +85,7 @@ export type FilterBy = {
     name: string
     religious?: boolean
     transform?: boolean
-    synergies?: Synergy[]
+    synergies: Map<Synergy, boolean>
 }
 
 export type SortingKeys = 'name' | StatsNames | ResistancesNames

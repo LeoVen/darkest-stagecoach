@@ -7,7 +7,7 @@ export const MainSection = styled.div`
 
 export const FormSection = styled.div`
     width: 100%;
-    margin: 1rem;
+    margin: 1rem 0rem 1rem 0;
 `
 
 export const SectionTitle = styled(Typography)`
@@ -26,4 +26,14 @@ export const IconButton = styled(Button)<{ selected?: boolean }>`
                     ? 'var(--selected-green)'
                     : 'var(--selected-red)'
                 : 'var(--bg-secondary)'};
+`
+
+export const BottomButtons = styled.div`
+    margin-top: 2rem;
+`
+
+export const SynergiesSection = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 `

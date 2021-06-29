@@ -39,7 +39,7 @@ export class ClassModFilter {
 export const filterClassMods = (classModKeys: string[], filterBy: FilterBy) => {
     let filter = new ClassModFilter(filterBy)
     let result = classModKeys.map(str => str.slice())
-    console.log(filterBy.religious)
+
     filter.getFilters().forEach(filter => (result = result.filter(filter)))
     return result
 }

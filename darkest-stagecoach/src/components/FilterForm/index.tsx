@@ -5,10 +5,54 @@ import {
     ThemeProvider
 } from '@material-ui/core'
 import React from 'react'
+import { CSSProperties } from 'react'
 import { THEME } from '../../theme'
-import { FilterBy } from '../../Types'
+import { FilterBy, Synergy } from '../../Types'
 import { ClassProfileIcon } from '../ClassProfileIcons'
-import { FormSection, IconButton, MainSection, SectionTitle } from './styles'
+import { SynergyIcon } from '../SynergyIcon'
+import {
+    BottomButtons,
+    FormSection,
+    IconButton,
+    MainSection,
+    SectionTitle,
+    SynergiesSection
+} from './styles'
+
+const synergies: Synergy[] = [
+    'bleed',
+    'blight',
+    'cure',
+    'heal',
+    'stress',
+    'buff',
+    'debuff',
+    'block',
+    'guard',
+    'guardBreak',
+    'reflect',
+    'stun',
+    'mark',
+    'riposte',
+    'stealth',
+    'deStealth',
+    'move',
+    'moveSelf'
+]
+
+const synergyIconStyles = (selected?: boolean): CSSProperties => {
+    return {
+        margin: '0.2rem',
+        border: `1px solid ${
+            selected === undefined
+                ? 'var(--bg-secondary)'
+                : selected
+                ? 'var(--selected-green)'
+                : 'var(--selected-red)'
+        }`,
+        borderRadius: '4px'
+    }
+}
 
 const FILTER_THEME = createMuiTheme(
     {
@@ -66,6 +110,14 @@ export const FilterForm = ({
         filterBy.transform = threeWayValueWrap(filterBy.transform)
         filterChange(filterBy)
     }
+    const handleSynergyClick = (s: Synergy) => {
+        let result = filterBy.synergies.get(s)
+        if (result === undefined) filterBy.synergies.set(s, true)
+        else if (result) filterBy.synergies.set(s, false)
+        else filterBy.synergies.delete(s)
+
+        filterChange(filterBy)
+    }
 
     return (
         <ThemeProvider theme={FILTER_THEME}>
@@ -99,7 +151,37 @@ export const FilterForm = ({
                         />
                     </IconButton>
                 </FormSection>
-                <Button onClick={onSubmit}>Ok</Button>
+                <FormSection>
+                    <SectionTitle variant="h4">
+                        Combat Skills Synergy
+                    </SectionTitle>
+                    <SynergiesSection>
+                        {synergies.map(s => {
+                            return (
+                                <div
+                                    onClick={() => handleSynergyClick(s)}
+                                    style={synergyIconStyles(
+                                        filterBy.synergies.get(s)
+                                    )}>
+                                    <SynergyIcon
+                                        key={`filter-synergy-${s}`}
+                                        icon={s}
+                                        style={{
+                                            padding: '6px 12px'
+                                        }}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </SynergiesSection>
+                </FormSection>
+                <BottomButtons>
+                    <Button
+                        onClick={onSubmit}
+                        style={{ border: '1px solid var(--bg-secondary)' }}>
+                        Ok
+                    </Button>
+                </BottomButtons>
             </MainSection>
         </ThemeProvider>
     )
