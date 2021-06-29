@@ -19,7 +19,7 @@ function App() {
     const [selectedClass, setSelectedClass] = React.useState<
         ClassMod | undefined
     >(undefined)
-    const [filter, setFilter] = React.useState<FilterBy>({})
+    const [filter, setFilter] = React.useState<FilterBy>({ name: '' })
     const [sort, setSort] = React.useState<SortBy>({
         key: 'name',
         sortDirection: 1,

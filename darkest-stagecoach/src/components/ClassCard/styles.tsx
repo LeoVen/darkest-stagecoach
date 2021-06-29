@@ -39,6 +39,10 @@ export const BottomIcons = styled.div`
     bottom: 2px;
 `
 
+export const ImageAndIcons = styled.div`
+    display: flex;
+`
+
 export const ImageAndPositions = styled.div`
     display: flex;
     flex-direction: column;

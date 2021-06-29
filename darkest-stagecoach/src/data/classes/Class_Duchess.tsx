@@ -5,6 +5,14 @@ export const Class_Duchess: ClassMod = {
     name: 'Duchess',
     portrait: portrait,
     religious: false,
+    transform: true,
+    classType: {
+        damage: 3,
+        healer: 0,
+        support: 1,
+        tank: 3
+    },
+    synergy: ['riposte', 'deStealth', 'stun', 'debuff'],
     resistances: {
         stun: 0.3,
         blight: 0.4,

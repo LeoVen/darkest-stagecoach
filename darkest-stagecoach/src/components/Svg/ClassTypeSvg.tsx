@@ -1,16 +1,13 @@
 import { ClassModType } from '../../Types'
+import { SvgProps } from '.'
 
-interface SvgProps {
-    type: ClassModType
-    width: string
-    height: string
-    fill: string
-}
-
-const iconMap: Map<ClassModType, (props: SvgProps) => JSX.Element> = new Map([
+const iconMap: Map<
+    ClassModType,
+    (props: SvgProps<ClassModType>) => JSX.Element
+> = new Map([
     [
         'damage',
-        (props: SvgProps) => (
+        (props: SvgProps<ClassModType>) => (
             <svg
                 id="svg"
                 version="1.1"
@@ -30,7 +27,7 @@ const iconMap: Map<ClassModType, (props: SvgProps) => JSX.Element> = new Map([
     ],
     [
         'healer',
-        (props: SvgProps) => (
+        (props: SvgProps<ClassModType>) => (
             <svg
                 id="svg"
                 version="1.1"
@@ -50,7 +47,7 @@ const iconMap: Map<ClassModType, (props: SvgProps) => JSX.Element> = new Map([
     ],
     [
         'support',
-        (props: SvgProps) => (
+        (props: SvgProps<ClassModType>) => (
             <svg
                 id="svg"
                 version="1.1"
@@ -70,7 +67,7 @@ const iconMap: Map<ClassModType, (props: SvgProps) => JSX.Element> = new Map([
     ],
     [
         'tank',
-        (props: SvgProps) => (
+        (props: SvgProps<ClassModType>) => (
             <svg
                 id="svg"
                 version="1.1"
@@ -90,5 +87,7 @@ const iconMap: Map<ClassModType, (props: SvgProps) => JSX.Element> = new Map([
     ]
 ])
 
-export const ClassTypeSvg = (props: SvgProps) =>
-    (iconMap.get(props.type) as (props: SvgProps) => JSX.Element)(props)
+export const ClassTypeSvg = (props: SvgProps<ClassModType>) =>
+    (iconMap.get(props.type) as (props: SvgProps<ClassModType>) => JSX.Element)(
+        props
+    )

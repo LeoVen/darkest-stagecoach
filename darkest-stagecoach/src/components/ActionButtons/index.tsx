@@ -159,7 +159,7 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 open={Boolean(anchorSort)}
                 onClose={handleSortMenuClose}
                 getContentAnchorEl={null}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
                 <LevelRefDisplay current={sort.levelRef} />
                 <div

@@ -1,13 +1,15 @@
 import { FilterBy } from './Types'
 
-var filterState: FilterBy = {}
+export class ClassModFilter {
+    filterState: FilterBy
+
+    constructor(filter: FilterBy) {
+        this.filterState = filter
+    }
+}
 
 export const filterClassMods = (classModKeys: string[], filterBy: FilterBy) => {
-    filterState = {
-        religious: filterBy.religious,
-        transform: filterBy.transform,
-        synergies: filterBy.synergies
-    }
+    let filter = new ClassModFilter(filterBy)
     // return classModKeys.map(str => str.slice()).sort(sortFuncMap[filterBy.key])
     return classModKeys.map(str => str.slice())
 }

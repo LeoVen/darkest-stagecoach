@@ -3,11 +3,18 @@ import ClassMod from '../../data/ClassMod'
 import { classModIndex } from '../../data/ClassModIndex'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
+import { ClassProfileIcons } from '../ClassProfileIcons'
 import { ClassTypeIcons } from '../ClassTypeIcons'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Positions } from '../Positions'
 import { SynergyIcons } from '../SynergyIcon'
-import { BottomIcons, HeroCard, ImageAndPositions, TopIcons } from './styles'
+import {
+    BottomIcons,
+    HeroCard,
+    ImageAndIcons,
+    ImageAndPositions,
+    TopIcons
+} from './styles'
 
 interface ClassCardProps {
     classKey: string
@@ -30,21 +37,23 @@ export const ClassCard = ({
             key={`${classInfo.name}-${index}`}
             style={{ position: 'relative' }}>
             <HeroCard elevation={5} onClick={() => handleOpenModal(classInfo)}>
-                <ImageAndPositions>
-                    <img
-                        src={classInfo.portrait}
-                        style={{
-                            margin: '1rem 1rem 0 1rem',
-                            maxWidth: 'calc(100vw - 6em)'
-                        }}
-                        alt="Hero Portrait"
-                    />
-                    <Positions
-                        pos={classInfo.position}
-                        totalSkills={classInfo.totalSkills}
-                    />
-                </ImageAndPositions>
-                <Typography variant="h3">{classInfo.name}</Typography>
+                <ImageAndIcons>
+                    <ClassProfileIcons classInfo={classInfo} />
+                    <ImageAndPositions>
+                        <img
+                            src={classInfo.portrait}
+                            style={{ margin: '1rem 0 0 0' }}
+                            alt="Hero Portrait"
+                        />
+                        <Positions
+                            pos={classInfo.position}
+                            totalSkills={classInfo.totalSkills}
+                        />
+                    </ImageAndPositions>
+                </ImageAndIcons>
+                <Typography variant="h3" style={{ marginLeft: '1rem' }}>
+                    {classInfo.name}
+                </Typography>
             </HeroCard>
             <TopIcons>
                 {classInfo.classType === undefined ? null : (

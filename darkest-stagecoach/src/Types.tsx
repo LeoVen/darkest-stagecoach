@@ -82,6 +82,7 @@ export type OriginalHeroes =
     | 'Vestal'
 
 export type FilterBy = {
+    name: string
     religious?: boolean
     transform?: boolean
     synergies?: Synergy[]
@@ -128,3 +129,5 @@ export type ClassModTypeValue =
     | 1 // Bad
     | 2 // Ok
     | 3 // Good
+
+export type ProfileType = 'transform' | 'religious'

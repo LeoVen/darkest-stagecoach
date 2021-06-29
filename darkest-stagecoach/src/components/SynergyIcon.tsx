@@ -17,12 +17,10 @@ import stealth from '../assets/img/stats/stealth.png'
 import stress from '../assets/img/stats/virtue.png'
 import stun from '../assets/img/stats/stun.png'
 import { Synergy } from '../Types'
-import { CSSProperties } from 'react'
 import { Tooltip } from '@material-ui/core'
 
 interface ResistanceIconProps {
     icon: Synergy
-    style?: CSSProperties
 }
 
 const iconMap: Record<Synergy, string> = {
@@ -73,7 +71,7 @@ export const SynergyIcon = (props: ResistanceIconProps) => {
             title={iconDescription[props.icon]}
             placement="top"
             arrow={true}>
-            <img src={iconMap[props.icon]} alt="Icon" style={props.style} />
+            <img src={iconMap[props.icon]} alt="Icon" />
         </Tooltip>
     )
 }

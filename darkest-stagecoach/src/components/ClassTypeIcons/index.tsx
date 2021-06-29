@@ -1,6 +1,6 @@
 import { Tooltip } from '@material-ui/core'
 import { ClassModType, ClassModTypeValue } from '../../Types'
-import { ClassTypeSvg } from './ClassTypeSvg'
+import { ClassTypeSvg } from '../Svg/ClassTypeSvg'
 import { IconContainer, MainSection } from './styles'
 
 interface Props {
@@ -48,6 +48,7 @@ export const ClassTypeIcons = ({ type }: Props) => {
             </Tooltip>
         )
     }
+
     return (
         <MainSection>
             {[type.damage, type.healer, type.support, type.tank].map((v, i) =>
