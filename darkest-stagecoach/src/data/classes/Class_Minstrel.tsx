@@ -5,6 +5,7 @@ export const Class_Minstrel: ClassMod = {
     name: 'Minstrel',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.3,

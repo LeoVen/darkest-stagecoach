@@ -5,6 +5,7 @@ export const Class_Wanderer: ClassMod = {
     name: 'Wanderer',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.4,

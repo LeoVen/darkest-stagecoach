@@ -5,6 +5,7 @@ export const Class_FishOnmyoji: ClassMod = {
     name: 'FishOnmyoji',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.25,

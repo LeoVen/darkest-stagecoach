@@ -5,6 +5,7 @@ export const Class_ShieldMaiden: ClassMod = {
     name: 'ShieldMaiden',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.3,

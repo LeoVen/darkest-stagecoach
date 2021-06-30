@@ -5,6 +5,7 @@ export const Class_Cataphract: ClassMod = {
     name: 'Cataphract',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.2,

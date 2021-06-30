@@ -11,6 +11,7 @@ export const Class_WraithMs: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    originalHero: false,
     synergy: ['stun', 'mark', 'bleed', 'move', 'debuff'],
     classType: {
         damage: 3,

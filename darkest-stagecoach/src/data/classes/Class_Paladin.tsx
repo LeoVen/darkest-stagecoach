@@ -5,6 +5,7 @@ export const Class_Paladin: ClassMod = {
     name: 'Paladin',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.4,

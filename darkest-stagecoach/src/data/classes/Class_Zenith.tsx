@@ -5,6 +5,7 @@ export const Class_Zenith: ClassMod = {
     name: 'Zenith',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.1,
         blight: 0.2,

@@ -5,6 +5,7 @@ export const Class_KegHunter: ClassMod = {
     name: 'KegHunter',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.3,

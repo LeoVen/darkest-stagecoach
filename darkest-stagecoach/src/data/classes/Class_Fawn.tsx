@@ -5,6 +5,7 @@ export const Class_Fawn: ClassMod = {
     name: 'Fawn',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.7,

@@ -5,6 +5,7 @@ export const Class_Omenseeker: ClassMod = {
     name: 'Omenseeker',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.4,

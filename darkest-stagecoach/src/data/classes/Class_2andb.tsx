@@ -5,6 +5,7 @@ export const Class_2andb: ClassMod = {
     name: '2andb',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.5,

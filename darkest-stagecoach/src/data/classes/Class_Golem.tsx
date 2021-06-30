@@ -6,6 +6,7 @@ export const Class_Golem: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    originalHero: false,
     classType: {
         damage: 2,
         healer: 0,

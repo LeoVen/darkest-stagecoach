@@ -5,6 +5,7 @@ export const Class_Vamp: ClassMod = {
     name: 'Vamp',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.3,

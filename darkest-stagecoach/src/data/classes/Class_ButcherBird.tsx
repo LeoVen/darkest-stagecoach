@@ -5,6 +5,7 @@ export const Class_ButcherBird: ClassMod = {
     name: 'ButcherBird',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.5,

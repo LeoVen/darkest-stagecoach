@@ -5,6 +5,7 @@ export const Class_Tifa: ClassMod = {
     name: 'Tifa',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.4,

@@ -5,6 +5,7 @@ export const Class_SteelDriver: ClassMod = {
     name: 'SteelDriver',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.2,

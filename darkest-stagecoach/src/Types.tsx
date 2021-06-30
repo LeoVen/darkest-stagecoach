@@ -85,6 +85,7 @@ export type FilterBy = {
     name: string
     religious?: boolean
     transform?: boolean
+    originalHero?: boolean
     synergies: Map<Synergy, boolean>
 }
 

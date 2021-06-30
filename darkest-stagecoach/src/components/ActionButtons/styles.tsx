@@ -22,7 +22,7 @@ export const BottomFilterSection = styled(Button)`
 `
 
 export const DrawerContent = styled.div`
-    padding: 2em;
+    padding: min(2rem, 5vw);
     background-color: var(--bg-primary);
 `
 

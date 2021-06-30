@@ -5,27 +5,18 @@ export const MainSection = styled.div`
     width: 100%;
 `
 
+export const FormContainedSections = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+`
+
 export const FormSection = styled.div`
-    width: 100%;
-    margin: 1rem 0rem 1rem 0;
+    margin: 1rem 0;
 `
 
 export const SectionTitle = styled(Typography)`
     margin: 1rem 0 0.5rem 0;
-`
-
-export const IconButton = styled(Button)<{ selected?: boolean }>`
-    padding: 0;
-    background-color: var(--bg-secondary);
-    margin-right: 1rem;
-
-    border: 1px solid
-        ${props =>
-            props.selected !== undefined
-                ? props.selected
-                    ? 'var(--selected-green)'
-                    : 'var(--selected-red)'
-                : 'var(--bg-secondary)'};
 `
 
 export const BottomButtons = styled.div`
@@ -36,4 +27,27 @@ export const SynergiesSection = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    max-width: 350px;
+`
+
+export const CharacteristicsSection = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 350px;
+`
+
+export const SelectionBox = styled.div<{ selected?: boolean }>`
+    margin: 0.2rem;
+    border-radius: 4px;
+    border: 1px solid
+        ${props =>
+            props.selected === undefined
+                ? 'var(--bg-secondary)'
+                : props.selected
+                ? 'var(--selected-green)'
+                : 'var(--selected-red)'};
+    & * {
+        cursor: var(--cursor-pointer) !important;
+    }
 `

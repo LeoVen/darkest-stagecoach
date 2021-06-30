@@ -5,6 +5,7 @@ export const Class_Spacemarine1: ClassMod = {
     name: 'Spacemarine1',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.3,

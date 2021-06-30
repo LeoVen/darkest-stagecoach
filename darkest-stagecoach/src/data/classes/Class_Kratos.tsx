@@ -5,6 +5,7 @@ export const Class_Kratos: ClassMod = {
     name: 'Kratos',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.2,

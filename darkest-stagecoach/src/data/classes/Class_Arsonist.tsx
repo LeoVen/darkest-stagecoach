@@ -5,6 +5,7 @@ export const Class_Arsonist: ClassMod = {
     name: 'Arsonist',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.2,

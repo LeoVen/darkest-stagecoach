@@ -5,6 +5,7 @@ export const Class_Ironbuddha: ClassMod = {
     name: 'Ironbuddha',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.2,

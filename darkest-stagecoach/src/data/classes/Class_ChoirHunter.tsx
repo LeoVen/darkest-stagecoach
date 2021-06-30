@@ -10,6 +10,7 @@ export const Class_ChoirHunter: ClassMod = {
     portrait: portrait,
     religious: true,
     transform: false,
+    originalHero: false,
     classType: {
         damage: 2,
         healer: 1,

@@ -13,6 +13,7 @@ export const Class_Commandant: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    originalHero: false,
     synergy: [
         'buff',
         'mark',

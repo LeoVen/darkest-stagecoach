@@ -5,6 +5,7 @@ export const Class_Offering: ClassMod = {
     name: 'Offering',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.4,

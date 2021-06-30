@@ -5,6 +5,7 @@ export const Class_Scourge: ClassMod = {
     name: 'Scourge',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.6,
         blight: 0,

@@ -5,6 +5,7 @@ export const Class_Deovolente: ClassMod = {
     name: 'Deovolente',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.6,
         blight: 0.2,

@@ -5,6 +5,7 @@ export const Class_Cannoneer: ClassMod = {
     name: 'Cannoneer',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.3,

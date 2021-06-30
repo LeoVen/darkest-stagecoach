@@ -6,6 +6,7 @@ export const Class_Duchess: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: true,
+    originalHero: false,
     classType: {
         damage: 3,
         healer: 0,

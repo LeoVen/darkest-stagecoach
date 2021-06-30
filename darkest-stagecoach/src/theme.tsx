@@ -49,6 +49,11 @@ export const THEME = createMuiTheme({
             list: {
                 padding: '0'
             }
+        },
+        MuiDrawer: {
+            paperAnchorBottom: {
+                maxHeight: '50vh'
+            }
         }
     },
     typography: {

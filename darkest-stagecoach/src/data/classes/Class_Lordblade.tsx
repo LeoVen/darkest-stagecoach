@@ -5,6 +5,7 @@ export const Class_Lordblade: ClassMod = {
     name: 'Lordblade',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.5,

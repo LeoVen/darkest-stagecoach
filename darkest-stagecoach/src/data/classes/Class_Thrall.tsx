@@ -11,6 +11,7 @@ export const Class_Thrall: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.4,

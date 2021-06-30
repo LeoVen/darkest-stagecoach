@@ -5,6 +5,7 @@ export const Class_Anoint: ClassMod = {
     name: 'Anoint',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.6,
         blight: 0.2,

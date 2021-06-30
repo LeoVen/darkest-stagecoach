@@ -5,6 +5,7 @@ export const Class_WarriorOfSunlight: ClassMod = {
     name: 'Warrior Of Sunlight',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.2,

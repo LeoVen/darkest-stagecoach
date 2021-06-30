@@ -5,6 +5,7 @@ export const Class_Fleshgolem: ClassMod = {
     name: 'Fleshgolem',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.5,
         blight: 0.2,

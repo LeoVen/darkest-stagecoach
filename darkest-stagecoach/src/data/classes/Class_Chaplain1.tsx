@@ -5,6 +5,7 @@ export const Class_Chaplain1: ClassMod = {
     name: 'Chaplain1',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.4,

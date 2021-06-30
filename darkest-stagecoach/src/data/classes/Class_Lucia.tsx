@@ -5,6 +5,7 @@ export const Class_Lucia: ClassMod = {
     name: 'Lucia',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.3,

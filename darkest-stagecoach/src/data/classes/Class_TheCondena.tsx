@@ -5,6 +5,7 @@ export const Class_TheCondena: ClassMod = {
     name: 'TheCondena',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.45,
         blight: 0.15,

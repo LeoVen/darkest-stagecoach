@@ -5,6 +5,7 @@ export const Class_Dragonslayers: ClassMod = {
     name: 'Dragonslayers',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.3,

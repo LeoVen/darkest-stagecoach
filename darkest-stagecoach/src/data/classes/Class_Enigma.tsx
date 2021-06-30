@@ -5,6 +5,7 @@ export const Class_Enigma: ClassMod = {
     name: 'Enigma',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.8,
         blight: 0.1,

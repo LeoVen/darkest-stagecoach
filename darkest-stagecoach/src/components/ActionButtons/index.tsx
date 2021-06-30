@@ -72,7 +72,8 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
             name: filterBy.name,
             religious: filterBy.religious,
             synergies: filterBy.synergies,
-            transform: filterBy.transform
+            transform: filterBy.transform,
+            originalHero: filterBy.originalHero
         })
     }
 

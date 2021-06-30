@@ -5,6 +5,7 @@ export const Class_Kheir: ClassMod = {
     name: 'Kheir',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.1,
         blight: 0.5,

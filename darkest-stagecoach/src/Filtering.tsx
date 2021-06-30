@@ -25,6 +25,11 @@ export class ClassModFilter {
         return classA.transform === this.filterState.transform
     }
 
+    filterOriginalHero = (a: string): boolean => {
+        let classA = classModIndex.get(a) as ClassMod
+        return classA.originalHero === this.filterState.originalHero
+    }
+
     getFilters(): Array<(a: string) => boolean> {
         let result = []
         if (this.filterState.name !== '') result.push(this.filterName)
@@ -32,6 +37,8 @@ export class ClassModFilter {
             result.push(this.filterReligious)
         if (this.filterState.transform !== undefined)
             result.push(this.filterTransform)
+        if (this.filterState.originalHero !== undefined)
+            result.push(this.filterOriginalHero)
         return result
     }
 }

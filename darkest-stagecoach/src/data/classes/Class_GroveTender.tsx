@@ -5,6 +5,7 @@ export const Class_GroveTender: ClassMod = {
     name: 'GroveTender',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.5,

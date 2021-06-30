@@ -5,6 +5,7 @@ export const Class_Aegis: ClassMod = {
     name: 'Aegis',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.6,
         blight: 0.4,

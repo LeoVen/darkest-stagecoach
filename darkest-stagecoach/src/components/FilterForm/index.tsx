@@ -9,13 +9,16 @@ import { CSSProperties } from 'react'
 import { THEME } from '../../theme'
 import { FilterBy, Synergy } from '../../Types'
 import { ClassProfileIcon } from '../ClassProfileIcons'
+import { OriginalHeroIcon } from '../OriginalHeroIcon'
 import { SynergyIcon } from '../SynergyIcon'
 import {
     BottomButtons,
+    CharacteristicsSection,
+    FormContainedSections,
     FormSection,
-    IconButton,
     MainSection,
     SectionTitle,
+    SelectionBox,
     SynergiesSection
 } from './styles'
 
@@ -39,20 +42,6 @@ const synergies: Synergy[] = [
     'move',
     'moveSelf'
 ]
-
-const synergyIconStyles = (selected?: boolean): CSSProperties => {
-    return {
-        margin: '0.2rem',
-        border: `1px solid ${
-            selected === undefined
-                ? 'var(--bg-secondary)'
-                : selected
-                ? 'var(--selected-green)'
-                : 'var(--selected-red)'
-        }`,
-        borderRadius: '4px'
-    }
-}
 
 const FILTER_THEME = createMuiTheme(
     {
@@ -98,6 +87,12 @@ export const FilterForm = ({
         else if (value !== undefined && !value) return undefined
         else return true
     }
+    const handleReset = () => {
+        filterChange({
+            name: '',
+            synergies: new Map()
+        })
+    }
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         filterBy.name = e.currentTarget.value
         filterChange(filterBy)
@@ -108,6 +103,10 @@ export const FilterForm = ({
     }
     const handleTransformChange = () => {
         filterBy.transform = threeWayValueWrap(filterBy.transform)
+        filterChange(filterBy)
+    }
+    const handleOriginalHeroChange = () => {
+        filterBy.originalHero = threeWayValueWrap(filterBy.originalHero)
         filterChange(filterBy)
     }
     const handleSynergyClick = (s: Synergy) => {
@@ -122,60 +121,80 @@ export const FilterForm = ({
     return (
         <ThemeProvider theme={FILTER_THEME}>
             <MainSection>
-                <FormSection>
-                    <TextField
-                        id="filter-name"
-                        label="Name"
-                        onChange={handleNameChange}
-                        value={filterBy.name}
-                    />
-                </FormSection>
-                <FormSection>
-                    <SectionTitle variant="h4">Characteristics</SectionTitle>
-                    <IconButton
-                        className="cursor-pointer"
-                        onClick={handleReligiousChange}
-                        selected={filterBy.religious}>
-                        <ClassProfileIcon
-                            type="religious"
-                            style={{ padding: '6px 0px', minWidth: '64px' }}
+                <FormContainedSections>
+                    <FormSection>
+                        <TextField
+                            id="filter-name"
+                            label="Name"
+                            onChange={handleNameChange}
+                            value={filterBy.name}
                         />
-                    </IconButton>
-                    <IconButton
-                        className="cursor-pointer"
-                        onClick={handleTransformChange}
-                        selected={filterBy.transform}>
-                        <ClassProfileIcon
-                            type="transform"
-                            style={{ padding: '6px 0px', minWidth: '64px' }}
-                        />
-                    </IconButton>
-                </FormSection>
-                <FormSection>
-                    <SectionTitle variant="h4">
-                        Combat Skills Synergy
-                    </SectionTitle>
-                    <SynergiesSection>
-                        {synergies.map(s => {
-                            return (
-                                <div
-                                    onClick={() => handleSynergyClick(s)}
-                                    style={synergyIconStyles(
-                                        filterBy.synergies.get(s)
-                                    )}>
-                                    <SynergyIcon
-                                        key={`filter-synergy-${s}`}
-                                        icon={s}
-                                        style={{
-                                            padding: '6px 12px'
-                                        }}
-                                    />
-                                </div>
-                            )
-                        })}
-                    </SynergiesSection>
-                </FormSection>
+                    </FormSection>
+                    <FormSection>
+                        <SectionTitle variant="h4">
+                            Characteristics
+                        </SectionTitle>
+                        <CharacteristicsSection>
+                            <SelectionBox
+                                onClick={handleReligiousChange}
+                                selected={filterBy.religious}>
+                                <ClassProfileIcon
+                                    type="religious"
+                                    style={{
+                                        padding: '9.5px 16px'
+                                    }}
+                                />
+                            </SelectionBox>
+                            <SelectionBox
+                                onClick={handleTransformChange}
+                                selected={filterBy.transform}>
+                                <ClassProfileIcon
+                                    type="transform"
+                                    style={{
+                                        padding: '9.5px 16px'
+                                    }}
+                                />
+                            </SelectionBox>
+                            <SelectionBox
+                                onClick={handleOriginalHeroChange}
+                                selected={filterBy.originalHero}>
+                                <OriginalHeroIcon
+                                    style={{
+                                        padding: '6px 12px'
+                                    }}
+                                />
+                            </SelectionBox>
+                        </CharacteristicsSection>
+                    </FormSection>
+                    <FormSection>
+                        <SectionTitle variant="h4">
+                            Combat Skills Synergy
+                        </SectionTitle>
+                        <SynergiesSection>
+                            {synergies.map(s => {
+                                return (
+                                    <SelectionBox
+                                        key={`form-synergy-${s}`}
+                                        selected={filterBy.synergies.get(s)}
+                                        onClick={() => handleSynergyClick(s)}>
+                                        <SynergyIcon
+                                            icon={s}
+                                            style={{
+                                                padding: '6px 12px'
+                                            }}
+                                        />
+                                    </SelectionBox>
+                                )
+                            })}
+                        </SynergiesSection>
+                    </FormSection>
+                </FormContainedSections>
                 <BottomButtons>
+                    <Button
+                        onClick={handleReset}
+                        style={{ border: '1px solid var(--bg-secondary)' }}>
+                        Reset
+                    </Button>
                     <Button
                         onClick={onSubmit}
                         style={{ border: '1px solid var(--bg-secondary)' }}>

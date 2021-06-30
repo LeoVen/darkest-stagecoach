@@ -5,6 +5,7 @@ export const Class_Seraph: ClassMod = {
     name: 'Seraph',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.1,

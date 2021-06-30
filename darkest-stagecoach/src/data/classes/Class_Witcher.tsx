@@ -5,6 +5,7 @@ export const Class_Witcher: ClassMod = {
     name: 'Witcher',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.8,

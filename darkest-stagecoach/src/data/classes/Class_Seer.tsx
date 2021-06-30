@@ -5,6 +5,7 @@ export const Class_Seer: ClassMod = {
     name: 'Seer',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.2,

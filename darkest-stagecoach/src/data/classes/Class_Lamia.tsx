@@ -8,6 +8,7 @@ export const Class_Lamia: ClassMod = {
     portrait: portrait,
     religious: false,
     transform: true,
+    originalHero: false,
     synergy: [
         'heal',
         'stress',

@@ -5,6 +5,7 @@ export const Class_Forsaken: ClassMod = {
     name: 'Forsaken',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.3,

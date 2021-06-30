@@ -9,6 +9,7 @@ export const Class_Courtesan: ClassMod = {
     ],
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.3,

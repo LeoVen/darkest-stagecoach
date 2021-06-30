@@ -5,6 +5,7 @@ export const Class_HollowKnight: ClassMod = {
     name: 'HollowKnight',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.55,
         blight: 0.1,

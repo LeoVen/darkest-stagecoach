@@ -5,6 +5,7 @@ export const Class_BluesmanBet: ClassMod = {
     name: 'BluesmanBet',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0.3,

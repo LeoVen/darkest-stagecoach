@@ -5,6 +5,7 @@ export const Class_SnakeCharmer: ClassMod = {
     name: 'SnakeCharmer',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.3,
         blight: 0.5,

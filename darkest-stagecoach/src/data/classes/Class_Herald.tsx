@@ -5,6 +5,7 @@ export const Class_Herald: ClassMod = {
     name: 'Herald',
     portrait: portrait,
     religious: false,
+    originalHero: false,
     resistances: {
         stun: 0.4,
         blight: 0,

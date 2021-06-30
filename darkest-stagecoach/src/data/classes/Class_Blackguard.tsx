@@ -5,6 +5,7 @@ export const Class_Blackguard: ClassMod = {
     name: 'Blackguard',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.1,

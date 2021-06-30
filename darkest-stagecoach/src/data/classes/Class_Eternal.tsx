@@ -5,6 +5,7 @@ export const Class_Eternal: ClassMod = {
     name: 'Eternal',
     portrait: portrait,
     religious: true,
+    originalHero: false,
     resistances: {
         stun: 0.2,
         blight: 0.1,
