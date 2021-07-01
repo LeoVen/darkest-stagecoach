@@ -81,30 +81,34 @@ export const ClassModal: React.FunctionComponent<ClassCardProps> = ({
                     <p key={i}>{paragraph}</p>
                 ))}
             </Typography>
-            <AccordionTemplate
-                expanded={accordion[0]}
-                title={'Sources'}
-                handleAccordionChange={handleAccordionChange(0)}>
-                <ModSources sources={classMod.sources} />
-            </AccordionTemplate>
-            <AccordionTemplate
-                expanded={accordion[1]}
-                title={'Creators'}
-                handleAccordionChange={handleAccordionChange(1)}>
-                <div style={{ width: '100%' }}>
-                    {classMod.authors === undefined ? (
-                        <Typography variant="body1">Unavailable</Typography>
-                    ) : (
-                        classMod.authors.map((auth, i) => (
-                            <AuthorCard
-                                key={`${auth.author.name}-${i}`}
-                                author={auth.author}
-                                credits={auth.credits}
-                            />
-                        ))
-                    )}
-                </div>
-            </AccordionTemplate>
+            {classMod.originalHero ? null : (
+                <AccordionTemplate
+                    expanded={accordion[0]}
+                    title={'Sources'}
+                    handleAccordionChange={handleAccordionChange(0)}>
+                    <ModSources sources={classMod.sources} />
+                </AccordionTemplate>
+            )}
+            {classMod.originalHero ? null : (
+                <AccordionTemplate
+                    expanded={accordion[1]}
+                    title={'Creators'}
+                    handleAccordionChange={handleAccordionChange(1)}>
+                    <div style={{ width: '100%' }}>
+                        {classMod.authors === undefined ? (
+                            <Typography variant="body1">Unavailable</Typography>
+                        ) : (
+                            classMod.authors.map((auth, i) => (
+                                <AuthorCard
+                                    key={`${auth.author.name}-${i}`}
+                                    author={auth.author}
+                                    credits={auth.credits}
+                                />
+                            ))
+                        )}
+                    </div>
+                </AccordionTemplate>
+            )}
             <AccordionTemplate
                 expanded={accordion[2]}
                 title={'Base Stats'}

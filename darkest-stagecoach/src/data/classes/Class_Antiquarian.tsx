@@ -7,6 +7,13 @@ export const Class_Antiquarian: ClassMod = {
     religious: false,
     transform: false,
     originalHero: true,
+    classType: {
+        damage: 1,
+        healer: 1,
+        support: 2,
+        tank: 0
+    },
+    synergy: ['blight', 'deStealth', 'debuff', 'guard', 'heal', 'buff'],
     resistances: {
         stun: 0.2,
         blight: 0.2,

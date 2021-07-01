@@ -106,7 +106,9 @@ export type Synergy =
     | 'buff' // Buffs ally
     | 'debuff' // Debuffs enemy
     | 'mark' // Marks enemy
-    | 'move' // Move enemy (push/pull/shuffle)
+    | 'knockback' // Move enemy back
+    | 'pull' // Move enemy forward
+    | 'shuffle' // Shuffles enemy
     | 'heal' // Heal ally or adds restoration
     | 'stress' // Stress heal ally or cure horor
     | 'block' // Gives block
@@ -116,8 +118,10 @@ export type Synergy =
     | 'stealth' // Activates stealth
     | 'deStealth' // Bypass or de-stealth enemy
     | 'cure' // Cure blight/bleed
+    | 'clear' // Clear stun/debuff/mark
     | 'reflect' // Adds damage reflection
-    | 'moveSelf' // Moves self
+    | 'back' // Moves selfback
+    | 'forward' // Moves self forward
 
 export type ClassModType =
     | 'tank' // How good this class is at tanking damage

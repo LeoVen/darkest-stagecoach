@@ -2,6 +2,7 @@ import bleed from '../assets/img/stats/bleed.png'
 import blight from '../assets/img/stats/blight.png'
 import block from '../assets/img/stats/block.png'
 import buff from '../assets/img/stats/buff.png'
+import clear from '../assets/img/stats/buffPlus.png'
 import cure from '../assets/img/stats/cure.png'
 import debuff from '../assets/img/stats/debuff.png'
 import deStealth from '../assets/img/stats/deStealth.png'
@@ -9,8 +10,11 @@ import guard from '../assets/img/stats/guard.png'
 import guardBreak from '../assets/img/stats/guardBreak.png'
 import heal from '../assets/img/stats/heal.png'
 import mark from '../assets/img/stats/mark.png'
-import move from '../assets/img/stats/move.png'
-import moveSelf from '../assets/img/stats/moveSelf.png'
+import shuffle from '../assets/img/stats/shuffle.png'
+import knockback from '../assets/img/stats/knockback.png'
+import pull from '../assets/img/stats/pull.png'
+import forward from '../assets/img/stats/forward.png'
+import back from '../assets/img/stats/back.png'
 import reflect from '../assets/img/stats/reflect.png'
 import riposte from '../assets/img/stats/riposte.png'
 import stealth from '../assets/img/stats/stealth.png'
@@ -19,6 +23,7 @@ import stun from '../assets/img/stats/stun.png'
 import { Synergy } from '../Types'
 import { Tooltip } from '@material-ui/core'
 import { CSSProperties } from 'react'
+import { sortSynergies } from '../Synergy'
 
 interface SynergyIconProps {
     icon: Synergy
@@ -30,6 +35,7 @@ const iconMap: Record<Synergy, string> = {
     blight: blight,
     block: block,
     buff: buff,
+    clear: clear,
     cure: cure,
     debuff: debuff,
     deStealth: deStealth,
@@ -37,8 +43,11 @@ const iconMap: Record<Synergy, string> = {
     guardBreak: guardBreak,
     heal: heal,
     mark: mark,
-    move: move,
-    moveSelf: moveSelf,
+    shuffle: shuffle,
+    knockback: knockback,
+    pull: pull,
+    forward: forward,
+    back: back,
     reflect: reflect,
     riposte: riposte,
     stealth: stealth,
@@ -51,15 +60,19 @@ const iconDescription: Record<Synergy, string> = {
     blight: 'Causes blight DoT',
     block: 'Add block ally',
     buff: 'Buffs ally',
+    clear: 'Clear stun or debuff or mark',
     cure: 'Cures bleed/blight',
     debuff: 'Debuffs enemy',
     deStealth: 'Bypass or de-stealth enemy',
-    guard: 'Guard ally',
+    guard: 'Guard ally or self',
     guardBreak: 'Breaks enemy guard',
     heal: 'Heal ally HP',
     mark: 'Mark enemy',
-    move: 'Moves enemy',
-    moveSelf: 'Moves around party',
+    shuffle: 'Shuffle enemy',
+    knockback: 'Knockback enemy',
+    pull: 'Pull enemy',
+    forward: 'Moves forward',
+    back: 'Moves back',
     reflect: 'Adds damage reflection',
     riposte: 'Activates riposte',
     stealth: 'Activates stealth',
@@ -81,11 +94,9 @@ export const SynergyIcons = (props: { synergies?: Synergy[] }) => {
             {props.synergies === undefined ? (
                 <></>
             ) : (
-                props.synergies
-                    .sort((a, b) => a.localeCompare(b))
-                    .map(s => {
-                        return <SynergyIcon key={`${s}-synergy`} icon={s} />
-                    })
+                sortSynergies(props.synergies).map(s => {
+                    return <SynergyIcon key={`${s}-synergy`} icon={s} />
+                })
             )}
         </div>
     )

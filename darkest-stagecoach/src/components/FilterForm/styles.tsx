@@ -1,4 +1,4 @@
-import { Button, Typography } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const MainSection = styled.div`
@@ -27,7 +27,7 @@ export const SynergiesSection = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 350px;
+    max-width: 400px;
 `
 
 export const CharacteristicsSection = styled.div`

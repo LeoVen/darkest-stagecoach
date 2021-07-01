@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import { CSSProperties } from 'react'
+import { synergies } from '../../Synergy'
 import { THEME } from '../../theme'
 import { FilterBy, Synergy } from '../../Types'
 import { ClassProfileIcon } from '../ClassProfileIcons'
@@ -21,27 +22,6 @@ import {
     SelectionBox,
     SynergiesSection
 } from './styles'
-
-const synergies: Synergy[] = [
-    'bleed',
-    'blight',
-    'cure',
-    'heal',
-    'stress',
-    'buff',
-    'debuff',
-    'block',
-    'guard',
-    'guardBreak',
-    'reflect',
-    'stun',
-    'mark',
-    'riposte',
-    'stealth',
-    'deStealth',
-    'move',
-    'moveSelf'
-]
 
 const FILTER_THEME = createMuiTheme(
     {

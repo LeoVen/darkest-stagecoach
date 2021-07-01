@@ -21,7 +21,8 @@ export const Class_Commandant: ClassMod = {
         'debuff',
         'guardBreak',
         'bleed',
-        'move',
+        'knockback',
+        'pull',
         'stun',
         'deStealth'
     ],

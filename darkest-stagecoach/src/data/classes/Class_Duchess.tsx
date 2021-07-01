@@ -13,7 +13,7 @@ export const Class_Duchess: ClassMod = {
         support: 1,
         tank: 2
     },
-    synergy: ['riposte', 'deStealth', 'stun', 'debuff'],
+    synergy: ['riposte', 'deStealth', 'stun', 'debuff', 'forward'],
     resistances: {
         stun: 0.3,
         blight: 0.4,

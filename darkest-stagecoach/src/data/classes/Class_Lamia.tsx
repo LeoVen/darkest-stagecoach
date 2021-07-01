@@ -9,16 +9,23 @@ export const Class_Lamia: ClassMod = {
     religious: false,
     transform: true,
     originalHero: false,
+    classType: {
+        damage: 2,
+        healer: 3,
+        support: 1,
+        tank: 0
+    },
     synergy: [
         'heal',
         'stress',
         'debuff',
-        'move',
+        'shuffle',
         'cure',
         'guardBreak',
         'blight',
         'stun',
-        'moveSelf'
+        'forward',
+        'back'
     ],
     resistances: {
         stun: 0.2,

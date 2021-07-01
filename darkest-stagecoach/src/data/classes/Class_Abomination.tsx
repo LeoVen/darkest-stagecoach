@@ -7,6 +7,13 @@ export const Class_Abomination: ClassMod = {
     religious: false,
     transform: true,
     originalHero: true,
+    classType: {
+        damage: 2,
+        healer: 0,
+        support: 2,
+        tank: 1
+    },
+    synergy: ['stun', 'blight', 'knockback', 'forward', 'debuff'],
     resistances: {
         stun: 0.4,
         blight: 0.6,

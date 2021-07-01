@@ -9,7 +9,7 @@ export const OriginalHeroIcon = ({ style }: { style?: CSSProperties }) => (
         placement="top"
         arrow={true}>
         <div style={style}>
-            <img src={originalHero} />
+            <img src={originalHero} alt="orig-hero" />
         </div>
     </Tooltip>
 )

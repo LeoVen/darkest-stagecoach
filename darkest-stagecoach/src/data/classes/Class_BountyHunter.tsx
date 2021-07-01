@@ -7,6 +7,7 @@ export const Class_BountyHunter: ClassMod = {
     religious: false,
     transform: false,
     originalHero: true,
+    synergy: ['mark', 'stun', 'pull', 'bleed', 'knockback', 'shuffle'],
     resistances: {
         stun: 0.4,
         blight: 0.3,
