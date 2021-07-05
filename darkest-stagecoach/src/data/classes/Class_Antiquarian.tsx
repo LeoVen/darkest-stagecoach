@@ -3,6 +3,9 @@ import portrait from '../../assets/img/portraits/antiquarian_portrait_roster.png
 
 export const Class_Antiquarian: ClassMod = {
     name: 'Antiquarian',
+    description: [
+        'A scholar, researcher, and keen archaeologist, The Antiquarian is not well suited for combat. She is, however, an expert in self-preservation - by making herself scarce in a fight, or demanding an ally protect her, she ensures her survival. If direct combat is unavoidable, The Antiquarian can use her fulminating censer to heal and invigorate allies...and to toxify attackers.'
+    ],
     portrait: portrait,
     religious: false,
     transform: false,

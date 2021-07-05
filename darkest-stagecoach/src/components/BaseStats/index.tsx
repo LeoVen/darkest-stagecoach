@@ -67,7 +67,7 @@ export const BaseStats: React.FunctionComponent<Props> = ({ stats }) => {
                     {template('SPD', `${sA.speed + sW.speed}`, false)}
                 </StatsCol>
                 <StatsCol>
-                    {template('ACC MOD', `${sW.accuracy}`, false)}
+                    {template('ACC MOD', `${sW.accuracy * 100}`, false)}
                     {template(
                         'CRIT',
                         `${(sW.crit * 100).toPrecision(2)}`,

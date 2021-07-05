@@ -3,6 +3,9 @@ import portrait from '../../assets/img/portraits/crusader_portrait_roster.png'
 
 export const Class_Crusader: ClassMod = {
     name: 'Crusader',
+    description: [
+        'Battle-hardened and stalwart, the Crusader has held the front lines in a hundred holy wars. He either attacks foes head-on with righteous fury, or embraces a melee support role by leveraging his powerful defensive buffs & off-heals.'
+    ],
     portrait: portrait,
     religious: true,
     transform: false,

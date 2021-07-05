@@ -118,6 +118,7 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     const sortBaseStats: [string, SortingKeys][] = [
         ['MAX HP', 'maxHp'],
         ['DODGE', 'dodge'],
+        ['PROT', 'prot'],
         ['SPD', 'speed'],
         ['ACC MOD', 'accuracy'],
         ['CRIT', 'crit'],

@@ -12,7 +12,7 @@ export class ClassModFilter {
     filterName = (a: string): boolean => {
         let classA = classModIndex.get(a) as ClassMod
         let value = classA.name
-        return value.includes(this.filterState.name)
+        return value.toLowerCase().includes(this.filterState.name.toLowerCase())
     }
 
     filterReligious = (a: string): boolean => {

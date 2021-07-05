@@ -73,6 +73,9 @@ export const FilterForm = ({
             synergies: new Map()
         })
     }
+    const onTextFieldEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') onSubmit()
+    }
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         filterBy.name = e.currentTarget.value
         filterChange(filterBy)
@@ -104,6 +107,7 @@ export const FilterForm = ({
                 <FormContainedSections>
                     <FormSection>
                         <TextField
+                            onKeyUp={onTextFieldEnter}
                             id="filter-name"
                             label="Name"
                             onChange={handleNameChange}

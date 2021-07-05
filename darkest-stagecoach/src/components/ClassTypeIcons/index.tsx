@@ -23,7 +23,7 @@ export const ClassTypeIcons = ({ type }: Props) => {
         ['Damage:', 'How good at dealing damage'],
         ['Healer:', 'How good at healing HP and stress'],
         ['Support:', 'How good at overall battle benefits'],
-        ['Tank:', 'How good at tanking damage']
+        ['Tank:', 'How good at diverting and tanking damage']
     ]
 
     const template = (idx: number, value: ClassModTypeValue) => {

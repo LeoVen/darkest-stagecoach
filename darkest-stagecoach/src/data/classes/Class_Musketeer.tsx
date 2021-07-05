@@ -3,6 +3,9 @@ import portrait from '../../assets/img/portraits/musketeer_portrait_roster.png'
 
 export const Class_Musketeer: ClassMod = {
     name: 'Musketeer',
+    description: [
+        'A competitive sharpshooter with little practical experience, the Musketeer excels when enemies remain at a distance. Her unerring eye and practiced reloading makes a dependable damage dealer, and her smokescreen, first aid, and skeet shot provide some supportive utility to the party.'
+    ],
     portrait: portrait,
     religious: false,
     transform: false,
