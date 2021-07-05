@@ -8,7 +8,7 @@ export const OriginalHeroIcon = ({ style }: { style?: CSSProperties }) => (
         title="Original Hero"
         placement="top"
         arrow={true}>
-        <div style={style}>
+        <div style={{ userSelect: 'none', ...style }}>
             <img src={originalHero} alt="orig-hero" />
         </div>
     </Tooltip>

@@ -134,5 +134,6 @@ export type ClassModTypeValue =
     | 1 // Bad
     | 2 // Ok
     | 3 // Good
+    | 4 // Excellent
 
 export type ProfileType = 'transform' | 'religious'

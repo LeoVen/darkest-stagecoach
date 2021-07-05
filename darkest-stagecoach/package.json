@@ -2,7 +2,7 @@
     "name": "darkest-stagecoach",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://leoven.github.io/darkest-stagecoach",
+    "homepage": "https://dds.leoven.dev",
     "dependencies": {
         "@fortawesome/free-brands-svg-icons": "^5.15.3",
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
