@@ -5,7 +5,6 @@ import {
     ThemeProvider
 } from '@material-ui/core'
 import React from 'react'
-import { CSSProperties } from 'react'
 import { synergies } from '../../Synergy'
 import { THEME } from '../../theme'
 import { FilterBy, Synergy } from '../../Types'

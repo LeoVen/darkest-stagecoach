@@ -1,30 +1,13 @@
 import { Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import logo from '../assets/img/logo.png'
+import logo from '../../assets/img/logo.png'
+import { MainSection, ImageAndTitle, LogoImage } from './styles'
 
-export const Header = () => (
-    <header
-        style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '1em'
-        }}>
-        <div
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap'
-            }}>
-            <img
-                src={logo}
-                alt="Logo"
-                style={{
-                    width: '64px',
-                    height: '64px',
-                    marginRight: '1em'
-                }}
-            />
+export const MainHeader = () => (
+    <MainSection>
+        <ImageAndTitle>
+            <LogoImage src={logo} alt="Logo" />
             <Typography variant="h1">Darkest Stagecoach</Typography>
             <Typography variant="subtitle1" style={{ marginTop: '0.5em' }}>
                 A place to explore class mods for the{' '}
@@ -36,7 +19,7 @@ export const Header = () => (
                 </a>{' '}
                 game
             </Typography>
-        </div>
+        </ImageAndTitle>
         <div>
             <a
                 href="https://github.com/LeoVen/darkest-stagecoach"
@@ -45,5 +28,5 @@ export const Header = () => (
                 <FontAwesomeIcon icon={faGithub} size={'2x'} />
             </a>
         </div>
-    </header>
+    </MainSection>
 )
