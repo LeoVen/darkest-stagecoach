@@ -7,7 +7,7 @@ use std::{
 
 use crate::types::*;
 
-const WRITE_OVERRIDE: bool = true;
+const WRITE_OVERRIDE: bool = false;
 
 pub fn write_classes(classes: Vec<ClassInfo>, img_output: PathBuf, src_output: PathBuf) {
     let classes = filter_duplicates(classes);

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const MainSection = styled.div`
     width: 100%;
+    user-select: none;
 `
 
 export const FormContainedSections = styled.div`

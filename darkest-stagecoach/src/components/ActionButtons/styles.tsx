@@ -1,4 +1,4 @@
-import { Button, MenuItem, Paper } from '@material-ui/core'
+import { MenuItem, Paper } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const BottomButton = styled(Paper)`
@@ -6,19 +6,6 @@ export const BottomButton = styled(Paper)`
     right: calc(1rem + ${(props: { index: number }) => props.index * 80}px);
     bottom: 1rem;
     z-index: 2;
-`
-
-export const BottomFilterSection = styled(Button)`
-    background-color: var(--bg-primary);
-    border: var(--accent-primary) 1px solid;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    color: var(--font-primary);
-
-    &:hover {
-        background-color: var(--accent-primary);
-    }
 `
 
 export const DrawerContent = styled.div`

@@ -17,3 +17,21 @@ export const LogoImage = styled.img`
     height: 64px;
     margin-right: 1em;
 `
+
+export const EndButtons = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-height: 150px;
+`
+
+export const MainIconButton = styled.div`
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    display: grid;
+    place-items: center;
+`

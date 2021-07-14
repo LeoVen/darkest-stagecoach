@@ -1,13 +1,7 @@
 import React from 'react'
 import { Drawer, Menu, Divider, Button } from '@material-ui/core'
 import { FilterBy, SortBy, SortingKeys } from '../../Types'
-import {
-    BottomButton,
-    BottomFilterSection,
-    InnerItem,
-    SortItem,
-    DrawerContent
-} from './styles'
+import { BottomButton, InnerItem, SortItem, DrawerContent } from './styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,6 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { LevelRefDisplay } from '../LevelRefDisplay'
 import { FilterForm } from '../FilterForm'
+import { CustomIconButton } from '../CustomIconButton'
 
 interface FilterProps {
     filter: FilterBy
@@ -139,9 +134,9 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
     return (
         <>
             <BottomButton className="cursor-pointer" index={0}>
-                <BottomFilterSection onClick={handleOpenFilterModal}>
+                <CustomIconButton onClick={handleOpenFilterModal}>
                     <FontAwesomeIcon icon={faFilter} size={'1x'} />
-                </BottomFilterSection>
+                </CustomIconButton>
             </BottomButton>
             <Drawer
                 open={modalFilterOpen}
@@ -166,9 +161,9 @@ export const ActionButtons: React.FunctionComponent<FilterProps> = ({
                 index={1}
                 aria-controls="sort-button"
                 aria-haspopup="true">
-                <BottomFilterSection onClick={handleSortMenuOpen}>
+                <CustomIconButton onClick={handleSortMenuOpen}>
                     <FontAwesomeIcon icon={faSort} size={'1x'} />
-                </BottomFilterSection>
+                </CustomIconButton>
             </BottomButton>
             <Menu
                 id="sort-button"
