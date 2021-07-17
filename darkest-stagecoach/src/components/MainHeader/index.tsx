@@ -50,7 +50,7 @@ export const MainHeader = () => {
                             <ModalWrapper
                                 style={{
                                     width: '80vw',
-                                    maxWidth: '1280px'
+                                    maxWidth: '1080px'
                                 }}>
                                 <ModalCloseButton onClick={handleModalClose} />
                                 <InfoContent />

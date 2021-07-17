@@ -54,6 +54,15 @@ export const THEME = createMuiTheme({
             paperAnchorBottom: {
                 maxHeight: '50vh'
             }
+        },
+        MuiTableCell: {
+            head: {
+                color: 'var(--font-primary)',
+                fontWeight: 'bold'
+            },
+            body: {
+                color: 'var(--font-primary)'
+            }
         }
     },
     typography: {

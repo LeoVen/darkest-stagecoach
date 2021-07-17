@@ -21,7 +21,17 @@ import stealth from '../assets/img/stats/stealth.png'
 import stress from '../assets/img/stats/virtue.png'
 import stun from '../assets/img/stats/stun.png'
 import { Synergy } from '../Types'
-import { Tooltip } from '@material-ui/core'
+import {
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Tooltip,
+    Typography
+} from '@material-ui/core'
 import { CSSProperties } from 'react'
 import { sortSynergies } from '../Synergy'
 
@@ -29,6 +39,31 @@ interface SynergyIconProps {
     icon: Synergy
     style?: CSSProperties
 }
+
+const allSynergies: Array<Synergy> = [
+    'bleed',
+    'blight',
+    'block',
+    'buff',
+    'clear',
+    'cure',
+    'debuff',
+    'deStealth',
+    'guard',
+    'guardBreak',
+    'heal',
+    'mark',
+    'shuffle',
+    'knockback',
+    'pull',
+    'forward',
+    'back',
+    'reflect',
+    'riposte',
+    'stealth',
+    'stress',
+    'stun'
+]
 
 const iconMap: Record<Synergy, string> = {
     bleed: bleed,
@@ -60,7 +95,7 @@ const iconDescription: Record<Synergy, string> = {
     blight: 'Causes blight DoT',
     block: 'Add block ally',
     buff: 'Buffs ally',
-    clear: 'Clear stun or debuff or mark',
+    clear: 'Clears stun, debuff or mark',
     cure: 'Cures bleed/blight',
     debuff: 'Debuffs enemy',
     deStealth: 'Bypass or de-stealth enemy',
@@ -99,5 +134,34 @@ export const SynergyIcons = (props: { synergies?: Synergy[] }) => {
                 })
             )}
         </div>
+    )
+}
+
+export const SynergyIconsTable = () => {
+    return (
+        <TableContainer component={Paper} style={{ marginTop: '1rem' }}>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center">Icon</TableCell>
+                        <TableCell>The class can...</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {allSynergies.map(syn => (
+                        <TableRow key={`table-${syn}`}>
+                            <TableCell align="center">
+                                <img src={iconMap[syn]} alt="Icon" />
+                            </TableCell>
+                            <TableCell>
+                                <Typography variant="body1">
+                                    {iconDescription[syn]}
+                                </Typography>
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
     )
 }
