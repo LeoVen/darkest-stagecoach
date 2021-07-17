@@ -60,11 +60,12 @@ export const ClassCard = ({
             <TopLeftIcons>
                 {classInfo.originalHero ? <OriginalHeroIcon /> : null}
             </TopLeftIcons>
-            <TopIcons>
-                {classInfo.classType === undefined ? null : (
+            {/* TODO Until I decide how to classify classes properly */}
+            {/* <TopIcons>
+                {!!classInfo.classType && (
                     <ClassTypeIcons type={classInfo.classType} />
                 )}
-            </TopIcons>
+            </TopIcons> */}
             <BottomIcons>
                 <SynergyIcons synergies={classInfo.synergy} />
             </BottomIcons>
