@@ -16,7 +16,14 @@ export const Class_Antiquarian: ClassMod = {
         support: 2,
         tank: 0
     },
-    synergy: ['blight', 'deStealth', 'debuff', 'guard', 'heal', 'buff'],
+    synergy: new Set([
+        'blight',
+        'deStealth',
+        'debuff',
+        'guard',
+        'heal',
+        'buff'
+    ]),
     resistances: {
         stun: 0.2,
         blight: 0.2,

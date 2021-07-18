@@ -14,7 +14,7 @@ export const Class_Commandant: ClassMod = {
     religious: false,
     transform: false,
     originalHero: false,
-    synergy: [
+    synergy: new Set([
         'buff',
         'mark',
         'reflect',
@@ -25,7 +25,7 @@ export const Class_Commandant: ClassMod = {
         'pull',
         'stun',
         'deStealth'
-    ],
+    ]),
     resistances: {
         stun: 0.4,
         blight: 0.4,

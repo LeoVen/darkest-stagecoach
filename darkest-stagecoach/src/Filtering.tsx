@@ -30,6 +30,16 @@ export class ClassModFilter {
         return classA.originalHero === this.filterState.originalHero
     }
 
+    filterBySynergy = (a: string): boolean => {
+        let classA = classModIndex.get(a) as ClassMod
+        if (classA.synergy === undefined)
+            return this.filterState.synergies.size === 0
+        for (const [key, value] of this.filterState.synergies.entries()) {
+            if (classA.synergy.has(key) !== value) return false
+        }
+        return true
+    }
+
     getFilters(): Array<(a: string) => boolean> {
         let result = []
         if (this.filterState.name !== '') result.push(this.filterName)
@@ -39,6 +49,8 @@ export class ClassModFilter {
             result.push(this.filterTransform)
         if (this.filterState.originalHero !== undefined)
             result.push(this.filterOriginalHero)
+        if (this.filterState.synergies.size > 0)
+            result.push(this.filterBySynergy)
         return result
     }
 }

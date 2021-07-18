@@ -15,7 +15,7 @@ export const Class_Lamia: ClassMod = {
         support: 1,
         tank: 0
     },
-    synergy: [
+    synergy: new Set([
         'heal',
         'stress',
         'debuff',
@@ -26,7 +26,7 @@ export const Class_Lamia: ClassMod = {
         'stun',
         'forward',
         'back'
-    ],
+    ]),
     resistances: {
         stun: 0.2,
         blight: 0.6,

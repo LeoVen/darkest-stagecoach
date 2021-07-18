@@ -123,7 +123,7 @@ export const SynergyIcon = ({ icon, style }: SynergyIconProps) => {
     )
 }
 
-export const SynergyIcons = (props: { synergies?: Synergy[] }) => {
+export const SynergyIcons = (props: { synergies?: Set<Synergy> }) => {
     return (
         <div>
             {props.synergies === undefined ? (

@@ -19,7 +19,7 @@ export default interface ClassMod {
     transform?: boolean
     originalHero: boolean
     classType?: Record<ClassModType, ClassModTypeValue>
-    synergy?: Synergy[]
+    synergy?: Set<Synergy>
     position?: PreferredPositions
     totalSkills?: number
     resistances: Resistances

@@ -18,7 +18,7 @@ export const Class_Janissary: ClassMod = {
     religious: false,
     transform: false,
     originalHero: false,
-    synergy: ['debuff', 'stress', 'buff', 'guard', 'riposte'],
+    synergy: new Set(['debuff', 'stress', 'buff', 'guard', 'riposte']),
     resistances: {
         stun: 0.4,
         blight: 0.3,

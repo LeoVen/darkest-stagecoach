@@ -16,7 +16,7 @@ export const Class_BountyHunter: ClassMod = {
         support: 2,
         tank: 0
     },
-    synergy: ['mark', 'stun', 'pull', 'bleed', 'knockback', 'shuffle'],
+    synergy: new Set(['mark', 'stun', 'pull', 'bleed', 'knockback', 'shuffle']),
     resistances: {
         stun: 0.4,
         blight: 0.3,

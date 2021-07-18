@@ -16,7 +16,14 @@ export const Class_Arbalest: ClassMod = {
         support: 1,
         tank: 0
     },
-    synergy: ['mark', 'debuff', 'knockback', 'heal', 'deStealth', 'clear'],
+    synergy: new Set([
+        'mark',
+        'debuff',
+        'knockback',
+        'heal',
+        'deStealth',
+        'clear'
+    ]),
     resistances: {
         stun: 0.4,
         blight: 0.3,

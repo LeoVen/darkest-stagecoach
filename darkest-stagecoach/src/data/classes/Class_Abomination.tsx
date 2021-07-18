@@ -16,7 +16,7 @@ export const Class_Abomination: ClassMod = {
         support: 1,
         tank: 1
     },
-    synergy: ['stun', 'blight', 'knockback', 'forward', 'debuff'],
+    synergy: new Set(['stun', 'blight', 'knockback', 'forward', 'debuff']),
     resistances: {
         stun: 0.4,
         blight: 0.6,
