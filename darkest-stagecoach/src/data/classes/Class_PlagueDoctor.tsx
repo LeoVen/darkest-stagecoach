@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/plague_doctor_portrait_roster.png'
 
 export const Class_PlagueDoctor: ClassMod = {
     key: 'Class_PlagueDoctor',
     name: 'PlagueDoctor',
-    portrait: portrait,
     religious: false,
     transform: false,
     originalHero: true,

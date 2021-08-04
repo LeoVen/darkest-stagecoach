@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/fleshgolem_portrait_roster.png'
 
 export const Class_Fleshgolem: ClassMod = {
     key: 'Class_Fleshgolem',
     name: 'Fleshgolem',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

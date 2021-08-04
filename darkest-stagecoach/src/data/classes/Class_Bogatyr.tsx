@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/bogatyr_portrait_roster.png'
 
 export const Class_Bogatyr: ClassMod = {
     key: 'Class_Bogatyr',
     name: 'Bogatyr',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

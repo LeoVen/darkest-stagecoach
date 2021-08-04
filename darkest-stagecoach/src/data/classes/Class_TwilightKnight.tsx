@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/twilight_knight_portrait_roster.png'
 
 export const Class_TwilightKnight: ClassMod = {
     key: 'Class_TwilightKnight',
     name: 'TwilightKnight',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

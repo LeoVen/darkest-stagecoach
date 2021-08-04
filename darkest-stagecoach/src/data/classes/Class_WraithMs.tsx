@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/wraith_ms_portrait_roster.png'
 import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_WraithMs: ClassMod = {
@@ -9,7 +8,6 @@ export const Class_WraithMs: ClassMod = {
         'An assassin from a distant land, the Wraith fights using a peculiar weapon of blade and chain. Master of this exotic tool of bloodshed, this heartless killer swings his sickle like a whip, lacerating and decapitating his foes from a range or delivering a brutal execution in melee.',
         'The Wraith is not an agile combatant. His body and mind are cold from a decade of remorseless slaughter and he has adapted a patient and calculating method to his combat tactics. He relies on ensnaring his victims or temporarily incapacitating them with the blunt side of his weapon, after which he can deliver an efficient and fatal attack.'
     ],
-    portrait: portrait,
     religious: false,
     transform: false,
     originalHero: false,

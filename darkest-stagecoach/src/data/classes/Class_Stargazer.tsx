@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/stargazer_portrait_roster.png'
 
 export const Class_Stargazer: ClassMod = {
     key: 'Class_Stargazer',
     name: 'Stargazer',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

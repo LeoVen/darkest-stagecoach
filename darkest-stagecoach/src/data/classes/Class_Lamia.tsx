@@ -1,12 +1,10 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/lamia_portrait_roster.png'
 import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_Lamia: ClassMod = {
     key: 'Class_Lamia',
     name: 'Lamia',
     description: ['Beauty is remembered forever...'],
-    portrait: portrait,
     religious: false,
     transform: true,
     originalHero: false,

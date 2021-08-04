@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/revenant_portrait_roster.png'
 import { Author_Exaelus } from '../authors/Author_Exaelus'
 
 export const Class_Revenant: ClassMod = {
@@ -8,7 +7,6 @@ export const Class_Revenant: ClassMod = {
     description: [
         'The Revenant is primarly a tank that is capable of doing really decent damage once his enemies start to bleed. He can heal and transfer all bleeds from all enemies to a single target. He also provides a skeleton key when embarking on a mission.'
     ],
-    portrait: portrait,
     religious: false,
     transform: false,
     originalHero: false,

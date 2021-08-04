@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/abomination_portrait_roster.png'
 
 export const Class_Abomination: ClassMod = {
     key: 'Class_Abomination',
@@ -7,7 +6,6 @@ export const Class_Abomination: ClassMod = {
     description: [
         'Beaten, branded and imprisoned for untold decades, this furtive vagrant hides a terrible secret. The Eldritch poison coursing through his veins has given him unspeakable power, at a terrible cost. As his form changes, so too does his role in combat!'
     ],
-    portrait: portrait,
     religious: false,
     transform: true,
     originalHero: true,

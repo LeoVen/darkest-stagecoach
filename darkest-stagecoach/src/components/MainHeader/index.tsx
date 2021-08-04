@@ -1,7 +1,7 @@
 import { Fade, Modal, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faInfo } from '@fortawesome/free-solid-svg-icons'
+import { faInfo, faUpload } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/img/logo.png'
 import { MainSection, ImageAndTitle, LogoImage, EndButtons } from './styles'
 import { CustomIconButton } from '../CustomIconButton'
@@ -9,15 +9,23 @@ import { useState } from 'react'
 import { ModalWrapper } from '../../styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { InfoContent } from '../InfoContent'
+import { UploadClass } from '../UploadClass'
 
 export const MainHeader = () => {
-    const [modalOpen, setModalOpen] = useState(false)
+    const [infoModalOpen, setInfoModalOpen] = useState(false)
+    const [uploadModalOpen, setUploadModalOpen] = useState(false)
 
-    const handleModalOpen = () => {
-        setModalOpen(true)
+    const handleInfoModalOpen = () => {
+        setInfoModalOpen(true)
     }
-    const handleModalClose = () => {
-        setModalOpen(false)
+    const handleInfoModalClose = () => {
+        setInfoModalOpen(false)
+    }
+    const handleUploadModalOpen = () => {
+        setUploadModalOpen(true)
+    }
+    const handleUploadModalClose = () => {
+        setUploadModalOpen(false)
     }
 
     return (
@@ -41,19 +49,44 @@ export const MainHeader = () => {
                 </ImageAndTitle>
                 <EndButtons>
                     <CustomIconButton
+                        className="cursor-pointer"
                         style={{ padding: '0.6rem' }}
-                        onClick={handleModalOpen}>
+                        onClick={handleInfoModalOpen}>
                         <FontAwesomeIcon icon={faInfo} size={'1x'} />
                     </CustomIconButton>
-                    <Modal open={modalOpen} onClose={handleModalClose}>
-                        <Fade in={modalOpen} timeout={400} exit={false}>
+                    <Modal open={infoModalOpen} onClose={handleInfoModalClose}>
+                        <Fade in={infoModalOpen} timeout={400} exit={false}>
                             <ModalWrapper
                                 style={{
                                     width: '80vw',
                                     maxWidth: '1080px'
                                 }}>
-                                <ModalCloseButton onClick={handleModalClose} />
+                                <ModalCloseButton
+                                    onClick={handleInfoModalClose}
+                                />
                                 <InfoContent />
+                            </ModalWrapper>
+                        </Fade>
+                    </Modal>
+                    <CustomIconButton
+                        className="cursor-pointer"
+                        style={{ padding: '0.6rem' }}
+                        onClick={handleUploadModalOpen}>
+                        <FontAwesomeIcon icon={faUpload} size={'1x'} />
+                    </CustomIconButton>
+                    <Modal
+                        open={uploadModalOpen}
+                        onClose={handleUploadModalClose}>
+                        <Fade in={uploadModalOpen} timeout={400} exit={false}>
+                            <ModalWrapper
+                                style={{
+                                    width: '80vw',
+                                    maxWidth: '1080px'
+                                }}>
+                                <ModalCloseButton
+                                    onClick={handleUploadModalClose}
+                                />
+                                <UploadClass />
                             </ModalWrapper>
                         </Fade>
                     </Modal>
@@ -61,7 +94,9 @@ export const MainHeader = () => {
                         href="https://github.com/LeoVen/darkest-stagecoach"
                         target="_blank"
                         rel="noreferrer">
-                        <CustomIconButton style={{ padding: '0.6rem' }}>
+                        <CustomIconButton
+                            className="cursor-pointer"
+                            style={{ padding: '0.6rem' }}>
                             <FontAwesomeIcon icon={faGithub} size={'1x'} />
                         </CustomIconButton>
                     </a>

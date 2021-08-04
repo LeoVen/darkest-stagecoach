@@ -1,6 +1,7 @@
 import { Fade, Modal, Typography } from '@material-ui/core'
 import ClassMod from '../../data/ClassMod'
 import { classModIndex } from '../../data/ClassModIndex'
+import { Portrait } from '../../data/Portrait'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
 import { ClassProfileIcons } from '../ClassProfileIcons'
@@ -42,10 +43,9 @@ export const ClassCard = ({
                 <ImageAndIcons>
                     <ClassProfileIcons classInfo={classInfo} />
                     <ImageAndPositions>
-                        <img
-                            src={classInfo.portrait}
+                        <Portrait
+                            classKey={classKey}
                             style={{ margin: '1rem 0 0 0' }}
-                            alt="Hero Portrait"
                         />
                         <Positions
                             pos={classInfo.position}

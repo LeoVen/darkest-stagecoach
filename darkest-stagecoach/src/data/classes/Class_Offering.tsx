@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/offering_portrait_roster.png'
 
 export const Class_Offering: ClassMod = {
     key: 'Class_Offering',
     name: 'Offering',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/kratos_portrait_roster.png'
 
 export const Class_Kratos: ClassMod = {
     key: 'Class_Kratos',
     name: 'Kratos',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

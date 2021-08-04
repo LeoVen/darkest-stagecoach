@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/snake_charmer_portrait_roster.png'
 
 export const Class_SnakeCharmer: ClassMod = {
     key: 'Class_SnakeCharmer',
     name: 'SnakeCharmer',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

@@ -12,6 +12,7 @@ import { ArrowDownIcon } from '../ArrowDownIcon'
 import { ResistancesSection } from '../Resistances'
 import { BaseStats } from '../BaseStats'
 import { ModSources } from '../ModSources'
+import { Portrait } from '../../data/Portrait'
 
 interface ClassCardProps {
     classMod: ClassMod
@@ -67,9 +68,8 @@ export const ClassModal: React.FunctionComponent<ClassCardProps> = ({
     return (
         <MainModal>
             <ClassCardBanner>
-                <img
-                    src={classMod.portrait}
-                    alt="Hero Portrait"
+                <Portrait
+                    classKey={classMod.key}
                     style={{ margin: '0 1em 1em 0' }}
                 />
                 <Typography variant="h2" style={{ margin: '0 0 0.5em 0' }}>

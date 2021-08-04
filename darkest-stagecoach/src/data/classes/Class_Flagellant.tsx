@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/flagellant_portrait_roster.png'
 
 export const Class_Flagellant: ClassMod = {
     key: 'Class_Flagellant',
     name: 'Flagellant',
-    portrait: portrait,
     religious: true,
     transform: false,
     originalHero: true,

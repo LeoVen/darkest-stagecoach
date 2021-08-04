@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/ushiro_portrait_roster.png'
 
 export const Class_Ushiro: ClassMod = {
     key: 'Class_Ushiro',
     name: 'Ushiro',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

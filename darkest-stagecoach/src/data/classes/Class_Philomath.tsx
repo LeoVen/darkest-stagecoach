@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/philomath_portrait_roster.png'
 
 export const Class_Philomath: ClassMod = {
     key: 'Class_Philomath',
     name: 'Philomath',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

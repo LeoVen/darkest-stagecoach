@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/wraith_portrait_roster.png'
 
 export const Class_Wraith: ClassMod = {
     key: 'Class_Wraith',
     name: 'Wraith',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

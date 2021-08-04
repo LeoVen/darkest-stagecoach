@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/fish_onmyoji_portrait_roster.png'
 
 export const Class_FishOnmyoji: ClassMod = {
     key: 'Class_FishOnmyoji',
     name: 'FishOnmyoji',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

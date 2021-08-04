@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/nbb_owlwing_portrait_roster.png'
 
 export const Class_NbbOwlwing: ClassMod = {
     key: 'Class_NbbOwlwing',
     name: 'NbbOwlwing',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

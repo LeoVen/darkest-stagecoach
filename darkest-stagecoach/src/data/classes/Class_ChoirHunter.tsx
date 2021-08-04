@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/choir_hunter_portrait_roster.png'
 import { Author_Shay } from '../authors/Author_Shay'
 import { Author_MoonKanin } from '../authors/Author_MoonKanin'
 import { Author_Rehtael } from '../authors/Author_Rehtael'
@@ -8,7 +7,6 @@ export const Class_ChoirHunter: ClassMod = {
     key: 'Class_ChoirHunter',
     name: 'Choir Hunter',
     description: ['A wandering sister in search of knowledge.'],
-    portrait: portrait,
     religious: true,
     transform: false,
     originalHero: false,

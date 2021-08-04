@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/janissary_portrait_roster.png'
 import { Author_Shay } from '../authors/Author_Shay'
 import { Author_Snorlaxxo } from '../authors/Author_Snorlaxxo'
 import { Author_EbonyBetty } from '../authors/Author_EbonyBetty'
@@ -15,7 +14,6 @@ export const Class_Janissary: ClassMod = {
     description: [
         'The Janissary is a weathered soldier who made the long trek from the southeast to aid the Hamlet. He claims he was sent by his Sultan as an act of goodwill, but is there more to his story than he lets on to? However inscrutable, we know that we will not turn down help from someone who so readily masters and shares the art of war.'
     ],
-    portrait: portrait,
     religious: false,
     transform: false,
     originalHero: false,

@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/bluesman_bet_portrait_roster.png'
 
 export const Class_BluesmanBet: ClassMod = {
     key: 'Class_BluesmanBet',
     name: 'BluesmanBet',
-    portrait: portrait,
     religious: true,
     originalHero: false,
     resistances: {

@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/hellion_portrait_roster.png'
 
 export const Class_Hellion: ClassMod = {
     key: 'Class_Hellion',
     name: 'Hellion',
-    portrait: portrait,
     religious: false,
     transform: false,
     originalHero: true,

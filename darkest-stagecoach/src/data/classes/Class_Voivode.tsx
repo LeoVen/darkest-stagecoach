@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/voivode_portrait_roster.png'
 
 export const Class_Voivode: ClassMod = {
     key: 'Class_Voivode',
     name: 'Voivode',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {

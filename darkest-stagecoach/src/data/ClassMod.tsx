@@ -15,7 +15,6 @@ export default interface ClassMod {
     name: string
     description?: string[]
     similarity?: OriginalHeroes
-    portrait: string
     religious?: boolean
     transform?: boolean
     originalHero: boolean

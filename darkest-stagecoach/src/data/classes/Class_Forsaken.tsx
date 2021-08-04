@@ -1,10 +1,8 @@
 import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/forsaken_portrait_roster.png'
 
 export const Class_Forsaken: ClassMod = {
     key: 'Class_Forsaken',
     name: 'Forsaken',
-    portrait: portrait,
     religious: false,
     originalHero: false,
     resistances: {
