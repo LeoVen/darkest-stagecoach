@@ -6,7 +6,7 @@ import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
 import { FilterBy, SortBy } from './Types'
 import { sortClassMods } from './Sorting'
-import { ClassModIndex } from './data/ClassModIndex'
+import { classModIndex } from './data/ClassModIndex'
 import { ClassCard } from './components/ClassCard'
 import { ScrollTopButton } from './components/ScrollTopButton'
 import { filterClassMods } from './Filtering'
@@ -23,7 +23,7 @@ function App() {
         levelRef: 0
     })
     const [classMods, setClassMods] = React.useState<string[]>(
-        Array.from(sortClassMods(Array.from(ClassModIndex().keys()), sort))
+        Array.from(sortClassMods(Array.from(classModIndex().keys()), sort))
     )
     const [selectedClass, setSelectedClass] = React.useState<
         ClassMod | undefined
@@ -42,7 +42,7 @@ function App() {
     const handleFilterChange = (filterBy: FilterBy) => {
         setClassMods(
             sortClassMods(
-                filterClassMods(Array.from(ClassModIndex().keys()), filterBy),
+                filterClassMods(Array.from(classModIndex().keys()), filterBy),
                 sort
             )
         )

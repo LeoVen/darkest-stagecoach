@@ -13,7 +13,7 @@ import { ModalCloseButton } from '../ModalCloseButton'
 import { AuthorInfo } from '../AuthorInfo'
 
 interface AuthorCardProps {
-    author: Author
+    author: Author | string
     credits: Credits
 }
 
@@ -24,41 +24,50 @@ export const AuthorCard: React.FunctionComponent<AuthorCardProps> = ({
     const handleOpenModal = () => {
         setOpen(true)
     }
-
     const handleCloseModal = () => {
         setOpen(false)
+    }
+
+    const getName = (author: Author | string): string => {
+        if (typeof author === 'string') return author
+        return author.name
     }
 
     let [open, setOpen] = React.useState(false)
 
     return (
-        <AuthorCardMain>
-            <AuthorCardRow>
-                <Typography
-                    className="anchor"
-                    variant="subtitle1"
-                    onClick={handleOpenModal}
-                    style={{ display: 'inline-block' }}>
-                    {author.name}
-                </Typography>
+        <>
+            <AuthorCardMain>
+                <AuthorCardRow>
+                    <Typography
+                        className="anchor"
+                        variant="subtitle1"
+                        onClick={handleOpenModal}
+                        style={{ display: 'inline-block' }}>
+                        {getName(author)}
+                    </Typography>
+                    <AuthorCardCreditList>
+                        {credits.map((credit, i) => {
+                            return (
+                                <AuthorCardCreditItem
+                                    variant="body1"
+                                    key={`${credit}-${i}`}>
+                                    {credit}
+                                </AuthorCardCreditItem>
+                            )
+                        })}
+                    </AuthorCardCreditList>
+                </AuthorCardRow>
+            </AuthorCardMain>
+
+            {typeof author === 'string' ? null : (
                 <Modal open={open} onClose={handleCloseModal}>
                     <ModalWrapper>
                         <ModalCloseButton onClick={handleCloseModal} />
                         <AuthorInfo author={author} />
                     </ModalWrapper>
                 </Modal>
-                <AuthorCardCreditList>
-                    {credits.map((credit, i) => {
-                        return (
-                            <AuthorCardCreditItem
-                                variant="body1"
-                                key={`${credit}-${i}`}>
-                                {credit}
-                            </AuthorCardCreditItem>
-                        )
-                    })}
-                </AuthorCardCreditList>
-            </AuthorCardRow>
-        </AuthorCardMain>
+            )}
+        </>
     )
 }

@@ -131,9 +131,9 @@ import { Class_PlagueDoctor } from './classes/Class_PlagueDoctor'
 import { Class_Shieldbreaker } from './classes/Class_Shieldbreaker'
 import { Class_Vestal } from './classes/Class_Vestal'
 
-export const classModIndex = ClassModIndex()
+export const ClassModIndex = classModIndex()
 
-export function ClassModIndex(): Map<string, ClassMod> {
+export function classModIndex(): Map<string, ClassMod> {
     return new Map([
         ['Class_2andb', Class_2andb],
         ['Class_Acolyte', Class_Acolyte],

@@ -1,6 +1,6 @@
 import { Fade, Modal, Typography } from '@material-ui/core'
 import ClassMod from '../../data/ClassMod'
-import { classModIndex } from '../../data/ClassModIndex'
+import { ClassModIndex } from '../../data/ClassModIndex'
 import { Portrait } from '../../data/Portrait'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
@@ -34,7 +34,7 @@ export const ClassCard = ({
     handleCloseModal,
     selectedClass
 }: ClassCardProps) => {
-    let classInfo = classModIndex.get(classKey) as ClassMod
+    let classInfo = ClassModIndex.get(classKey) as ClassMod
     return (
         <div
             key={`${classInfo.name}-${index}`}

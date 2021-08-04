@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_Thrall: ClassMod = {
     key: 'Class_Thrall',
@@ -47,7 +46,7 @@ export const Class_Thrall: ClassMod = {
     ],
     authors: [
         {
-            author: Author_MarvinSeo,
+            author: 'Author_MarvinSeo',
             credits: ['All']
         }
     ]

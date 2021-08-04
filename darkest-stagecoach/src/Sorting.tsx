@@ -1,5 +1,5 @@
 import ClassMod from './data/ClassMod'
-import { classModIndex } from './data/ClassModIndex'
+import { ClassModIndex } from './data/ClassModIndex'
 import { SortBy, SortingKeys } from './Types'
 
 export class ClassModSorter {
@@ -20,14 +20,14 @@ export class ClassModSorter {
     }
 
     sortByNameDefault = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         return classA.name.localeCompare(classB.name)
     }
 
     sortByName = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         return (
             classA.name.localeCompare(classB.name) *
             this.sortingState.sortDirection
@@ -35,8 +35,8 @@ export class ClassModSorter {
     }
 
     sortByHp = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.armours[idx].hp
         let rhs = classB.stats.armours[idx].hp
@@ -44,8 +44,8 @@ export class ClassModSorter {
     }
 
     sortByDodge = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.armours[idx].dodge
         let rhs = classB.stats.armours[idx].dodge
@@ -53,8 +53,8 @@ export class ClassModSorter {
     }
 
     sortByProt = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.armours[idx].prot
         let rhs = classB.stats.armours[idx].prot
@@ -62,8 +62,8 @@ export class ClassModSorter {
     }
 
     sortBySpeed = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs =
             classA.stats.armours[idx].speed + classA.stats.weapons[idx].speed
@@ -73,8 +73,8 @@ export class ClassModSorter {
     }
 
     sortByAccuracy = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.weapons[idx].accuracy
         let rhs = classB.stats.weapons[idx].accuracy
@@ -82,8 +82,8 @@ export class ClassModSorter {
     }
 
     sortByCrit = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.weapons[idx].crit
         let rhs = classB.stats.weapons[idx].crit
@@ -91,8 +91,8 @@ export class ClassModSorter {
     }
 
     sortByDamage = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let idx = this.sortingState.levelRef
         let lhs = classA.stats.weapons[idx].damage[1]
         let rhs = classB.stats.weapons[idx].damage[1]
@@ -100,64 +100,64 @@ export class ClassModSorter {
     }
 
     sortByStun = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.stun
         let rhs = classB.resistances.stun
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByBlight = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.blight
         let rhs = classB.resistances.blight
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByDisease = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.disease
         let rhs = classB.resistances.disease
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByDeathBlow = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.deathBlow
         let rhs = classB.resistances.deathBlow
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByMove = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.move
         let rhs = classB.resistances.move
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByBleed = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.bleed
         let rhs = classB.resistances.bleed
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByDebuff = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.debuff
         let rhs = classB.resistances.debuff
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))
     }
 
     sortByTrap = (a: string, b: string) => {
-        let classA = classModIndex.get(a) as ClassMod
-        let classB = classModIndex.get(b) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
+        let classB = ClassModIndex.get(b) as ClassMod
         let lhs = classA.resistances.trap
         let rhs = classB.resistances.trap
         return this.defaultSort(lhs, rhs, () => this.sortByNameDefault(a, b))

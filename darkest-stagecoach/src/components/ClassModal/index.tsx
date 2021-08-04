@@ -13,6 +13,7 @@ import { ResistancesSection } from '../Resistances'
 import { BaseStats } from '../BaseStats'
 import { ModSources } from '../ModSources'
 import { Portrait } from '../../data/Portrait'
+import { AuthorIndex } from '../../data/AuthorIndex'
 
 interface ClassCardProps {
     classMod: ClassMod
@@ -98,13 +99,16 @@ export const ClassModal: React.FunctionComponent<ClassCardProps> = ({
                         {classMod.authors === undefined ? (
                             <Typography variant="body1">Unavailable</Typography>
                         ) : (
-                            classMod.authors.map((auth, i) => (
-                                <AuthorCard
-                                    key={`${auth.author.name}-${i}`}
-                                    author={auth.author}
-                                    credits={auth.credits}
-                                />
-                            ))
+                            classMod.authors.map((auth, i) => {
+                                const author = AuthorIndex.get(auth.author)
+                                return (
+                                    <AuthorCard
+                                        key={`${auth.author}-${i}`}
+                                        author={author ?? auth.author}
+                                        credits={auth.credits}
+                                    />
+                                )
+                            })
                         )}
                     </div>
                 </AccordionTemplate>

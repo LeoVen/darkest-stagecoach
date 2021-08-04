@@ -1,8 +1,4 @@
 import ClassMod from '../ClassMod'
-import { Author_Terkmc } from '../authors/Author_Terkmc'
-import { Author_Cryptix } from '../authors/Author_Cryptix'
-import { Author_VoidSlime } from '../authors/Author_VoidSlime'
-import { Author_54NBB } from '../authors/Author_54NBB'
 
 export const Class_Commandant: ClassMod = {
     key: 'Class_Commandant',
@@ -61,19 +57,19 @@ export const Class_Commandant: ClassMod = {
     ],
     authors: [
         {
-            author: Author_Terkmc,
+            author: 'Author_Terkmc',
             credits: ['Concept', 'Art', 'Design', 'Sound']
         },
         {
-            author: Author_Cryptix,
+            author: 'Author_Cryptix',
             credits: ['Scripting']
         },
         {
-            author: Author_VoidSlime,
+            author: 'Author_VoidSlime',
             credits: ['Scripting']
         },
         {
-            author: Author_54NBB,
+            author: 'Author_54NBB',
             credits: ['Animation']
         }
     ]

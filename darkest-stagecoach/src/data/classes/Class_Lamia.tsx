@@ -1,5 +1,4 @@
 import ClassMod from '../ClassMod'
-import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_Lamia: ClassMod = {
     key: 'Class_Lamia',
@@ -66,7 +65,7 @@ export const Class_Lamia: ClassMod = {
     ],
     authors: [
         {
-            author: Author_MarvinSeo,
+            author: 'Author_MarvinSeo',
             credits: ['All']
         }
     ]

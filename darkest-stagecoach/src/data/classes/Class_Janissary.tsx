@@ -1,12 +1,4 @@
 import ClassMod from '../ClassMod'
-import { Author_Shay } from '../authors/Author_Shay'
-import { Author_Snorlaxxo } from '../authors/Author_Snorlaxxo'
-import { Author_EbonyBetty } from '../authors/Author_EbonyBetty'
-import { Author_Terkmc } from '../authors/Author_Terkmc'
-import { Author_54NBB } from '../authors/Author_54NBB'
-import { Author_Ruin } from '../authors/Author_Ruin'
-import { Author_Cat } from '../authors/Author_Cat'
-import { Author_Sasiji } from '../authors/Author_Sasiji'
 
 export const Class_Janissary: ClassMod = {
     key: 'Class_Janissary',
@@ -54,39 +46,39 @@ export const Class_Janissary: ClassMod = {
     ],
     authors: [
         {
-            author: Author_Shay,
+            author: 'Author_Shay',
             credits: ['Design', 'Sound']
         },
         {
-            author: Author_Snorlaxxo,
+            author: 'Author_Snorlaxxo',
             credits: ['Design', 'Scripting']
         },
         {
-            author: Author_EbonyBetty,
+            author: 'Author_EbonyBetty',
             credits: ['Concept']
         },
         {
-            author: { name: 'Black Templar#8655', links: [] },
+            author: 'Black Templar#8655',
             credits: ['Concept']
         },
         {
-            author: Author_Terkmc,
+            author: 'Author_Terkmc',
             credits: ['Art']
         },
         {
-            author: Author_54NBB,
+            author: 'Author_54NBB',
             credits: ['Animation']
         },
         {
-            author: Author_Ruin,
+            author: 'Author_Ruin',
             credits: ['Color Variants']
         },
         {
-            author: Author_Cat,
+            author: 'Author_Cat',
             credits: ['Testing', 'Writing']
         },
         {
-            author: Author_Sasiji,
+            author: 'Author_Sasiji',
             credits: ['Code Assistance']
         }
     ]

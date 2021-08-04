@@ -1,5 +1,5 @@
 import ClassMod from './data/ClassMod'
-import { classModIndex } from './data/ClassModIndex'
+import { ClassModIndex } from './data/ClassModIndex'
 import { FilterBy } from './Types'
 
 export class ClassModFilter {
@@ -10,28 +10,28 @@ export class ClassModFilter {
     }
 
     filterName = (a: string): boolean => {
-        let classA = classModIndex.get(a) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
         let value = classA.name
         return value.toLowerCase().includes(this.filterState.name.toLowerCase())
     }
 
     filterReligious = (a: string): boolean => {
-        let classA = classModIndex.get(a) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
         return classA.religious === this.filterState.religious
     }
 
     filterTransform = (a: string): boolean => {
-        let classA = classModIndex.get(a) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
         return classA.transform === this.filterState.transform
     }
 
     filterOriginalHero = (a: string): boolean => {
-        let classA = classModIndex.get(a) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
         return classA.originalHero === this.filterState.originalHero
     }
 
     filterBySynergy = (a: string): boolean => {
-        let classA = classModIndex.get(a) as ClassMod
+        let classA = ClassModIndex.get(a) as ClassMod
         if (classA.synergy === undefined)
             return this.filterState.synergies.size === 0
         for (const [key, value] of this.filterState.synergies.entries()) {

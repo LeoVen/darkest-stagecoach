@@ -29,7 +29,7 @@ export default interface ClassMod {
         link: string
     }[]
     authors?: {
-        author: Author
+        author: string
         credits: Credits
     }[]
 }

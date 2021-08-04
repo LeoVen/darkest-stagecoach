@@ -1,7 +1,4 @@
 import ClassMod from '../ClassMod'
-import { Author_Shay } from '../authors/Author_Shay'
-import { Author_MoonKanin } from '../authors/Author_MoonKanin'
-import { Author_Rehtael } from '../authors/Author_Rehtael'
 
 export const Class_ChoirHunter: ClassMod = {
     key: 'Class_ChoirHunter',
@@ -61,15 +58,15 @@ export const Class_ChoirHunter: ClassMod = {
     ],
     authors: [
         {
-            author: Author_Shay,
+            author: 'Author_Shay',
             credits: ['Sound']
         },
         {
-            author: Author_MoonKanin,
+            author: 'Author_MoonKanin',
             credits: ['Concept', 'Art', 'Animation', 'Writing', 'Design']
         },
         {
-            author: Author_Rehtael,
+            author: 'Author_Rehtael',
             credits: ['Design', 'Scripting', 'Trailer']
         }
     ]
