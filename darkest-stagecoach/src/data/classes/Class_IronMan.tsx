@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/iron_man_portrait_roster.png'
 
 export const Class_IronMan: ClassMod = {
+    key: 'Class_IronMan',
     name: 'IronMan',
     portrait: portrait,
     religious: false,

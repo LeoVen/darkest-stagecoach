@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/darkwraith_portrait_roster.png'
 
 export const Class_Darkwraith: ClassMod = {
+    key: 'Class_Darkwraith',
     name: 'Darkwraith',
     portrait: portrait,
     religious: false,

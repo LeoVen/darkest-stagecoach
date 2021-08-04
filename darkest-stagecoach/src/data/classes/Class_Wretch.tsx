@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/wretch_portrait_roster.png'
 
 export const Class_Wretch: ClassMod = {
+    key: 'Class_Wretch',
     name: 'Wretch',
     portrait: portrait,
     religious: false,

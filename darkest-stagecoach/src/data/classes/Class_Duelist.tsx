@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/duelist_portrait_roster.png'
 
 export const Class_Duelist: ClassMod = {
+    key: 'Class_Duelist',
     name: 'Duelist',
     portrait: portrait,
     religious: false,

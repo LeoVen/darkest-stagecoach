@@ -10,6 +10,7 @@ import { Author_Cat } from '../authors/Author_Cat'
 import { Author_Sasiji } from '../authors/Author_Sasiji'
 
 export const Class_Janissary: ClassMod = {
+    key: 'Class_Janissary',
     name: 'Janissary',
     description: [
         'The Janissary is a weathered soldier who made the long trek from the southeast to aid the Hamlet. He claims he was sent by his Sultan as an act of goodwill, but is there more to his story than he lets on to? However inscrutable, we know that we will not turn down help from someone who so readily masters and shares the art of war.'

@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/hollow_knight_portrait_roster.png'
 
 export const Class_HollowKnight: ClassMod = {
+    key: 'Class_HollowKnight',
     name: 'HollowKnight',
     portrait: portrait,
     religious: false,

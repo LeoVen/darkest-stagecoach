@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/arbalest_portrait_roster.png'
 
 export const Class_Arbalest: ClassMod = {
+    key: 'Class_Arbalest',
     name: 'Arbalest',
     description: [
         'A runaway turned soldier, the Arbalest is the definitive backline fighter. Able to rain suppressing fire down on the enemy, snipe high profile targets and apply powerfully effective first-aid, she is a rallying point, a turret, a beacon in the dark.'

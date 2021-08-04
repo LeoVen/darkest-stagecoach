@@ -3,6 +3,7 @@ import portrait from '../../assets/img/portraits/wraith_ms_portrait_roster.png'
 import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_WraithMs: ClassMod = {
+    key: 'Class_WraithMs',
     name: 'Wraith',
     description: [
         'An assassin from a distant land, the Wraith fights using a peculiar weapon of blade and chain. Master of this exotic tool of bloodshed, this heartless killer swings his sickle like a whip, lacerating and decapitating his foes from a range or delivering a brutal execution in melee.',

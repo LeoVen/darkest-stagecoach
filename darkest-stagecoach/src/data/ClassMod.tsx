@@ -11,6 +11,7 @@ import {
 } from '../Types'
 
 export default interface ClassMod {
+    key: string
     name: string
     description?: string[]
     similarity?: OriginalHeroes

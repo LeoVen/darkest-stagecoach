@@ -3,6 +3,7 @@ import portrait from '../../assets/img/portraits/thrall_portrait_roster.png'
 import { Author_MarvinSeo } from '../authors/Author_MarvinSeo'
 
 export const Class_Thrall: ClassMod = {
+    key: 'Class_Thrall',
     name: 'Thrall',
     description: [
         'A monster of a man, the Thrall can take a beating and deliver one twice as strong in return. The Thrall shines best in the thick of combat, where he can deliver devastating blows and punish any who try to defy him. Should the opponent be too far to engage in close combat, the Thrall can take a moment to hype himself up and charge back into the fray, trampling all who stand in his way.',

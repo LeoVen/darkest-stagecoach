@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/ringmaster_portrait_roster.png'
 
 export const Class_Ringmaster: ClassMod = {
+    key: 'Class_Ringmaster',
     name: 'Ringmaster',
     portrait: portrait,
     religious: false,

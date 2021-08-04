@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/steel_driver_portrait_roster.png'
 
 export const Class_SteelDriver: ClassMod = {
+    key: 'Class_SteelDriver',
     name: 'SteelDriver',
     portrait: portrait,
     religious: true,

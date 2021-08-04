@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/shieldbreaker_portrait_roster.png'
 
 export const Class_Shieldbreaker: ClassMod = {
+    key: 'Class_Shieldbreaker',
     name: 'Shieldbreaker',
     portrait: portrait,
     religious: false,

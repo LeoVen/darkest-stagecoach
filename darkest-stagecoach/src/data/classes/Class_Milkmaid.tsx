@@ -2,6 +2,7 @@ import ClassMod from '../ClassMod'
 import portrait from '../../assets/img/portraits/milkmaid_portrait_roster.png'
 
 export const Class_Milkmaid: ClassMod = {
+    key: 'Class_Milkmaid',
     name: 'Milkmaid',
     portrait: portrait,
     religious: false,
