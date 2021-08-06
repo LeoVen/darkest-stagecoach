@@ -1,5 +1,6 @@
 import Author from './Author'
 import {
+    ArmourStats,
     ClassModType,
     ClassModTypeValue,
     Credits,
@@ -7,7 +8,8 @@ import {
     OriginalHeroes,
     PreferredPositions,
     Resistances,
-    Synergy
+    Synergy,
+    WeaponStats
 } from '../Types'
 
 export default interface ClassMod {
@@ -32,6 +34,41 @@ export default interface ClassMod {
         author: string
         credits: Credits
     }[]
+}
+
+export const defaultClassMod = (): ClassMod => {
+    let armour: ArmourStats = {
+        dodge: 0,
+        prot: 0,
+        hp: 0,
+        speed: 0
+    }
+    let weapon: WeaponStats = {
+        accuracy: 0,
+        damage: [0, 0],
+        crit: 0,
+        speed: 0
+    }
+    return {
+        key: '',
+        name: '',
+        originalHero: false,
+        resistances: {
+            stun: 0,
+            blight: 0,
+            bleed: 0,
+            disease: 0,
+            move: 0,
+            debuff: 0,
+            deathBlow: 0,
+            trap: 0
+        },
+        stats: {
+            armours: [armour, armour, armour, armour, armour],
+            weapons: [weapon, weapon, weapon, weapon, weapon]
+        },
+        sources: []
+    }
 }
 
 export interface ClassModInfo {

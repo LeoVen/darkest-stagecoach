@@ -20,21 +20,31 @@ import {
 } from './styles'
 
 interface ClassCardProps {
-    classKey: string
+    classKey: string | ClassMod
     index: number
+    modalOpen: boolean
     handleOpenModal: (classMod: ClassMod) => void
     handleCloseModal: () => void
-    selectedClass?: ClassMod
 }
 
 export const ClassCard = ({
     classKey,
     index,
+    modalOpen,
     handleOpenModal,
-    handleCloseModal,
-    selectedClass
+    handleCloseModal
 }: ClassCardProps) => {
-    let classInfo = ClassModIndex.get(classKey) as ClassMod
+    let classInfo: ClassMod
+    let classKeyValue: string
+
+    if (typeof classKey === 'string') {
+        classInfo = ClassModIndex.get(classKey) as ClassMod
+        classKeyValue = classInfo.key
+    } else {
+        classInfo = classKey
+        classKeyValue = classKey.key
+    }
+
     return (
         <div
             key={`${classInfo.name}-${index}`}
@@ -44,7 +54,7 @@ export const ClassCard = ({
                     <ClassProfileIcons classInfo={classInfo} />
                     <ImageAndPositions>
                         <Portrait
-                            classKey={classKey}
+                            classKey={classKeyValue}
                             style={{ margin: '1rem 0 0 0' }}
                         />
                         <Positions
@@ -69,19 +79,8 @@ export const ClassCard = ({
             <BottomIcons>
                 <SynergyIcons synergies={classInfo.synergy} />
             </BottomIcons>
-            <Modal
-                open={
-                    selectedClass !== undefined &&
-                    selectedClass.name === classInfo.name
-                }
-                onClose={handleCloseModal}>
-                <Fade
-                    in={
-                        selectedClass !== undefined &&
-                        selectedClass.name === classInfo.name
-                    }
-                    timeout={400}
-                    exit={false}>
+            <Modal open={modalOpen} onClose={handleCloseModal}>
+                <Fade in={modalOpen} timeout={400} exit={false}>
                     <ModalWrapper
                         style={{
                             width: '80vw',

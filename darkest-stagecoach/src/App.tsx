@@ -71,7 +71,9 @@ function App() {
                             ClassCard({
                                 classKey: classKey,
                                 index: i,
-                                selectedClass: selectedClass,
+                                modalOpen:
+                                    selectedClass !== undefined &&
+                                    selectedClass.key === classKey,
                                 handleOpenModal: handleOpenModal,
                                 handleCloseModal: handleCloseModal
                             })
