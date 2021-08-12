@@ -1,4 +1,4 @@
-import { Button, Modal } from '@material-ui/core'
+import { Button, Modal, Typography } from '@material-ui/core'
 import React from 'react'
 import ClassMod, { defaultClassMod } from '../../data/ClassMod'
 import { ClassInfoForm } from './ClassInfoForm'
@@ -10,25 +10,47 @@ export interface FormBind<T> {
     valueChanged: (newValue: T) => void
 }
 
-export const ClassForm = () => {
-    const [classInfo, setClassInfo] = React.useState<ClassMod>(
-        defaultClassMod()
-    )
+interface ClassFormProps {
+    classInfo: ClassMod
+    handleClassInfoChange: (classInfo: ClassMod) => void
+}
+
+export const ClassForm = ({
+    classInfo,
+    handleClassInfoChange
+}: ClassFormProps) => {
     const [showPreview, setShowPreview] = React.useState<boolean>(false)
 
-    const setName = (newName: string) => {
-        setClassInfo({ ...classInfo, name: newName })
-    }
+    const setName = (newName: string) =>
+        handleClassInfoChange({ ...classInfo, name: newName })
+    const setReligious = (newValue: boolean) =>
+        handleClassInfoChange({ ...classInfo, religious: newValue })
+    const setTransform = (newValue: boolean) =>
+        handleClassInfoChange({ ...classInfo, transform: newValue })
 
     return (
         <MainSection>
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                <Button onClick={() => setShowPreview(true)}>Preview</Button>
+                <Typography variant="body1">
+                    <Button
+                        onClick={() => setShowPreview(true)}
+                        variant="outlined">
+                        Preview
+                    </Button>
+                </Typography>
             </div>
             <ClassInfoForm
                 nameBind={{
                     value: classInfo.name,
                     valueChanged: setName
+                }}
+                religiousBind={{
+                    value: classInfo.religious || false,
+                    valueChanged: setReligious
+                }}
+                transformBind={{
+                    value: classInfo.transform || false,
+                    valueChanged: setTransform
                 }}
             />
             <Modal open={showPreview} onClose={() => setShowPreview(false)}>

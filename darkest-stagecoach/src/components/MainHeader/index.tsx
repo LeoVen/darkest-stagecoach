@@ -10,8 +10,17 @@ import { ModalWrapper } from '../../styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { InfoContent } from '../InfoContent'
 import { UploadClass } from '../UploadClass'
+import ClassMod from '../../data/ClassMod'
 
-export const MainHeader = () => {
+interface MainHeaderProps {
+    classInfo: ClassMod
+    handleClassInfoChange: (classInfo: ClassMod) => void
+}
+
+export const MainHeader = ({
+    classInfo,
+    handleClassInfoChange
+}: MainHeaderProps) => {
     const [infoModalOpen, setInfoModalOpen] = useState(false)
     const [uploadModalOpen, setUploadModalOpen] = useState(false)
 
@@ -86,7 +95,12 @@ export const MainHeader = () => {
                                 <ModalCloseButton
                                     onClick={handleUploadModalClose}
                                 />
-                                <UploadClass />
+                                <UploadClass
+                                    classInfo={classInfo}
+                                    handleClassInfoChange={
+                                        handleClassInfoChange
+                                    }
+                                />
                             </ModalWrapper>
                         </Fade>
                     </Modal>
