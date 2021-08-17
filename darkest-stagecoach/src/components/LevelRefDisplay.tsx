@@ -1,8 +1,8 @@
-interface Props {
+interface LevelRefDisplayProps {
     current: number
 }
 
-export const LevelRefDisplay = ({ current }: Props) => {
+export const LevelRefDisplay = ({ current }: LevelRefDisplayProps) => {
     return (
         <div
             style={{

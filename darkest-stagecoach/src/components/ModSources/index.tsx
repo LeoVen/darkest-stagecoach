@@ -8,9 +8,7 @@ interface ModSourcesProps {
     }[]
 }
 
-export const ModSources: React.FunctionComponent<ModSourcesProps> = ({
-    sources
-}) => {
+export const ModSources = ({ sources }: ModSourcesProps) => {
     return (
         <ModSourcesMain>
             <Typography variant="subtitle2">

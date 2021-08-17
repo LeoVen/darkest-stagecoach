@@ -1,4 +1,3 @@
-import Author from './Author'
 import {
     ArmourStats,
     ClassModType,
@@ -36,6 +35,7 @@ export default interface ClassMod {
     }[]
 }
 
+// Creates a ClassMod that has the minimum required values
 export const defaultClassMod = (): ClassMod => {
     let armour: ArmourStats = {
         dodge: 0,
@@ -71,11 +71,13 @@ export const defaultClassMod = (): ClassMod => {
     }
 }
 
-export interface ClassModInfo {
-    name: string
-    dataId: string
-    authors: {
-        author: Author
-        credits: Credits
-    }[]
+// Tries to make any object into a valid ClassMod
+// Used when retrieving things from the database
+// '"string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function"'
+export const compatTransform = (input: any): ClassMod | null => {
+    if (typeof input !== 'object') return null
+
+    let result = defaultClassMod()
+
+    return result
 }

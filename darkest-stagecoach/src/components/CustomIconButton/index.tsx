@@ -1,22 +1,20 @@
 import React from 'react'
 import { MainButton } from './styles'
 
-interface Props {
+interface CustomIconButtonProps {
     children?: React.ReactNode
     style?: React.CSSProperties
     className?: string
     onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export function CustomIconButton({
+export const CustomIconButton = ({
     children,
     style,
     className,
     onClick
-}: Props) {
-    return (
-        <MainButton className={className} onClick={onClick} style={style}>
-            {children}
-        </MainButton>
-    )
-}
+}: CustomIconButtonProps) => (
+    <MainButton className={className} onClick={onClick} style={style}>
+        {children}
+    </MainButton>
+)

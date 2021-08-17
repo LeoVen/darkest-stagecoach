@@ -17,19 +17,19 @@ import { LevelRefDisplay } from '../LevelRefDisplay'
 import { FilterForm } from '../FilterForm'
 import { CustomIconButton } from '../CustomIconButton'
 
-interface FilterProps {
+interface ActionButtonsProps {
     filter: FilterBy
     sort: SortBy
     onSortChange: (sort: SortBy) => void
     onFilterChange: (filter: FilterBy) => void
 }
 
-export const ActionButtons: React.FunctionComponent<FilterProps> = ({
+export const ActionButtons = ({
     filter,
     sort,
     onSortChange,
     onFilterChange
-}) => {
+}: ActionButtonsProps) => {
     const [modalFilterOpen, setModalFilterOpen] = React.useState<boolean>(false)
     const [filterCache, setFilterCache] = React.useState<FilterBy>(filter)
 

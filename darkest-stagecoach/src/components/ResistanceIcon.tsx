@@ -25,6 +25,6 @@ const iconMap: Record<ResistancesNames, string> = {
     trap: trap
 }
 
-export function ResistanceIcon(props: ResistanceIconProps) {
-    return <img src={iconMap[props.icon]} alt="Icon" style={props.style} />
-}
+export const ResistanceIcon = (props: ResistanceIconProps) => (
+    <img src={iconMap[props.icon]} alt="Icon" style={props.style} />
+)

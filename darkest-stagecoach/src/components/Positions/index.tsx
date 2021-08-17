@@ -1,7 +1,7 @@
 import { PreferredPositions } from '../../Types'
 import { Circle, MainSection } from './styles'
 
-interface Props {
+interface PositionsProps {
     pos?: PreferredPositions
     totalSkills?: number
 }
@@ -45,7 +45,7 @@ const circle = (idx: number, skills: number, total?: number) => {
     )
 }
 
-export const Positions = ({ pos, totalSkills }: Props) => {
+export const Positions = ({ pos, totalSkills }: PositionsProps) => {
     if (pos === undefined) pos = [0, 0, 0, 0]
 
     return (

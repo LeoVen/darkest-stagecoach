@@ -1,12 +1,13 @@
 import {
     Button,
+    ButtonGroup,
     createMuiTheme,
     TextField,
     ThemeProvider
 } from '@material-ui/core'
 import React from 'react'
 import { synergies } from '../../Synergy'
-import { THEME } from '../../theme'
+import { AppTheme, THEME } from '../../theme'
 import { FilterBy, Synergy } from '../../Types'
 import { ClassProfileIcon } from '../ClassProfileIcons'
 import { OriginalHeroIcon } from '../OriginalHeroIcon'
@@ -29,11 +30,11 @@ const FILTER_THEME = createMuiTheme(
                 tooltip: {
                     fontFamily: 'Mate SC',
                     fontSize: '0.8rem',
-                    backgroundColor: 'var(--bg-secondary)'
+                    backgroundColor: AppTheme.bgSecondary
                 },
                 arrow: {
                     '&:before': {
-                        backgroundColor: 'var(--bg-secondary)'
+                        backgroundColor: AppTheme.bgSecondary
                     }
                 }
             }
@@ -173,16 +174,14 @@ export const FilterForm = ({
                     </FormSection>
                 </FormContainedSections>
                 <BottomButtons>
-                    <Button
-                        onClick={handleReset}
-                        style={{ border: '1px solid var(--bg-secondary)' }}>
-                        Reset
-                    </Button>
-                    <Button
-                        onClick={onSubmit}
-                        style={{ border: '1px solid var(--bg-secondary)' }}>
-                        Ok
-                    </Button>
+                    <ButtonGroup>
+                        <Button variant="outlined" onClick={handleReset}>
+                            Reset
+                        </Button>
+                        <Button variant="outlined" onClick={onSubmit}>
+                            Ok
+                        </Button>
+                    </ButtonGroup>
                 </BottomButtons>
             </MainSection>
         </ThemeProvider>

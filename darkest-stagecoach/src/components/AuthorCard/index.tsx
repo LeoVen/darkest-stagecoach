@@ -17,10 +17,7 @@ interface AuthorCardProps {
     credits: Credits
 }
 
-export const AuthorCard: React.FunctionComponent<AuthorCardProps> = ({
-    author,
-    credits
-}) => {
+export const AuthorCard = ({ author, credits }: AuthorCardProps) => {
     const handleOpenModal = () => {
         setOpen(true)
     }

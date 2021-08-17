@@ -137,31 +137,29 @@ export const SynergyIcons = (props: { synergies?: Set<Synergy> }) => {
     )
 }
 
-export const SynergyIconsTable = () => {
-    return (
-        <TableContainer component={Paper} style={{ marginTop: '1rem' }}>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell align="center">Icon</TableCell>
-                        <TableCell>The class can...</TableCell>
+export const SynergyIconsTable = () => (
+    <TableContainer component={Paper} style={{ marginTop: '1rem' }}>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell align="center">Icon</TableCell>
+                    <TableCell>The class can...</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {allSynergies.map(syn => (
+                    <TableRow key={`table-${syn}`}>
+                        <TableCell align="center">
+                            <img src={iconMap[syn]} alt="Icon" />
+                        </TableCell>
+                        <TableCell>
+                            <Typography variant="body1">
+                                {iconDescription[syn]}
+                            </Typography>
+                        </TableCell>
                     </TableRow>
-                </TableHead>
-                <TableBody>
-                    {allSynergies.map(syn => (
-                        <TableRow key={`table-${syn}`}>
-                            <TableCell align="center">
-                                <img src={iconMap[syn]} alt="Icon" />
-                            </TableCell>
-                            <TableCell>
-                                <Typography variant="body1">
-                                    {iconDescription[syn]}
-                                </Typography>
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    )
-}
+                ))}
+            </TableBody>
+        </Table>
+    </TableContainer>
+)

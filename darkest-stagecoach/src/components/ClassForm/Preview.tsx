@@ -23,7 +23,7 @@ export const Preview = ({ classInfo, onClose }: Props) => {
                 handleOpenModal={() => setModalOpen(true)}
             />
             <PreviewCloseButton>
-                <Typography variant="body1">
+                <Typography variant="body1" component="span">
                     <Button onClick={onClose} variant="outlined">
                         Close
                     </Button>

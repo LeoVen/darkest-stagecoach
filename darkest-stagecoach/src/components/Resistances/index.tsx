@@ -20,11 +20,11 @@ export const TextColors = {
     trap: '#8860B2'
 }
 
-interface Props {
+interface ResistancesSectionProps {
     res?: Resistances
 }
 
-export const ResistancesSection: React.FunctionComponent<Props> = ({ res }) => {
+export const ResistancesSection = ({ res }: ResistancesSectionProps) => {
     if (res === undefined) {
         return <Typography variant="body1">Unavailable</Typography>
     }

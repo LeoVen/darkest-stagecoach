@@ -10,11 +10,11 @@ import {
 import { Typography } from '@material-ui/core'
 import { NumberSelection } from '../NumberSelection'
 
-interface Props {
+interface BaseStatsProps {
     stats?: GearStats
 }
 
-export const BaseStats: React.FunctionComponent<Props> = ({ stats }) => {
+export const BaseStats = ({ stats }: BaseStatsProps) => {
     const [level, changeLevel] = React.useState<number>(0)
 
     if (stats === undefined) {

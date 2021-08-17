@@ -1,15 +1,27 @@
 import { createMuiTheme } from '@material-ui/core'
 
+export const AppTheme = {
+    bgPrimary: '#2f3129',
+    bgSecondary: '#272822',
+    accentPrimary: '#d3552e',
+    accentSecondary: '#5e3124',
+    accentHover: '#ff6738',
+    fontPrimary: '#cccccc',
+    fontDisabled: '#444444',
+    selectedRed: '#b11900',
+    selectedGreen: '#00d7a2'
+}
+
 export const THEME = createMuiTheme({
     overrides: {
         MuiFormLabel: {
             root: {
-                color: 'var(--accent-primary)'
+                color: AppTheme.accentPrimary
             }
         },
         MuiInput: {
             root: {
-                color: 'var(--accent-primary)'
+                color: AppTheme.accentPrimary
             }
         },
         MuiAccordionSummary: {
@@ -30,18 +42,21 @@ export const THEME = createMuiTheme({
         },
         MuiButton: {
             label: {
-                color: 'var(--font-primary)'
+                color: AppTheme.fontPrimary
+            },
+            outlined: {
+                borderColor: AppTheme.accentPrimary
             }
         },
         MuiTooltip: {
             tooltip: {
                 fontFamily: 'Mate SC',
                 fontSize: '0.8rem',
-                backgroundColor: 'var(--bg-primary)'
+                backgroundColor: AppTheme.bgPrimary
             },
             arrow: {
                 '&:before': {
-                    backgroundColor: 'var(--bg-primary)'
+                    backgroundColor: AppTheme.bgPrimary
                 }
             }
         },
@@ -57,11 +72,17 @@ export const THEME = createMuiTheme({
         },
         MuiTableCell: {
             head: {
-                color: 'var(--font-primary)',
+                color: AppTheme.fontPrimary,
                 fontWeight: 'bold'
             },
             body: {
-                color: 'var(--font-primary)'
+                color: AppTheme.fontPrimary
+            }
+        },
+        MuiSnackbarContent: {
+            root: {
+                backgroundColor: AppTheme.bgPrimary,
+                color: AppTheme.fontPrimary
             }
         }
     },
@@ -69,50 +90,50 @@ export const THEME = createMuiTheme({
         h1: {
             fontFamily: 'Mate SC',
             fontSize: '2.5em',
-            color: 'var(--font-primary)',
+            color: AppTheme.fontPrimary,
             marginRight: '1em'
         },
         h2: {
             fontFamily: 'Mate SC',
             fontSize: '2em',
-            color: 'var(--font-primary)'
+            color: AppTheme.fontPrimary
         },
         h3: {
             fontFamily: 'Mate SC',
             fontSize: '1.5em',
-            color: 'var(--font-primary)'
+            color: AppTheme.fontPrimary
         },
         h4: {
             fontFamily: 'Mate SC',
             fontSize: '1.2em',
-            color: 'var(--font-primary)',
+            color: AppTheme.fontPrimary,
             wordWrap: 'break-word',
             marginTop: '1.5rem'
         },
         subtitle1: {
             fontFamily: 'Mate SC',
             fontSize: '1.2em',
-            color: 'var(--font-primary)',
+            color: AppTheme.fontPrimary,
             wordWrap: 'break-word'
         },
         subtitle2: {
             fontFamily: 'Mate SC',
             fontSize: '1.1em',
-            color: 'var(--font-primary)',
+            color: AppTheme.fontPrimary,
             wordWrap: 'break-word',
             marginBottom: '20px'
         },
         body1: {
             fontFamily: 'Mate SC',
             fontSize: '1em',
-            color: 'var(--font-primary)',
+            color: AppTheme.fontPrimary,
             wordWrap: 'break-word'
         }
     },
     palette: {
         background: {
-            default: 'var(--bg-primary)',
-            paper: 'var(--bg-secondary)'
+            default: AppTheme.bgPrimary,
+            paper: AppTheme.bgSecondary
         }
     }
 })

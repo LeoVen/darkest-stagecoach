@@ -3,11 +3,11 @@ import { ClassModType, ClassModTypeValue } from '../../Types'
 import { ClassTypeSvg } from '../Svg/ClassTypeSvg'
 import { IconContainer, MainSection } from './styles'
 
-interface Props {
+interface ClassTypeIconsProps {
     type: Record<ClassModType, ClassModTypeValue>
 }
 
-export const ClassTypeIcons = ({ type }: Props) => {
+export const ClassTypeIcons = ({ type }: ClassTypeIconsProps) => {
     const colorMap = [
         'var(--font-disabled)',
         '#cd7f32',

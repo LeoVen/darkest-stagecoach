@@ -15,11 +15,11 @@ import { ModSources } from '../ModSources'
 import { Portrait } from '../../data/Portrait'
 import { AuthorIndex } from '../../data/AuthorIndex'
 
-interface ClassCardProps {
+interface ClassModalProps {
     classMod: ClassMod
 }
 
-const AccordionTemplate: React.FunctionComponent<{
+interface AccordionTemplateProps {
     expanded: boolean
     handleAccordionChange?: (
         event: React.ChangeEvent<{}>,
@@ -27,30 +27,33 @@ const AccordionTemplate: React.FunctionComponent<{
     ) => void
     title: React.ReactNode
     children: React.ReactNode
-}> = ({ expanded, handleAccordionChange, title, children }) => {
-    return (
-        <Accordion
-            expanded={expanded}
-            onChange={handleAccordionChange}
-            style={{ backgroundColor: 'var(--bg-secondary)' }}>
-            <AccordionSummary
-                className="cursor-pointer"
-                expandIcon={<ArrowDownIcon />}>
-                <Typography
-                    variant="h3"
-                    className="anchor"
-                    style={{ padding: '0.5em 1em' }}>
-                    {title}
-                </Typography>
-            </AccordionSummary>
-            <AccordionDetails>{children}</AccordionDetails>
-        </Accordion>
-    )
 }
 
-export const ClassModal: React.FunctionComponent<ClassCardProps> = ({
-    classMod
-}) => {
+const AccordionTemplate = ({
+    expanded,
+    handleAccordionChange,
+    title,
+    children
+}: AccordionTemplateProps) => (
+    <Accordion
+        expanded={expanded}
+        onChange={handleAccordionChange}
+        style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <AccordionSummary
+            className="cursor-pointer"
+            expandIcon={<ArrowDownIcon />}>
+            <Typography
+                variant="h3"
+                className="anchor"
+                style={{ padding: '0.5em 1em' }}>
+                {title}
+            </Typography>
+        </AccordionSummary>
+        <AccordionDetails>{children}</AccordionDetails>
+    </Accordion>
+)
+
+export const ClassModal = ({ classMod }: ClassModalProps) => {
     const [accordion, setAccordion] = React.useState<boolean[]>([
         false,
         false,

@@ -5,7 +5,7 @@ import { ProfileType } from '../../Types'
 import { ProfileSvg } from '../Svg/ProfileSvg'
 import { MainSection } from './styles'
 
-interface Props {
+interface ClassProfileIconsProps {
     classInfo: ClassMod
 }
 
@@ -41,7 +41,7 @@ export const ClassProfileIcon = ({
     </Tooltip>
 )
 
-export const ClassProfileIcons = ({ classInfo }: Props) => {
+export const ClassProfileIcons = ({ classInfo }: ClassProfileIconsProps) => {
     const template = (type: ProfileType) => {
         return (
             <Tooltip
