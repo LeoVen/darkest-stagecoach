@@ -58,15 +58,15 @@ export const Class_ChoirHunter: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_Shay',
+            authorKey: 'Author_Shay',
             credits: ['Sound']
         },
         {
-            author: 'Author_MoonKanin',
+            authorKey: 'Author_MoonKanin',
             credits: ['Concept', 'Art', 'Animation', 'Writing', 'Design']
         },
         {
-            author: 'Author_Rehtael',
+            authorKey: 'Author_Rehtael',
             credits: ['Design', 'Scripting', 'Trailer']
         }
     ]

@@ -57,19 +57,19 @@ export const Class_Commandant: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_Terkmc',
+            authorKey: 'Author_Terkmc',
             credits: ['Concept', 'Art', 'Design', 'Sound']
         },
         {
-            author: 'Author_Cryptix',
+            authorKey: 'Author_Cryptix',
             credits: ['Scripting']
         },
         {
-            author: 'Author_VoidSlime',
+            authorKey: 'Author_VoidSlime',
             credits: ['Scripting']
         },
         {
-            author: 'Author_54NBB',
+            authorKey: 'Author_54NBB',
             credits: ['Animation']
         }
     ]

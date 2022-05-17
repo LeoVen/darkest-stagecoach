@@ -103,11 +103,11 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                             <Typography variant="body1">Unavailable</Typography>
                         ) : (
                             classMod.authors.map((auth, i) => {
-                                const author = AuthorIndex.get(auth.author)
+                                const author = AuthorIndex.get(auth.authorKey)
                                 return (
                                     <AuthorCard
-                                        key={`${auth.author}-${i}`}
-                                        author={author ?? auth.author}
+                                        key={`${auth.authorKey}-${i}`}
+                                        author={author ?? auth.authorKey}
                                         credits={auth.credits}
                                     />
                                 )

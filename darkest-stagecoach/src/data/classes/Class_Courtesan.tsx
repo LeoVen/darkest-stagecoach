@@ -44,7 +44,7 @@ export const Class_Courtesan: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_Roderick',
+            authorKey: 'Author_Roderick',
             credits: ['All']
         }
     ]

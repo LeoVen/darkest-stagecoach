@@ -65,7 +65,7 @@ export const Class_Lamia: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_MarvinSeo',
+            authorKey: 'Author_MarvinSeo',
             credits: ['All']
         }
     ]

@@ -38,5 +38,11 @@ export const Class_2andb: ClassMod = {
             name: 'Steam',
             link: 'https://steamcommunity.com/sharedfiles/filedetails/?id=1483514982'
         }
+    ],
+    authors: [
+        {
+            authorKey: 'Author_HellCross',
+            credits: ['All']
+        }
     ]
 }

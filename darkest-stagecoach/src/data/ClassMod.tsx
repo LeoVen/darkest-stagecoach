@@ -30,7 +30,7 @@ export default interface ClassMod {
         link: string
     }[]
     authors?: {
-        author: string
+        authorKey: string
         credits: Credits
     }[]
 }

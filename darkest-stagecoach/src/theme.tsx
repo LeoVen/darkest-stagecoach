@@ -19,10 +19,29 @@ export const THEME = createMuiTheme({
                 color: AppTheme.accentPrimary
             }
         },
+        MuiInputLabel: {
+            root: {
+                backgroundColor: AppTheme.bgPrimary,
+            },
+            shrink: {
+                color: `${AppTheme.accentHover} !important`,
+            }
+        },
         MuiInput: {
             root: {
                 color: AppTheme.accentPrimary
-            }
+            },
+            underline: {
+                '&:before': {
+                  borderBottomColor: AppTheme.accentHover,
+                },
+                '&:after': {
+                  borderBottomColor: AppTheme.accentHover,
+                },
+                '&:hover:before': {
+                  borderBottomColor: [AppTheme.accentHover, '!important'],
+                },
+              },
         },
         MuiAccordionSummary: {
             root: {

@@ -46,39 +46,39 @@ export const Class_Janissary: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_Shay',
+            authorKey: 'Author_Shay',
             credits: ['Design', 'Sound']
         },
         {
-            author: 'Author_Snorlaxxo',
+            authorKey: 'Author_Snorlaxxo',
             credits: ['Design', 'Scripting']
         },
         {
-            author: 'Author_EbonyBetty',
+            authorKey: 'Author_EbonyBetty',
             credits: ['Concept']
         },
         {
-            author: 'Black Templar#8655',
+            authorKey: 'Black Templar#8655',
             credits: ['Concept']
         },
         {
-            author: 'Author_Terkmc',
+            authorKey: 'Author_Terkmc',
             credits: ['Art']
         },
         {
-            author: 'Author_54NBB',
+            authorKey: 'Author_54NBB',
             credits: ['Animation']
         },
         {
-            author: 'Author_Ruin',
+            authorKey: 'Author_Ruin',
             credits: ['Color Variants']
         },
         {
-            author: 'Author_Cat',
+            authorKey: 'Author_Cat',
             credits: ['Testing', 'Writing']
         },
         {
-            author: 'Author_Sasiji',
+            authorKey: 'Author_Sasiji',
             credits: ['Code Assistance']
         }
     ]

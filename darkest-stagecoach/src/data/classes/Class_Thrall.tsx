@@ -46,7 +46,7 @@ export const Class_Thrall: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_MarvinSeo',
+            authorKey: 'Author_MarvinSeo',
             credits: ['All']
         }
     ]

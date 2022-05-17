@@ -5,6 +5,7 @@ import { Author_Cat } from './authors/Author_Cat'
 import { Author_Cryptix } from './authors/Author_Cryptix'
 import { Author_EbonyBetty } from './authors/Author_EbonyBetty'
 import { Author_Exaelus } from './authors/Author_Exaelus'
+import { Author_HellCross } from './authors/Author_HellCross'
 import { Author_MarvinSeo } from './authors/Author_MarvinSeo'
 import { Author_MoonKanin } from './authors/Author_MoonKanin'
 import { Author_Rehtael } from './authors/Author_Rehtael'
@@ -28,6 +29,7 @@ export function authorIndex(): Map<string, Author> {
         ['Author_Cryptix', Author_Cryptix],
         ['Author_EbonyBetty', Author_EbonyBetty],
         ['Author_Exaelus', Author_Exaelus],
+        ['Author_HellCross', Author_HellCross],
         ['Author_MarvinSeo', Author_MarvinSeo],
         ['Author_MoonKanin', Author_MoonKanin],
         ['Author_Rehtael', Author_Rehtael],

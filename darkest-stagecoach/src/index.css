@@ -87,3 +87,7 @@ a *:hover {
 *:focus {
     outline: 0;
 }
+
+.MuiFormControlLabel-root {
+    cursor: var(--cursor-default) !important;
+}

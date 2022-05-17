@@ -45,7 +45,7 @@ export const Class_Revenant: ClassMod = {
     ],
     authors: [
         {
-            author: 'Author_Exaelus',
+            authorKey: 'Author_Exaelus',
             credits: ['All']
         }
     ]
