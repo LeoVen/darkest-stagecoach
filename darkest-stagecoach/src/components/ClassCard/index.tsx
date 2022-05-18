@@ -5,7 +5,6 @@ import { Portrait } from '../../data/Portrait'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
 import { ClassProfileIcons } from '../ClassProfileIcons'
-import { ClassTypeIcons } from '../ClassTypeIcons'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { OriginalHeroIcon } from '../OriginalHeroIcon'
 import { Positions } from '../Positions'
@@ -15,7 +14,6 @@ import {
     HeroCard,
     ImageAndIcons,
     ImageAndPositions,
-    TopIcons,
     TopLeftIcons
 } from './styles'
 

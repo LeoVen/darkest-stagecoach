@@ -1,5 +1,4 @@
 import {
-    Slide,
     Snackbar,
     SnackbarCloseReason,
     SnackbarContentProps
