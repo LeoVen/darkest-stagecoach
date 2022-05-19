@@ -2,7 +2,7 @@ import ClassMod from '../ClassMod'
 
 export const Class_2andb: ClassMod = {
     key: 'Class_2andb',
-    name: '2andb',
+    name: 'Two-B',
     religious: false,
     originalHero: false,
     resistances: {

@@ -2,7 +2,7 @@ import ClassMod from '../ClassMod'
 
 export const Class_Aegis: ClassMod = {
     key: 'Class_Aegis',
-    name: 'Aegis',
+    name: 'Royal Aegis',
     religious: true,
     originalHero: false,
     resistances: {

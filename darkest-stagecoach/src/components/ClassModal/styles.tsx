@@ -2,7 +2,7 @@ import { Paper } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const MainModal = styled(Paper)`
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--bg-primary);
 `
 

@@ -77,8 +77,9 @@ export const MainHeader = ({
                             </ModalWrapper>
                         </Fade>
                     </Modal>
+                    {/* TODO */}
                     <CustomIconButton
-                        className="cursor-pointer"
+                        className="cursor-pointer hidden"
                         style={{ padding: '0.6rem' }}
                         onClick={handleUploadModalOpen}>
                         <FontAwesomeIcon icon={faUpload} size={'1x'} />

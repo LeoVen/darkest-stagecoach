@@ -14,21 +14,21 @@ import {
 export default interface ClassMod {
     key: string
     name: string
-    description?: string[]
-    similarity?: OriginalHeroes
-    religious?: boolean
-    transform?: boolean
-    originalHero: boolean
-    classType?: Record<ClassModType, ClassModTypeValue>
-    synergy?: Set<Synergy>
-    position?: PreferredPositions
-    totalSkills?: number
     resistances: Resistances
     stats: GearStats
     sources: {
         name: string
         link: string
     }[]
+    originalHero: boolean
+    description?: string[]
+    similarity?: OriginalHeroes
+    religious?: boolean
+    transform?: boolean
+    classType?: Record<ClassModType, ClassModTypeValue>
+    synergy?: Set<Synergy>
+    position?: PreferredPositions
+    totalSkills?: number
     authors?: {
         authorKey: string
         credits: Credits
