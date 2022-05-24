@@ -25,9 +25,9 @@ export const UploadSection = ({
         return (
             <MainSection
             >
-            <Typography variant='h2' style={{ marginBottom: '1rem' }}>
-                {classInfo.key === '' ? 'Add new class' : `Edit class ${classInfo.name}`}
-            </Typography>
+                <Typography variant='h2' style={{ marginBottom: '1rem' }}>
+                    {classInfo.key === '' ? 'Add new class' : `Edit class ${classInfo.name}`}
+                </Typography>
                 <ButtonsGroup>
                     <Button variant='outlined' onClick={() => setSection(1)}>Add or Edit Class</Button>
                     <Button variant='outlined' onClick={() => setSection(2)}>Add or Edit Author</Button>
@@ -38,10 +38,9 @@ export const UploadSection = ({
         return (
             <MainSection
             >
-
                 <Typography variant='h2' style={{ marginBottom: '1rem' }}>
                     {classInfo.key === '' ? 'Add new class' : `Edit class ${classInfo.name}`}
-                {<Button variant='outlined' onClick={() => setSection(0)}>Return</Button>}
+                    {<Button variant='outlined' onClick={() => setSection(0)}>Return</Button>}
                 </Typography>
                 <ClassForm
                     classInfo={classInfo}
@@ -52,10 +51,10 @@ export const UploadSection = ({
     } else if (section === 2) {
         return (
             <MainSection            >
-            <Typography variant='h2' style={{ marginBottom: '1rem' }}>
-                {classInfo.key === '' ? 'Add new class' : `Edit class ${classInfo.name}`}
-                {<Button variant='outlined' onClick={() => setSection(0)}>Return</Button>}
-            </Typography>
+                <Typography variant='h2' style={{ marginBottom: '1rem' }}>
+                    {classInfo.key === '' ? 'Add new class' : `Edit class ${classInfo.name}`}
+                    {<Button variant='outlined' onClick={() => setSection(0)}>Return</Button>}
+                </Typography>
                 <AuthorForm
                     authorInfo={authorInfo}
                     handleAuthorInfoChange={handleAuthorInfoChange}

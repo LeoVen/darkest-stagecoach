@@ -33,15 +33,15 @@ export const THEME = createMuiTheme({
             },
             underline: {
                 '&:before': {
-                  borderBottomColor: AppTheme.accentHover,
+                    borderBottomColor: AppTheme.accentHover,
                 },
                 '&:after': {
-                  borderBottomColor: AppTheme.accentHover,
+                    borderBottomColor: AppTheme.accentHover,
                 },
                 '&:hover:before': {
-                  borderBottomColor: [AppTheme.accentHover, '!important'],
+                    borderBottomColor: [AppTheme.accentHover, '!important'],
                 },
-              },
+            },
         },
         MuiAccordionSummary: {
             root: {

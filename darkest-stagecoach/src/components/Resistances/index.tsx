@@ -35,55 +35,55 @@ export const ResistancesSection = ({ res }: ResistancesSectionProps) => {
         value: number
         color: string
     }[] = [
-        {
-            icon: 'stun',
-            name: 'Stun',
-            value: res.stun,
-            color: TextColors.stun
-        },
-        {
-            icon: 'blight',
-            name: 'Blight',
-            value: res.blight,
-            color: TextColors.blight
-        },
-        {
-            icon: 'disease',
-            name: 'Disease',
-            value: res.disease,
-            color: TextColors.disease
-        },
-        {
-            icon: 'deathBlow',
-            name: 'Death Blow',
-            value: res.deathBlow,
-            color: TextColors.deathBlow
-        },
-        {
-            icon: 'move',
-            name: 'Move',
-            value: res.move,
-            color: TextColors.move
-        },
-        {
-            icon: 'bleed',
-            name: 'Bleed',
-            value: res.bleed,
-            color: TextColors.bleed
-        },
-        {
-            icon: 'debuff',
-            name: 'Debuff',
-            value: res.debuff,
-            color: TextColors.debuff
-        },
-        {
-            icon: 'trap',
-            name: 'Trap',
-            value: res.trap,
-            color: TextColors.trap
-        }
-    ]
+            {
+                icon: 'stun',
+                name: 'Stun',
+                value: res.stun,
+                color: TextColors.stun
+            },
+            {
+                icon: 'blight',
+                name: 'Blight',
+                value: res.blight,
+                color: TextColors.blight
+            },
+            {
+                icon: 'disease',
+                name: 'Disease',
+                value: res.disease,
+                color: TextColors.disease
+            },
+            {
+                icon: 'deathBlow',
+                name: 'Death Blow',
+                value: res.deathBlow,
+                color: TextColors.deathBlow
+            },
+            {
+                icon: 'move',
+                name: 'Move',
+                value: res.move,
+                color: TextColors.move
+            },
+            {
+                icon: 'bleed',
+                name: 'Bleed',
+                value: res.bleed,
+                color: TextColors.bleed
+            },
+            {
+                icon: 'debuff',
+                name: 'Debuff',
+                value: res.debuff,
+                color: TextColors.debuff
+            },
+            {
+                icon: 'trap',
+                name: 'Trap',
+                value: res.trap,
+                color: TextColors.trap
+            }
+        ]
 
     let half = data.length / 2
 
