@@ -4,7 +4,7 @@ import {
     FormGroup,
     TextField
 } from '@material-ui/core'
-import { FormBind } from '.'
+import { FormBind } from '../FormBind'
 
 interface Props {
     nameBind: FormBind<string>

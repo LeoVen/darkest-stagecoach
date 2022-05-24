@@ -7,11 +7,6 @@ import { ClassInfoForm } from './ClassInfoForm'
 import { Preview } from './Preview'
 import { MainSection } from './styles'
 
-export interface FormBind<T> {
-    value: T
-    valueChanged: (newValue: T) => void
-}
-
 interface ClassFormProps {
     classInfo: ClassMod
     handleClassInfoChange: (classInfo: ClassMod) => void

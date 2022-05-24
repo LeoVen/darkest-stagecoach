@@ -6,3 +6,11 @@ export default interface Author {
         link: string
     }[]
 }
+
+// Creates an Author that has the minimum required values
+export const defaultAuthor = (): Author => {
+    return {
+        name: "",
+        links: [],
+    }
+}

@@ -13,6 +13,7 @@ import { filterClassMods } from './Filtering'
 import { MainHeader } from './components/MainHeader'
 import { SnackbarMessage } from './components/SnackbarMessage'
 import { SnackbarContext } from './services/SnackbarService'
+import Author, { defaultAuthor } from './data/Author'
 
 export const App = () => {
     const [filter, setFilter] = React.useState<FilterBy>({
@@ -32,6 +33,9 @@ export const App = () => {
     >(undefined)
     const [classInfo, setClassInfo] = React.useState<ClassMod>(
         defaultClassMod()
+    )
+    const [authorInfo, setAuthorInfo] = React.useState<Author>(
+        defaultAuthor()
     )
     const [snackbarMessage, setSnackbarMessage] = React.useState<
         string | undefined
@@ -72,6 +76,8 @@ export const App = () => {
                         <MainHeader
                             classInfo={classInfo}
                             handleClassInfoChange={setClassInfo}
+                            authorInfo={authorInfo}
+                            handleAuthorInfoChange={setAuthorInfo}
                         />
                         <ActionButtons
                             filter={filter}

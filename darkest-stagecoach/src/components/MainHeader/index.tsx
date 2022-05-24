@@ -9,20 +9,25 @@ import { useState } from 'react'
 import { ModalWrapper } from '../../styles'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { InfoContent } from '../InfoContent'
-import { UploadClass } from '../UploadClass'
+import { UploadSection } from '../UploadSection'
 import ClassMod from '../../data/ClassMod'
+import Author from '../../data/Author'
 
 interface MainHeaderProps {
     classInfo: ClassMod
     handleClassInfoChange: (classInfo: ClassMod) => void
+    authorInfo: Author
+    handleAuthorInfoChange: (authorInfo: Author) => void
 }
 
 export const MainHeader = ({
     classInfo,
-    handleClassInfoChange
+    handleClassInfoChange,
+    authorInfo,
+    handleAuthorInfoChange,
 }: MainHeaderProps) => {
     const [infoModalOpen, setInfoModalOpen] = useState(false)
-    const [uploadModalOpen, setUploadModalOpen] = useState(false)
+    const [uploadSectionOpen, setUploadSectionOpen] = useState(false)
 
     const handleInfoModalOpen = () => {
         setInfoModalOpen(true)
@@ -30,11 +35,11 @@ export const MainHeader = ({
     const handleInfoModalClose = () => {
         setInfoModalOpen(false)
     }
-    const handleUploadModalOpen = () => {
-        setUploadModalOpen(true)
+    const handleUploadSectionOpen = () => {
+        setUploadSectionOpen(true)
     }
-    const handleUploadModalClose = () => {
-        setUploadModalOpen(false)
+    const handleUploadSectionClose = () => {
+        setUploadSectionOpen(false)
     }
 
     return (
@@ -77,30 +82,31 @@ export const MainHeader = ({
                             </ModalWrapper>
                         </Fade>
                     </Modal>
-                    {/* TODO */}
                     <CustomIconButton
-                        className="cursor-pointer hidden"
+                        className="cursor-pointer"
                         style={{ padding: '0.6rem' }}
-                        onClick={handleUploadModalOpen}>
+                        onClick={handleUploadSectionOpen}>
                         <FontAwesomeIcon icon={faUpload} size={'1x'} />
                     </CustomIconButton>
                     <Modal
-                        open={uploadModalOpen}
-                        onClose={handleUploadModalClose}>
-                        <Fade in={uploadModalOpen} timeout={400} exit={false}>
+                        open={uploadSectionOpen}
+                        onClose={handleUploadSectionClose}>
+                        <Fade in={uploadSectionOpen} timeout={400} exit={false}>
                             <ModalWrapper
                                 style={{
                                     width: '80vw',
                                     maxWidth: '1080px'
                                 }}>
                                 <ModalCloseButton
-                                    onClick={handleUploadModalClose}
+                                    onClick={handleUploadSectionClose}
                                 />
-                                <UploadClass
+                                <UploadSection
                                     classInfo={classInfo}
                                     handleClassInfoChange={
                                         handleClassInfoChange
                                     }
+                                    authorInfo={authorInfo}
+                                    handleAuthorInfoChange={handleAuthorInfoChange}
                                 />
                             </ModalWrapper>
                         </Fade>
