@@ -1,0 +1,13 @@
+[package]
+name = "mod_writer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mod_reader = { path = "../mod_reader" }
+parser = { path = "../parser" }
+root_finder = { path = "../root_finder" }
+
+tokio = { version = "1", features = ["full"] }

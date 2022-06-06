@@ -10,7 +10,7 @@ fn main() {
     match rt.block_on(async { find_roots(path).await }) {
         Ok(paths) => {
             for path in paths {
-                println!("{}", path)
+                println!("{}", path.file_name().unwrap().to_str().unwrap());
             }
         }
         Err(e) => eprintln!("{}", e),

@@ -1,2 +1,2 @@
 [workspace]
-members = ["mod-reader", "parser", "root_finder"]
+members = ["mod-reader", "parser", "root_finder", "mod_reader", "mod_writer"]

@@ -194,6 +194,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "mod_reader"
+version = "0.1.0"
+dependencies = [
+ "parser",
+ "root_finder",
+ "tokio",
+]
+
+[[package]]
+name = "mod_writer"
+version = "0.1.0"
+dependencies = [
+ "mod_reader",
+ "parser",
+ "root_finder",
+ "tokio",
+]
+
+[[package]]
 name = "num_cpus"
 version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

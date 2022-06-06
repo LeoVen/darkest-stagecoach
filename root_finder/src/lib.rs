@@ -3,7 +3,7 @@ use std::{fs::Metadata, path::PathBuf};
 use futures::{io, select, stream::FuturesUnordered, StreamExt};
 use tokio_stream::wrappers::ReadDirStream;
 
-pub async fn find_roots(path: PathBuf) -> io::Result<Vec<String>> {
+pub async fn find_roots(path: PathBuf) -> io::Result<Vec<PathBuf>> {
     let mut meta_queue = FuturesUnordered::new();
     meta_queue.push(metadata(path));
 
@@ -47,14 +47,14 @@ async fn metadata(path: PathBuf) -> io::Result<(PathBuf, Metadata)> {
     Ok((path, meta))
 }
 
-async fn filter_file(mut path: PathBuf) -> Option<String> {
+async fn filter_file(mut path: PathBuf) -> Option<PathBuf> {
     if let Some(file_name) = path.file_name() {
         if let (Some(file_name), Some(path_name)) = (file_name.to_str(), path.to_str()) {
             if file_name.ends_with(".info.darkest") && path_name.contains("hero") {
                 if !path.pop() {
                     return None;
                 }
-                return Some(path.to_str().unwrap().to_string());
+                return Some(path);
             }
         }
     }

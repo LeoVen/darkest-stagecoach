@@ -1,8 +1,9 @@
 use std::collections::HashMap;
 
-pub fn parse_darkest(
-    data: impl ToString,
-) -> Result<Vec<(String, HashMap<String, Vec<String>>)>, String> {
+pub type DarkestRow = HashMap<String, Vec<String>>;
+pub type DarkestFile = Vec<(String, DarkestRow)>;
+
+pub fn parse_darkest(data: impl ToString) -> Result<DarkestFile, String> {
     let data = data.to_string();
 
     let lines = data.lines();
@@ -26,7 +27,7 @@ pub fn parse_darkest(
 }
 
 // TODO edge case: some values are floats and have a '.' in the middle
-fn parse_line(mut line: &str) -> Option<HashMap<String, Vec<String>>> {
+fn parse_line(mut line: &str) -> Option<DarkestRow> {
     line = line.trim();
 
     if line.len() == 0 {
