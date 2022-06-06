@@ -1,0 +1,1 @@
+# Parser for .darkest files

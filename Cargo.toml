@@ -1,0 +1,2 @@
+[workspace]
+members = ["mod-reader", "parser", "root_finder"]
