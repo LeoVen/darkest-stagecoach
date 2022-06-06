@@ -9,6 +9,12 @@ export const Class_Crusader: ClassMod = {
     religious: true,
     transform: false,
     originalHero: true,
+    synergy: new Set([
+        'stun',
+        "heal",
+        "forward",
+        "stress",
+    ]),
     resistances: {
         stun: 0.4,
         blight: 0.3,

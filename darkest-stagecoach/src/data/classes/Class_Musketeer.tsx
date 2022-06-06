@@ -9,6 +9,20 @@ export const Class_Musketeer: ClassMod = {
     religious: false,
     transform: false,
     originalHero: true,
+    classType: {
+        damage: 3,
+        healer: 1,
+        support: 1,
+        tank: 0
+    },
+    synergy: new Set([
+        'mark',
+        'debuff',
+        'knockback',
+        'heal',
+        'deStealth',
+        'clear'
+    ]),
     resistances: {
         stun: 0.4,
         blight: 0.3,

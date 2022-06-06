@@ -1,3 +1,4 @@
+import armor from '../assets/img/stats/armor.png'
 import bleed from '../assets/img/stats/bleed.png'
 import blight from '../assets/img/stats/blight.png'
 import block from '../assets/img/stats/block.png'
@@ -19,6 +20,7 @@ import reflect from '../assets/img/stats/reflect.png'
 import riposte from '../assets/img/stats/riposte.png'
 import stealth from '../assets/img/stats/stealth.png'
 import stress from '../assets/img/stats/virtue.png'
+import horror from '../assets/img/stats/horror.png'
 import stun from '../assets/img/stats/stun.png'
 import { Synergy } from '../Types'
 import {
@@ -33,39 +35,15 @@ import {
     Typography
 } from '@material-ui/core'
 import { CSSProperties } from 'react'
-import { sortSynergies } from '../Synergy'
+import { sortSynergies, Synergies } from '../Synergy'
 
 interface SynergyIconProps {
     icon: Synergy
     style?: CSSProperties
 }
 
-const allSynergies: Array<Synergy> = [
-    'bleed',
-    'blight',
-    'block',
-    'buff',
-    'clear',
-    'cure',
-    'debuff',
-    'deStealth',
-    'guard',
-    'guardBreak',
-    'heal',
-    'mark',
-    'shuffle',
-    'knockback',
-    'pull',
-    'forward',
-    'back',
-    'reflect',
-    'riposte',
-    'stealth',
-    'stress',
-    'stun'
-]
-
 const iconMap: Record<Synergy, string> = {
+    armor: armor,
     bleed: bleed,
     blight: blight,
     block: block,
@@ -87,10 +65,12 @@ const iconMap: Record<Synergy, string> = {
     riposte: riposte,
     stealth: stealth,
     stress: stress,
+    horror: horror,
     stun: stun
 }
 
 const iconDescription: Record<Synergy, string> = {
+    armor: 'Armor piercing',
     bleed: 'Causes bleed DoT',
     blight: 'Causes blight DoT',
     block: 'Add block ally',
@@ -111,7 +91,8 @@ const iconDescription: Record<Synergy, string> = {
     reflect: 'Adds damage reflection',
     riposte: 'Activates riposte',
     stealth: 'Activates stealth',
-    stress: 'Heals stress or cure horror',
+    stress: 'Heals stress',
+    horror: 'Cures horror',
     stun: 'Stuns enemy'
 }
 
@@ -147,7 +128,7 @@ export const SynergyIconsTable = () => (
                 </TableRow>
             </TableHead>
             <TableBody>
-                {allSynergies.map(syn => (
+                {Synergies.map(syn => (
                     <TableRow key={`table-${syn}`}>
                         <TableCell align="center">
                             <img src={iconMap[syn]} alt="Icon" />

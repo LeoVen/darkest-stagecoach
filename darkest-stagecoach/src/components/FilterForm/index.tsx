@@ -6,7 +6,7 @@ import {
     ThemeProvider
 } from '@material-ui/core'
 import React from 'react'
-import { synergies } from '../../Synergy'
+import { Synergies } from '../../Synergy'
 import { AppTheme, THEME } from '../../theme'
 import { FilterBy, Synergy } from '../../Types'
 import { ClassProfileIcon } from '../ClassProfileIcons'
@@ -155,7 +155,7 @@ export const FilterForm = ({
                             Combat Skills Synergy
                         </SectionTitle>
                         <SynergiesSection>
-                            {synergies.map(s => {
+                            {Synergies.map(s => {
                                 return (
                                     <SelectionBox
                                         key={`form-synergy-${s}`}

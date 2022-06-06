@@ -3,9 +3,21 @@ import ClassMod from '../ClassMod'
 export const Class_PlagueDoctor: ClassMod = {
     key: 'Class_PlagueDoctor',
     name: 'PlagueDoctor',
+    description: [
+        'A doctor, researcher and alchemist who prefers to hang back, eating away at her foes with stacking damage-over-time abilities like toxic clouds & plague-filled grenades. She is equally effective in a support role, blinding and confusing foes while enhancing a party\'s survival with damage-increasing tonics, and remedies for bleed and blight effects.',
+    ],
     religious: false,
     transform: false,
     originalHero: true,
+    synergy: new Set([
+        'stun',
+        'blight',
+        'cure',
+        'heal',
+        'bleed',
+        'shuffle',
+        'buff',
+    ]),
     resistances: {
         stun: 0.2,
         blight: 0.6,

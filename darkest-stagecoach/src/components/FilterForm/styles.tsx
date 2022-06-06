@@ -28,7 +28,7 @@ export const SynergiesSection = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 400px;
+    max-width: 500px;
 `
 
 export const CharacteristicsSection = styled.div`

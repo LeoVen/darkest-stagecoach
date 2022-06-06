@@ -100,6 +100,7 @@ export type SortBy = {
 export type PreferredPositions = [number, number, number, number]
 
 export type Synergy =
+    | 'armor' // Armor piercing
     | 'bleed' // Causes dot bleed
     | 'blight' // Causes dot blight
     | 'stun' // Stuns enemy
@@ -110,7 +111,8 @@ export type Synergy =
     | 'pull' // Move enemy forward
     | 'shuffle' // Shuffles enemy
     | 'heal' // Heal ally or adds restoration
-    | 'stress' // Stress heal ally or cure horor
+    | 'stress' // Stress heal ally
+    | 'horror' // Cure horror from ally
     | 'block' // Gives block
     | 'riposte' // Activates riposte
     | 'guard' // Guards ally

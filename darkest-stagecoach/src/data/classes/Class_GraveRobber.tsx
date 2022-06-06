@@ -9,6 +9,13 @@ export const Class_GraveRobber: ClassMod = {
     religious: false,
     transform: false,
     originalHero: true,
+    synergy: new Set([
+        'armor',
+        "debuff",
+        "stealth",
+        "mark",
+        'blight',
+    ]),
     resistances: {
         stun: 0.2,
         blight: 0.5,

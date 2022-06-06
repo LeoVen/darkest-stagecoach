@@ -3,9 +3,19 @@ import ClassMod from '../ClassMod'
 export const Class_Occultist: ClassMod = {
     key: 'Class_Occultist',
     name: 'Occultist',
+    description: [
+        'A lifetime of scholarly inquest into ancient and forbidden lore has opened the Occultist\'s mind to the powers of the void. Debilitating curses and maddeningly impossible support skills are his specialty. The void, however, is an unpredictable power, and consequently skills effectiveness can vary dramatically, and usually come at a cost of light, or stress.',
+    ],
     religious: false,
     transform: false,
     originalHero: true,
+    synergy: new Set([
+        'debuff',
+        'heal',
+        'mark',
+        'stun',
+        'pull',
+    ]),
     resistances: {
         stun: 0.2,
         blight: 0.3,

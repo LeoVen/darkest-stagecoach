@@ -5,6 +5,7 @@ import { Portrait } from '../../data/Portrait'
 import { ModalWrapper } from '../../styles'
 import { ClassModal } from '../ClassModal'
 import { ClassProfileIcons } from '../ClassProfileIcons'
+import { ClassTypeIcons } from '../ClassTypeIcons'
 import { ModalCloseButton } from '../ModalCloseButton'
 import { OriginalHeroIcon } from '../OriginalHeroIcon'
 import { Positions } from '../Positions'
@@ -14,6 +15,7 @@ import {
     HeroCard,
     ImageAndIcons,
     ImageAndPositions,
+    TopIcons,
     TopLeftIcons
 } from './styles'
 
@@ -69,11 +71,11 @@ export const ClassCard = ({
                 {classInfo.originalHero ? <OriginalHeroIcon /> : null}
             </TopLeftIcons>
             {/* TODO Until I decide how to classify classes properly */}
-            {/* <TopIcons>
+            <TopIcons>
                 {!!classInfo.classType && (
                     <ClassTypeIcons type={classInfo.classType} />
                 )}
-            </TopIcons> */}
+            </TopIcons>
             <BottomIcons>
                 <SynergyIcons synergies={classInfo.synergy} />
             </BottomIcons>
