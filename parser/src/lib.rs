@@ -13,14 +13,47 @@ pub fn parse_darkest(
         let idx = line.find(":");
         if let Some(idx) = idx {
             let key = &line[..idx];
-            let map = parse_line(&line[idx..]);
-            result.push((key.to_string(), map));
+            let map = parse_line(&line[idx + 1..]);
+            if let Some(map) = map {
+                result.push((key.to_string(), map));
+            } else {
+                println!("Warning: line failed to be parsed:\n{}", line);
+            }
         }
     });
 
     return Ok(result);
 }
 
-fn parse_line(_line: &str) -> HashMap<String, Vec<String>> {
-    todo!()
+// TODO edge case: some values are floats and have a '.' in the middle
+fn parse_line(mut line: &str) -> Option<HashMap<String, Vec<String>>> {
+    line = line.trim();
+
+    if line.len() == 0 {
+        return None;
+    }
+
+    let mut result = HashMap::new();
+
+    let splits = line
+        .split(".")
+        .filter(|s| s.len() > 0)
+        .collect::<Vec<&str>>();
+
+    for chars in splits.into_iter() {
+        let space = chars.find(" ");
+        if let Some(space) = space {
+            let key = &chars[..space];
+
+            let values = chars[space..]
+                .trim()
+                .split(" ")
+                .map(|s| s.to_string())
+                .collect::<Vec<String>>();
+
+            result.insert(key.to_string(), values);
+        }
+    }
+
+    return Some(result);
 }
