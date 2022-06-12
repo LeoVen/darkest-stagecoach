@@ -9,5 +9,3 @@ edition = "2021"
 mod_reader = { path = "../mod_reader" }
 parser = { path = "../parser" }
 root_finder = { path = "../root_finder" }
-
-tokio = { version = "1", features = ["full"] }

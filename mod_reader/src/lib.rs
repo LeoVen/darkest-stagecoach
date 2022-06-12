@@ -1,13 +1,43 @@
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
-// TODO read ability icons and icons_equip
-pub struct ClassModInfo {
-    pub key: String,
-    pub art: parser::DarkestFile,
-    pub info: parser::DarkestFile,
+use tokio::io;
+
+use crate::types::ClassModInfo;
+
+pub mod types;
+
+pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
+    let rt = tokio::runtime::Runtime::new().unwrap();
+    match rt.block_on(async { read_all(root.to_path_buf()).await }) {
+        Ok(mut infos) => {
+            infos.sort_by(|a, b| a.key.cmp(&b.key));
+            return infos;
+        }
+        Err(e) => eprintln!("Failed to read all mod files: {}", e),
+    }
+    return vec![];
 }
 
-pub async fn read_mod(root: &Path) -> Option<ClassModInfo> {
+async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
+    let roots = root_finder::find_roots(path).await?;
+
+    let mut result = vec![];
+
+    for root in roots {
+        if let Some(info) = read_single(&root).await {
+            result.push(info);
+        } else {
+            eprintln!(
+                "Mod couldn't be read: {}",
+                root.to_string_lossy().to_string()
+            );
+        }
+    }
+
+    Ok(result)
+}
+
+async fn read_single(root: &Path) -> Option<ClassModInfo> {
     let name = root.file_name()?.to_str()?.to_string();
 
     let info_file = root.join(name.clone() + ".info.darkest");
@@ -50,6 +80,6 @@ pub async fn read_mod(root: &Path) -> Option<ClassModInfo> {
     });
 }
 
-// fn file_to_base64(path: PathBuf) -> Vec<u8> {
-//     todo!()
-// }
+fn _file_to_base64(_path: PathBuf) -> Vec<u8> {
+    todo!()
+}
