@@ -1,7 +1,5 @@
 use std::collections::HashMap;
 
-pub mod types;
-
 pub type DarkestRow = HashMap<String, Vec<String>>;
 pub type DarkestFile = Vec<(String, DarkestRow)>;
 

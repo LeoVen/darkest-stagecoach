@@ -194,6 +194,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "mod_parser"
+version = "0.1.0"
+dependencies = [
+ "mod_reader",
+]
+
+[[package]]
 name = "mod_reader"
 version = "0.1.0"
 dependencies = [
@@ -206,9 +213,8 @@ dependencies = [
 name = "mod_writer"
 version = "0.1.0"
 dependencies = [
+ "mod_parser",
  "mod_reader",
- "parser",
- "root_finder",
 ]
 
 [[package]]

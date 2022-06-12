@@ -2,9 +2,9 @@ use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
 use mod_reader::types::ClassModInfo;
 
-use parser::types::ClassInfo;
+use mod_parser::types::ClassInfo;
 
-use crate::proc::{proc_resistances, proc_stats};
+use mod_parser::{proc_resistances, proc_stats};
 
 const PREFIX: &str = "Class_";
 const SUFFIX: &str = ".tsx";

@@ -1,5 +1,8 @@
 use mod_reader::types::ClassModInfo;
-use parser::types::{ClassResistances, ClassStats};
+
+use crate::types::*;
+
+pub mod types;
 
 pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
     let mut result = ClassResistances::default();
@@ -16,9 +19,7 @@ pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
                 "debuff" => result.debuff = parse_value(&values[0]),
                 "death_blow" => result.death_blow = parse_value(&values[0]),
                 "trap" => result.trap = parse_value(&values[0]),
-                _ => {
-                    println!("found unmatched: {}", key);
-                }
+                _ => {}
             }
         }
     }
@@ -26,6 +27,7 @@ pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
     result
 }
 
+// TODO check for upgradeRequirementCode for the upgrade level
 pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
     let mut result = ClassStats::default();
 
@@ -38,9 +40,7 @@ pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
                 "prot" => result.armour[i].prot = parse_value(&values[0]),
                 "hp" => result.armour[i].hp = parse_value(&values[0]),
                 "spd" => result.armour[i].speed = parse_value(&values[0]),
-                _ => {
-                    println!("found unmatched: {}", key);
-                }
+                _ => {}
             }
         }
     }

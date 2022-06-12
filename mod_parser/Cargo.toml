@@ -1,5 +1,5 @@
 [package]
-name = "mod_writer"
+name = "mod_parser"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +7,3 @@ edition = "2021"
 
 [dependencies]
 mod_reader = { path = "../mod_reader" }
-mod_parser = { path = "../mod_parser" }
