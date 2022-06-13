@@ -2,8 +2,9 @@ use std::path::{Path, PathBuf};
 
 use tokio::io;
 
-use crate::types::ClassModInfo;
+use crate::{reader::ModReader, types::ClassModInfo};
 
+mod reader;
 pub mod types;
 
 pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
@@ -18,6 +19,7 @@ pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
     return vec![];
 }
 
+// TODO select!
 async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
     let roots = root_finder::find_roots(path).await?;
 
@@ -40,46 +42,16 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
 async fn read_single(root: &Path) -> Option<ClassModInfo> {
     let name = root.file_name()?.to_str()?.to_string();
 
-    let info_file = root.join(name.clone() + ".info.darkest");
-    let art_file = root.join(name.clone() + ".art.darkest");
+    println!("Reading class mod {}", &name);
 
-    let info_data = match tokio::fs::read_to_string(&info_file).await {
-        Ok(data) => data,
-        Err(e) => {
-            eprintln!("Failed to read info data ({:?}):\n\t{}", info_file, e);
-            return None;
-        }
-    };
-    let art_data = match tokio::fs::read_to_string(&art_file).await {
-        Ok(data) => data,
-        Err(e) => {
-            eprintln!("Failed to read art data ({:?}):\n\t{}", art_file, e);
-            return None;
-        }
-    };
+    let mut mod_info = Default::default();
 
-    let info = match parser::parse_darkest(info_data) {
-        Ok(info) => info,
-        Err(e) => {
-            eprintln!("Failed to parse info data: {}", e);
-            return None;
-        }
-    };
-    let art = match parser::parse_darkest(art_data) {
-        Ok(info) => info,
-        Err(e) => {
-            eprintln!("Failed to parse art data: {}", e);
-            return None;
-        }
-    };
+    // TODO spawn tokio tasks
+    let mod_reader = ModReader::new(&name, root);
+    mod_reader.read_darkest(&mut mod_info).await;
+    mod_reader.read_portrait(&mut mod_info).await;
 
-    return Some(ClassModInfo {
-        key: name,
-        art,
-        info,
-    });
-}
+    mod_info.key = name;
 
-fn _file_to_base64(_path: PathBuf) -> Vec<u8> {
-    todo!()
+    Some(mod_info)
 }

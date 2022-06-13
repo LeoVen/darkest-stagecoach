@@ -4,7 +4,7 @@ use mod_reader::types::ClassModInfo;
 
 use mod_parser::types::ClassInfo;
 
-use mod_parser::{proc_resistances, proc_stats};
+use mod_parser::{proc_resistances, proc_stats, proc_tag};
 
 const PREFIX: &str = "Class_";
 const SUFFIX: &str = ".tsx";
@@ -32,8 +32,10 @@ fn transform_info(info: ClassModInfo) -> ClassInfo {
 
     result.res = proc_resistances(&info);
     result.stats = proc_stats(&info);
+    (result.religious, result.transform) = proc_tag(&info);
 
     result.key = info.key;
+    result.portrait = info.portrait;
 
     return result;
 }
@@ -42,16 +44,15 @@ pub fn make_code(class_info: ClassInfo) -> (String, String) {
     let a = &class_info.stats.armour;
     let w = &class_info.stats.weapon;
     (
-        class_info.key,
+        class_info.key.to_string(),
         format!(
             r"import ClassMod from '../ClassMod'
-import portrait from '../../assets/img/portraits/{image}'
 
-export const Class_{name}: ClassMod = {{
-    key: '{name}',
+export const Class_{key}: ClassMod = {{
+    key: '{key}',
     name: '{name}',
-    portrait: portrait,
     religious: {religious},
+    transform: {transform},
     resistances: {resistances},
     position: {pos:?},
     totalSkills: {skills},
@@ -68,10 +69,12 @@ export const Class_{name}: ClassMod = {{
             name: 'Steam',
             link: '{steam_link}'
         }}
-    ]
+    ],
+    portrait: `{portrait}`,
 }}
 ",
-            image = class_info.image_name,
+            key = &class_info.key,
+            portrait = class_info.portrait,
             name = class_info.name,
             pos = class_info.pos,
             skills = class_info.total_skills,
@@ -95,7 +98,8 @@ export const Class_{name}: ClassMod = {{
             ),
             resistances = class_info.res,
             religious = class_info.religious,
-            steam_link = steam_link(&class_info.steam_id)
+            transform = class_info.transform,
+            steam_link = steam_link(&class_info.steam_id),
         ),
     )
 }

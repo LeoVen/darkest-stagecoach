@@ -36,8 +36,26 @@ pub struct ClassStats {
 }
 
 #[derive(Debug, Default)]
+pub struct Launch {
+    pub targets: [bool; 4],
+}
+
+#[derive(Debug, Default)]
+pub struct Target {
+    pub modifiers: Vec<char>,
+    pub targets: [bool; 4],
+}
+
+#[derive(Debug, Default)]
+pub struct SkillInfo {
+    pub name: String,
+    pub img: String, // base64 encoded image
+    pub launch: Launch,
+    pub target: Target,
+}
+
+#[derive(Debug, Default)]
 pub struct ClassInfo {
-    pub key: String,
     pub failed: bool,
     pub steam_id: String,
     pub name: String,
@@ -45,11 +63,20 @@ pub struct ClassInfo {
     pub info_path: PathBuf,
     pub image_name: String,
     pub image_path: PathBuf,
-    pub religious: bool,
-    pub res: ClassResistances,
-    pub stats: ClassStats,
     pub pos: [u8; 4],
     pub total_skills: u8,
+
+    pub skills: Vec<SkillInfo>,
+
+    // Done parsing
+    pub key: String,
+    pub res: ClassResistances,
+    pub stats: ClassStats,
+
+    pub religious: bool,
+    pub transform: bool,
+
+    pub portrait: String, // base64 encoded image
 }
 
 impl Display for ClassResistances {

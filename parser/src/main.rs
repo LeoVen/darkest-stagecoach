@@ -13,20 +13,15 @@ fn main() {
 
     let result = parse_darkest(data);
 
-    match result {
-        Ok(result) => {
-            for (key, map) in result {
-                println!("key: {}\nmap:", key);
-                for (k, v) in map {
-                    print!("K: {} -> ", k);
-                    for values in v {
-                        print!("{} ", values);
-                    }
-                    println!("");
-                }
-                println!();
+    for (key, map) in result {
+        println!("key: {}\nmap:", key);
+        for (k, v) in map {
+            print!("K: {} -> ", k);
+            for values in v {
+                print!("{} ", values);
             }
+            println!("");
         }
-        Err(e) => eprintln!("{}", e),
-    };
+        println!();
+    }
 }

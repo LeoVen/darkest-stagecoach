@@ -27,7 +27,7 @@ pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
     result
 }
 
-// TODO check for upgradeRequirementCode for the upgrade level
+// TODO check for upgradeRequirementCode for the upgrade level instead of assuming that they are ordered
 pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
     let mut result = ClassStats::default();
 
@@ -50,7 +50,6 @@ pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
     for (i, (_, stats)) in filter.enumerate() {
         for (key, values) in stats {
             match &**key {
-                // .atk 0% .dmg 6 11 .crit 2% .spd 7
                 "atk" => result.weapon[i].accuracy = parse_value(&values[0]),
                 "crit" => result.weapon[i].crit = parse_value(&values[0]),
                 "spd" => result.weapon[i].speed = parse_value(&values[0]),
@@ -58,14 +57,29 @@ pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
                     result.weapon[i].damage[0] = parse_value(&values[0]);
                     result.weapon[i].damage[1] = parse_value(&values[1]);
                 }
-                _ => {
-                    println!("found unmatched: {}", key);
-                }
+                _ => {}
             }
         }
     }
 
     result
+}
+
+pub fn proc_tag(info: &ClassModInfo) -> (bool, bool) {
+    let mut religious = false;
+    let transform = info.info.iter().filter(|(key, _)| key == "mode").count() > 0;
+
+    for (_, map) in info.info.iter().filter(|(key, _)| key == "tag") {
+        if let Some(id) = map.get("id") {
+            match &*id[0] {
+                "non-religious" => religious = false,
+                "religious" => religious = true,
+                _ => {}
+            }
+        }
+    }
+
+    (religious, transform)
 }
 
 pub fn parse_value(val: &str) -> f32 {
