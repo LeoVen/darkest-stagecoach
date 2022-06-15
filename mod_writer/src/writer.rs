@@ -2,9 +2,9 @@ use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
 use mod_reader::types::ClassModInfo;
 
-use mod_parser::types::ClassInfo;
+use mod_parser::types::{ClassInfo, SkillInfo};
 
-use mod_parser::{proc_resistances, proc_stats, proc_tag};
+use mod_parser::{proc_resistances, proc_skills, proc_stats, proc_tag};
 
 const PREFIX: &str = "Class_";
 const SUFFIX: &str = ".tsx";
@@ -33,6 +33,7 @@ fn transform_info(info: ClassModInfo) -> ClassInfo {
     result.res = proc_resistances(&info);
     result.stats = proc_stats(&info);
     (result.religious, result.transform) = proc_tag(&info);
+    result.skills = proc_skills(info.skills);
 
     result.key = info.key;
     result.portrait = info.portrait;
@@ -50,12 +51,10 @@ pub fn make_code(class_info: ClassInfo) -> (String, String) {
 
 export const Class_{key}: ClassMod = {{
     key: '{key}',
-    name: '{name}',
     religious: {religious},
     transform: {transform},
     resistances: {resistances},
-    position: {pos:?},
-    totalSkills: {skills},
+    totalSkills: {total_skills},
     stats: {{
         armours: [
             {armours}
@@ -70,14 +69,14 @@ export const Class_{key}: ClassMod = {{
             link: '{steam_link}'
         }}
     ],
+    skills: [{skills}
+    ],
     portrait: `{portrait}`,
 }}
 ",
             key = &class_info.key,
             portrait = class_info.portrait,
-            name = class_info.name,
-            pos = class_info.pos,
-            skills = class_info.total_skills,
+            total_skills = class_info.total_skills,
             armours = format!(
                 "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
                 a[0],
@@ -100,8 +99,19 @@ export const Class_{key}: ClassMod = {{
             religious = class_info.religious,
             transform = class_info.transform,
             steam_link = steam_link(&class_info.steam_id),
+            skills = format_skills(&class_info.skills)
         ),
     )
+}
+
+fn format_skills(skills: &[SkillInfo]) -> String {
+    let mut result = String::with_capacity(40_000 * skills.len());
+
+    skills
+        .iter()
+        .for_each(|skill| result += &(skill.to_string() + ","));
+
+    result
 }
 
 fn steam_link(steam_id: &str) -> String {

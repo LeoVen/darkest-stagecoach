@@ -11,5 +11,6 @@ pub struct ClassModInfo {
 pub struct SkillData {
     pub key: String,
     pub name: String,
+    pub icon: String,
     pub img: String, // base64 encoded image
 }

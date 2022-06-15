@@ -1,5 +1,4 @@
 use std::fmt::Display;
-use std::path::PathBuf;
 
 #[derive(Debug, Default)]
 pub struct ClassResistances {
@@ -42,7 +41,8 @@ pub struct Launch {
 
 #[derive(Debug, Default)]
 pub struct Target {
-    pub modifiers: Vec<char>,
+    // TODO
+    pub modifiers: String,
     pub targets: [bool; 4],
 }
 
@@ -56,14 +56,7 @@ pub struct SkillInfo {
 
 #[derive(Debug, Default)]
 pub struct ClassInfo {
-    pub failed: bool,
     pub steam_id: String,
-    pub name: String,
-    pub info_name: String,
-    pub info_path: PathBuf,
-    pub image_name: String,
-    pub image_path: PathBuf,
-    pub pos: [u8; 4],
     pub total_skills: u8,
 
     pub skills: Vec<SkillInfo>,
@@ -122,5 +115,33 @@ impl Display for ClassStats {
             self.weapon[3],
             self.weapon[4]
         )
+    }
+}
+
+impl Display for SkillInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            r"
+        {{
+            name: '{}',
+            launch: {},
+            target: {},
+            image: `{}`,
+        }}",
+            self.name, self.launch, self.target, self.img,
+        )
+    }
+}
+
+impl Display for Launch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "\"\"")
+    }
+}
+
+impl Display for Target {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "\"\"")
     }
 }

@@ -42,16 +42,18 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
 async fn read_single(root: &Path) -> Option<ClassModInfo> {
     let name = root.file_name()?.to_str()?.to_string();
 
-    println!("Reading class mod {}", &name);
+    print!("Reading class mod {:<20} ", &name);
 
     let mut mod_info = Default::default();
 
-    // TODO spawn tokio tasks
     let mod_reader = ModReader::new(&name, root);
-    mod_reader.read_darkest(&mut mod_info).await;
-    mod_reader.read_portrait(&mut mod_info).await;
+    mod_reader.read_darkest(&mut mod_info).await.ok()?;
+    mod_reader.read_portrait(&mut mod_info).await.ok()?;
+    mod_reader.read_skills(&mut mod_info).await.ok()?;
 
     mod_info.key = name;
+
+    println!();
 
     Some(mod_info)
 }

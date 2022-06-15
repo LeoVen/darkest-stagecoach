@@ -1,4 +1,4 @@
-use mod_reader::types::ClassModInfo;
+use mod_reader::types::{ClassModInfo, SkillData};
 
 use crate::types::*;
 
@@ -80,6 +80,23 @@ pub fn proc_tag(info: &ClassModInfo) -> (bool, bool) {
     }
 
     (religious, transform)
+}
+
+pub fn proc_skills(data: Vec<SkillData>) -> Vec<SkillInfo> {
+    // TODO
+    data.into_iter()
+        .map(|data| SkillInfo {
+            img: data.img,
+            name: data.name,
+            launch: Launch {
+                targets: [false, false, false, false],
+            },
+            target: Target {
+                modifiers: String::new(),
+                targets: [false, false, false, false],
+            },
+        })
+        .collect::<Vec<SkillInfo>>()
 }
 
 pub fn parse_value(val: &str) -> f32 {
