@@ -1,4 +1,4 @@
-use std::path::Path;
+use std::{collections::HashMap, path::Path};
 
 use parser::DarkestFile;
 use tokio::{fs, io};
@@ -13,6 +13,27 @@ pub struct ModReader<'a> {
 impl<'a> ModReader<'a> {
     pub fn new(name: &'a str, root: &'a Path) -> Self {
         Self { name, root }
+    }
+
+    pub fn loc_exceptions(&self) -> HashMap<&'static str, &'static str> {
+        return HashMap::from([
+            ("abomination", "heroes"),
+            ("antiquarian", "heroes"),
+            ("bounty_hunter", "heroes"),
+            ("arbalest", "heroes"),
+            ("crusader", "heroes"),
+            ("grave_robber", "heroes"),
+            ("hellion", "heroes"),
+            ("highwayman", "heroes"),
+            ("flagellant", "heroes"),
+            ("houndmaster", "heroes"),
+            ("jester", "heroes"),
+            ("leper", "heroes"),
+            ("man_at_arms", "heroes"),
+            ("occultist", "heroes"),
+            ("plague_doctor", "heroes"),
+            ("vestal", "heroes"),
+        ]);
     }
 
     pub async fn read_darkest(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
@@ -42,6 +63,36 @@ impl<'a> ModReader<'a> {
     }
 
     pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+        let excp = self.loc_exceptions();
+
+        let mut name = self.name;
+        // The default heroes use a shared loc file
+        if let Some(other) = excp.get(self.name) {
+            name = other;
+        }
+
+        let mut path = self.root.to_path_buf();
+        _ = path.pop(); // /<steam_id>/heroes/
+        _ = path.pop(); // /<steam_id>/
+        path.push("localization"); // /<steam_id>/localization/
+        path.push(format!("{}.string_table.xml", name));
+
+        match std::fs::read_to_string(path) {
+            Ok(data) => {
+                print!("read loc ok!  ");
+                if let Ok(xml) = xml_parser::parse_loc_xml(data) {
+                    mod_info.locs = xml;
+                    print!("parse ok! . ");
+                } else {
+                    print!("parse fail. ");
+                }
+            }
+            Err(_) => {
+                print!("read loc fail ");
+                print!("parse fail. ");
+            }
+        }
+
         Ok(())
     }
 
@@ -64,7 +115,10 @@ impl<'a> ModReader<'a> {
                 }
             };
 
-            // TODO get skill name
+            let key = format!("combat_skill_name_{}_{}", self.name, data.key);
+            if let Some(value) = mod_info.locs.get(&key) {
+                data.name = value[0].to_string();
+            }
 
             result.push(data);
         }
@@ -77,14 +131,23 @@ impl<'a> ModReader<'a> {
     }
 
     pub async fn read_guild_header(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        // TODO get guild header
-        todo!()
+        let mut path = self.root.to_path_buf();
+        path.push(format!("{}_guild_header.png", self.name));
+
+        if let Ok(data) = image_to_base64(&path).await {
+            mod_info.guild = data;
+            print!("guild found. ");
+        } else {
+            print!("guild fail.  ");
+        }
+
+        Ok(())
     }
 
-    pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        // TODO get all equip icons
-        todo!()
-    }
+    // pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+    //     // TODO get all equip icons
+    //     todo!()
+    // }
 }
 
 pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {

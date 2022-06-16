@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 // TODO read ability icons and icons_equip
 #[derive(Default)]
 pub struct ClassModInfo {
@@ -6,8 +8,8 @@ pub struct ClassModInfo {
     pub info: parser::DarkestFile,
     pub portrait: String, // base64 encoded image
     pub skills: Vec<SkillData>,
-    // TODO
-    pub guild_header: String,
+    pub locs: HashMap<String, Vec<String>>,
+    pub guild: String,
     // TODO equip icons
     // TODO effects
     // TODO camping skills

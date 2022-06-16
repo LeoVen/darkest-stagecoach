@@ -9,5 +9,6 @@ edition = "2021"
 tokio = "1"
 root_finder = { path = "../root_finder" }
 parser = { path = "../parser" }
+xml_parser = { path = "../xml_parser" }
 base64 = "0.13"
 anyhow = "1"

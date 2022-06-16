@@ -210,6 +210,7 @@ name = "mod_parser"
 version = "0.1.0"
 dependencies = [
  "mod_reader",
+ "parser",
 ]
 
 [[package]]
@@ -221,6 +222,7 @@ dependencies = [
  "parser",
  "root_finder",
  "tokio",
+ "xml_parser",
 ]
 
 [[package]]

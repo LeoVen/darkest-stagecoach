@@ -36,7 +36,7 @@ pub struct ClassStats {
 
 #[derive(Debug, Default)]
 pub struct Launch {
-    pub targets: [bool; 4],
+    pub positions: [bool; 4],
 }
 
 #[derive(Debug, Default)]
@@ -57,9 +57,6 @@ pub struct SkillInfo {
 #[derive(Debug, Default)]
 pub struct ClassInfo {
     pub steam_id: String,
-    pub total_skills: u8,
-
-    pub skills: Vec<SkillInfo>,
 
     // Done parsing
     pub key: String,
@@ -70,6 +67,9 @@ pub struct ClassInfo {
     pub transform: bool,
 
     pub portrait: String, // base64 encoded image
+    pub guild: String,    // base64 encoded image
+
+    pub skills: Vec<SkillInfo>,
 }
 
 impl Display for ClassResistances {
@@ -124,7 +124,7 @@ impl Display for SkillInfo {
             f,
             r"
         {{
-            name: '{}',
+            name: `{}`,
             launch: {},
             target: {},
             image: `{}`,
@@ -136,12 +136,23 @@ impl Display for SkillInfo {
 
 impl Display for Launch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "\"\"")
+        write!(
+            f,
+            "[{},{},{},{}]",
+            self.positions[0], self.positions[1], self.positions[2], self.positions[3],
+        )
     }
 }
 
 impl Display for Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "\"\"")
+        write!(
+            f,
+            r"{{
+                targets: [{},{},{},{}],
+                mods: `{}`,
+            }}",
+            self.targets[0], self.targets[1], self.targets[2], self.targets[3], self.modifiers
+        )
     }
 }

@@ -51,6 +51,7 @@ async fn read_single(root: &Path) -> Option<ClassModInfo> {
     mod_reader.read_loc(&mut mod_info).await.ok()?;
     mod_reader.read_portrait(&mut mod_info).await.ok()?;
     mod_reader.read_skills(&mut mod_info).await.ok()?;
+    mod_reader.read_guild_header(&mut mod_info).await.ok()?;
 
     mod_info.key = name;
 

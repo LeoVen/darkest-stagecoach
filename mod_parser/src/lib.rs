@@ -82,24 +82,71 @@ pub fn proc_tag(info: &ClassModInfo) -> (bool, bool) {
     (religious, transform)
 }
 
-pub fn proc_skills(data: Vec<SkillData>) -> Vec<SkillInfo> {
-    // TODO
+pub fn proc_skills(info_file: &parser::DarkestFile, data: Vec<SkillData>) -> Vec<SkillInfo> {
     data.into_iter()
-        .map(|data| SkillInfo {
-            img: data.img,
-            name: data.name,
-            launch: Launch {
-                targets: [false, false, false, false],
-            },
-            target: Target {
-                modifiers: String::new(),
-                targets: [false, false, false, false],
-            },
+        .map(|data| {
+            let row = info_file
+                .iter()
+                .filter(|(key, _)| key == "combat_skill")
+                .find(|(_, map)| {
+                    if let Some(values) = map.get("id") {
+                        if let Some(value) = values.get(0) {
+                            if value == &data.key {
+                                return true;
+                            }
+                        }
+                    }
+                    false
+                })
+                .unwrap(); // TODO
+            SkillInfo {
+                img: data.img,
+                name: data.name,
+                launch: make_launch(&row.1),
+                target: make_target(&row.1),
+            }
         })
         .collect::<Vec<SkillInfo>>()
 }
 
-pub fn parse_value(val: &str) -> f32 {
+fn make_launch(map: &parser::DarkestRow) -> Launch {
+    let mut result: Launch = Default::default();
+    if let Some(launch) = map.get("launch") {
+        let nums = &*launch[0];
+        for c in nums.chars() {
+            match c {
+                '1' => result.positions[0] = true,
+                '2' => result.positions[1] = true,
+                '3' => result.positions[2] = true,
+                '4' => result.positions[3] = true,
+                _ => {}
+            }
+        }
+    }
+    result
+}
+
+fn make_target(map: &parser::DarkestRow) -> Target {
+    let mut result: Target = Default::default();
+    if let Some(launch) = map.get("target") {
+        let nums = &*launch[0];
+        for c in nums.chars() {
+            match c {
+                '1' => result.targets[0] = true,
+                '2' => result.targets[1] = true,
+                '3' => result.targets[2] = true,
+                '4' => result.targets[3] = true,
+                '@' => result.modifiers.push(c),
+                '?' => result.modifiers.push(c),
+                '~' => result.modifiers.push(c),
+                _ => {}
+            }
+        }
+    }
+    result
+}
+
+fn parse_value(val: &str) -> f32 {
     if val.ends_with('%') {
         val.strip_suffix('%')
             .unwrap()

@@ -33,10 +33,11 @@ fn transform_info(info: ClassModInfo) -> ClassInfo {
     result.res = proc_resistances(&info);
     result.stats = proc_stats(&info);
     (result.religious, result.transform) = proc_tag(&info);
-    result.skills = proc_skills(info.skills);
+    result.skills = proc_skills(&info.info, info.skills);
 
     result.key = info.key;
     result.portrait = info.portrait;
+    result.guild = info.guild;
 
     return result;
 }
@@ -54,7 +55,6 @@ export const Class_{key}: ClassMod = {{
     religious: {religious},
     transform: {transform},
     resistances: {resistances},
-    totalSkills: {total_skills},
     stats: {{
         armours: [
             {armours}
@@ -72,11 +72,11 @@ export const Class_{key}: ClassMod = {{
     skills: [{skills}
     ],
     portrait: `{portrait}`,
+    guild: `{guild}`,
 }}
 ",
             key = &class_info.key,
             portrait = class_info.portrait,
-            total_skills = class_info.total_skills,
             armours = format!(
                 "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
                 a[0],
@@ -99,7 +99,8 @@ export const Class_{key}: ClassMod = {{
             religious = class_info.religious,
             transform = class_info.transform,
             steam_link = steam_link(&class_info.steam_id),
-            skills = format_skills(&class_info.skills)
+            skills = format_skills(&class_info.skills),
+            guild = class_info.guild,
         ),
     )
 }
