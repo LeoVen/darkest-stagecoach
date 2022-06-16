@@ -48,6 +48,7 @@ async fn read_single(root: &Path) -> Option<ClassModInfo> {
 
     let mod_reader = ModReader::new(&name, root);
     mod_reader.read_darkest(&mut mod_info).await.ok()?;
+    mod_reader.read_loc(&mut mod_info).await.ok()?;
     mod_reader.read_portrait(&mut mod_info).await.ok()?;
     mod_reader.read_skills(&mut mod_info).await.ok()?;
 

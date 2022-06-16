@@ -6,6 +6,11 @@ pub struct ClassModInfo {
     pub info: parser::DarkestFile,
     pub portrait: String, // base64 encoded image
     pub skills: Vec<SkillData>,
+    // TODO
+    pub guild_header: String,
+    // TODO equip icons
+    // TODO effects
+    // TODO camping skills
 }
 
 pub struct SkillData {

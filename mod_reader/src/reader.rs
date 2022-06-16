@@ -41,6 +41,10 @@ impl<'a> ModReader<'a> {
         Ok(())
     }
 
+    pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+        Ok(())
+    }
+
     pub async fn read_skills(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
         let skills = get_all_skills(&mod_info.art);
         print!("found {:>2} skills ", skills.len());
@@ -70,6 +74,16 @@ impl<'a> ModReader<'a> {
         mod_info.skills = result;
 
         Ok(())
+    }
+
+    pub async fn read_guild_header(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+        // TODO get guild header
+        todo!()
+    }
+
+    pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+        // TODO get all equip icons
+        todo!()
     }
 }
 
