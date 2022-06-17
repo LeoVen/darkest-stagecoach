@@ -139,3 +139,17 @@ export type ClassModTypeValue =
     | 4 // Excellent
 
 export type ProfileType = 'transform' | 'religious'
+
+export type Target = {
+    targets: [boolean, boolean, boolean, boolean]
+    mods: string
+}
+
+export type Launch = [boolean, boolean, boolean, boolean]
+
+export type Skill = {
+    name: string
+    launch: Launch
+    target: Target
+    image: string
+}

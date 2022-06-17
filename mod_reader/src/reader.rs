@@ -25,13 +25,14 @@ impl<'a> ModReader<'a> {
             ("grave_robber", "heroes"),
             ("hellion", "heroes"),
             ("highwayman", "heroes"),
-            ("flagellant", "heroes"),
+            ("flagellant", "CC"),
             ("houndmaster", "heroes"),
             ("jester", "heroes"),
             ("leper", "heroes"),
             ("man_at_arms", "heroes"),
             ("occultist", "heroes"),
             ("plague_doctor", "heroes"),
+            ("shieldbreaker", "shieldbreaker"),
             ("vestal", "heroes"),
         ]);
     }

@@ -2,8 +2,10 @@ use std::collections::HashMap;
 
 use quick_xml::events::Event;
 
-pub fn parse_loc_xml(data: String) -> anyhow::Result<HashMap<String, Vec<String>>> {
-    let mut result: HashMap<String, Vec<String>> = HashMap::new();
+pub type LocFile = HashMap<String, Vec<String>>;
+
+pub fn parse_loc_xml(data: String) -> anyhow::Result<LocFile> {
+    let mut result: LocFile = HashMap::new();
     let mut buf = Vec::with_capacity(data.len());
 
     let mut reader = quick_xml::Reader::from_str(&data);

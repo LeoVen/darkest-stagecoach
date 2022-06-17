@@ -11,7 +11,7 @@
                 "\"mod_writer\"",
                 "--",
                 "C:\\Users\\lvenk\\Documents\\Darkest Dungeon\\tests\\mods",
-                "C:\\Users\\lvenk\\Documents\\GitHub\\darkest-stagecoach\\darkest-stagecoach\\src\\mods"
+                "C:\\Users\\lvenk\\Documents\\GitHub\\darkest-stagecoach\\darkest-stagecoach\\src\\data\\mods"
             ],
             "problemMatcher": []
         },

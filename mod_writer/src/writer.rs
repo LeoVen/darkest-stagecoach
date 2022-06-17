@@ -1,17 +1,15 @@
 use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
-use mod_reader::types::ClassModInfo;
-
+use mod_parser::proc_class_mod;
 use mod_parser::types::{ClassInfo, SkillInfo};
-
-use mod_parser::{proc_resistances, proc_skills, proc_stats, proc_tag};
+use mod_reader::types::ClassModInfo;
 
 const PREFIX: &str = "Class_";
 const SUFFIX: &str = ".tsx";
 
 pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
     let root = PathBuf::from_str(&output).unwrap();
-    let result = mods.into_iter().map(transform_info).map(make_code);
+    let result = mods.into_iter().map(proc_class_mod).map(make_code);
 
     for (name, data) in result {
         let mut file_name = root.clone();
@@ -27,31 +25,18 @@ pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
     }
 }
 
-fn transform_info(info: ClassModInfo) -> ClassInfo {
-    let mut result = ClassInfo::default();
-
-    result.res = proc_resistances(&info);
-    result.stats = proc_stats(&info);
-    (result.religious, result.transform) = proc_tag(&info);
-    result.skills = proc_skills(&info.info, info.skills);
-
-    result.key = info.key;
-    result.portrait = info.portrait;
-    result.guild = info.guild;
-
-    return result;
-}
-
 pub fn make_code(class_info: ClassInfo) -> (String, String) {
     let a = &class_info.stats.armour;
     let w = &class_info.stats.weapon;
     (
         class_info.key.to_string(),
         format!(
-            r"import ClassMod from '../ClassMod'
+            r"import {{ ClassModData }} from '../ClassMod'
 
-export const Class_{key}: ClassMod = {{
+export const Class_{key}: ClassModData = {{
     key: '{key}',
+    name: `{name}`,
+    originalHero: {original_hero},
     religious: {religious},
     transform: {transform},
     resistances: {resistances},
@@ -76,6 +61,8 @@ export const Class_{key}: ClassMod = {{
 }}
 ",
             key = &class_info.key,
+            name = &class_info.name,
+            original_hero = &class_info.original_hero,
             portrait = class_info.portrait,
             armours = format!(
                 "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",

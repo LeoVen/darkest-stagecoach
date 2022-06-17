@@ -1,8 +1,60 @@
+use std::collections::HashSet;
+
 use mod_reader::types::{ClassModInfo, SkillData};
 
 use crate::types::*;
 
 pub mod types;
+
+pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
+    let mut result = ClassInfo::default();
+
+    result.key = info.key.clone();
+
+    proc_infos(&info, &mut result);
+    result.res = proc_resistances(&info);
+    result.stats = proc_stats(&info);
+    (result.religious, result.transform) = proc_tag(&info);
+    result.skills = proc_skills(&info.info, info.skills);
+
+    result.portrait = info.portrait;
+    result.guild = info.guild;
+
+    return result;
+}
+
+// Proc any other info
+pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
+    let original_heroes = HashSet::from([
+        "abomination",
+        "antiquarian",
+        "bounty_hunter",
+        "arbalest",
+        "crusader",
+        "grave_robber",
+        "hellion",
+        "highwayman",
+        "flagellant",
+        "houndmaster",
+        "jester",
+        "leper",
+        "man_at_arms",
+        "musketeer",
+        "occultist",
+        "plague_doctor",
+        "shieldbreaker",
+        "vestal",
+    ]);
+
+    let key = format!("hero_class_name_{}", info.key);
+    if let Some(name) = info.locs.get(&key) {
+        if let Some(name) = name.get(0) {
+            result.name = name.to_string();
+        }
+    }
+
+    result.original_hero = original_heroes.contains(result.key.as_str());
+}
 
 pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
     let mut result = ClassResistances::default();

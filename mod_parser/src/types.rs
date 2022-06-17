@@ -60,6 +60,9 @@ pub struct ClassInfo {
 
     // Done parsing
     pub key: String,
+    pub name: String,
+    pub original_hero: bool,
+
     pub res: ClassResistances,
     pub stats: ClassStats,
 
