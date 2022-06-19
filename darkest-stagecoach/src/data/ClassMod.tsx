@@ -36,6 +36,39 @@ export default interface ClassMod {
     }[]
 }
 
+export interface ClassModInfo {
+    key: string
+    name: string
+    similarity?: OriginalHeroes
+    classType?: Record<ClassModType, ClassModTypeValue>
+    synergy?: Set<Synergy>
+    authors?: {
+        authorKey: string
+        credits: Credits
+    }[]
+    sources?: {
+        name: string
+        link: string
+    }[]
+}
+
+export interface ClassModData {
+    key: string
+    name: string
+    originalHero: boolean
+    religious: boolean
+    transform: boolean
+    resistances: Resistances
+    stats: GearStats
+    sources: {
+        name: string
+        link: string
+    }[]
+    skills: Skill[]
+    portrait: string
+    guild: string
+}
+
 // Creates a ClassMod that has the minimum required values
 export const defaultClassMod = (): ClassMod => {
     let armour: ArmourStats = {
@@ -70,23 +103,6 @@ export const defaultClassMod = (): ClassMod => {
         },
         sources: []
     }
-}
-
-export interface ClassModData {
-    key: string
-    name: string
-    originalHero: boolean
-    religious: boolean
-    transform: boolean
-    resistances: Resistances
-    stats: GearStats
-    sources: {
-        name: string
-        link: string
-    }[]
-    skills: Skill[]
-    portrait: string
-    guild: string
 }
 
 // Creates a ClassMod that has the minimum required values
