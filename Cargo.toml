@@ -1,10 +1,9 @@
 [workspace]
 members = [
-    "mod-reader",
-    "parser",
-    "root_finder",
-    "mod_reader",
-    "mod_writer",
-    "mod_parser",
-    "xml_parser",
+  "parser",
+  "root_finder",
+  "mod_reader",
+  "mod_writer",
+  "mod_parser",
+  "xml_parser",
 ]

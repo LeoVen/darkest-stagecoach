@@ -8,14 +8,20 @@ use crate::types::{ClassModInfo, SkillData};
 pub struct ModReader<'a> {
     name: &'a str,
     root: &'a Path,
+    exceptions: HashMap<&'static str, &'static str>,
 }
 
 impl<'a> ModReader<'a> {
     pub fn new(name: &'a str, root: &'a Path) -> Self {
-        Self { name, root }
+        Self {
+            name,
+            root,
+            exceptions: ModReader::file_exceptions(),
+        }
     }
 
-    pub fn loc_exceptions(&self) -> HashMap<&'static str, &'static str> {
+    // Exceptions for loc files and steam ID
+    pub fn file_exceptions() -> HashMap<&'static str, &'static str> {
         return HashMap::from([
             ("abomination", "heroes"),
             ("antiquarian", "heroes"),
@@ -64,11 +70,9 @@ impl<'a> ModReader<'a> {
     }
 
     pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let excp = self.loc_exceptions();
-
         let mut name = self.name;
         // The default heroes use a shared loc file
-        if let Some(other) = excp.get(self.name) {
+        if let Some(other) = self.exceptions.get(self.name) {
             name = other;
         }
 
@@ -143,6 +147,10 @@ impl<'a> ModReader<'a> {
         }
 
         Ok(())
+    }
+
+    pub fn read_steam_id(&self, mod_info: &mut ClassModInfo) {
+        file_exceptions
     }
 
     // pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
