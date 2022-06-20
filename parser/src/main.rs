@@ -1,21 +1,17 @@
-use std::{fs::read_to_string, path::PathBuf, str::FromStr};
+use std::collections::BTreeMap;
 
 use parser::parse_darkest;
 
 fn main() {
-    let path = PathBuf::from_str(
-        r"C:\Program Files (x86)\Steam\steamapps\common\DarkestDungeon\heroes\abomination\abomination.art.darkest",
+    let data = String::from(
+        "test: .value0 \"id\" .value1 10% .value2 .1 .value3 1. .value4 12.3% .value5 1 .1 1.\n",
     );
-    let path = path.expect("failed to get PathBuf from str");
-
-    let data = read_to_string(path);
-    let data = data.expect("failed to get file data");
 
     let result = parse_darkest(data);
 
     for (key, map) in result {
         println!("key: {}\nmap:", key);
-        for (k, v) in map {
+        for (k, v) in BTreeMap::from_iter(map.into_iter()) {
             print!("K: {} -> ", k);
             for values in v {
                 print!("{} ", values);

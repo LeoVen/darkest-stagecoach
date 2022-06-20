@@ -5,10 +5,13 @@ use mod_parser::proc_class_mod;
 use mod_parser::types::{ClassInfo, SkillInfo};
 use mod_reader::types::ClassModInfo;
 
+use crate::fixer::fix_classes;
+
 const AUTO_GENERATED: &str = "// THIS FILE WAS AUTO-GENERATED\n";
 
 pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
     let root = PathBuf::from_str(&output).expect("failed to get path from output str");
+    let mods = fix_classes(mods);
     let result = mods.into_iter().map(proc_class_mod).map(make_code);
 
     let mut classes = vec![];

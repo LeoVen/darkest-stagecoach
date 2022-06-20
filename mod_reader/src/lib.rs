@@ -19,7 +19,6 @@ pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
     return vec![];
 }
 
-// TODO select!
 async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
     let roots = root_finder::find_roots(path).await?;
 
@@ -36,26 +35,27 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
         }
     }
 
+    println!();
+
     Ok(result)
 }
 
 async fn read_single(root: &Path) -> Option<ClassModInfo> {
     let name = root.file_name()?.to_str()?.to_string();
 
-    print!("Reading class mod {:<20} ", &name);
+    print!("\nReading class mod {:<20} ", &name);
 
     let mut mod_info = Default::default();
 
     let mod_reader = ModReader::new(&name, root);
+    mod_reader.read_steam_id(&mut mod_info);
     mod_reader.read_darkest(&mut mod_info).await.ok()?;
-    mod_reader.read_loc(&mut mod_info).await.ok()?;
-    mod_reader.read_portrait(&mut mod_info).await.ok()?;
-    mod_reader.read_skills(&mut mod_info).await.ok()?;
-    mod_reader.read_guild_header(&mut mod_info).await.ok()?;
+    _ = mod_reader.read_loc(&mut mod_info).await;
+    _ = mod_reader.read_portrait(&mut mod_info).await;
+    _ = mod_reader.read_skills(&mut mod_info).await;
+    _ = mod_reader.read_guild_header(&mut mod_info).await;
 
     mod_info.key = name;
-
-    println!();
 
     Some(mod_info)
 }

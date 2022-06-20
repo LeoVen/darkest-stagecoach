@@ -56,9 +56,6 @@ pub struct SkillInfo {
 
 #[derive(Debug, Default)]
 pub struct ClassInfo {
-    pub steam_id: String,
-
-    // Done parsing
     pub key: String,
     pub name: String,
     pub original_hero: bool,
@@ -73,6 +70,8 @@ pub struct ClassInfo {
     pub guild: String,    // base64 encoded image
 
     pub skills: Vec<SkillInfo>,
+
+    pub steam_id: String,
 }
 
 impl Display for ClassResistances {

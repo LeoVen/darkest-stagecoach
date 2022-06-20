@@ -3,23 +3,26 @@ use std::collections::HashMap;
 pub type DarkestRow = HashMap<String, Vec<String>>;
 pub type DarkestFile = Vec<(String, DarkestRow)>;
 
-pub fn parse_darkest(data: impl ToString) -> DarkestFile {
+pub fn parse_darkest(data: String) -> DarkestFile {
     let data = data.to_string();
 
     let lines = data.lines();
 
     let mut result = vec![];
 
-    lines.for_each(|line| {
-        let idx = line.find(":");
-        if let Some(idx) = idx {
-            let key = &line[..idx];
-            let map = parse_line(&line[idx + 1..]);
-            if let Some(map) = map {
-                result.push((key.to_string(), map));
+    lines
+        .map(|line| line.trim())
+        .filter(|line| !line.starts_with("//") || line.is_empty())
+        .for_each(|line| {
+            let idx = line.find(":");
+            if let Some(idx) = idx {
+                let key = &line[..idx];
+                let map = parse_line(&line[idx + 1..]);
+                if let Some(map) = map {
+                    result.push((key.to_string(), map));
+                }
             }
-        }
-    });
+        });
 
     return result;
 }

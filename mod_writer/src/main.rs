@@ -2,6 +2,7 @@ use std::{fs::symlink_metadata, path::PathBuf};
 
 use crate::writer::write_files;
 
+mod fixer;
 mod writer;
 
 fn main() {

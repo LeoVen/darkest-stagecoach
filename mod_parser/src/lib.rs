@@ -19,6 +19,7 @@ pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
 
     result.portrait = info.portrait;
     result.guild = info.guild;
+    result.steam_id = info.steam_id;
 
     return result;
 }
@@ -134,31 +135,39 @@ pub fn proc_tag(info: &ClassModInfo) -> (bool, bool) {
     (religious, transform)
 }
 
-pub fn proc_skills(info_file: &parser::DarkestFile, data: Vec<SkillData>) -> Vec<SkillInfo> {
-    data.into_iter()
-        .map(|data| {
-            let row = info_file
-                .iter()
-                .filter(|(key, _)| key == "combat_skill")
-                .find(|(_, map)| {
-                    if let Some(values) = map.get("id") {
-                        if let Some(value) = values.get(0) {
-                            if value == &data.key {
-                                return true;
-                            }
+// Edge case: skill list comes from art, but consider only those present in the
+// info file since I happened to find mods with art entries of skills that don't
+// exist.
+pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) -> Vec<SkillInfo> {
+    let mut result = vec![];
+
+    for skill in skill_data.into_iter() {
+        // Find skill with "id"
+        let row = info_file
+            .iter()
+            .filter(|(key, _)| key == "combat_skill")
+            .find(|(_, map)| {
+                if let Some(values) = map.get("id") {
+                    if let Some(value) = values.get(0) {
+                        if value == &skill.key {
+                            return true;
                         }
                     }
-                    false
-                })
-                .unwrap(); // TODO
-            SkillInfo {
-                img: data.img,
-                name: data.name,
+                }
+                false
+            });
+
+        if let Some(row) = row {
+            result.push(SkillInfo {
+                img: skill.img,
+                name: skill.name,
                 launch: make_launch(&row.1),
                 target: make_target(&row.1),
-            }
-        })
-        .collect::<Vec<SkillInfo>>()
+            })
+        }
+    }
+
+    return result;
 }
 
 fn make_launch(map: &parser::DarkestRow) -> Launch {
@@ -198,14 +207,26 @@ fn make_target(map: &parser::DarkestRow) -> Target {
     result
 }
 
-fn parse_value(val: &str) -> f32 {
-    if val.ends_with('%') {
-        val.strip_suffix('%')
-            .unwrap()
-            .parse::<f32>()
-            .unwrap_or(9999.0)
-            / 100.0
-    } else {
-        val.parse::<f32>().unwrap_or(99.0)
+fn parse_value(mut val: &str) -> f32 {
+    let mut div = 1.0;
+
+    // TODO maybe this gets fixed once the parser is fixed
+    if val.len() == 0 {
+        return 9999.0;
     }
+
+    // TODO this is currently not possible because of the parser's limitation
+    // Something like ".1" indicating "0.1"
+    if val.starts_with(".") {
+        val = &val.strip_prefix(".").unwrap();
+        div *= 10.0;
+    }
+
+    // Transform % values
+    if val.ends_with('%') {
+        val = &val.strip_suffix("%").unwrap();
+        div *= 100.0;
+    }
+
+    val.parse::<f32>().expect(&format!("f32 but got {}!", val)) / div
 }

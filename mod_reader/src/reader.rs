@@ -61,14 +61,18 @@ impl<'a> ModReader<'a> {
 
         match image_to_base64(&file).await {
             Ok(data) => mod_info.portrait = data,
-            Err(e) => return Err(anyhow::anyhow!("failed to read portrait: {}", e)),
+            Err(e) => {
+                print!("portrait failed. ");
+                return Err(anyhow::anyhow!("failed to read portrait: {}", e));
+            }
         }
 
-        print!("found portrait. ");
+        print!("found portrait . ");
 
         Ok(())
     }
 
+    // TODO there is no pattern. Must read all .string_table.xml files!
     pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
         let mut name = self.name;
         // The default heroes use a shared loc file
@@ -128,7 +132,7 @@ impl<'a> ModReader<'a> {
             result.push(data);
         }
 
-        print!("got {} fail {} ", ok, fail);
+        print!("got {:>2} fail {:>2} ", ok, fail);
 
         mod_info.skills = result;
 
@@ -143,14 +147,34 @@ impl<'a> ModReader<'a> {
             mod_info.guild = data;
             print!("guild found. ");
         } else {
-            print!("guild fail.  ");
+            print!("guild fail . ");
         }
 
         Ok(())
     }
 
     pub fn read_steam_id(&self, mod_info: &mut ClassModInfo) {
-        file_exceptions
+        if self.exceptions.contains_key(&*mod_info.key) {
+            return;
+        }
+
+        // There are two ways of doing this
+        // 1- Get from file path (folder is the steam ID)
+        // 2- Get from project.xml at the root of the steam folder
+
+        // Doing it as 1 because it is simpler and works for now
+
+        let mut path = self.root.to_path_buf();
+
+        _ = path.pop(); // /<steam_id>/heroes/
+        _ = path.pop(); // /<steam_id>/
+
+        if let Some(id) = path.file_name() {
+            if let Some(id) = id.to_str() {
+                mod_info.steam_id = id.to_string();
+                print!("{:>11} ", mod_info.steam_id);
+            }
+        }
     }
 
     // pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
@@ -171,6 +195,7 @@ pub async fn get_icon(root: &Path, name: &str, icon: &str) -> io::Result<String>
     image_to_base64(&path).await
 }
 
+// Edge case: art and info files might not have the same skills
 pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
     let mut result = vec![];
 
