@@ -1,9 +1,8 @@
-import { PreferredPositions } from '../../Types'
+import { Skill } from '../../Types'
 import { Circle, MainSection } from './styles'
 
 interface PositionsProps {
-    pos?: PreferredPositions
-    totalSkills?: number
+    skills: Skill[]
 }
 
 export const circleColors = (ratio?: number) => {
@@ -28,16 +27,16 @@ export const extraCss = (ratio: number) => {
     return '#4fcb4f'
 }
 
-const circle = (idx: number, skills: number, total?: number) => {
-    let ratio = total === undefined ? undefined : skills / total
+const circle = (idx: number, skills: number, total: number) => {
+    let ratio = skills / total
     return (
         <Circle
             key={`${idx}-positions`}
             color={circleColors(
-                total === undefined ? undefined : skills / total
+                skills / total
             )}
             border={borderColors(
-                total === undefined ? undefined : skills / total
+                skills / total
             )}
             blur={ratio !== undefined && ratio === 1 ? true : false}>
             {skills}
@@ -45,12 +44,22 @@ const circle = (idx: number, skills: number, total?: number) => {
     )
 }
 
-export const Positions = ({ pos, totalSkills }: PositionsProps) => {
-    if (pos === undefined) pos = [0, 0, 0, 0]
+export const Positions = ({ skills }: PositionsProps) => {
+
+    let totalSkills = skills.length
+
+    let result = [0, 0, 0, 0]
+
+    skills.forEach(skill => {
+        result[0] += skill.launch[0] ? 1 : 0
+        result[1] += skill.launch[1] ? 1 : 0
+        result[2] += skill.launch[2] ? 1 : 0
+        result[3] += skill.launch[3] ? 1 : 0
+    });
 
     return (
         <MainSection>
-            {pos.map((v, i) => circle(i, v, totalSkills as number))}
+            {result.map((v, i) => circle(i, v, totalSkills))}
         </MainSection>
     )
 }

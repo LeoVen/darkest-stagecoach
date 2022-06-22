@@ -1,6 +1,6 @@
 import React from 'react'
 import { StylesProvider, ThemeProvider } from '@material-ui/core'
-import ClassMod, { defaultClassMod } from './data/ClassMod'
+import ClassMod from './data/ClassMod'
 import { ClassCardsContainer } from './styles'
 import { THEME } from './theme'
 import { ActionButtons } from './components/ActionButtons'
@@ -13,7 +13,6 @@ import { filterClassMods } from './Filtering'
 import { MainHeader } from './components/MainHeader'
 import { SnackbarMessage } from './components/SnackbarMessage'
 import { SnackbarContext } from './services/SnackbarService'
-import Author, { defaultAuthor } from './data/Author'
 
 export const App = () => {
     const [filter, setFilter] = React.useState<FilterBy>({
@@ -31,12 +30,7 @@ export const App = () => {
     const [selectedClass, setSelectedClass] = React.useState<
         ClassMod | undefined
     >(undefined)
-    const [classInfo, setClassInfo] = React.useState<ClassMod>(
-        defaultClassMod()
-    )
-    const [authorInfo, setAuthorInfo] = React.useState<Author>(
-        defaultAuthor()
-    )
+
     const [snackbarMessage, setSnackbarMessage] = React.useState<
         string | undefined
     >(undefined)
@@ -73,12 +67,7 @@ export const App = () => {
                         style={{
                             backgroundColor: THEME.palette.background.default
                         }}>
-                        <MainHeader
-                            classInfo={classInfo}
-                            handleClassInfoChange={setClassInfo}
-                            authorInfo={authorInfo}
-                            handleAuthorInfoChange={setAuthorInfo}
-                        />
+                        <MainHeader />
                         <ActionButtons
                             filter={filter}
                             sort={sort}
@@ -95,7 +84,7 @@ export const App = () => {
                                     index: i,
                                     modalOpen:
                                         selectedClass !== undefined &&
-                                        selectedClass.key === classKey,
+                                        selectedClass.data.key === classKey,
                                     handleOpenModal: handleOpenModal,
                                     handleCloseModal: handleCloseModal
                                 })

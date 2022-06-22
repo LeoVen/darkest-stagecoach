@@ -6,4 +6,5 @@ members = [
   "mod_writer",
   "mod_parser",
   "xml_parser",
+  "img_compr",
 ]

@@ -11,9 +11,9 @@ const AUTO_GENERATED: &str = "// THIS FILE WAS AUTO-GENERATED\n";
 
 pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
     let root = PathBuf::from_str(&output).expect("failed to get path from output str");
-    let mods = fix_classes(mods);
-    let result = mods.into_iter().map(proc_class_mod).map(make_code);
+    let mods = fix_classes(mods.into_iter().map(proc_class_mod).collect());
 
+    let result = mods.into_iter().map(make_code);
     let mut classes = vec![];
 
     for (name, data) in result {
@@ -58,8 +58,8 @@ fn make_index(root: &Path, classes: Vec<String>) {
         index_data += &format!("import {{ {class} }} from './{class}'\n");
     }
 
-    index_data += "\nexport const ClassModIndex = classModIndex()\n\n";
-    index_data += "export function classModIndex(): Map<string, ClassModData> {\n";
+    index_data += "\nexport const ClassModDataIndex = classModDataIndex()\n\n";
+    index_data += "export function classModDataIndex(): Map<string, ClassModData> {\n";
     index_data += "    return new Map([\n";
 
     for class in classes.iter() {

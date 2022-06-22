@@ -170,9 +170,9 @@ pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) 
     return result;
 }
 
-fn make_launch(map: &parser::DarkestRow) -> Launch {
+fn make_launch(row: &parser::DarkestRow) -> Launch {
     let mut result: Launch = Default::default();
-    if let Some(launch) = map.get("launch") {
+    if let Some(launch) = row.get("launch") {
         let nums = &*launch[0];
         for c in nums.chars() {
             match c {

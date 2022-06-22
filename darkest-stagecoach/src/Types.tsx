@@ -97,8 +97,6 @@ export type SortBy = {
     levelRef: number
 }
 
-export type PreferredPositions = [number, number, number, number]
-
 export type Synergy =
     | 'armor' // Armor piercing
     | 'bleed' // Causes dot bleed

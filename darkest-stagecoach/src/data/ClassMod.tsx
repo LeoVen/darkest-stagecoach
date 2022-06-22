@@ -5,7 +5,6 @@ import {
     Credits,
     GearStats,
     OriginalHeroes,
-    PreferredPositions,
     Resistances,
     Skill,
     Synergy,
@@ -13,32 +12,12 @@ import {
 } from '../Types'
 
 export default interface ClassMod {
-    key: string
-    name: string
-    resistances: Resistances
-    stats: GearStats
-    sources: {
-        name: string
-        link: string
-    }[]
-    originalHero: boolean
-    description?: string[]
-    similarity?: OriginalHeroes
-    religious?: boolean
-    transform?: boolean
-    classType?: Record<ClassModType, ClassModTypeValue>
-    synergy?: Set<Synergy>
-    position?: PreferredPositions
-    totalSkills?: number
-    authors?: {
-        authorKey: string
-        credits: Credits
-    }[]
+    info: ClassModInfo
+    data: ClassModData
 }
 
 export interface ClassModInfo {
-    key: string
-    name: string
+    description?: string[]
     similarity?: OriginalHeroes
     classType?: Record<ClassModType, ClassModTypeValue>
     synergy?: Set<Synergy>
@@ -71,41 +50,18 @@ export interface ClassModData {
 
 // Creates a ClassMod that has the minimum required values
 export const defaultClassMod = (): ClassMod => {
-    let armour: ArmourStats = {
-        dodge: 0,
-        prot: 0,
-        hp: 0,
-        speed: 0
-    }
-    let weapon: WeaponStats = {
-        accuracy: 0,
-        damage: [0, 0],
-        crit: 0,
-        speed: 0
-    }
     return {
-        key: '',
-        name: '',
-        originalHero: false,
-        resistances: {
-            stun: 0,
-            blight: 0,
-            bleed: 0,
-            disease: 0,
-            move: 0,
-            debuff: 0,
-            deathBlow: 0,
-            trap: 0
-        },
-        stats: {
-            armours: [armour, armour, armour, armour, armour],
-            weapons: [weapon, weapon, weapon, weapon, weapon]
-        },
-        sources: []
+        data: defaultClassModData(),
+        info: defaultClassModInfo(),
     }
 }
 
-// Creates a ClassMod that has the minimum required values
+// Creates a ClassModInfo that has the minimum required values
+export const defaultClassModInfo = (): ClassModInfo => {
+    return {}
+}
+
+// Creates a ClassModData that has the minimum required values
 export const defaultClassModData = (): ClassModData => {
     let armour: ArmourStats = {
         dodge: 0,

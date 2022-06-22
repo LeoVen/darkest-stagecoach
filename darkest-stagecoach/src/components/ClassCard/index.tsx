@@ -20,7 +20,7 @@ import {
 } from './styles'
 
 interface ClassCardProps {
-    classKey: string | ClassMod
+    classKey: string
     index: number
     modalOpen: boolean
     handleOpenModal: (classMod: ClassMod) => void
@@ -34,50 +34,39 @@ export const ClassCard = ({
     handleOpenModal,
     handleCloseModal
 }: ClassCardProps) => {
-    let classInfo: ClassMod
-    let classKeyValue: string
-
-    if (typeof classKey === 'string') {
-        classInfo = ClassModIndex.get(classKey) as ClassMod
-        classKeyValue = classInfo.key
-    } else {
-        classInfo = classKey
-        classKeyValue = classKey.key
-    }
+    let classInfo: ClassMod = ClassModIndex.get(classKey) as ClassMod
 
     return (
         <div
-            key={`${classInfo.name}-${index}`}
+            key={`${classInfo.data.name}-${index}`}
             style={{ position: 'relative' }}>
             <HeroCard elevation={5} onClick={() => handleOpenModal(classInfo)}>
                 <ImageAndIcons>
                     <ClassProfileIcons classInfo={classInfo} />
                     <ImageAndPositions>
                         <Portrait
-                            classKey={classKeyValue}
+                            portrait={classInfo.data.portrait}
                             style={{ margin: '1rem 0 0 0' }}
                         />
                         <Positions
-                            pos={classInfo.position}
-                            totalSkills={classInfo.totalSkills}
+                            skills={classInfo.data.skills}
                         />
                     </ImageAndPositions>
                 </ImageAndIcons>
                 <Typography variant="h3" style={{ marginLeft: '1rem' }}>
-                    {classInfo.name}
+                    {classInfo.data.name}
                 </Typography>
             </HeroCard>
             <TopLeftIcons>
-                {classInfo.originalHero ? <OriginalHeroIcon /> : null}
+                {classInfo.data.originalHero ? <OriginalHeroIcon /> : null}
             </TopLeftIcons>
-            {/* TODO Until I decide how to classify classes properly */}
             <TopIcons>
-                {!!classInfo.classType && (
-                    <ClassTypeIcons type={classInfo.classType} />
+                {!!classInfo.info.classType && (
+                    <ClassTypeIcons type={classInfo.info.classType} />
                 )}
             </TopIcons>
             <BottomIcons>
-                <SynergyIcons synergies={classInfo.synergy} />
+                <SynergyIcons synergies={classInfo.info.synergy} />
             </BottomIcons>
             <Modal open={modalOpen} onClose={handleCloseModal}>
                 <Fade in={modalOpen} timeout={400} exit={false}>
@@ -88,7 +77,7 @@ export const ClassCard = ({
                         }}>
                         <ModalCloseButton onClick={handleCloseModal} />
                         <ClassModal
-                            key={`${classInfo.name}-card-${index}`}
+                            key={`${classInfo.data.name}-card-${index}`}
                             classMod={classInfo}
                         />
                     </ModalWrapper>

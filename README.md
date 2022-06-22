@@ -13,5 +13,6 @@ There is also a bunch of tools that automatically generate data from a class mod
 * `mod_reader`: Reads all the necessary data from a class mod folder like `.darkest` files, skills and portraits
 * `parser`: Parses a `.darkest` file
 * `xml_parser`: Parses string tables to get hero, skills and equipment names
+* `img_compr`: Compresses images to minimize their size
 * `mod_parser`: Transforms `.info.darkest` file into a more structured data about the class mod
 * `mod_writer`: Writes data from class mods to be consumed by the Darkest Stagecoach

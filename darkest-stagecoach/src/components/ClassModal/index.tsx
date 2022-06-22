@@ -73,36 +73,36 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
         <MainModal>
             <ClassCardBanner>
                 <Portrait
-                    classKey={classMod.key}
+                    portrait={classMod.data.portrait}
                     style={{ margin: '0 1em 1em 0' }}
                 />
                 <Typography variant="h2" style={{ margin: '0 0 0.5em 0' }}>
-                    {classMod.name}
+                    {classMod.data.name}
                 </Typography>
             </ClassCardBanner>
             <Typography variant="subtitle2">
-                {classMod.description?.map((paragraph, i) => (
+                {classMod.info.description?.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                 ))}
             </Typography>
-            {classMod.originalHero ? null : (
+            {classMod.data.originalHero ? null : (
                 <AccordionTemplate
                     expanded={accordion[0]}
                     title={'Sources'}
                     handleAccordionChange={handleAccordionChange(0)}>
-                    <ModSources sources={classMod.sources} />
+                    <ModSources sources={classMod.data.sources.concat(classMod.info.sources ?? [])} />
                 </AccordionTemplate>
             )}
-            {classMod.originalHero ? null : (
+            {classMod.data.originalHero ? null : (
                 <AccordionTemplate
                     expanded={accordion[1]}
                     title={'Creators'}
                     handleAccordionChange={handleAccordionChange(1)}>
                     <div style={{ width: '100%' }}>
-                        {classMod.authors === undefined ? (
+                        {classMod.info.authors === undefined ? (
                             <Typography variant="body1">Unavailable</Typography>
                         ) : (
-                            classMod.authors.map((auth, i) => {
+                            classMod.info.authors.map((auth, i) => {
                                 const author = AuthorIndex.get(auth.authorKey)
                                 return (
                                     <AuthorCard
@@ -120,13 +120,13 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                 expanded={accordion[2]}
                 title={'Base Stats'}
                 handleAccordionChange={handleAccordionChange(2)}>
-                <BaseStats stats={classMod.stats} />
+                <BaseStats stats={classMod.data.stats} />
             </AccordionTemplate>
             <AccordionTemplate
                 expanded={accordion[3]}
                 title={'Resistances'}
                 handleAccordionChange={handleAccordionChange(3)}>
-                <ResistancesSection res={classMod.resistances} />
+                <ResistancesSection res={classMod.data.resistances} />
             </AccordionTemplate>
         </MainModal>
     )

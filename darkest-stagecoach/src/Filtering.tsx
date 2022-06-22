@@ -11,31 +11,31 @@ export class ClassModFilter {
 
     filterName = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        let value = classA.name
+        let value = classA.data.name
         return value.toLowerCase().includes(this.filterState.name.toLowerCase())
     }
 
     filterReligious = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        return classA.religious === this.filterState.religious
+        return classA.data.religious === this.filterState.religious
     }
 
     filterTransform = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        return classA.transform === this.filterState.transform
+        return classA.data.transform === this.filterState.transform
     }
 
     filterOriginalHero = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        return classA.originalHero === this.filterState.originalHero
+        return classA.data.originalHero === this.filterState.originalHero
     }
 
     filterBySynergy = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        if (classA.synergy === undefined)
+        if (classA.info.synergy === undefined)
             return this.filterState.synergies.size === 0
         for (const [key, value] of this.filterState.synergies.entries()) {
-            if (classA.synergy.has(key) !== value) return false
+            if (classA.info.synergy.has(key) !== value) return false
         }
         return true
     }

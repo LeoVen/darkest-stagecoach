@@ -63,8 +63,8 @@ export const ClassProfileIcons = ({ classInfo }: ClassProfileIconsProps) => {
 
     return (
         <MainSection>
-            {classInfo.religious ? template('religious') : null}
-            {classInfo.transform ? template('transform') : null}
+            {classInfo.data.religious ? template('religious') : null}
+            {classInfo.data.transform ? template('transform') : null}
         </MainSection>
     )
 }

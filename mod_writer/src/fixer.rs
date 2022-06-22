@@ -1,10 +1,10 @@
 use std::collections::HashMap;
 
-use mod_reader::types::ClassModInfo;
+use mod_parser::types::ClassInfo;
 
 // 1. Dedupe classes with the same key!
 // 2. Fix their names
-pub fn fix_classes(mut input: Vec<ClassModInfo>) -> Vec<ClassModInfo> {
+pub fn fix_classes(mut input: Vec<ClassInfo>) -> Vec<ClassInfo> {
     let mut dupes = HashMap::new();
 
     for class in input.iter_mut() {

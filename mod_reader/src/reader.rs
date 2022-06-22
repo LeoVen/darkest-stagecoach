@@ -217,5 +217,7 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
 
 pub async fn image_to_base64(path: &Path) -> io::Result<String> {
     let file = fs::read(path).await?;
+    // TODO this is too slow, parallelize this in a later step!
+    let file = png_compr::compress(file);
     return Ok(base64::encode(file));
 }
