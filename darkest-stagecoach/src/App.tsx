@@ -13,6 +13,7 @@ import { filterClassMods } from './Filtering'
 import { MainHeader } from './components/MainHeader'
 import { SnackbarMessage } from './components/SnackbarMessage'
 import { SnackbarContext } from './services/SnackbarService'
+import { ClassModalWrapper } from './components/ClassModal/wrapper'
 
 export const App = () => {
     const [filter, setFilter] = React.useState<FilterBy>({
@@ -82,11 +83,7 @@ export const App = () => {
                                 ClassCard({
                                     classKey: classKey,
                                     index: i,
-                                    modalOpen:
-                                        selectedClass !== undefined &&
-                                        selectedClass.data.key === classKey,
                                     handleOpenModal: handleOpenModal,
-                                    handleCloseModal: handleCloseModal
                                 })
                             )}
                         </ClassCardsContainer>
@@ -96,6 +93,9 @@ export const App = () => {
                             onClose={() => setSnackbarMessage(undefined)}
                         />
                     </div>
+                    <ClassModalWrapper
+                        classMod={selectedClass}
+                        handleCloseModal={handleCloseModal} />
                 </SnackbarContext.Provider>
             </ThemeProvider>
         </StylesProvider>

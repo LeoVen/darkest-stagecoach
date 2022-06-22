@@ -22,17 +22,13 @@ import {
 interface ClassCardProps {
     classKey: string
     index: number
-    modalOpen: boolean
     handleOpenModal: (classMod: ClassMod) => void
-    handleCloseModal: () => void
 }
 
 export const ClassCard = ({
     classKey,
     index,
-    modalOpen,
     handleOpenModal,
-    handleCloseModal
 }: ClassCardProps) => {
     let classInfo: ClassMod = ClassModIndex.get(classKey) as ClassMod
 
@@ -68,21 +64,6 @@ export const ClassCard = ({
             <BottomIcons>
                 <SynergyIcons synergies={classInfo.info.synergy} />
             </BottomIcons>
-            <Modal open={modalOpen} onClose={handleCloseModal}>
-                <Fade in={modalOpen} timeout={400} exit={false}>
-                    <ModalWrapper
-                        style={{
-                            width: '80vw',
-                            maxWidth: '1280px'
-                        }}>
-                        <ModalCloseButton onClick={handleCloseModal} />
-                        <ClassModal
-                            key={`${classInfo.data.name}-card-${index}`}
-                            classMod={classInfo}
-                        />
-                    </ModalWrapper>
-                </Fade>
-            </Modal>
         </div>
     )
 }
