@@ -10,7 +10,7 @@ export const Portrait = ({ portrait, className, style }: PortraitProps) => {
     let src = ""
 
     if (portrait.length > 0) {
-        src = "data:image/png;base64, " + portrait
+        src = "data:image/jpeg;base64, " + portrait
     }
 
     return (

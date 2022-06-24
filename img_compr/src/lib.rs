@@ -1,12 +1,19 @@
-use oxipng::{optimize_from_memory, Options};
+use std::io::Cursor;
+
+use image::io::Reader as ImageReader;
 
 pub fn compress(data: Vec<u8>) -> Vec<u8> {
-    let opts = Options::default();
-    let result = optimize_from_memory(&data, &opts);
-
-    if let Ok(data) = result {
-        return data;
+    if let Ok(reader) = ImageReader::new(Cursor::new(&*data)).with_guessed_format() {
+        if let Ok(img) = reader.decode() {
+            let mut bytes = vec![];
+            if let Ok(()) = img.write_to(
+                &mut Cursor::new(&mut bytes),
+                image::ImageOutputFormat::Jpeg(50),
+            ) {
+                return bytes;
+            }
+        }
     }
 
-    data
+    vec![]
 }
