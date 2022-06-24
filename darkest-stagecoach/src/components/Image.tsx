@@ -1,21 +1,21 @@
 import imageNotFound from '../assets/img/image_not_found.png'
 
-interface PortraitProps {
-    portrait: string
+interface ImageProps {
+    imgData: string
     className?: string
     style?: React.CSSProperties
 }
 
-export const Portrait = ({ portrait, className, style }: PortraitProps) => {
+export const Image = ({ imgData, className, style }: ImageProps) => {
     let src = ""
 
-    if (portrait.length > 0) {
-        src = "data:image/jpeg;base64, " + portrait
+    if (imgData.length > 0) {
+        src = "data:image/jpeg;base64, " + imgData
     }
 
     return (
         <img
-            alt="Hero Portrait"
+            alt={className}
             className={className}
             style={style}
             src={src.length > 0 ? src : imageNotFound}

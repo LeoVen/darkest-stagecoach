@@ -11,6 +11,14 @@
     --selected-green: #00d7a2;
     --cursor-default: url('assets/cursor/arrow.png'), auto;
     --cursor-pointer: url('assets/cursor/pointer.png'), auto;
+    --skill-off-color: #3c3c3c;
+    --skill-off-glow: #1d1d1d;
+    --skill-launch-color: #c8b56e;
+    --skill-launch-glow: #ffed8c;
+    --skill-target-color: #b21800;
+    --skill-target-glow: #f43e00;
+    --skill-ally-color: #73c849;
+    --skill-ally-glow: #96ed6b;
 }
 
 * {
@@ -28,6 +36,7 @@ html {
 /* Custom scroll bar */
 *::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 
 *::-webkit-scrollbar-track {

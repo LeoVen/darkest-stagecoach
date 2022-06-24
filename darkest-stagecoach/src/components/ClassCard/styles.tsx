@@ -1,4 +1,4 @@
-import { Paper } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const ClassCardsContainer = styled.div`
@@ -54,4 +54,12 @@ export const ImageAndPositions = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+`
+
+export const ClassName = styled(Typography)`
+    margin-left: 1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 150px;
 `

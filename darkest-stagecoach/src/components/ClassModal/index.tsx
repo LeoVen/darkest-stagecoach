@@ -12,8 +12,9 @@ import { ArrowDownIcon } from '../ArrowDownIcon'
 import { ResistancesSection } from '../Resistances'
 import { BaseStats } from '../BaseStats'
 import { ModSources } from '../ModSources'
-import { Portrait } from '../../data/Portrait'
 import { AuthorIndex } from '../../data/AuthorIndex'
+import SkillsSection from '../Skills'
+import { Image } from '../Image'
 
 interface ClassModalProps {
     classMod: ClassMod
@@ -57,7 +58,8 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
     const [accordion, setAccordion] = React.useState<boolean[]>([
         false,
         false,
-        false
+        false,
+        false,
     ])
 
     const handleAccordionChange =
@@ -72,8 +74,8 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
     return (
         <MainModal>
             <ClassCardBanner>
-                <Portrait
-                    portrait={classMod.data.portrait}
+                <Image
+                    imgData={classMod.data.portrait}
                     style={{ margin: '0 1em 1em 0' }}
                 />
                 <Typography variant="h2" style={{ margin: '0 0 0.5em 0' }}>
@@ -127,6 +129,12 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                 title={'Resistances'}
                 handleAccordionChange={handleAccordionChange(3)}>
                 <ResistancesSection res={classMod.data.resistances} />
+            </AccordionTemplate>
+            <AccordionTemplate
+                expanded={accordion[4]}
+                title={'Skills'}
+                handleAccordionChange={handleAccordionChange(4)}>
+                    <SkillsSection skills={classMod.data.skills} />
             </AccordionTemplate>
         </MainModal>
     )

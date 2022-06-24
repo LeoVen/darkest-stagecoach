@@ -1,17 +1,14 @@
-import { Fade, Modal, Typography } from '@material-ui/core'
 import ClassMod from '../../data/ClassMod'
 import { ClassModIndex } from '../../data/ClassModIndex'
-import { Portrait } from '../../data/Portrait'
-import { ModalWrapper } from '../../styles'
-import { ClassModal } from '../ClassModal'
 import { ClassProfileIcons } from '../ClassProfileIcons'
 import { ClassTypeIcons } from '../ClassTypeIcons'
-import { ModalCloseButton } from '../ModalCloseButton'
+import { Image } from '../Image'
 import { OriginalHeroIcon } from '../OriginalHeroIcon'
 import { Positions } from '../Positions'
 import { SynergyIcons } from '../SynergyIcon'
 import {
     BottomIcons,
+    ClassName,
     HeroCard,
     ImageAndIcons,
     ImageAndPositions,
@@ -40,8 +37,8 @@ export const ClassCard = ({
                 <ImageAndIcons>
                     <ClassProfileIcons classInfo={classInfo} />
                     <ImageAndPositions>
-                        <Portrait
-                            portrait={classInfo.data.portrait}
+                        <Image
+                            imgData={classInfo.data.portrait}
                             style={{ margin: '1rem 0 0 0' }}
                         />
                         <Positions
@@ -49,9 +46,9 @@ export const ClassCard = ({
                         />
                     </ImageAndPositions>
                 </ImageAndIcons>
-                <Typography variant="h3" style={{ marginLeft: '1rem' }}>
+                <ClassName variant='h3'>
                     {classInfo.data.name}
-                </Typography>
+                </ClassName>
             </HeroCard>
             <TopLeftIcons>
                 {classInfo.data.originalHero ? <OriginalHeroIcon /> : null}
