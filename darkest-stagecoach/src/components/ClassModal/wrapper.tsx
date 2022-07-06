@@ -22,11 +22,7 @@ export const ClassModalWrapper = ({
     return (
         <Modal open={modalOpen} onClose={handleCloseModal}>
             <Fade in={modalOpen} timeout={400} exit={false}>
-                <ModalWrapper
-                    style={{
-                        width: '80vw',
-                        maxWidth: '1280px'
-                    }}>
+                <ModalWrapper>
                     <ModalCloseButton onClick={handleCloseModal} />
                     {classMod &&
                     <ClassModal

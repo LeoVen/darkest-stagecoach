@@ -3,6 +3,7 @@ import {
     ClassModType,
     ClassModTypeValue,
     Credits,
+    EquipIcons,
     GearStats,
     OriginalHeroes,
     Resistances,
@@ -46,6 +47,7 @@ export interface ClassModData {
     skills: Skill[]
     portrait: string
     guild: string
+    equip: EquipIcons
 }
 
 // Creates a ClassMod that has the minimum required values
@@ -99,5 +101,9 @@ export const defaultClassModData = (): ClassModData => {
         skills: [],
         portrait: '',
         guild: '',
+        equip: {
+            armour: ['', '', '', '', ''],
+            weapon: ['', '', '', '', ''],
+        }
     }
 }

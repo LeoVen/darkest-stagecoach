@@ -122,7 +122,8 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                 expanded={accordion[2]}
                 title={'Base Stats'}
                 handleAccordionChange={handleAccordionChange(2)}>
-                <BaseStats stats={classMod.data.stats} />
+                <BaseStats stats={classMod.data.stats}
+                           icons={classMod.data.equip} />
             </AccordionTemplate>
             <AccordionTemplate
                 expanded={accordion[3]}

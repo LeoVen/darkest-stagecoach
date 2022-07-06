@@ -1,20 +1,23 @@
 import React from 'react'
-import { GearStats } from '../../Types'
+import { EquipIcons, GearStats } from '../../Types'
 import {
     MainSection,
     StatsSection,
     StatsCol,
     StatsRow,
-    LevelSelection
+    LevelSelection,
+    StatsListing
 } from './styles'
 import { Typography } from '@material-ui/core'
 import { NumberSelection } from '../NumberSelection'
+import { Image } from '../Image'
 
 interface BaseStatsProps {
-    stats?: GearStats
+    stats: GearStats
+    icons: EquipIcons
 }
 
-export const BaseStats = ({ stats }: BaseStatsProps) => {
+export const BaseStats = ({ stats, icons }: BaseStatsProps) => {
     const [level, changeLevel] = React.useState<number>(0)
 
     if (stats === undefined) {
@@ -61,19 +64,21 @@ export const BaseStats = ({ stats }: BaseStatsProps) => {
             </LevelSelection>
             <StatsSection>
                 <StatsCol>
-                    {template('MAX HP', `${sA.hp}`, false)}
-                    {template('DODGE', `${sA.dodge * 100}`, false)}
-                    {template('PROT', `${sA.prot * 100}`, true)}
-                    {template('SPD', `${sA.speed + sW.speed}`, false)}
+                    <Image imgData={icons.armour[level]} />
+                    <StatsListing>
+                        {template('MAX HP', `${sA.hp}`, false)}
+                        {template('DODGE', `${(sA.dodge * 100).toFixed(0)}`, false)}
+                        {template('PROT', `${sA.prot * 100}`, true)}
+                        {template('SPD', `${sA.speed + sW.speed}`, false)}
+                    </StatsListing>
                 </StatsCol>
                 <StatsCol>
-                    {template('ACC MOD', `${sW.accuracy * 100}`, false)}
-                    {template(
-                        'CRIT',
-                        `${(sW.crit * 100).toPrecision(2)}`,
-                        true
-                    )}
-                    {template('DMG', `${sW.damage[0]}-${sW.damage[1]}`, false)}
+                    <Image imgData={icons.weapon[level]} />
+                    <StatsListing>
+                        {template('ACC MOD', `${sW.accuracy * 100}`, false)}
+                        {template('CRIT', `${(sW.crit * 100).toPrecision(2)}`, true)}
+                        {template('DMG', `${sW.damage[0]}-${sW.damage[1]}`, false)}
+                    </StatsListing>
                 </StatsCol>
             </StatsSection>
         </MainSection>

@@ -6,7 +6,9 @@ export const ModalWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 80vh;
+    max-width: 1280px;
     overflow-y: auto;
+    width: 95%;
 `
 
 export const ClassCardsContainer = styled.div`

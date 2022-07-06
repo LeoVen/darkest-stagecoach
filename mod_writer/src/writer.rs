@@ -115,6 +115,10 @@ export const Class_{key}: ClassModData = {{
     ],
     skills: [{skills}
     ],
+    equip: {{
+        armour: {equip_armour},
+        weapon: {equip_weapon},
+    }},
     portrait: `{portrait}`,
     guild: `{guild}`,
 }}
@@ -147,16 +151,32 @@ export const Class_{key}: ClassModData = {{
             steam_link = steam_link(&class_info.steam_id),
             skills = format_skills(&class_info.skills),
             guild = class_info.guild,
+            equip_armour = format_equip(&class_info.armour_icons),
+            equip_weapon = format_equip(&class_info.weapon_icons),
         ),
     )
 }
 
 fn format_skills(skills: &[SkillInfo]) -> String {
-    let mut result = String::with_capacity(40_000 * skills.len());
+    let mut result = String::with_capacity(5_000 * skills.len());
 
     skills
         .iter()
         .for_each(|skill| result += &(skill.to_string() + ","));
+
+    result
+}
+
+fn format_equip(equip: &[String]) -> String {
+    let mut result = String::with_capacity(2_000 * equip.len());
+
+    result += "[\n";
+
+    equip
+        .iter()
+        .for_each(|equip| result += &format!("            '{}',\n", equip));
+
+    result += "        ]";
 
     result
 }

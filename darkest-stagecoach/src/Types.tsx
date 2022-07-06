@@ -151,3 +151,8 @@ export type Skill = {
     target: Target
     image: string
 }
+
+export type EquipIcons = {
+    armour: [string, string, string, string, string],
+    weapon: [string, string, string, string, string],
+}

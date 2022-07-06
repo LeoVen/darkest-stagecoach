@@ -12,7 +12,6 @@ export const StatsSection = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    max-width: 500px;
 `
 
 export const LevelSelection = styled.div`
@@ -22,11 +21,22 @@ export const LevelSelection = styled.div`
     margin-bottom: 1rem;
 `
 
-export const StatsCol = styled.div`
-    width: 200px;
-`
-
 export const StatsRow = styled.div`
     display: flex;
     justify-content: space-between;
+`
+
+export const StatsCol = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    max-width: 300px;
+    width: 100%;
+`
+
+export const StatsListing = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 `

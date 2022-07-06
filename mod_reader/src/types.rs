@@ -11,7 +11,8 @@ pub struct ClassModInfo {
     pub locs: HashMap<String, Vec<String>>,
     pub guild: String,
     pub steam_id: String,
-    // TODO equip icons
+    pub equip_armour: [String; 5],
+    pub equip_weapon: [String; 5],
     // TODO effects
     // TODO camping skills
 }

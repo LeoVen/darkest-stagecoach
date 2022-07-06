@@ -177,10 +177,111 @@ impl<'a> ModReader<'a> {
         }
     }
 
-    // pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-    //     // TODO get all equip icons
-    //     todo!()
-    // }
+    // TODO due to a bug in the parser, the icon field that specifies the equip
+    // file contains a dot ("eqp_armour_0.png") and that doesn't get split
+    // correctly.
+    pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
+        let mut armour_names = vec!["", "", "", "", ""];
+        let mut weapon_names = vec!["", "", "", "", ""];
+
+        for (fallback, (_, map)) in mod_info
+            .art
+            .iter()
+            .filter(|(key, _)| key == "armour")
+            .enumerate()
+        {
+            if let Some(name) = map.get("name") {
+                if let Some(key) = name.get(0) {
+                    let index = match key.chars().last() {
+                        Some('0') => 0,
+                        Some('1') => 1,
+                        Some('2') => 2,
+                        Some('3') => 3,
+                        Some('4') => 4,
+                        _ => fallback,
+                    };
+
+                    if let Some(icon) = map.get("icon") {
+                        if let Some(icon) = icon.get(0) {
+                            armour_names[index] = &icon[1..]; // TODO bug in the parser
+                        }
+                    }
+                }
+            }
+        }
+
+        for (fallback, (_, map)) in mod_info
+            .art
+            .iter()
+            .filter(|(key, _)| key == "weapon")
+            .enumerate()
+        {
+            if let Some(name) = map.get("name") {
+                if let Some(key) = name.get(0) {
+                    let index = match key.chars().last() {
+                        Some('0') => 0,
+                        Some('1') => 1,
+                        Some('2') => 2,
+                        Some('3') => 3,
+                        Some('4') => 4,
+                        _ => fallback,
+                    };
+
+                    if let Some(icon) = map.get("icon") {
+                        if let Some(icon) = icon.get(0) {
+                            weapon_names[index] = &icon[1..]; // TODO bug in the parser
+                        }
+                    }
+                }
+            }
+        }
+
+        let mut path = self.root.to_path_buf();
+        path.push("icons_equip");
+
+        let mut found = 0;
+        let mut err = 0;
+
+        for (i, name) in weapon_names.iter().enumerate() {
+            let mut armour = path.to_path_buf();
+            armour.push(&format!("{}.png", name));
+
+            let result = match image_to_base64(&armour).await {
+                Ok(data) => {
+                    found += 1;
+                    data
+                }
+                Err(_) => {
+                    err += 1;
+                    String::new()
+                }
+            };
+
+            mod_info.equip_armour[i] = result;
+        }
+
+        for (i, name) in armour_names.iter().enumerate() {
+            let mut armour = path.to_path_buf();
+            armour.push(&format!("{}.png", name));
+
+            let result = match image_to_base64(&armour).await {
+                Ok(data) => {
+                    found += 1;
+                    data
+                }
+                Err(_) => {
+                    err += 1;
+                    String::new()
+                }
+            };
+
+            mod_info.equip_weapon[i] = result;
+        }
+
+        print!("eqp ({}) ok {}", found + err, found);
+
+        Ok(())
+    }
 }
 
 pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {

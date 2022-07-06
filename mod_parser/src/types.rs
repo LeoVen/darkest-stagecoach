@@ -72,6 +72,9 @@ pub struct ClassInfo {
     pub skills: Vec<SkillInfo>,
 
     pub steam_id: String,
+
+    pub armour_icons: [String; 5],
+    pub weapon_icons: [String; 5],
 }
 
 impl Display for ClassResistances {

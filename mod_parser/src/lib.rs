@@ -20,6 +20,8 @@ pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
     result.portrait = info.portrait;
     result.guild = info.guild;
     result.steam_id = info.steam_id;
+    result.armour_icons = info.equip_armour;
+    result.weapon_icons = info.equip_weapon;
 
     return result;
 }
