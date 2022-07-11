@@ -52,7 +52,7 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
     let key = format!("hero_class_name_{}", info.key);
     if let Some(name) = info.locs.get(&key) {
         if let Some(name) = name.get(0) {
-            result.name = name.to_string();
+            result.name = proc_name(name.clone());
         }
     }
 
@@ -162,7 +162,7 @@ pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) 
         if let Some(row) = row {
             result.push(SkillInfo {
                 img: skill.img,
-                name: skill.name,
+                name: proc_name(skill.name),
                 launch: make_launch(&row.1),
                 target: make_target(&row.1),
             })
@@ -231,4 +231,26 @@ fn parse_value(mut val: &str) -> f32 {
     }
 
     val.parse::<f32>().expect(&format!("f32 but got {}!", val)) / div
+}
+
+fn proc_name(name: String) -> String {
+    let mut result = name;
+
+    loop {
+        if let Some(start) = result.find('{') {
+            if let Some(end) = result.find('}') {
+                let mut fixed = result[..start].to_string();
+                if end + 1 != result.len() {
+                    fixed += &result[end + 1..];
+                }
+                result = fixed;
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
+    }
+
+    result
 }
