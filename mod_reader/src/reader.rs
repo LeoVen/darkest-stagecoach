@@ -2,6 +2,7 @@ use std::{collections::HashMap, path::Path};
 
 use parser::DarkestFile;
 use tokio::{fs, io};
+use xml_parser::LocFile;
 
 use crate::types::{ClassModInfo, SkillData};
 
@@ -72,35 +73,56 @@ impl<'a> ModReader<'a> {
         Ok(())
     }
 
-    // TODO there is no pattern. Must read all .string_table.xml files!
     pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let mut name = self.name;
-        // The default heroes use a shared loc file
-        if let Some(other) = self.exceptions.get(self.name) {
-            name = other;
-        }
-
         let mut path = self.root.to_path_buf();
         _ = path.pop(); // /<steam_id>/heroes/
         _ = path.pop(); // /<steam_id>/
         path.push("localization"); // /<steam_id>/localization/
-        path.push(format!("{}.string_table.xml", name));
 
-        match std::fs::read_to_string(path) {
-            Ok(data) => {
-                print!("read loc ok!  ");
-                if let Ok(xml) = xml_parser::parse_loc_xml(data) {
-                    mod_info.locs = xml;
-                    print!("parse ok! . ");
-                } else {
-                    print!("parse fail. ");
+        let mut files_to_read = vec![];
+
+        let dir_iter = std::fs::read_dir(&path).expect(&format!("expected directory: {:?}", &path));
+        for entry in dir_iter {
+            if let Ok(entry) = entry {
+                if let Some(entry_path) = entry.path().to_str() {
+                    if entry_path.ends_with(".string_table.xml") {
+                        files_to_read.push(entry_path.to_string());
+                    }
                 }
             }
-            Err(_) => {
-                print!("read loc fail ");
-                print!("parse fail. ");
+        }
+
+        let mut read_ok = 0;
+        let mut read_fail = 0;
+        let mut parse_ok = 0;
+        let mut parse_fail = 0;
+
+        for file in &files_to_read {
+            match std::fs::read_to_string(file) {
+                Ok(data) => {
+                    read_ok += 1;
+                    if let Ok(xml) = xml_parser::parse_loc_xml(data) {
+                        merge_xml(&mut mod_info.locs, xml);
+                        parse_ok += 1;
+                    } else {
+                        parse_fail += 1;
+                    }
+                }
+                Err(_) => {
+                    read_fail += 1;
+                    parse_fail += 1;
+                }
             }
         }
+
+        print!(
+            "loc({:>2} of read {:>2}/{:>2}, parse {:>2}/{:>2}) ",
+            &files_to_read.len(),
+            read_ok,
+            read_fail + read_ok,
+            parse_ok,
+            parse_fail + parse_ok,
+        );
 
         Ok(())
     }
@@ -320,4 +342,10 @@ pub async fn image_to_base64(path: &Path) -> io::Result<String> {
     let file = fs::read(path).await?;
     let file = png_compr::compress(file);
     return Ok(base64::encode(file));
+}
+
+fn merge_xml(source: &mut LocFile, input: LocFile) {
+    for (key, val) in input {
+        _ = source.entry(key).or_insert(val);
+    }
 }

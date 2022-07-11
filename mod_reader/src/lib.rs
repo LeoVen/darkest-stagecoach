@@ -20,7 +20,9 @@ pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
 }
 
 async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
-    let roots = root_finder::find_roots(path).await?;
+    let mut roots = root_finder::find_roots(path).await?;
+
+    roots.sort();
 
     let mut result = vec![];
 
