@@ -1,51 +1,33 @@
 use std::path::Path;
-use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
 use mod_parser::proc_class_mod;
-use mod_parser::types::{ClassInfo, SkillInfo};
 use mod_reader::types::ClassModInfo;
-use mod_reader::types::Image;
 
 use crate::fixer::fix_classes;
 use crate::images::ImageStore;
+use crate::output::ClassModData;
 
-const AUTO_GENERATED: &str = "// THIS FILE WAS AUTO-GENERATED\n";
+/// Name of the generated data file inside the output folder
+pub const CLASSES_FILE: &str = "classes.json";
 
-pub fn write_files(output: &str, images: &mut ImageStore, mods: Vec<ClassModInfo>) {
-    let root = PathBuf::from_str(output).expect("failed to get path from output str");
-    let mods = fix_classes(mods.into_iter().map(proc_class_mod).collect());
+pub fn write_files(output: &Path, images: &mut ImageStore, mods: Vec<ClassModInfo>) {
+    let classes: Vec<ClassModData> = fix_classes(mods.into_iter().map(proc_class_mod).collect())
+        .into_iter()
+        .map(|class| ClassModData::new(class, images))
+        .collect();
 
-    remove_generated(&root);
+    remove_generated(output);
 
-    let result = mods.into_iter().map(|class| make_code(class, images));
-    let mut classes = vec![];
-
-    for (name, data) in result {
-        let mut file_name = root.clone();
-        let fname = format!("Class_{}.tsx", name);
-        file_name.push(&fname);
-
-        classes.push(fname.strip_suffix(".tsx").unwrap_or(&fname).to_string());
-
-        match File::create(&file_name) {
-            Ok(mut file) => match file.write_all(data.as_bytes()) {
-                Ok(_) => println!(
-                    "Created file {}",
-                    file_name
-                        .to_str()
-                        .expect("failed to get file name str from path")
-                ),
-                Err(e) => eprintln!("{}", e),
-            },
-            Err(e) => eprintln!("{}", e),
-        }
+    let path = output.join(CLASSES_FILE);
+    let json = serde_json::to_string_pretty(&classes).expect("failed to serialize classes");
+    match std::fs::write(&path, json + "\n") {
+        Ok(()) => println!("Wrote {} classes to {}", classes.len(), path.display()),
+        Err(e) => eprintln!("Failed to write {}: {}", path.display(), e),
     }
-
-    make_index(&root, classes);
 }
 
-// Removes previously generated files so classes of removed mods don't linger.
-// Only runs once mods were read successfully.
+// Removes previously generated files (including the TS modules older versions
+// generated). Only runs once mods were read successfully.
 fn remove_generated(root: &Path) {
     let Ok(entries) = std::fs::read_dir(root) else {
         return;
@@ -56,169 +38,13 @@ fn remove_generated(root: &Path) {
             .file_name()
             .and_then(|n| n.to_str())
             .is_some_and(|name| {
-                name == "index.tsx" || (name.starts_with("Class_") && name.ends_with(".tsx"))
+                name == CLASSES_FILE
+                    || name == "index.tsx"
+                    || (name.starts_with("Class_") && name.ends_with(".tsx"))
             });
 
         if generated && let Err(e) = std::fs::remove_file(&path) {
             eprintln!("Failed to remove {}: {}", path.display(), e);
         }
     }
-}
-
-fn make_index(root: &Path, classes: Vec<String>) {
-    let mut index_path = root.to_path_buf();
-    index_path.push("index.tsx");
-
-    println!(
-        "\nCreating index {}",
-        index_path.to_str().expect("failed to get index_path str")
-    );
-
-    let mut index_data = String::with_capacity(classes.len() * 1000);
-
-    index_data += AUTO_GENERATED;
-    index_data += "import { ClassModData } from '../ClassMod'\n\n";
-
-    for class in classes.iter() {
-        index_data += &format!("import {{ {class} }} from './{class}'\n");
-    }
-
-    index_data += "\nexport const ClassModDataIndex = classModDataIndex()\n\n";
-    index_data += "export function classModDataIndex(): Map<string, ClassModData> {\n";
-    index_data += "    return new Map([\n";
-
-    for class in classes.iter() {
-        index_data += &format!("        ['{class}', {class}],\n");
-    }
-
-    index_data += "    ])\n";
-    index_data += "}\n";
-
-    match File::create(&index_path) {
-        Ok(mut file) => match file.write_all(index_data.as_bytes()) {
-            Ok(_) => println!(
-                "Created index {}",
-                index_path
-                    .to_str()
-                    .expect("failed to get file name str from path")
-            ),
-            Err(e) => eprintln!("{}", e),
-        },
-        Err(e) => eprintln!("{}", e),
-    }
-}
-
-fn make_code(class_info: ClassInfo, images: &mut ImageStore) -> (String, String) {
-    let a = &class_info.stats.armour;
-    let w = &class_info.stats.weapon;
-    (
-        class_info.key.to_string(),
-        format!(
-            r"{AUTO_GENERATED}
-import {{ ClassModData }} from '../ClassMod'
-
-export const Class_{key}: ClassModData = {{
-    key: '{key}',
-    name: `{name}`,
-    originalHero: {original_hero},
-    religious: {religious},
-    transform: {transform},
-    resistances: {resistances},
-    stats: {{
-        armours: [
-            {armours}
-        ],
-        weapons: [
-            {weapons}
-        ]
-    }},
-    sources: [{sources}],
-    skills: [{skills}
-    ],
-    equip: {{
-        armour: {equip_armour},
-        weapon: {equip_weapon},
-    }},
-    portrait: '{portrait}',
-}}
-",
-            key = class_info.key,
-            name = class_info.name,
-            original_hero = class_info.original_hero,
-            portrait = images.save(&class_info.portrait),
-            armours = format!(
-                "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
-                a[0],
-                a[1],
-                a[2],
-                a[3],
-                a[4],
-                s = ""
-            ),
-            weapons = format!(
-                "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
-                w[0],
-                w[1],
-                w[2],
-                w[3],
-                w[4],
-                s = ""
-            ),
-            resistances = class_info.res,
-            religious = class_info.religious,
-            transform = class_info.transform,
-            sources = sources(&class_info.steam_id),
-            skills = format_skills(&class_info.skills, images),
-            equip_armour = format_equip(&class_info.armour_icons, images),
-            equip_weapon = format_equip(&class_info.weapon_icons, images),
-        ),
-    )
-}
-
-fn format_skills(skills: &[SkillInfo], images: &mut ImageStore) -> String {
-    skills
-        .iter()
-        .map(|skill| {
-            format!(
-                r"
-        {{
-            name: `{}`,
-            launch: {},
-            target: {},
-            image: '{}',
-        }},",
-                skill.name,
-                skill.launch,
-                skill.target,
-                images.save(&skill.img),
-            )
-        })
-        .collect()
-}
-
-fn format_equip(equip: &[Image], images: &mut ImageStore) -> String {
-    let mut result = String::from("[\n");
-
-    for image in equip {
-        result += &format!("            '{}',\n", images.save(image));
-    }
-
-    result += "        ]";
-
-    result
-}
-
-fn sources(steam_id: &str) -> String {
-    if steam_id.is_empty() {
-        return String::new();
-    }
-
-    format!(
-        r"
-        {{
-            name: 'Steam',
-            link: 'https://steamcommunity.com/sharedfiles/filedetails/?id={steam_id}'
-        }}
-    "
-    )
 }

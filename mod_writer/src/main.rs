@@ -4,6 +4,7 @@ use crate::{images::ImageStore, writer::write_files};
 
 mod fixer;
 mod images;
+mod output;
 mod writer;
 
 const USAGE: &str = "Usage: mod_writer --images <image_dir> <input_dir>... <output_dir>";
@@ -56,6 +57,6 @@ fn main() {
 
     let mut images =
         ImageStore::new(&PathBuf::from(image_dir)).expect("failed to prepare image dir");
-    write_files(&output, &mut images, infos);
+    write_files(output.as_ref(), &mut images, infos);
     println!("Wrote {} unique images", images.len());
 }

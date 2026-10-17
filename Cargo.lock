@@ -503,6 +503,8 @@ version = "0.1.0"
 dependencies = [
  "mod_parser",
  "mod_reader",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
