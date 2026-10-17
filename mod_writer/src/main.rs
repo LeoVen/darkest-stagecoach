@@ -54,7 +54,8 @@ fn main() {
     // Keep keys (and their dedupe suffixes) stable regardless of input order
     infos.sort_by(|a, b| a.key.cmp(&b.key).then_with(|| a.steam_id.cmp(&b.steam_id)));
 
-    let mut images = ImageStore::new(&PathBuf::from(image_dir)).expect("failed to prepare image dir");
+    let mut images =
+        ImageStore::new(&PathBuf::from(image_dir)).expect("failed to prepare image dir");
     write_files(&output, &mut images, infos);
     println!("Wrote {} unique images", images.len());
 }

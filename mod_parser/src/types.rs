@@ -80,8 +80,19 @@ pub struct ClassInfo {
 
 impl Display for ClassResistances {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{{\n{s:<8}stun: {},\n{s:<8}blight: {},\n{s:<8}bleed: {},\n{s:<8}disease: {},\n{s:<8}move: {},\n{s:<8}debuff: {},\n{s:<8}deathBlow: {},\n{s:<8}trap: {}\n    }}",
-            self.stun,self.blight, self.bleed, self.disease, self.shuffle, self.debuff, self.death_blow, self.trap, s = "")
+        write!(
+            f,
+            "{{\n{s:<8}stun: {},\n{s:<8}blight: {},\n{s:<8}bleed: {},\n{s:<8}disease: {},\n{s:<8}move: {},\n{s:<8}debuff: {},\n{s:<8}deathBlow: {},\n{s:<8}trap: {}\n    }}",
+            self.stun,
+            self.blight,
+            self.bleed,
+            self.disease,
+            self.shuffle,
+            self.debuff,
+            self.death_blow,
+            self.trap,
+            s = ""
+        )
     }
 }
 

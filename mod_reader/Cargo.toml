@@ -1,14 +1,12 @@
 [package]
 name = "mod_reader"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+version.workspace = true
+edition.workspace = true
 
 [dependencies]
-tokio = "1"
-root_finder = { path = "../root_finder" }
-parser = { path = "../parser" }
-xml_parser = { path = "../xml_parser" }
-png_compr = { path = "../img_compr" }
-anyhow = "1"
+tokio.workspace = true
+root_finder.workspace = true
+parser.workspace = true
+xml_parser.workspace = true
+png_compr.workspace = true
+anyhow.workspace = true

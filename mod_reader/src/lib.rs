@@ -30,10 +30,7 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
         if let Some(info) = read_single(&root).await {
             result.push(info);
         } else {
-            eprintln!(
-                "Mod couldn't be read: {}",
-                root.to_string_lossy()
-            );
+            eprintln!("Mod couldn't be read: {}", root.to_string_lossy());
         }
     }
 

@@ -3,8 +3,8 @@ use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
 use mod_parser::proc_class_mod;
 use mod_parser::types::{ClassInfo, SkillInfo};
-use mod_reader::types::Image;
 use mod_reader::types::ClassModInfo;
+use mod_reader::types::Image;
 
 use crate::fixer::fix_classes;
 use crate::images::ImageStore;

@@ -1,10 +1,8 @@
 [package]
 name = "xml_parser"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+version.workspace = true
+edition.workspace = true
 
 [dependencies]
-quick-xml = "0.23.0"
-anyhow = "1"
+quick-xml.workspace = true
+anyhow.workspace = true

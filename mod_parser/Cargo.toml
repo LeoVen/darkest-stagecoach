@@ -1,10 +1,8 @@
 [package]
 name = "mod_parser"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+version.workspace = true
+edition.workspace = true
 
 [dependencies]
-mod_reader = { path = "../mod_reader" }
-parser = { path = "../parser" }
+mod_reader.workspace = true
+parser.workspace = true

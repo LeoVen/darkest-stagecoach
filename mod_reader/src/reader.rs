@@ -84,10 +84,10 @@ impl<'a> ModReader<'a> {
             }
         };
         for entry in dir_iter.flatten() {
-            if let Some(entry_path) = entry.path().to_str() {
-                if entry_path.ends_with(".string_table.xml") {
-                    files_to_read.push(entry_path.to_string());
-                }
+            if let Some(entry_path) = entry.path().to_str()
+                && entry_path.ends_with(".string_table.xml")
+            {
+                files_to_read.push(entry_path.to_string());
             }
         }
 
@@ -190,26 +190,26 @@ impl<'a> ModReader<'a> {
             .filter(|(key, _)| key == "armour")
             .enumerate()
         {
-            if let Some(name) = map.get("name") {
-                if let Some(key) = name.first() {
-                    let index = match key.chars().last() {
-                        Some('0') => 0,
-                        Some('1') => 1,
-                        Some('2') => 2,
-                        Some('3') => 3,
-                        Some('4') => 4,
-                        _ => fallback,
-                    };
+            if let Some(name) = map.get("name")
+                && let Some(key) = name.first()
+            {
+                let index = match key.chars().last() {
+                    Some('0') => 0,
+                    Some('1') => 1,
+                    Some('2') => 2,
+                    Some('3') => 3,
+                    Some('4') => 4,
+                    _ => fallback,
+                };
 
-                    if index >= 5 {
-                        continue;
-                    }
+                if index >= 5 {
+                    continue;
+                }
 
-                    if let Some(icon) = map.get("icon") {
-                        if let Some(icon) = icon.first() {
-                            armour_names[index] = icon.trim_end_matches(".png");
-                        }
-                    }
+                if let Some(icon) = map.get("icon")
+                    && let Some(icon) = icon.first()
+                {
+                    armour_names[index] = icon.trim_end_matches(".png");
                 }
             }
         }
@@ -220,26 +220,26 @@ impl<'a> ModReader<'a> {
             .filter(|(key, _)| key == "weapon")
             .enumerate()
         {
-            if let Some(name) = map.get("name") {
-                if let Some(key) = name.first() {
-                    let index = match key.chars().last() {
-                        Some('0') => 0,
-                        Some('1') => 1,
-                        Some('2') => 2,
-                        Some('3') => 3,
-                        Some('4') => 4,
-                        _ => fallback,
-                    };
+            if let Some(name) = map.get("name")
+                && let Some(key) = name.first()
+            {
+                let index = match key.chars().last() {
+                    Some('0') => 0,
+                    Some('1') => 1,
+                    Some('2') => 2,
+                    Some('3') => 3,
+                    Some('4') => 4,
+                    _ => fallback,
+                };
 
-                    if index >= 5 {
-                        continue;
-                    }
+                if index >= 5 {
+                    continue;
+                }
 
-                    if let Some(icon) = map.get("icon") {
-                        if let Some(icon) = icon.first() {
-                            weapon_names[index] = icon.trim_end_matches(".png");
-                        }
-                    }
+                if let Some(icon) = map.get("icon")
+                    && let Some(icon) = icon.first()
+                {
+                    weapon_names[index] = icon.trim_end_matches(".png");
                 }
             }
         }
@@ -309,15 +309,15 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
     let mut result = vec![];
 
     for (_, map) in info.iter().filter(|(key, _)| key == "combat_skill") {
-        if let (Some(id), Some(icon)) = (map.get("id"), map.get("icon")) {
-            if let (Some(skill_name), Some(skill_icon)) = (id.first(), icon.first()) {
-                result.push(SkillData {
-                    key: skill_name.to_string(),
-                    name: String::new(),
-                    icon: skill_icon.to_string(),
-                    img: Image::new(),
-                });
-            }
+        if let (Some(id), Some(icon)) = (map.get("id"), map.get("icon"))
+            && let (Some(skill_name), Some(skill_icon)) = (id.first(), icon.first())
+        {
+            result.push(SkillData {
+                key: skill_name.to_string(),
+                name: String::new(),
+                icon: skill_icon.to_string(),
+                img: Image::new(),
+            });
         }
     }
 

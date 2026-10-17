@@ -51,10 +51,10 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
     ]);
 
     let key = format!("hero_class_name_{}", info.key);
-    if let Some(name) = info.locs.get(&key) {
-        if let Some(name) = name.first() {
-            result.name = proc_name(name.clone());
-        }
+    if let Some(name) = info.locs.get(&key)
+        && let Some(name) = name.first()
+    {
+        result.name = proc_name(name.clone());
     }
 
     // Some mods only ship compiled .loc2 files, which can't be read
@@ -155,12 +155,11 @@ pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) 
             .iter()
             .filter(|(key, _)| key == "combat_skill")
             .find(|(_, map)| {
-                if let Some(values) = map.get("id") {
-                    if let Some(value) = values.first() {
-                        if value == &skill.key {
-                            return true;
-                        }
-                    }
+                if let Some(values) = map.get("id")
+                    && let Some(value) = values.first()
+                    && value == &skill.key
+                {
+                    return true;
                 }
                 false
             });
@@ -278,7 +277,10 @@ mod tests {
 
     #[test]
     fn strips_name_tags() {
-        assert_eq!(proc_name("{colour_start|x}Vestal{colour_end}".into()), "Vestal");
+        assert_eq!(
+            proc_name("{colour_start|x}Vestal{colour_end}".into()),
+            "Vestal"
+        );
         assert_eq!(proc_name("Plain".into()), "Plain");
         assert_eq!(proc_name("Open {tag".into()), "Open {tag");
     }

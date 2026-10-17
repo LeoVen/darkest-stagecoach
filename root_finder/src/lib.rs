@@ -3,7 +3,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use futures::{io, select, stream::FuturesUnordered, StreamExt};
+use futures::{StreamExt, io, select, stream::FuturesUnordered};
 use tokio_stream::wrappers::ReadDirStream;
 
 pub async fn find_roots(path: PathBuf) -> io::Result<Vec<PathBuf>> {
@@ -22,14 +22,14 @@ pub async fn find_roots(path: PathBuf) -> io::Result<Vec<PathBuf>> {
                 let ft = meta.file_type();
                 if ft.is_dir() {
                     let entries_stream = ReadDirStream::new(tokio::fs::read_dir(path).await?);
-                    entry_queue.push(entries_stream.into_future());
+                    entry_queue.push(StreamExt::into_future(entries_stream));
                 } else if ft.is_file() {
                     filter_queue.push(filter_file(path));
                 }
             },
             (entry, tail) = entry_queue.select_next_some() => {
                 if let Some(Ok(entry)) = entry {
-                    entry_queue.push(tail.into_future());
+                    entry_queue.push(StreamExt::into_future(tail));
                     meta_queue.push(metadata(entry.path()))
                 }
             },
@@ -82,12 +82,18 @@ mod tests {
 
     #[test]
     fn matches_only_hero_roots() {
-        assert!(is_hero_info(Path::new("123/heroes/lamia/lamia.info.darkest")));
+        assert!(is_hero_info(Path::new(
+            "123/heroes/lamia/lamia.info.darkest"
+        )));
         assert!(!is_hero_info(Path::new(
             "123/monsters/pyre1/pyre1_A/pyre1_A.info.darkest"
         )));
-        assert!(!is_hero_info(Path::new("123/heroes/lamia/other.info.darkest")));
-        assert!(!is_hero_info(Path::new("123/pre-change-files/x.info.darkest")));
+        assert!(!is_hero_info(Path::new(
+            "123/heroes/lamia/other.info.darkest"
+        )));
+        assert!(!is_hero_info(Path::new(
+            "123/pre-change-files/x.info.darkest"
+        )));
         assert!(!is_hero_info(Path::new("heroes/x/x/x.info.darkest")));
     }
 }

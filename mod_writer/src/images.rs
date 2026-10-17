@@ -40,10 +40,10 @@ impl ImageStore {
 
         let name = format!("{:016x}.jpg", fnv1a(image));
 
-        if self.saved.insert(name.clone()) {
-            if let Err(e) = fs::write(self.dir.join(&name), image) {
-                eprintln!("Failed to write image {}: {}", name, e);
-            }
+        if self.saved.insert(name.clone())
+            && let Err(e) = fs::write(self.dir.join(&name), image)
+        {
+            eprintln!("Failed to write image {}: {}", name, e);
         }
 
         format!("img/{}", name)

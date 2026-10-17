@@ -4,59 +4,72 @@ use quick_xml::events::Event;
 
 pub type LocFile = HashMap<String, Vec<String>>;
 
+// Reads the entries of the first <language> in a .string_table.xml file
 pub fn parse_loc_xml(data: String) -> anyhow::Result<LocFile> {
     let mut result: LocFile = HashMap::new();
-    let mut buf = Vec::with_capacity(data.len());
 
     let mut reader = quick_xml::Reader::from_str(&data);
-    reader.trim_text(true);
+    reader.config_mut().trim_text(true);
 
     let mut lang_started = false;
     let mut current_id = String::default();
 
     loop {
-        match reader.read_event(&mut buf) {
-            Ok(Event::Start(ref tag)) => {
-                if !lang_started && tag.name() == b"language" {
+        match reader.read_event()? {
+            Event::Start(tag) => {
+                if !lang_started && tag.name().as_ref() == "language" {
                     lang_started = true;
-                } else if lang_started && tag.name() == b"entry" {
-                    if let Some(Ok(id)) = tag.attributes().find(|attr| {
-                        if let Ok(attr) = attr {
-                            if attr.key == b"id" {
-                                return true;
-                            }
-                        }
-                        false
-                    }) {
-                        if let Ok(str) = std::str::from_utf8(id.value.as_ref()) {
-                            current_id = String::from(str);
-                        }
-                    }
+                } else if lang_started
+                    && tag.name().as_ref() == "entry"
+                    && let Some(id) = tag
+                        .attributes()
+                        .flatten()
+                        .find(|attr| attr.key.as_ref() == "id")
+                {
+                    current_id = id.value.to_string();
                 }
             }
-            Ok(Event::CData(ref cdata)) => {
+            Event::CData(cdata) => {
                 if lang_started && !current_id.is_empty() {
-                    if let Ok(data) = std::str::from_utf8(cdata.as_ref()) {
-                        // There can be multiple same ids
-                        if let Some(entry) = result.get_mut(&current_id) {
-                            entry.push(data.to_string());
-                        } else {
-                            _ = result.insert(current_id.clone(), vec![data.to_string()]);
-                        }
-                    }
-                    current_id = String::new();
+                    // There can be multiple same ids
+                    result
+                        .entry(std::mem::take(&mut current_id))
+                        .or_default()
+                        .push(cdata.to_string());
                 }
             }
-            Ok(Event::End(ref end)) => {
-                if lang_started && end.name() == b"language" {
+            Event::End(end) => {
+                if lang_started && end.name().as_ref() == "language" {
                     break;
                 }
             }
-            Ok(Event::Eof) => break,
-            Err(e) => return anyhow::Result::Err(e.into()),
+            Event::Eof => break,
             _ => {}
         }
     }
 
     Ok(result)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn reads_first_language_only() {
+        let xml = r#"<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <language id="english">
+    <entry id="hero_class_name_lamia"><![CDATA[Lamia]]></entry>
+    <entry id="dup"><![CDATA[a]]></entry>
+    <entry id="dup"><![CDATA[b]]></entry>
+  </language>
+  <language id="french">
+    <entry id="hero_class_name_lamia"><![CDATA[Lamie]]></entry>
+  </language>
+</root>"#;
+        let loc = parse_loc_xml(xml.to_string()).unwrap();
+        assert_eq!(loc["hero_class_name_lamia"], ["Lamia"]);
+        assert_eq!(loc["dup"], ["a", "b"]);
+    }
 }

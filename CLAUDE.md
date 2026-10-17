@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (deployed at https://dds.leoven.dev via GitHub Pages from `docs/`). The repo has two halves:
 
 - `darkest-stagecoach/`: the React 19 + TypeScript site (Vite, MUI v9, styled-components v6, FontAwesome).
-- A Cargo workspace at the root (`parser`, `root_finder`, `mod_reader`, `mod_parser`, `xml_parser`, `img_compr`, `mod_writer`). Together these crates read the class mod folders on disk and generate the TypeScript data files the site uses.
+- A Cargo workspace at the root (`parser`, `root_finder`, `mod_reader`, `mod_parser`, `xml_parser`, `img_compr`, `mod_writer`). Together these crates read the class mod folders on disk and generate the TypeScript data files the site uses. Edition 2024; all dependency versions live in `[workspace.dependencies]` in the root `Cargo.toml`, and member crates use `dep.workspace = true`.
 
 ## Commands
 
@@ -27,7 +27,9 @@ Rust (run from the repo root):
 
 ```sh
 cargo build
-cargo test --workspace            # unit tests in parser, mod_parser, root_finder
+cargo test --workspace            # unit tests
+cargo clippy --workspace --all-targets
+cargo fmt --all
 cargo test -p parser <test_name>  # single test
 
 # Regenerate the site data (WSL paths; base game + DLC heroes, then workshop mods)
@@ -40,7 +42,7 @@ cargo run --release --bin mod_writer -- \
 
 `mod_writer --images <image_dir> <input_dir>... <output_dir>` is the real entry point for data generation. It clears old `.jpg` files from the image dir, but only overwrites `.tsx` files in the output dir, so clear that folder first to drop removed mods. The `main.rs` files in `root_finder`, `parser`, `xml_parser` and `img_compr` are scratch drivers with hardcoded Windows paths, not real CLIs.
 
-Formatting: Prettier settings live in `darkest-stagecoach/package.json` (4 spaces, no semicolons, single quotes, `arrowParens: avoid`, `jsxBracketSameLine`). Use rustfmt for the Rust code.
+Formatting: Prettier settings live in `darkest-stagecoach/package.json` (4 spaces, no semicolons, single quotes, `arrowParens: avoid`, `jsxBracketSameLine`). The Rust code is `cargo fmt` clean.
 
 ## Data pipeline (Rust → TS)
 

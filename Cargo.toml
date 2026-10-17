@@ -1,5 +1,5 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = [
   "parser",
   "root_finder",
@@ -9,6 +9,25 @@ members = [
   "xml_parser",
   "img_compr",
 ]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+anyhow = "1.0.104"
+futures = "0.3.34"
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg"] }
+quick-xml = "0.42.0"
+tokio = { version = "1.53.3", features = ["fs", "rt-multi-thread"] }
+tokio-stream = { version = "0.1.19", features = ["fs"] }
+
+mod_parser = { path = "mod_parser" }
+mod_reader = { path = "mod_reader" }
+parser = { path = "parser" }
+png_compr = { path = "img_compr" }
+root_finder = { path = "root_finder" }
+xml_parser = { path = "xml_parser" }
 
 [profile.dev.package.root_finder]
 opt-level = 3
