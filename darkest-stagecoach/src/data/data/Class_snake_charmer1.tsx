@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_snake_charmer1: ClassModData = {
     key: 'snake_charmer1',
-    name: `Encantador de Serpentes`,
+    name: `Snake Charmer`,
     originalHero: false,
     religious: false,
     transform: false,
@@ -42,7 +42,7 @@ export const Class_snake_charmer1: ClassModData = {
     ],
     skills: [
         {
-            name: `Presas Venenosas`,
+            name: `Venomous Fangs`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/e71bf306609cc447.jpg',
         },
         {
-            name: `Dança da Mamba`,
+            name: `Mamba Dance`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/3cebcde1dfc66d9a.jpg',
         },
         {
-            name: `Banquete`,
+            name: `Feast`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/21fb5661b588d7e9.jpg',
         },
         {
-            name: `Constrição`,
+            name: `Constriction`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -78,7 +78,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/682e95f4827e69a6.jpg',
         },
         {
-            name: `Armadilha de Chocalho`,
+            name: `Rattling Trap`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -87,7 +87,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/5e40fd7a4e7c7066.jpg',
         },
         {
-            name: `Charme Vicioso`,
+            name: `Vicious Charm`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_snake_charmer1: ClassModData = {
             image: 'img/3538404cb9dba2b1.jpg',
         },
         {
-            name: `Toxina Calmante`,
+            name: `Calming Toxin`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],

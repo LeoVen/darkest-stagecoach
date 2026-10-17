@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_apostate1: ClassModData = {
     key: 'apostate1',
-    name: `Apóstata`,
+    name: `Apostate`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_apostate1: ClassModData = {
     ],
     skills: [
         {
-            name: `Condenar`,
+            name: `Condemn`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -51,7 +51,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/e0a7e034f98064ee.jpg',
         },
         {
-            name: `Últimos Ritos`,
+            name: `Last Rites`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/fc73136165561ce0.jpg',
         },
         {
-            name: `Textos Apócrifos`,
+            name: `Apocryphal Texts`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/0601223cdb175761.jpg',
         },
         {
-            name: `Tempo Emprestado`,
+            name: `Borrowed Time`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -78,7 +78,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/526ae33166f91705.jpg',
         },
         {
-            name: `Tenebrosidade`,
+            name: `Tenebrosity`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -87,7 +87,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/8f091adfb9e44599.jpg',
         },
         {
-            name: `Instigar`,
+            name: `Incite`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_apostate1: ClassModData = {
             image: 'img/5fcde623c0ee2b9d.jpg',
         },
         {
-            name: `Desconsagrar`,
+            name: `Desecrate`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],

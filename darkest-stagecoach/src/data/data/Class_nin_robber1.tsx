@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_nin_robber1: ClassModData = {
     key: 'nin_robber1',
-    name: `女忍`,
+    name: `Assault Kunoichi`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_nin_robber1: ClassModData = {
     ],
     skills: [
         {
-            name: `奥义|追心刺`,
+            name: `ULT|Coring stike`,
             launch: [false,false,false,true],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/19d4169328370db4.jpg',
         },
         {
-            name: `奥义|佯攻`,
+            name: `ULT|Feign attack`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -60,7 +60,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/aa8a60d3182f4c08.jpg',
         },
         {
-            name: `疾风连刺`,
+            name: `Rainstorm srtike`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,false,false],
@@ -69,7 +69,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/9adcbff404ab55ae.jpg',
         },
         {
-            name: `飞刀投掷`,
+            name: `Knife throwing`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,true,true,true],
@@ -78,7 +78,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/7107d2be9fb97707.jpg',
         },
         {
-            name: `刀扇`,
+            name: `Fan of Knives`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -87,7 +87,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/914a65f51a724944.jpg',
         },
         {
-            name: `后跳`,
+            name: `flash back`,
             launch: [true,true,true,false],
             target: {
                 targets: [false,false,false,false],
@@ -96,7 +96,7 @@ export const Class_nin_robber1: ClassModData = {
             image: 'img/0501d8b6ed7c5205.jpg',
         },
         {
-            name: `卑劣攻击`,
+            name: `Despicable attacks`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,false,false,false],

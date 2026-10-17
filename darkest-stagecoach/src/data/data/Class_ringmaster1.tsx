@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_ringmaster1: ClassModData = {
     key: 'ringmaster1',
-    name: `Mestre de Cerimônia`,
+    name: `Ringmaster`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_ringmaster1: ClassModData = {
     ],
     skills: [
         {
-            name: `Última Risada`,
+            name: `Last Laugh`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_ringmaster1: ClassModData = {
             image: 'img/4ba2fdd0a50d43ae.jpg',
         },
         {
-            name: `Desconcertar!`,
+            name: `Flummox!`,
             launch: [false,true,true,true],
             target: {
                 targets: [false,true,true,true],
@@ -60,7 +60,7 @@ export const Class_ringmaster1: ClassModData = {
             image: 'img/f5084f20ae505881.jpg',
         },
         {
-            name: `A Grande Entrada`,
+            name: `Grand Entrance`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_ringmaster1: ClassModData = {
             image: 'img/526735317ad7d7f4.jpg',
         },
         {
-            name: `Ajoelhe-se!`,
+            name: `Kneel!`,
             launch: [true,false,false,false],
             target: {
                 targets: [false,true,true,true],
@@ -78,7 +78,7 @@ export const Class_ringmaster1: ClassModData = {
             image: 'img/a871ec80fa00ca66.jpg',
         },
         {
-            name: `Favorito da Audiência`,
+            name: `Fan Favourite`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_ringmaster1: ClassModData = {
             image: 'img/4f38defa7ac5f896.jpg',
         },
         {
-            name: `Fazer Vênia`,
+            name: `Take a Bow`,
             launch: [true,true,false,false],
             target: {
                 targets: [false,false,false,false],

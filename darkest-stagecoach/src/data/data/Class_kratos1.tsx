@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_kratos1: ClassModData = {
     key: 'kratos1',
-    name: `Guerreiro Cinzento`,
+    name: `Ashen Warrior`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_kratos1: ClassModData = {
     ],
     skills: [
         {
-            name: `Soco Flamejante`,
+            name: `Flaming Punch`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_kratos1: ClassModData = {
             image: 'img/509bf40219ad59bd.jpg',
         },
         {
-            name: `Mordida do Leviathan`,
+            name: `Leviathan's Bite`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,false,false],
@@ -60,7 +60,7 @@ export const Class_kratos1: ClassModData = {
             image: 'img/b968e266d6068969.jpg',
         },
         {
-            name: `Fúria Espartana`,
+            name: `Spartan Rage`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -69,7 +69,7 @@ export const Class_kratos1: ClassModData = {
             image: 'img/ddd0826d0b920490.jpg',
         },
         {
-            name: `Vôo do Leviathan`,
+            name: `Leviathan's Drift`,
             launch: [true,true,true,false],
             target: {
                 targets: [false,true,true,true],
@@ -78,7 +78,7 @@ export const Class_kratos1: ClassModData = {
             image: 'img/0833800c77d24801.jpg',
         },
         {
-            name: `Golpe do Guardião`,
+            name: `Guardian's Bash`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,false,false],
@@ -88,7 +88,7 @@ export const Class_kratos1: ClassModData = {
         },
         {
             name: ` ¤ ¤¦¤¦¤
-Desejo Agonizante`,
+Suffering Desire`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -98,7 +98,7 @@ Desejo Agonizante`,
         },
         {
             name: ` ¤ ¤ ¤ ¤
-Me Cure!`,
+Heal Me!`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],

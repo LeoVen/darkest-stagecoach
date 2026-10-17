@@ -91,10 +91,20 @@ impl<'a> ModReader<'a> {
             }
         }
 
+        // The first definition of an id wins, so read in a fixed order rather
+        // than the filesystem's listing order
+        files_to_read.sort();
+
         let mut read_ok = 0;
         let mut read_fail = 0;
         let mut parse_ok = 0;
         let mut parse_fail = 0;
+
+        // Mods ship either one file per language or several languages per
+        // file, often with the same ids in each, so prefer english and only
+        // use other languages for ids it doesn't have
+        let mut english = vec![];
+        let mut others = vec![];
 
         for file in &files_to_read {
             // Some mods ship string tables that aren't valid UTF-8
@@ -102,8 +112,14 @@ impl<'a> ModReader<'a> {
                 Ok(data) => {
                     read_ok += 1;
                     let data = String::from_utf8_lossy(&data).into_owned();
-                    if let Ok(xml) = xml_parser::parse_loc_xml(data) {
-                        merge_xml(&mut mod_info.locs, xml);
+                    if let Ok(languages) = xml_parser::parse_loc_xml(data) {
+                        for (language, entries) in languages {
+                            if language.eq_ignore_ascii_case("english") {
+                                english.push(entries);
+                            } else {
+                                others.push(entries);
+                            }
+                        }
                         parse_ok += 1;
                     } else {
                         parse_fail += 1;
@@ -114,6 +130,10 @@ impl<'a> ModReader<'a> {
                     parse_fail += 1;
                 }
             }
+        }
+
+        for entries in english.into_iter().chain(others) {
+            merge_xml(&mut mod_info.locs, entries);
         }
 
         print!(

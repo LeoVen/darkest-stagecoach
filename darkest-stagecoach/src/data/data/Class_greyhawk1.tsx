@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_greyhawk1: ClassModData = {
     key: 'greyhawk1',
-    name: `灰鹰`,
+    name: `Greyhawk`,
     originalHero: false,
     religious: false,
     transform: false,
@@ -42,7 +42,7 @@ export const Class_greyhawk1: ClassModData = {
     ],
     skills: [
         {
-            name: `异牙穿刺`,
+            name: `Sharp puncture`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/47f80c072ae98d08.jpg',
         },
         {
-            name: `银鬃扑杀`,
+            name: `Bristle strike`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/0d99405db361bd96.jpg',
         },
         {
-            name: `灰鹰狩猎`,
+            name: `Hawk's hunting`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/945e8f938690b3e1.jpg',
         },
         {
-            name: `化神一击`,
+            name: `Divine blow`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -78,7 +78,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/686d75bce89defcd.jpg',
         },
         {
-            name: `凤凰恩典`,
+            name: `Phoenix grace`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -87,7 +87,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/2e3fc4adb0daf2fa.jpg',
         },
         {
-            name: `堡垒庇护`,
+            name: `Fortress shelter`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -96,7 +96,7 @@ export const Class_greyhawk1: ClassModData = {
             image: 'img/052c812ff6b03d55.jpg',
         },
         {
-            name: `执政官狂怒`,
+            name: `Rage of archon`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],

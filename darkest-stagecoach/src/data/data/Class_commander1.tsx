@@ -71,7 +71,7 @@ Reorganization`,
             image: 'img/b1e3a3c62e668aef.jpg',
         },
         {
-            name: `Chain of thunderbolts/The other side`,
+            name: `Chain of thunderbolts/The interdimensional side`,
             launch: [false,true,true,false],
             target: {
                 targets: [false,true,true,true],
@@ -98,7 +98,7 @@ Reorganization`,
             image: 'img/8919a36e6c861c2e.jpg',
         },
         {
-            name: `Tactical change`,
+            name: `Changing tactics`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],

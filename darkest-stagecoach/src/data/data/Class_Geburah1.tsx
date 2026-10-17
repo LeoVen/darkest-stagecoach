@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_Geburah1: ClassModData = {
     key: 'Geburah1',
-    name: `殷红迷雾`,
+    name: `Red Mist`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_Geburah1: ClassModData = {
     ],
     skills: [
         {
-            name: `大刀纵切`,
+            name: `Upstanding Slash`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -51,7 +51,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/605aa512b2de5833.jpg',
         },
         {
-            name: `大刀直刺`,
+            name: `Spear`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/7bac9990524a6c7f.jpg',
         },
         {
-            name: `屏息凝神`,
+            name: `Focus Spirit`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/53835a4b6563a86d.jpg',
         },
         {
-            name: `陷阵之志`,
+            name: `Onrush`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -78,7 +78,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/c3026df8ea731ee2.jpg',
         },
         {
-            name: `守护他人的决意`,
+            name: `The Courage to Protect`,
             launch: [true,false,false,false],
             target: {
                 targets: [false,false,false,false],
@@ -105,7 +105,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/950b5a9d5a30b32c.jpg',
         },
         {
-            name: `小红帽雇佣兵`,
+            name: `Little Red Riding Hooded Mercenary`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -114,7 +114,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/7e393466c0bdfa0b.jpg',
         },
         {
-            name: `大坏狼`,
+            name: `Big and Will be Bad Wolf`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -123,7 +123,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/aa8bf0aef1326f98.jpg',
         },
         {
-            name: `微笑的尸山`,
+            name: `Mountain of Smiling Bodies`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -132,7 +132,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/a56f69bf37604692.jpg',
         },
         {
-            name: `诺斯费拉图`,
+            name: `Nosferatu`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -141,7 +141,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/74bea95828b50e53.jpg',
         },
         {
-            name: `一无所有`,
+            name: `Nothing There`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -150,7 +150,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/2b08f061e6824e43.jpg',
         },
         {
-            name: `血雾弥漫`,
+            name: `Great Split: Vertical`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -159,7 +159,7 @@ export const Class_Geburah1: ClassModData = {
             image: 'img/3a0a8ecc7acb8423.jpg',
         },
         {
-            name: `尸横遍野`,
+            name: `Great Split: Horizontal`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],

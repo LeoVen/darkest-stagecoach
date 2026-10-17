@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_Shao1: ClassModData = {
     key: 'Shao1',
-    name: `邵`,
+    name: `Xiao`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_Shao1: ClassModData = {
     ],
     skills: [
         {
-            name: `剑之所向`,
+            name: `Single-Point Stab`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/0f87c8e1968bc6bb.jpg',
         },
         {
-            name: `破竹之势`,
+            name: `Fiery Dragon Slash`,
             launch: [true,true,false,false],
             target: {
                 targets: [false,true,true,true],
@@ -60,7 +60,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/9ddbf6b00e847270.jpg',
         },
         {
-            name: `椒图镇邪`,
+            name: `Jiāo Tú`,
             launch: [true,true,false,false],
             target: {
                 targets: [false,false,false,false],
@@ -69,7 +69,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/313617c711ad4b08.jpg',
         },
         {
-            name: `狻猊腾云`,
+            name: `Jīn Ní`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -78,7 +78,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/30bab9cfd5c23c5a.jpg',
         },
         {
-            name: `狻猊腾云`,
+            name: `Jīn Ní`,
             launch: [false,false,false,false],
             target: {
                 targets: [false,false,false,false],
@@ -87,7 +87,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/85f31962af029d05.jpg',
         },
         {
-            name: `睚眦雪恨`,
+            name: `Yá Zì`,
             launch: [false,false,false,false],
             target: {
                 targets: [false,false,false,false],
@@ -96,7 +96,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/76e13f111c283d11.jpg',
         },
         {
-            name: `蒲牢鸣钟`,
+            name: `Pú Láo`,
             launch: [false,false,false,false],
             target: {
                 targets: [false,false,false,false],
@@ -105,7 +105,7 @@ export const Class_Shao1: ClassModData = {
             image: 'img/8e7529f558cd6381.jpg',
         },
         {
-            name: `饕餮飨食`,
+            name: `Tāo Tiè`,
             launch: [false,false,false,false],
             target: {
                 targets: [false,false,false,false],

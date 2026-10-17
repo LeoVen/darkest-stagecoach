@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_blackguard1: ClassModData = {
     key: 'blackguard1',
-    name: `Guarda Negro`,
+    name: `Blackguard`,
     originalHero: false,
     religious: true,
     transform: false,
@@ -42,7 +42,7 @@ export const Class_blackguard1: ClassModData = {
     ],
     skills: [
         {
-            name: `Pulverizar`,
+            name: `Pulverize`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/0fa1b3ff9c87c1ba.jpg',
         },
         {
-            name: `Roubo de Vida`,
+            name: `Life Steal`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/14c6b95855d13975.jpg',
         },
         {
-            name: `Renunciar`,
+            name: `Relinquish`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/80370c1ac9e889d2.jpg',
         },
         {
-            name: `Ofuscar`,
+            name: `Blearing`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -78,7 +78,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/455bea4c3bbf0b66.jpg',
         },
         {
-            name: `Aperto da Morte`,
+            name: `Death Grip`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -87,7 +87,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/47d53af384fd762f.jpg',
         },
         {
-            name: `Chamado da Sepultura`,
+            name: `Call of the Grave`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_blackguard1: ClassModData = {
             image: 'img/d47381c700888871.jpg',
         },
         {
-            name: `Inexorável`,
+            name: `Inexorable`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],

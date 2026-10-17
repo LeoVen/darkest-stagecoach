@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_werewolf1: ClassModData = {
     key: 'werewolf1',
-    name: `Lobanil`,
+    name: `Werewolf`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_werewolf1: ClassModData = {
     ],
     skills: [
         {
-            name: `Garras Derramadoras de Sangue`,
+            name: `Bloodshed Claws`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_werewolf1: ClassModData = {
             image: 'img/d0af04f8c11378f6.jpg',
         },
         {
-            name: `Rugido Apavorante`,
+            name: `Horrendous Roar`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_werewolf1: ClassModData = {
             image: 'img/334c6b5c654d4659.jpg',
         },
         {
-            name: `Provocar`,
+            name: `Taunt`,
             launch: [true,true,true,false],
             target: {
                 targets: [false,false,false,false],
@@ -70,7 +70,7 @@ export const Class_werewolf1: ClassModData = {
         },
         {
             name: ` ¤ ¤ ¤ ¤
-Bomba de Fumaça`,
+Smoke Bomb`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -79,7 +79,7 @@ Bomba de Fumaça`,
             image: 'img/08da3be5a14148aa.jpg',
         },
         {
-            name: `Banquete Selvagem`,
+            name: `Savage Feast`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -88,7 +88,7 @@ Bomba de Fumaça`,
             image: 'img/641f1e8685badcdd.jpg',
         },
         {
-            name: `Cabeçada`,
+            name: `Headbutt`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -97,7 +97,7 @@ Bomba de Fumaça`,
             image: 'img/f4a1c8fb9ff0464c.jpg',
         },
         {
-            name: `Uivo da Meia-Noite`,
+            name: `Midnight Howl`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],

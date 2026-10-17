@@ -42,7 +42,7 @@ export const Class_deovolente1: ClassModData = {
     ],
     skills: [
         {
-            name: `Etérea`,
+            name: `Etherealness`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -51,7 +51,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/13a41f24f7d4e69e.jpg',
         },
         {
-            name: `Volver a la forma física`,
+            name: `Back to physical form`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/ad6ecf64fd41e7db.jpg',
         },
         {
-            name: `Oscuridad`,
+            name: `Dusk`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/d9fb25f4b138b4a9.jpg',
         },
         {
-            name: `Anochecer`,
+            name: `Nightfall`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,true,true],
@@ -78,7 +78,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/459b65f6f2025d76.jpg',
         },
         {
-            name: `Piedad demoniaca`,
+            name: `Pity of fiend`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -87,7 +87,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/c6d4dd5bf26182ee.jpg',
         },
         {
-            name: `Amanecer`,
+            name: `Dawn`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/937daf03607fb469.jpg',
         },
         {
-            name: `Lluvia de estrellas`,
+            name: `Starfall`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -105,7 +105,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/a9bb0e1034f296de.jpg',
         },
         {
-            name: `Vino de arrogancia`,
+            name: `Wine of arrogance`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -114,7 +114,7 @@ export const Class_deovolente1: ClassModData = {
             image: 'img/a80fc1c4a6ffddf0.jpg',
         },
         {
-            name: `Eco efímero`,
+            name: `Ephemeral echo`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],

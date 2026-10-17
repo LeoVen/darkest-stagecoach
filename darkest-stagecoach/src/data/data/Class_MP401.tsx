@@ -42,7 +42,7 @@ export const Class_MP401: ClassModData = {
     ],
     skills: [
         {
-            name: ``,
+            name: `点射`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,true],
@@ -51,7 +51,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/e060c7c70a932487.jpg',
         },
         {
-            name: ``,
+            name: `扫射`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/4c21a01a429750a7.jpg',
         },
         {
-            name: ``,
+            name: `烟雾弹`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/edd6e59ee97fd310.jpg',
         },
         {
-            name: ``,
+            name: `燃烧弹`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -78,7 +78,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/ccfd1ffbe9130ff5.jpg',
         },
         {
-            name: ``,
+            name: `木柄手榴弹`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -87,7 +87,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/1139072eba7f4721.jpg',
         },
         {
-            name: ``,
+            name: `铁拳火箭筒`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_MP401: ClassModData = {
             image: 'img/aea8f73a8f55ae3b.jpg',
         },
         {
-            name: ``,
+            name: `战地急救`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],

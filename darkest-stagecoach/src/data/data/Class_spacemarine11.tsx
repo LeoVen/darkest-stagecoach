@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_spacemarine11: ClassModData = {
     key: 'spacemarine11',
-    name: `星际战士`,
+    name: `Space marine`,
     originalHero: false,
     religious: true,
     transform: false,
@@ -42,7 +42,7 @@ export const Class_spacemarine11: ClassModData = {
     ],
     skills: [
         {
-            name: `战斧劈击`,
+            name: `Axe blow`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/b3426006709e9fbb.jpg',
         },
         {
-            name: `爆弹手枪`,
+            name: `Bolt pistol`,
             launch: [true,true,true,false],
             target: {
                 targets: [false,true,true,true],
@@ -60,7 +60,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/98b8c149b7c12e53.jpg',
         },
         {
-            name: `警惕`,
+            name: `On guard`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/625765de960864b3.jpg',
         },
         {
-            name: `盾牌猛击`,
+            name: `Shield blow`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -78,7 +78,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/e85ab2d2278334d7.jpg',
         },
         {
-            name: `退后!`,
+            name: `Get back`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -87,7 +87,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/948335082d41d998.jpg',
         },
         {
-            name: `全力一击`,
+            name: `Power strike`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -96,7 +96,7 @@ export const Class_spacemarine11: ClassModData = {
             image: 'img/74e47fdc8895dede.jpg',
         },
         {
-            name: `坚守阵线`,
+            name: `Hold the line`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,true,true],

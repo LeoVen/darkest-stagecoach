@@ -42,7 +42,7 @@ export const Class_Patriot1: ClassModData = {
     ],
     skills: [
         {
-            name: ``,
+            name: `长戟突刺`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/b3d586f86134e16d.jpg',
         },
         {
-            name: ``,
+            name: `盾牌猛击`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/a21967dfd6c1625b.jpg',
         },
         {
-            name: ``,
+            name: `感染者之盾`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -69,7 +69,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/2270c57a4c858990.jpg',
         },
         {
-            name: ``,
+            name: `重生`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -78,7 +78,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/ad4d42a3399d79f8.jpg',
         },
         {
-            name: ``,
+            name: `长戟横扫`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -87,7 +87,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/2b44e58094178f99.jpg',
         },
         {
-            name: ``,
+            name: `毁灭投掷`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/d1f424661cbbbdaf.jpg',
         },
         {
-            name: ``,
+            name: `温迪戈的诅咒`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],
@@ -105,7 +105,7 @@ export const Class_Patriot1: ClassModData = {
             image: 'img/d7794a4e3d256d65.jpg',
         },
         {
-            name: ``,
+            name: `不屈号令`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],

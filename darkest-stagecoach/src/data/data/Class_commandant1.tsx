@@ -42,7 +42,7 @@ export const Class_commandant1: ClassModData = {
     ],
     skills: [
         {
-            name: `Pistola de Oficial`,
+            name: `Officer's Pistol`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_commandant1: ClassModData = {
             image: 'img/9d28153752f2732e.jpg',
         },
         {
-            name: `Terreno perigoso`,
+            name: `Perilous Ground`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],

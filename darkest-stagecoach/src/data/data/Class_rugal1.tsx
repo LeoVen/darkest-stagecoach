@@ -42,7 +42,7 @@ export const Class_rugal1: ClassModData = {
     ],
     skills: [
         {
-            name: ``,
+            name: `变身狂模式`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -51,7 +51,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/6f9c1967d3ec3974.jpg',
         },
         {
-            name: ``,
+            name: `TX-498喷火器`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/25265884c26b0f5d.jpg',
         },
         {
-            name: ``,
+            name: `致命反击`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/1369de67fbc361b5.jpg',
         },
         {
-            name: ``,
+            name: `不灭之握`,
             launch: [false,true,true,true],
             target: {
                 targets: [false,false,true,true],
@@ -78,7 +78,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/24dc238efa3dd79a.jpg',
         },
         {
-            name: ``,
+            name: `巨人压杀`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,false,false],
@@ -87,7 +87,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/a2df7428ba17e3fd.jpg',
         },
         {
-            name: ``,
+            name: `灭族切割`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -96,7 +96,7 @@ export const Class_rugal1: ClassModData = {
             image: 'img/3d6a841182369cb1.jpg',
         },
         {
-            name: ``,
+            name: `帝王凯撒波`,
             launch: [false,false,true,true],
             target: {
                 targets: [false,true,true,true],

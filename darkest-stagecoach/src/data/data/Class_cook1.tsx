@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_cook1: ClassModData = {
     key: 'cook1',
-    name: `Cozinheira`,
+    name: `Itinerant Cook`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_cook1: ClassModData = {
     ],
     skills: [
         {
-            name: `Curso principal`,
+            name: `Main Course`,
             launch: [false,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -51,7 +51,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/9762684463a0908b.jpg',
         },
         {
-            name: `Corte de açougueira`,
+            name: `Butcher's Slice`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/93221c3fb7ea0a9f.jpg',
         },
         {
-            name: `Escolher pedaço`,
+            name: `Choice Piece`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/9d4ff0104ff94ea0.jpg',
         },
         {
-            name: `Isca venenosa`,
+            name: `Poisoned Bait`,
             launch: [false,true,true,true],
             target: {
                 targets: [false,true,true,true],
@@ -78,7 +78,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/d2e9475cf7c63fab.jpg',
         },
         {
-            name: `Condimento Oculto`,
+            name: `Occult Condiment`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -87,7 +87,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/f2f6aba2e3c6b3d8.jpg',
         },
         {
-            name: `Sobremesa`,
+            name: `Entremet`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_cook1: ClassModData = {
             image: 'img/9a998728aff19bd1.jpg',
         },
         {
-            name: `Ajude a cozinheira`,
+            name: `Commis`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,true],

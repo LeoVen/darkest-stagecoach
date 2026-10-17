@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_bombard1: ClassModData = {
     key: 'bombard1',
-    name: `Bombardeiro`,
+    name: `Bombard`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_bombard1: ClassModData = {
     ],
     skills: [
         {
-            name: `Carga de Rompimento`,
+            name: `Breaching Charge`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/b1055c998d462fb9.jpg',
         },
         {
-            name: `Armado / KABUM!`,
+            name: `Armed / KABOOM`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/2c0693a133e4d224.jpg',
         },
         {
-            name: `Explosão Concussiva`,
+            name: `Concussive Blast`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/34ec1203a298eca4.jpg',
         },
         {
-            name: `Fogo no Buraco`,
+            name: `Fire in the Hole`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -78,7 +78,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/6e1c23bb7aacb927.jpg',
         },
         {
-            name: `Rearmamento`,
+            name: `Rearmament`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -87,7 +87,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/e681d15c8ddfbc3b.jpg',
         },
         {
-            name: `Clarão`,
+            name: `Flash Out`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -96,7 +96,7 @@ export const Class_bombard1: ClassModData = {
             image: 'img/286d2ecdfe6cd2d8.jpg',
         },
         {
-            name: `Cabeçada`,
+            name: `Headbutt`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],

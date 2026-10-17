@@ -42,7 +42,7 @@ export const Class_nbb_owlwing1: ClassModData = {
     ],
     skills: [
         {
-            name: `Bomba de fumaça`,
+            name: `Smoke Bomb`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_nbb_owlwing1: ClassModData = {
             image: 'img/84e4df27bbff2d92.jpg',
         },
         {
-            name: `Briga`,
+            name: `Fist Fight`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -60,7 +60,7 @@ export const Class_nbb_owlwing1: ClassModData = {
             image: 'img/fceebfb122ab6444.jpg',
         },
         {
-            name: `Cabo Atordoante`,
+            name: `Cape Stun`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -69,7 +69,7 @@ export const Class_nbb_owlwing1: ClassModData = {
             image: 'img/7245d685d9e4e2c6.jpg',
         },
         {
-            name: `Vontade de Vingança`,
+            name: `Revenge Will`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -78,7 +78,7 @@ export const Class_nbb_owlwing1: ClassModData = {
             image: 'img/d25b730cca4b0afa.jpg',
         },
         {
-            name: `Gancho tiro rápido`,
+            name: `Quickfire Hook`,
             launch: [true,true,true,false],
             target: {
                 targets: [false,false,true,true],
@@ -87,7 +87,7 @@ export const Class_nbb_owlwing1: ClassModData = {
             image: 'img/6e3c9f0c94c69616.jpg',
         },
         {
-            name: `Arranhão Oculi`,
+            name: `Oculi Scratch`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,false,false],

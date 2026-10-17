@@ -8,15 +8,14 @@ fn main() {
     let data = fs::read_to_string(path).expect("failed to read xml data");
 
     match parse_loc_xml(data) {
-        Ok(data) => {
-            for (key, value) in &data {
-                println!("{}: {:?}", key, value);
+        Ok(languages) => {
+            for (language, entries) in &languages {
+                println!(
+                    "{}: {} entries",
+                    language,
+                    entries.values().map(Vec::len).sum::<usize>()
+                );
             }
-
-            println!(
-                "\n\nFound {} entries",
-                data.iter().fold(0, |acc, (_, v)| acc + v.len())
-            );
         }
         Err(e) => eprintln!("{}", e),
     }

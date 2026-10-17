@@ -42,7 +42,7 @@ export const Class_paracausalist1: ClassModData = {
     ],
     skills: [
         {
-            name: ``,
+            name: `Nucleo-Protonic Ray`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/80062414f59ce406.jpg',
         },
         {
-            name: ``,
+            name: `Scanner Scope`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/3fea50bf751c15f1.jpg',
         },
         {
-            name: ``,
+            name: `Short Controlled Burst`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,false],
@@ -69,7 +69,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/bdaeafa2b0acb3fd.jpg',
         },
         {
-            name: ``,
+            name: `Electroplasmic Overcharge`,
             launch: [false,false,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -78,7 +78,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/5e0069133b2493c1.jpg',
         },
         {
-            name: ``,
+            name: `Attractor Tether`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,true,true],
@@ -87,7 +87,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/efa1fd75d8d44ea0.jpg',
         },
         {
-            name: ``,
+            name: `Photonic Flash Flare`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -96,7 +96,7 @@ export const Class_paracausalist1: ClassModData = {
             image: 'img/19a2f97a82dd29ce.jpg',
         },
         {
-            name: ``,
+            name: `The Goligher Cage`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],

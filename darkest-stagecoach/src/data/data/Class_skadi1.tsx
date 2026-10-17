@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_skadi1: ClassModData = {
     key: 'skadi1',
-    name: `深海猎人`,
+    name: `Abyss hunter`,
     originalHero: false,
     religious: false,
     transform: false,
@@ -42,7 +42,7 @@ export const Class_skadi1: ClassModData = {
     ],
     skills: [
         {
-            name: `迅速挥砍`,
+            name: `Quick Chop`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,false,false],
@@ -51,7 +51,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/d8c31f9b76fb2c63.jpg',
         },
         {
-            name: `跃涌之潮`,
+            name: `Rising Tides`,
             launch: [true,false,false,false],
             target: {
                 targets: [true,false,false,false],
@@ -60,7 +60,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/152761eda917428a.jpg',
         },
         {
-            name: `古老月光`,
+            name: `Olden Moonlight`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -69,7 +69,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/95e71e0b0fbf6e46.jpg',
         },
         {
-            name: `快速反应`,
+            name: `Quick reaction`,
             launch: [true,true,false,false],
             target: {
                 targets: [false,true,true,false],
@@ -78,7 +78,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/89673655a53e633d.jpg',
         },
         {
-            name: `掠食时刻`,
+            name: `Prey Time`,
             launch: [false,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -87,7 +87,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/4f3e84d33a2de4fb.jpg',
         },
         {
-            name: `古老者之血`,
+            name: `Blood Of Olden One`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_skadi1: ClassModData = {
             image: 'img/c28daa0a9aad1099.jpg',
         },
         {
-            name: `凝结`,
+            name: `Condensation`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],

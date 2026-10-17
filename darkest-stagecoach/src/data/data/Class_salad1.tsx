@@ -51,7 +51,7 @@ export const Class_salad1: ClassModData = {
             image: 'img/338775f49dac1622.jpg',
         },
         {
-            name: `Salamander's Breath`,
+            name: `Dragonfire`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],

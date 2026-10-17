@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_eternal1: ClassModData = {
     key: 'eternal1',
-    name: `Eterna`,
+    name: `Eternal`,
     originalHero: false,
     religious: true,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_eternal1: ClassModData = {
     ],
     skills: [
         {
-            name: `Canalizar`,
+            name: `Channel`,
             launch: [false,false,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -51,7 +51,7 @@ export const Class_eternal1: ClassModData = {
             image: 'img/d35d6127c245e5ca.jpg',
         },
         {
-            name: `Queimar`,
+            name: `Scorch`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -61,7 +61,7 @@ export const Class_eternal1: ClassModData = {
         },
         {
             name: ` ¤¦¤ ¤ ¤
-Édge Brilhante`,
+Glaring Aegis`,
             launch: [false,false,false,true],
             target: {
                 targets: [false,false,true,true],
@@ -71,7 +71,7 @@ export const Class_eternal1: ClassModData = {
         },
         {
             name: ` ¤ ¤ ¤ ¤
-Rejuvenescer`,
+Rejuvenate`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -80,7 +80,7 @@ Rejuvenescer`,
             image: 'img/d8842c67e842d860.jpg',
         },
         {
-            name: `Murchar`,
+            name: `Wither`,
             launch: [true,true,true,false],
             target: {
                 targets: [true,true,true,false],
@@ -89,7 +89,7 @@ Rejuvenescer`,
             image: 'img/ed14447943b42887.jpg',
         },
         {
-            name: `Praga Eterna`,
+            name: `Eternal Plague`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,true],

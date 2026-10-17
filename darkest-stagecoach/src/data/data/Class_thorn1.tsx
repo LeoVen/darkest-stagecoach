@@ -4,7 +4,7 @@ import { ClassModData } from '../ClassMod'
 
 export const Class_thorn1: ClassModData = {
     key: 'thorn1',
-    name: `Espinho`,
+    name: `Thorn`,
     originalHero: false,
     religious: false,
     transform: true,
@@ -42,7 +42,7 @@ export const Class_thorn1: ClassModData = {
     ],
     skills: [
         {
-            name: `Estocada`,
+            name: `Thrust`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -51,7 +51,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/677909b9e63af111.jpg',
         },
         {
-            name: `Distinguir`,
+            name: `Single Out`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -60,7 +60,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/f72f7d968340597b.jpg',
         },
         {
-            name: `Murchar`,
+            name: `Wilt`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -69,7 +69,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/dc4ae89782ab4272.jpg',
         },
         {
-            name: `Perfurar`,
+            name: `Perforate`,
             launch: [true,true,false,false],
             target: {
                 targets: [true,true,true,false],
@@ -78,7 +78,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/0d3e9e40d1ecd989.jpg',
         },
         {
-            name: `Desafiar`,
+            name: `Dare`,
             launch: [true,true,true,true],
             target: {
                 targets: [false,false,false,false],
@@ -87,7 +87,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/b4619e081a482169.jpg',
         },
         {
-            name: `Florescer`,
+            name: `Blossom`,
             launch: [false,true,true,true],
             target: {
                 targets: [true,true,true,true],
@@ -96,7 +96,7 @@ export const Class_thorn1: ClassModData = {
             image: 'img/a69903af407875a2.jpg',
         },
         {
-            name: `Ouvir com atenção`,
+            name: `Hearken`,
             launch: [true,true,true,true],
             target: {
                 targets: [true,true,true,true],
