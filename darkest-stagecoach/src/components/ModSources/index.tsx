@@ -9,6 +9,8 @@ interface ModSourcesProps {
 }
 
 export const ModSources = ({ sources }: ModSourcesProps) => {
+    if (sources.length === 0) return null
+
     return (
         <ModSourcesMain>
             <Typography variant="subtitle2">

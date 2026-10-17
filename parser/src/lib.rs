@@ -81,14 +81,27 @@ fn tokenize(line: &str) -> Vec<Token> {
                 text.push(c);
                 chars.next();
             }
-            tokens.push(Token {
-                text,
+            tokens.extend(split_fields(&text).map(|text| Token {
+                text: text.to_string(),
                 quoted: false,
-            });
+            }));
         }
     }
 
     tokens
+}
+
+// Some mods omit the space before a field (`.hp 38.spd 0`), which the game
+// accepts, so split unquoted text before any '.' followed by a letter
+fn split_fields(text: &str) -> impl Iterator<Item = &str> {
+    let bytes = text.as_bytes();
+    let mut starts: Vec<usize> = (1..bytes.len())
+        .filter(|&i| bytes[i] == b'.' && bytes.get(i + 1).is_some_and(u8::is_ascii_alphabetic))
+        .collect();
+    starts.insert(0, 0);
+    starts.push(text.len());
+
+    (0..starts.len() - 1).map(move |i| &text[starts[i]..starts[i + 1]])
 }
 
 #[cfg(test)]
@@ -125,6 +138,20 @@ mod tests {
         assert_eq!(get(&r, "b"), ["1."]);
         assert_eq!(get(&r, "c"), ["12.3%"]);
         assert_eq!(get(&r, "d"), ["1", ".1", "1."]);
+    }
+
+    #[test]
+    fn splits_fields_without_spaces() {
+        let r = row("weapon: .dmg 6 10.crit 2% .spd 9.upgradeRequirementCode 1");
+        assert_eq!(get(&r, "dmg"), ["6", "10"]);
+        assert_eq!(get(&r, "crit"), ["2%"]);
+        assert_eq!(get(&r, "spd"), ["9"]);
+        assert_eq!(get(&r, "upgradeRequirementCode"), ["1"]);
+
+        let r = row("armour: .def 7.5%\t.hp 38.spd 0");
+        assert_eq!(get(&r, "def"), ["7.5%"]);
+        assert_eq!(get(&r, "hp"), ["38"]);
+        assert_eq!(get(&r, "spd"), ["0"]);
     }
 
     #[test]

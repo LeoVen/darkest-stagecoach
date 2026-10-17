@@ -67,6 +67,7 @@ export type OriginalHeroes =
     | 'Arbalest'
     | 'Bounty Hunter'
     | 'Crusader'
+    | 'Duelist'
     | 'Flagellant'
     | 'Grave Robber'
     | 'Hellion'
@@ -78,6 +79,7 @@ export type OriginalHeroes =
     | 'Musketeer'
     | 'Occultist'
     | 'Plague Doctor'
+    | 'Runaway'
     | 'Shieldbreaker'
     | 'Vestal'
 

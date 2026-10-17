@@ -107,12 +107,7 @@ export const Class_{key}: ClassModData = {{
             {weapons}
         ]
     }},
-    sources: [
-        {{
-            name: 'Steam',
-            link: '{steam_link}'
-        }}
-    ],
+    sources: [{sources}],
     skills: [{skills}
     ],
     equip: {{
@@ -148,7 +143,7 @@ export const Class_{key}: ClassModData = {{
             resistances = class_info.res,
             religious = class_info.religious,
             transform = class_info.transform,
-            steam_link = steam_link(&class_info.steam_id),
+            sources = sources(&class_info.steam_id),
             skills = format_skills(&class_info.skills),
             guild = class_info.guild,
             equip_armour = format_equip(&class_info.armour_icons),
@@ -181,9 +176,17 @@ fn format_equip(equip: &[String]) -> String {
     result
 }
 
-fn steam_link(steam_id: &str) -> String {
+fn sources(steam_id: &str) -> String {
+    if steam_id.is_empty() {
+        return String::new();
+    }
+
     format!(
-        "https://steamcommunity.com/sharedfiles/filedetails/?id={}",
-        steam_id
+        r"
+        {{
+            name: 'Steam',
+            link: 'https://steamcommunity.com/sharedfiles/filedetails/?id={steam_id}'
+        }}
+    "
     )
 }

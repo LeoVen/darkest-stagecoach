@@ -1,4 +1,7 @@
-use std::{fs::Metadata, path::PathBuf};
+use std::{
+    fs::Metadata,
+    path::{Path, PathBuf},
+};
 
 use futures::{io, select, stream::FuturesUnordered, StreamExt};
 use tokio_stream::wrappers::ReadDirStream;
@@ -47,16 +50,44 @@ async fn metadata(path: PathBuf) -> io::Result<(PathBuf, Metadata)> {
     Ok((path, meta))
 }
 
-async fn filter_file(mut path: PathBuf) -> Option<PathBuf> {
-    if let Some(file_name) = path.file_name() {
-        if let (Some(file_name), Some(path_name)) = (file_name.to_str(), path.to_str()) {
-            if file_name.ends_with(".info.darkest") && path_name.contains("hero") {
-                if !path.pop() {
-                    return None;
-                }
-                return Some(path);
-            }
-        }
+// A class mod root is a `heroes/<name>/` folder containing `<name>.info.darkest`.
+// This excludes monsters (`monsters/<name>/<name>_A/...`) and stray files.
+async fn filter_file(path: PathBuf) -> Option<PathBuf> {
+    if is_hero_info(&path) {
+        path.parent().map(PathBuf::from)
+    } else {
+        None
     }
-    None
+}
+
+fn is_hero_info(path: &Path) -> bool {
+    fn name(path: Option<&Path>) -> Option<&str> {
+        path?.file_name()?.to_str()
+    }
+
+    let parent = path.parent();
+    match (
+        name(Some(path)).and_then(|f| f.strip_suffix(".info.darkest")),
+        name(parent),
+        name(parent.and_then(Path::parent)),
+    ) {
+        (Some(stem), Some(folder), Some(heroes)) => stem == folder && heroes == "heroes",
+        _ => false,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn matches_only_hero_roots() {
+        assert!(is_hero_info(Path::new("123/heroes/lamia/lamia.info.darkest")));
+        assert!(!is_hero_info(Path::new(
+            "123/monsters/pyre1/pyre1_A/pyre1_A.info.darkest"
+        )));
+        assert!(!is_hero_info(Path::new("123/heroes/lamia/other.info.darkest")));
+        assert!(!is_hero_info(Path::new("123/pre-change-files/x.info.darkest")));
+        assert!(!is_hero_info(Path::new("heroes/x/x/x.info.darkest")));
+    }
 }

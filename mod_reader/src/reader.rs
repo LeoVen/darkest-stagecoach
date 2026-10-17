@@ -1,4 +1,4 @@
-use std::{collections::HashMap, path::Path};
+use std::path::Path;
 
 use parser::DarkestFile;
 use tokio::{fs, io};
@@ -9,39 +9,11 @@ use crate::types::{ClassModInfo, SkillData};
 pub struct ModReader<'a> {
     name: &'a str,
     root: &'a Path,
-    exceptions: HashMap<&'static str, &'static str>,
 }
 
 impl<'a> ModReader<'a> {
     pub fn new(name: &'a str, root: &'a Path) -> Self {
-        Self {
-            name,
-            root,
-            exceptions: ModReader::file_exceptions(),
-        }
-    }
-
-    // Exceptions for loc files and steam ID
-    pub fn file_exceptions() -> HashMap<&'static str, &'static str> {
-        HashMap::from([
-            ("abomination", "heroes"),
-            ("antiquarian", "heroes"),
-            ("bounty_hunter", "heroes"),
-            ("arbalest", "heroes"),
-            ("crusader", "heroes"),
-            ("grave_robber", "heroes"),
-            ("hellion", "heroes"),
-            ("highwayman", "heroes"),
-            ("flagellant", "CC"),
-            ("houndmaster", "heroes"),
-            ("jester", "heroes"),
-            ("leper", "heroes"),
-            ("man_at_arms", "heroes"),
-            ("occultist", "heroes"),
-            ("plague_doctor", "heroes"),
-            ("shieldbreaker", "shieldbreaker"),
-            ("vestal", "heroes"),
-        ])
+        Self { name, root }
     }
 
     pub async fn read_darkest(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
@@ -57,8 +29,25 @@ impl<'a> ModReader<'a> {
     }
 
     pub async fn read_portrait(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let folder = self.root.join(self.name.to_string() + "_A");
-        let file = folder.join(self.name.to_string() + "_portrait_roster.png");
+        let file_name = self.name.to_string() + "_portrait_roster.png";
+        let default = self
+            .root
+            .join(self.name.to_string() + "_A")
+            .join(&file_name);
+
+        // Not every mod uses <name>_A for its default skin, so fall back to
+        // the first skin folder (sorted by name) that has a roster portrait
+        let file = if default.is_file() {
+            default
+        } else {
+            let mut candidates: Vec<_> = std::fs::read_dir(self.root)?
+                .flatten()
+                .map(|entry| entry.path().join(&file_name))
+                .filter(|path| path.is_file())
+                .collect();
+            candidates.sort();
+            candidates.into_iter().next().unwrap_or(default)
+        };
 
         match image_to_base64(&file).await {
             Ok(data) => mod_info.portrait = data,
@@ -74,14 +63,26 @@ impl<'a> ModReader<'a> {
     }
 
     pub async fn read_loc(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let mut path = self.root.to_path_buf();
-        _ = path.pop(); // /<steam_id>/heroes/
-        _ = path.pop(); // /<steam_id>/
-        path.push("localization"); // /<steam_id>/localization/
+        // Usually /<steam_id>/localization/, but DLC heroes are nested deeper
+        // (e.g. dlc/<id>/features/flagellant/heroes/flagellant/) and use the
+        // closest localization folder above them
+        let path = self
+            .root
+            .ancestors()
+            .skip(2)
+            .map(|dir| dir.join("localization"))
+            .find(|dir| dir.is_dir())
+            .unwrap_or_else(|| self.root.join("../../localization"));
 
         let mut files_to_read = vec![];
 
-        let dir_iter = std::fs::read_dir(&path).unwrap_or_else(|_| panic!("expected directory: {:?}", path));
+        let dir_iter = match std::fs::read_dir(&path) {
+            Ok(dir_iter) => dir_iter,
+            Err(e) => {
+                print!("loc not found. ");
+                return Err(anyhow::anyhow!("failed to read {:?}: {}", path, e));
+            }
+        };
         for entry in dir_iter.flatten() {
             if let Some(entry_path) = entry.path().to_str() {
                 if entry_path.ends_with(".string_table.xml") {
@@ -96,9 +97,11 @@ impl<'a> ModReader<'a> {
         let mut parse_fail = 0;
 
         for file in &files_to_read {
-            match std::fs::read_to_string(file) {
+            // Some mods ship string tables that aren't valid UTF-8
+            match std::fs::read(file) {
                 Ok(data) => {
                     read_ok += 1;
+                    let data = String::from_utf8_lossy(&data).into_owned();
                     if let Ok(xml) = xml_parser::parse_loc_xml(data) {
                         merge_xml(&mut mod_info.locs, xml);
                         parse_ok += 1;
@@ -173,33 +176,24 @@ impl<'a> ModReader<'a> {
         Ok(())
     }
 
+    // Workshop mods live in /<steam_id>/heroes/<name>/. Base game and DLC
+    // heroes don't have a numeric folder there, so they get no steam ID.
     pub fn read_steam_id(&self, mod_info: &mut ClassModInfo) {
-        if self.exceptions.contains_key(&*mod_info.key) {
-            return;
+        let id = self
+            .root
+            .parent()
+            .and_then(Path::parent)
+            .and_then(Path::file_name)
+            .and_then(|id| id.to_str())
+            .filter(|id| !id.is_empty() && id.chars().all(|c| c.is_ascii_digit()));
+
+        if let Some(id) = id {
+            mod_info.steam_id = id.to_string();
         }
 
-        // There are two ways of doing this
-        // 1- Get from file path (folder is the steam ID)
-        // 2- Get from project.xml at the root of the steam folder
-
-        // Doing it as 1 because it is simpler and works for now
-
-        let mut path = self.root.to_path_buf();
-
-        _ = path.pop(); // /<steam_id>/heroes/
-        _ = path.pop(); // /<steam_id>/
-
-        if let Some(id) = path.file_name() {
-            if let Some(id) = id.to_str() {
-                mod_info.steam_id = id.to_string();
-                print!("{:>11} ", mod_info.steam_id);
-            }
-        }
+        print!("{:>11} ", mod_info.steam_id);
     }
 
-    // TODO due to a bug in the parser, the icon field that specifies the equip
-    // file contains a dot ("eqp_armour_0.png") and that doesn't get split
-    // correctly.
     pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
         let mut armour_names = ["", "", "", "", ""];
         let mut weapon_names = ["", "", "", "", ""];
@@ -221,9 +215,13 @@ impl<'a> ModReader<'a> {
                         _ => fallback,
                     };
 
+                    if index >= 5 {
+                        continue;
+                    }
+
                     if let Some(icon) = map.get("icon") {
                         if let Some(icon) = icon.first() {
-                            armour_names[index] = &icon[1..]; // TODO bug in the parser
+                            armour_names[index] = icon.trim_end_matches(".png");
                         }
                     }
                 }
@@ -247,9 +245,13 @@ impl<'a> ModReader<'a> {
                         _ => fallback,
                     };
 
+                    if index >= 5 {
+                        continue;
+                    }
+
                     if let Some(icon) = map.get("icon") {
                         if let Some(icon) = icon.first() {
-                            weapon_names[index] = &icon[1..]; // TODO bug in the parser
+                            weapon_names[index] = icon.trim_end_matches(".png");
                         }
                     }
                 }
@@ -262,7 +264,7 @@ impl<'a> ModReader<'a> {
         let mut found = 0;
         let mut err = 0;
 
-        for (i, name) in weapon_names.iter().enumerate() {
+        for (i, name) in armour_names.iter().enumerate() {
             let mut armour = path.to_path_buf();
             armour.push(format!("{}.png", name));
 
@@ -280,7 +282,7 @@ impl<'a> ModReader<'a> {
             mod_info.equip_armour[i] = result;
         }
 
-        for (i, name) in armour_names.iter().enumerate() {
+        for (i, name) in weapon_names.iter().enumerate() {
             let mut armour = path.to_path_buf();
             armour.push(format!("{}.png", name));
 

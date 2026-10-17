@@ -47,6 +47,8 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
         "plague_doctor",
         "shieldbreaker",
         "vestal",
+        "duelist",
+        "runaway",
     ]);
 
     let key = format!("hero_class_name_{}", info.key);
@@ -54,6 +56,11 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
         if let Some(name) = name.first() {
             result.name = proc_name(name.clone());
         }
+    }
+
+    // Some mods only ship compiled .loc2 files, which can't be read
+    if result.name.is_empty() {
+        result.name = name_from_key(&result.key);
     }
 
     result.original_hero = original_heroes.contains(result.key.as_str());
@@ -87,7 +94,7 @@ pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
     let mut result = ClassStats::default();
 
     // Armour
-    let filter = info.info.iter().filter(|(key, _)| key == "armour");
+    let filter = info.info.iter().filter(|(key, _)| key == "armour").take(5);
     for (i, (_, stats)) in filter.enumerate() {
         for (key, values) in stats {
             match &**key {
@@ -101,7 +108,7 @@ pub fn proc_stats(info: &ClassModInfo) -> ClassStats {
     }
 
     // Weapon
-    let filter = info.info.iter().filter(|(key, _)| key == "weapon");
+    let filter = info.info.iter().filter(|(key, _)| key == "weapon").take(5);
     for (i, (_, stats)) in filter.enumerate() {
         for (key, values) in stats {
             match &**key {
@@ -220,9 +227,28 @@ fn parse_value(val: &str) -> f32 {
         None => (val, 1.0),
     };
 
-    val.parse::<f32>()
-        .unwrap_or_else(|_| panic!("f32 but got {}!", val))
-        / div
+    match val.parse::<f32>() {
+        Ok(value) => value / div,
+        Err(_) => {
+            eprintln!("\nWarning: expected a number but got {:?}, using 0", val);
+            0.0
+        }
+    }
+}
+
+// e.g. "man_at_arms" -> "Man At Arms"
+fn name_from_key(key: &str) -> String {
+    key.split('_')
+        .filter(|word| !word.is_empty())
+        .map(|word| {
+            let mut chars = word.chars();
+            match chars.next() {
+                Some(first) => first.to_uppercase().chain(chars).collect(),
+                None => String::new(),
+            }
+        })
+        .collect::<Vec<String>>()
+        .join(" ")
 }
 
 // Removes `{...}` color tags from localized names
@@ -256,6 +282,12 @@ mod tests {
         assert_eq!(proc_name("{colour_start|x}Vestal{colour_end}".into()), "Vestal");
         assert_eq!(proc_name("Plain".into()), "Plain");
         assert_eq!(proc_name("Open {tag".into()), "Open {tag");
+    }
+
+    #[test]
+    fn names_from_key() {
+        assert_eq!(name_from_key("lamia"), "Lamia");
+        assert_eq!(name_from_key("man_at_arms"), "Man At Arms");
     }
 
     #[test]
