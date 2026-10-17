@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const ModSourcesMain = styled.div`
+export const ModSourcesMain = styled('div')`
     width: 100%;
 `
 
-export const ModSourceContainer = styled.div`
+export const ModSourceContainer = styled('div')`
     display: flex;
     flex-wrap: wrap;
 `

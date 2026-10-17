@@ -1,12 +1,12 @@
 import { Paper } from '@mui/material'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
 export const MainModal = styled(Paper)`
     padding: 1rem;
     background-color: var(--bg-primary);
 `
 
-export const ClassCardBanner = styled.div`
+export const ClassCardBanner = styled('div')`
     display: flex;
     align-items: center;
     flex-wrap: wrap;

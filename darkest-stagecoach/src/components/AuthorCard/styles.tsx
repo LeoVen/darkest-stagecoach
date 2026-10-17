@@ -1,14 +1,14 @@
 import { Typography } from '@mui/material'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const AuthorCardMain = styled.div`
+export const AuthorCardMain = styled('div')`
     padding: 0.5em;
     border-top: 1px solid #cccccc;
 `
 
-export const AuthorCardRow = styled.div``
+export const AuthorCardRow = styled('div')``
 
-export const AuthorCardCreditList = styled.div`
+export const AuthorCardCreditList = styled('div')`
     display: flex;
     flex-wrap: wrap;
 `

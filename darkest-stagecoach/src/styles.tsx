@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const ModalWrapper = styled.div`
+export const ModalWrapper = styled('div')`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11,7 +11,7 @@ export const ModalWrapper = styled.div`
     width: 95%;
 `
 
-export const ClassCardsContainer = styled.div`
+export const ClassCardsContainer = styled('div')`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

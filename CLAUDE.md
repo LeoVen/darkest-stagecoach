@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (deployed at https://dds.leoven.dev via GitHub Pages from `docs/`). The repo has two halves:
 
-- `darkest-stagecoach/`: the React 19 + TypeScript site (Vite, MUI v9, styled-components v6, FontAwesome).
+- `darkest-stagecoach/`: the React 19 + TypeScript site (Vite, MUI v9 with Emotion, FontAwesome).
 - A Cargo workspace at the root (`parser`, `root_finder`, `mod_reader`, `mod_parser`, `xml_parser`, `img_compr`, `mod_writer`). Together these crates read the class mod folders on disk and generate the TypeScript data files the site uses. Edition 2024; all dependency versions live in `[workspace.dependencies]` in the root `Cargo.toml`, and member crates use `dep.workspace = true`.
 
 ## Commands
@@ -67,6 +67,6 @@ Authors live in `src/data/authors/Author_<Name>.tsx` and are registered in `src/
 
 Enums such as `Synergy`, `OriginalHeroes` and `ClassModType` are string-literal unions in `src/Types.tsx`. The display order of synergies is defined in `src/Synergy.tsx`.
 
-Styling: MUI components are themed in `src/theme.tsx` (`components.<Name>.styleOverrides`); app-specific styles use styled-components in `styles.tsx` files, with colors from CSS variables in `index.css`. `StyledEngineProvider injectFirst` makes MUI's Emotion styles load first so styled-components can override them. Custom props on styled components must be transient (`$selected`), or styled-components v6 forwards them to the DOM.
+Styling: everything uses Emotion through MUI. MUI components are themed in `src/theme.tsx` (`components.<Name>.styleOverrides`); app-specific styles live in `styles.tsx` files using `styled` from `@mui/material/styles` (template-literal CSS, colors from CSS variables in `index.css`). Style-only props are prefixed with `$` and need the `transient` option from `src/styled.ts` (`styled('div', transient)<{ $selected: boolean }>`), otherwise they're forwarded to the component/DOM. `StyledEngineProvider injectFirst` loads Emotion styles first so `index.css` can override them. Don't add styled-components back.
 
 `App.tsx` holds the filter/sort state and a list of class keys. Filtering (`Filtering.tsx`) and sorting (`Sorting.tsx`) work on keys and look each class up in the global `ClassModIndex`. Components live in `src/components/<Name>/{index,styles}.tsx` (styled-components in `styles.tsx`). The theme is in `src/theme.tsx`. App-wide toasts go through `SnackbarContext`.

@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
+import { transient } from '../../styled'
 
-export const MainSection = styled.div`
+export const MainSection = styled('div')`
     display: flex;
     gap: 1rem;
     width: 100%;
@@ -8,7 +9,7 @@ export const MainSection = styled.div`
     padding: 1rem;
 `
 
-export const SkillSection = styled.div`
+export const SkillSection = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@ export const SkillSection = styled.div`
     min-width: 150px;
 `
 
-export const SkillContainer = styled.div<{
+export const SkillContainer = styled('div', transient)<{
     $wrap: boolean
 }>`
     display: flex;
@@ -27,18 +28,18 @@ export const SkillContainer = styled.div<{
     gap: ${props => props.$wrap ? '8px' : '1rem'};
 `
 
-export const LaunchContainer = styled.div`
+export const LaunchContainer = styled('div')`
     display: flex;
     flex-direction: row-reverse;
     gap: 6px;
 `
 
-export const TargetContainer = styled.div`
+export const TargetContainer = styled('div')`
     display: flex;
     align-items: center;
 `
 
-export const Circle = styled.div<{
+export const Circle = styled('div', transient)<{
     $color: string
     $blur: string
 }>`
@@ -49,7 +50,7 @@ export const Circle = styled.div<{
     border-radius: 50%;
 `
 
-export const Square = styled.div<{
+export const Square = styled('div', transient)<{
     $color: string
     $blur?: string
 }>`

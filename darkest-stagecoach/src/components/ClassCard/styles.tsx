@@ -1,7 +1,7 @@
 import { Paper, Typography } from '@mui/material'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const ClassCardsContainer = styled.div`
+export const ClassCardsContainer = styled('div')`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -27,29 +27,29 @@ export const HeroCard = styled(Paper)`
     }
 `
 
-export const TopIcons = styled.div`
+export const TopIcons = styled('div')`
     position: absolute;
     right: 1rem;
     top: 1rem;
 `
 
-export const TopLeftIcons = styled.div`
+export const TopLeftIcons = styled('div')`
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
 `
 
-export const BottomIcons = styled.div`
+export const BottomIcons = styled('div')`
     position: absolute;
     right: 1rem;
     bottom: 2px;
 `
 
-export const ImageAndIcons = styled.div`
+export const ImageAndIcons = styled('div')`
     display: flex;
 `
 
-export const ImageAndPositions = styled.div`
+export const ImageAndPositions = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;

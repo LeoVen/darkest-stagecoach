@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
+import { transient } from '../../styled'
 
-export const MainSection = styled.div`
+export const MainSection = styled('div')`
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -11,14 +12,14 @@ export const MainSection = styled.div`
     margin: 8px 0 22px 0;
 `
 
-export const Circle = styled.div<{
+export const Circle = styled('div', transient)<{
     $color: string
     $border: string
     $blur: boolean
 }>`
     background-color: ${props => props.$color};
     ${props => (props.$blur ? `box-shadow: 0px 0px 4px #fff` : '')};
-    $border: 1px ${props => props.$border} solid;
+    border: 1px ${props => props.$border} solid;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -27,5 +28,5 @@ export const Circle = styled.div<{
     font-size: 9px;
     font-weight: bold;
     font-family: 'Mate SC';
-    $color: var(--font-primary);
+    color: var(--font-primary);
 `

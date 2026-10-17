@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
 export const MainButton = styled(Button)`
     background-color: var(--bg-primary);

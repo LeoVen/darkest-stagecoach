@@ -1,5 +1,5 @@
 import { Paper } from '@mui/material'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
 export const AuthorInfoMain = styled(Paper)`
     padding: 1em;
@@ -7,7 +7,7 @@ export const AuthorInfoMain = styled(Paper)`
     max-width: 800px;
 `
 
-export const AuthorInfoLinkList = styled.div`
+export const AuthorInfoLinkList = styled('div')`
     display: flex;
     flex-wrap: wrap;
 `

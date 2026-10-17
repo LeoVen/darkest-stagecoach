@@ -1,13 +1,13 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
 
-export const MainSection = styled.div`
+export const MainSection = styled('div')`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
 `
 
-export const StatsSection = styled.div`
+export const StatsSection = styled('div')`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -15,13 +15,13 @@ export const StatsSection = styled.div`
     max-width: 500px;
 `
 
-export const ResRowSection = styled.div`
+export const ResRowSection = styled('div')`
     display: flex;
     justify-content: space-between;
     width: 200px;
 `
 
-export const ResRowIconText = styled.div`
+export const ResRowIconText = styled('div')`
     display: flex;
     align-items: center;
 `

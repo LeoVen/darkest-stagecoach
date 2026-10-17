@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles'
+import { transient } from '../../styled'
 
-export const MainSection = styled.div`
+export const MainSection = styled('div')`
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -9,7 +10,7 @@ export const MainSection = styled.div`
     width: 100%;
 `
 
-export const IconContainer = styled.div<{
+export const IconContainer = styled('div', transient)<{
     $pad: string
     $dim: string
     $color: string
