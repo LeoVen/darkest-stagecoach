@@ -11,6 +11,8 @@ Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (
 
 ## Commands
 
+A root `justfile` wraps the common commands: `just` lists them (`dev`, `build`, `preview`, `check`, `test`, `generate`, `deploy`, ...). The underlying commands:
+
 Frontend (run from `darkest-stagecoach/`):
 
 ```sh
@@ -69,4 +71,4 @@ Enums such as `Synergy`, `OriginalHeroes` and `ClassModType` are string-literal 
 
 Styling: everything uses Emotion through MUI. MUI components are themed in `src/theme.tsx` (`components.<Name>.styleOverrides`); app-specific styles live in `styles.tsx` files using `styled` from `@mui/material/styles` (template-literal CSS, colors from CSS variables in `index.css`). Style-only props are prefixed with `$` and need the `transient` option from `src/styled.ts` (`styled('div', transient)<{ $selected: boolean }>`), otherwise they're forwarded to the component/DOM. `StyledEngineProvider injectFirst` loads Emotion styles first so `index.css` can override them. Don't add styled-components back.
 
-`App.tsx` holds the filter/sort state and a list of class keys. Filtering (`Filtering.tsx`) and sorting (`Sorting.tsx`) work on keys and look each class up in the global `ClassModIndex`. Components live in `src/components/<Name>/{index,styles}.tsx` (styled-components in `styles.tsx`). The theme is in `src/theme.tsx`. App-wide toasts go through `SnackbarContext`.
+`App.tsx` holds the filter/sort state and a list of class keys. Filtering (`Filtering.tsx`) and sorting (`Sorting.tsx`) work on keys and look each class up in the global `ClassModIndex`. Components live in `src/components/<Name>/{index,styles}.tsx` (MUI `styled` components in `styles.tsx`). The theme is in `src/theme.tsx`. App-wide toasts go through `SnackbarContext`.
