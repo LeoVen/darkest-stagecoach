@@ -1,67 +1,67 @@
 import { ClassModInfo } from '../ClassMod'
 
-import { Class_2andb1 } from './Class_2andb1'
-import { Class_abomination1 } from './Class_abomination1'
-import { Class_antiquarian1 } from './Class_antiquarian1'
-import { Class_arbalest1 } from './Class_arbalest1'
-import { Class_bounty_hunter1 } from './Class_bounty_hunter1'
-import { Class_choir_hunter1 } from './Class_choir_hunter1'
-import { Class_commandant1 } from './Class_commandant1'
-import { Class_courtesan1 } from './Class_courtesan1'
-import { Class_crusader1 } from './Class_crusader1'
-import { Class_duchess1 } from './Class_duchess1'
-import { Class_flagellant1 } from './Class_flagellant1'
-import { Class_golem1 } from './Class_golem1'
-import { Class_grave_robber1 } from './Class_grave_robber1'
-import { Class_hellion1 } from './Class_hellion1'
-import { Class_highwayman1 } from './Class_highwayman1'
-import { Class_houndmaster1 } from './Class_houndmaster1'
-import { Class_janissary1 } from './Class_janissary1'
-import { Class_jester1 } from './Class_jester1'
-import { Class_lamia1 } from './Class_lamia1'
-import { Class_leper1 } from './Class_leper1'
-import { Class_man_at_arms1 } from './Class_man_at_arms1'
-import { Class_musketeer1 } from './Class_musketeer1'
-import { Class_occultist1 } from './Class_occultist1'
-import { Class_plague_doctor1 } from './Class_plague_doctor1'
-import { Class_revenant1 } from './Class_revenant1'
-import { Class_shieldbreaker1 } from './Class_shieldbreaker1'
-import { Class_thrall1 } from './Class_thrall1'
-import { Class_vestal1 } from './Class_vestal1'
-import { Class_wraith_ms1 } from './Class_wraith_ms1'
+import { Class_2andb_1483514982 } from './Class_2andb_1483514982'
+import { Class_abomination } from './Class_abomination'
+import { Class_antiquarian } from './Class_antiquarian'
+import { Class_arbalest } from './Class_arbalest'
+import { Class_bounty_hunter } from './Class_bounty_hunter'
+import { Class_choir_hunter_2505955762 } from './Class_choir_hunter_2505955762'
+import { Class_commandant_2472629364 } from './Class_commandant_2472629364'
+import { Class_courtesan_2508921150 } from './Class_courtesan_2508921150'
+import { Class_crusader } from './Class_crusader'
+import { Class_duchess_1935797249 } from './Class_duchess_1935797249'
+import { Class_flagellant } from './Class_flagellant'
+import { Class_golem_2418764393 } from './Class_golem_2418764393'
+import { Class_grave_robber } from './Class_grave_robber'
+import { Class_hellion } from './Class_hellion'
+import { Class_highwayman } from './Class_highwayman'
+import { Class_houndmaster } from './Class_houndmaster'
+import { Class_janissary_2377934884 } from './Class_janissary_2377934884'
+import { Class_jester } from './Class_jester'
+import { Class_lamia_1130829365 } from './Class_lamia_1130829365'
+import { Class_leper } from './Class_leper'
+import { Class_man_at_arms } from './Class_man_at_arms'
+import { Class_musketeer } from './Class_musketeer'
+import { Class_occultist } from './Class_occultist'
+import { Class_plague_doctor } from './Class_plague_doctor'
+import { Class_revenant_913178378 } from './Class_revenant_913178378'
+import { Class_shieldbreaker } from './Class_shieldbreaker'
+import { Class_thrall_1175904375 } from './Class_thrall_1175904375'
+import { Class_vestal } from './Class_vestal'
+import { Class_wraith_ms_1697037179 } from './Class_wraith_ms_1697037179'
 
 export const ClassModIndex = classModInfoIndex()
 
 export function classModInfoIndex(): Map<string, ClassModInfo> {
     return new Map([
-        ['Class_2andb1', Class_2andb1],
-        ['Class_abomination1', Class_abomination1],
-        ['Class_antiquarian1', Class_antiquarian1],
-        ['Class_arbalest1', Class_arbalest1],
-        ['Class_bounty_hunter1', Class_bounty_hunter1],
-        ['Class_choir_hunter1', Class_choir_hunter1],
-        ['Class_commandant1', Class_commandant1],
-        ['Class_courtesan1', Class_courtesan1],
-        ['Class_crusader1', Class_crusader1],
-        ['Class_duchess1', Class_duchess1],
-        ['Class_flagellant1', Class_flagellant1],
-        ['Class_golem1', Class_golem1],
-        ['Class_grave_robber1', Class_grave_robber1],
-        ['Class_hellion1', Class_hellion1],
-        ['Class_highwayman1', Class_highwayman1],
-        ['Class_houndmaster1', Class_houndmaster1],
-        ['Class_janissary1', Class_janissary1],
-        ['Class_jester1', Class_jester1],
-        ['Class_lamia1', Class_lamia1],
-        ['Class_leper1', Class_leper1],
-        ['Class_man_at_arms1', Class_man_at_arms1],
-        ['Class_musketeer1', Class_musketeer1],
-        ['Class_occultist1', Class_occultist1],
-        ['Class_plague_doctor1', Class_plague_doctor1],
-        ['Class_revenant1', Class_revenant1],
-        ['Class_shieldbreaker1', Class_shieldbreaker1],
-        ['Class_thrall1', Class_thrall1],
-        ['Class_vestal1', Class_vestal1],
-        ['Class_wraith_ms1', Class_wraith_ms1],
+        ['Class_2andb_1483514982', Class_2andb_1483514982],
+        ['Class_abomination', Class_abomination],
+        ['Class_antiquarian', Class_antiquarian],
+        ['Class_arbalest', Class_arbalest],
+        ['Class_bounty_hunter', Class_bounty_hunter],
+        ['Class_choir_hunter_2505955762', Class_choir_hunter_2505955762],
+        ['Class_commandant_2472629364', Class_commandant_2472629364],
+        ['Class_courtesan_2508921150', Class_courtesan_2508921150],
+        ['Class_crusader', Class_crusader],
+        ['Class_duchess_1935797249', Class_duchess_1935797249],
+        ['Class_flagellant', Class_flagellant],
+        ['Class_golem_2418764393', Class_golem_2418764393],
+        ['Class_grave_robber', Class_grave_robber],
+        ['Class_hellion', Class_hellion],
+        ['Class_highwayman', Class_highwayman],
+        ['Class_houndmaster', Class_houndmaster],
+        ['Class_janissary_2377934884', Class_janissary_2377934884],
+        ['Class_jester', Class_jester],
+        ['Class_lamia_1130829365', Class_lamia_1130829365],
+        ['Class_leper', Class_leper],
+        ['Class_man_at_arms', Class_man_at_arms],
+        ['Class_musketeer', Class_musketeer],
+        ['Class_occultist', Class_occultist],
+        ['Class_plague_doctor', Class_plague_doctor],
+        ['Class_revenant_913178378', Class_revenant_913178378],
+        ['Class_shieldbreaker', Class_shieldbreaker],
+        ['Class_thrall_1175904375', Class_thrall_1175904375],
+        ['Class_vestal', Class_vestal],
+        ['Class_wraith_ms_1697037179', Class_wraith_ms_1697037179],
     ])
 }
