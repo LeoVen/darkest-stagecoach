@@ -11,12 +11,12 @@ fn main() {
 
     for (key, map) in result {
         println!("key: {}\nmap:", key);
-        for (k, v) in BTreeMap::from_iter(map.into_iter()) {
+        for (k, v) in BTreeMap::from_iter(map) {
             print!("K: {} -> ", k);
             for values in v {
                 print!("{} ", values);
             }
-            println!("");
+            println!();
         }
         println!();
     }

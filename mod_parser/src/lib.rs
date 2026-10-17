@@ -23,7 +23,7 @@ pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
     result.armour_icons = info.equip_armour;
     result.weapon_icons = info.equip_weapon;
 
-    return result;
+    result
 }
 
 // Proc any other info
@@ -51,7 +51,7 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
 
     let key = format!("hero_class_name_{}", info.key);
     if let Some(name) = info.locs.get(&key) {
-        if let Some(name) = name.get(0) {
+        if let Some(name) = name.first() {
             result.name = proc_name(name.clone());
         }
     }
@@ -66,7 +66,7 @@ pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
     if let Some(res) = info.info.iter().find(|(key, _)| key == "resistances") {
         for (key, values) in &res.1 {
             match &**key {
-                "stun" => result.blight = parse_value(&values[0]),
+                "stun" => result.stun = parse_value(&values[0]),
                 "poison" => result.blight = parse_value(&values[0]),
                 "bleed" => result.bleed = parse_value(&values[0]),
                 "disease" => result.disease = parse_value(&values[0]),
@@ -150,7 +150,7 @@ pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) 
             .filter(|(key, _)| key == "combat_skill")
             .find(|(_, map)| {
                 if let Some(values) = map.get("id") {
-                    if let Some(value) = values.get(0) {
+                    if let Some(value) = values.first() {
                         if value == &skill.key {
                             return true;
                         }
@@ -169,7 +169,7 @@ pub fn proc_skills(info_file: &parser::DarkestFile, skill_data: Vec<SkillData>) 
         }
     }
 
-    return result;
+    result
 }
 
 fn make_launch(row: &parser::DarkestRow) -> Launch {
@@ -209,48 +209,66 @@ fn make_target(map: &parser::DarkestRow) -> Target {
     result
 }
 
-fn parse_value(mut val: &str) -> f32 {
-    let mut div = 1.0;
-
-    // TODO maybe this gets fixed once the parser is fixed
-    if val.len() == 0 {
+fn parse_value(val: &str) -> f32 {
+    if val.is_empty() {
         return 9999.0;
     }
 
-    // TODO this is currently not possible because of the parser's limitation
-    // Something like ".1" indicating "0.1"
-    if val.starts_with(".") {
-        val = &val.strip_prefix(".").unwrap();
-        div *= 10.0;
-    }
-
     // Transform % values
-    if val.ends_with('%') {
-        val = &val.strip_suffix("%").unwrap();
-        div *= 100.0;
-    }
+    let (val, div) = match val.strip_suffix('%') {
+        Some(val) => (val, 100.0),
+        None => (val, 1.0),
+    };
 
-    val.parse::<f32>().expect(&format!("f32 but got {}!", val)) / div
+    val.parse::<f32>()
+        .unwrap_or_else(|_| panic!("f32 but got {}!", val))
+        / div
 }
 
+// Removes `{...}` color tags from localized names
 fn proc_name(name: String) -> String {
     let mut result = name;
 
-    loop {
-        if let Some(start) = result.find('{') {
-            if let Some(end) = result.find('}') {
-                let mut fixed = result[..start].to_string();
-                if end + 1 != result.len() {
-                    fixed += &result[end + 1..];
-                }
-                result = fixed;
-            } else {
-                break;
-            }
-        } else {
+    while let Some(start) = result.find('{') {
+        let Some(end) = result[start..].find('}') else {
             break;
-        }
+        };
+        result.replace_range(start..=start + end, "");
     }
 
     result
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parses_values() {
+        assert_eq!(parse_value("4"), 4.0);
+        assert_eq!(parse_value("7.5%"), 0.075);
+        assert_eq!(parse_value(".25"), 0.25);
+        assert_eq!(parse_value("1."), 1.0);
+    }
+
+    #[test]
+    fn strips_name_tags() {
+        assert_eq!(proc_name("{colour_start|x}Vestal{colour_end}".into()), "Vestal");
+        assert_eq!(proc_name("Plain".into()), "Plain");
+        assert_eq!(proc_name("Open {tag".into()), "Open {tag");
+    }
+
+    #[test]
+    fn maps_stun_resistance() {
+        let info = ClassModInfo {
+            info: parser::parse_darkest(
+                "resistances: .stun 30% .poison 40% .bleed 50%".to_string(),
+            ),
+            ..Default::default()
+        };
+        let res = proc_resistances(&info);
+        assert_eq!(res.stun, 0.3);
+        assert_eq!(res.blight, 0.4);
+        assert_eq!(res.bleed, 0.5);
+    }
 }

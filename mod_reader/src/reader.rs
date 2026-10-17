@@ -23,7 +23,7 @@ impl<'a> ModReader<'a> {
 
     // Exceptions for loc files and steam ID
     pub fn file_exceptions() -> HashMap<&'static str, &'static str> {
-        return HashMap::from([
+        HashMap::from([
             ("abomination", "heroes"),
             ("antiquarian", "heroes"),
             ("bounty_hunter", "heroes"),
@@ -41,7 +41,7 @@ impl<'a> ModReader<'a> {
             ("plague_doctor", "heroes"),
             ("shieldbreaker", "shieldbreaker"),
             ("vestal", "heroes"),
-        ]);
+        ])
     }
 
     pub async fn read_darkest(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
@@ -81,13 +81,11 @@ impl<'a> ModReader<'a> {
 
         let mut files_to_read = vec![];
 
-        let dir_iter = std::fs::read_dir(&path).expect(&format!("expected directory: {:?}", &path));
-        for entry in dir_iter {
-            if let Ok(entry) = entry {
-                if let Some(entry_path) = entry.path().to_str() {
-                    if entry_path.ends_with(".string_table.xml") {
-                        files_to_read.push(entry_path.to_string());
-                    }
+        let dir_iter = std::fs::read_dir(&path).unwrap_or_else(|_| panic!("expected directory: {:?}", path));
+        for entry in dir_iter.flatten() {
+            if let Some(entry_path) = entry.path().to_str() {
+                if entry_path.ends_with(".string_table.xml") {
+                    files_to_read.push(entry_path.to_string());
                 }
             }
         }
@@ -117,7 +115,7 @@ impl<'a> ModReader<'a> {
 
         print!(
             "loc({:>2} of read {:>2}/{:>2}, parse {:>2}/{:>2}) ",
-            &files_to_read.len(),
+            files_to_read.len(),
             read_ok,
             read_fail + read_ok,
             parse_ok,
@@ -203,8 +201,8 @@ impl<'a> ModReader<'a> {
     // file contains a dot ("eqp_armour_0.png") and that doesn't get split
     // correctly.
     pub async fn read_icons_equip(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let mut armour_names = vec!["", "", "", "", ""];
-        let mut weapon_names = vec!["", "", "", "", ""];
+        let mut armour_names = ["", "", "", "", ""];
+        let mut weapon_names = ["", "", "", "", ""];
 
         for (fallback, (_, map)) in mod_info
             .art
@@ -213,7 +211,7 @@ impl<'a> ModReader<'a> {
             .enumerate()
         {
             if let Some(name) = map.get("name") {
-                if let Some(key) = name.get(0) {
+                if let Some(key) = name.first() {
                     let index = match key.chars().last() {
                         Some('0') => 0,
                         Some('1') => 1,
@@ -224,7 +222,7 @@ impl<'a> ModReader<'a> {
                     };
 
                     if let Some(icon) = map.get("icon") {
-                        if let Some(icon) = icon.get(0) {
+                        if let Some(icon) = icon.first() {
                             armour_names[index] = &icon[1..]; // TODO bug in the parser
                         }
                     }
@@ -239,7 +237,7 @@ impl<'a> ModReader<'a> {
             .enumerate()
         {
             if let Some(name) = map.get("name") {
-                if let Some(key) = name.get(0) {
+                if let Some(key) = name.first() {
                     let index = match key.chars().last() {
                         Some('0') => 0,
                         Some('1') => 1,
@@ -250,7 +248,7 @@ impl<'a> ModReader<'a> {
                     };
 
                     if let Some(icon) = map.get("icon") {
-                        if let Some(icon) = icon.get(0) {
+                        if let Some(icon) = icon.first() {
                             weapon_names[index] = &icon[1..]; // TODO bug in the parser
                         }
                     }
@@ -266,7 +264,7 @@ impl<'a> ModReader<'a> {
 
         for (i, name) in weapon_names.iter().enumerate() {
             let mut armour = path.to_path_buf();
-            armour.push(&format!("{}.png", name));
+            armour.push(format!("{}.png", name));
 
             let result = match image_to_base64(&armour).await {
                 Ok(data) => {
@@ -284,7 +282,7 @@ impl<'a> ModReader<'a> {
 
         for (i, name) in armour_names.iter().enumerate() {
             let mut armour = path.to_path_buf();
-            armour.push(&format!("{}.png", name));
+            armour.push(format!("{}.png", name));
 
             let result = match image_to_base64(&armour).await {
                 Ok(data) => {
@@ -324,7 +322,7 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
 
     for (_, map) in info.iter().filter(|(key, _)| key == "combat_skill") {
         if let (Some(id), Some(icon)) = (map.get("id"), map.get("icon")) {
-            if let (Some(skill_name), Some(skill_icon)) = (id.get(0), icon.get(0)) {
+            if let (Some(skill_name), Some(skill_icon)) = (id.first(), icon.first()) {
                 result.push(SkillData {
                     key: skill_name.to_string(),
                     name: String::new(),
@@ -341,7 +339,7 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
 pub async fn image_to_base64(path: &Path) -> io::Result<String> {
     let file = fs::read(path).await?;
     let file = png_compr::compress(file);
-    return Ok(base64::encode(file));
+    Ok(base64::encode(file))
 }
 
 fn merge_xml(source: &mut LocFile, input: LocFile) {

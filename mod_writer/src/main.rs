@@ -28,12 +28,17 @@ fn main() {
 
     let meta = symlink_metadata(&path).expect("failed to get path metadata");
     if meta.is_file() {
-        panic!("Expected directory, got file: {}", &input);
+        panic!("Expected directory, got file: {}", input);
     } else if meta.is_symlink() {
-        panic!("Expected directory, got symlink: {}", &input);
+        panic!("Expected directory, got symlink: {}", input);
     }
 
     let infos = mod_reader::read_mods(&path);
+
+    if infos.is_empty() {
+        eprintln!("No class mods found in {}", input);
+        std::process::exit(1);
+    }
 
     write_files(&output, infos);
 }

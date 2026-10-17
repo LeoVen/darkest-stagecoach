@@ -10,7 +10,7 @@ use crate::fixer::fix_classes;
 const AUTO_GENERATED: &str = "// THIS FILE WAS AUTO-GENERATED\n";
 
 pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
-    let root = PathBuf::from_str(&output).expect("failed to get path from output str");
+    let root = PathBuf::from_str(output).expect("failed to get path from output str");
     let mods = fix_classes(mods.into_iter().map(proc_class_mod).collect());
 
     let result = mods.into_iter().map(make_code);
@@ -18,7 +18,7 @@ pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
 
     for (name, data) in result {
         let mut file_name = root.clone();
-        let fname = format!("Class_{}.tsx", &name);
+        let fname = format!("Class_{}.tsx", name);
         file_name.push(&fname);
 
         classes.push(fname.strip_suffix(".tsx").unwrap_or(&fname).to_string());
@@ -123,9 +123,9 @@ export const Class_{key}: ClassModData = {{
     guild: `{guild}`,
 }}
 ",
-            key = &class_info.key,
-            name = &class_info.name,
-            original_hero = &class_info.original_hero,
+            key = class_info.key,
+            name = class_info.name,
+            original_hero = class_info.original_hero,
             portrait = class_info.portrait,
             armours = format!(
                 "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",

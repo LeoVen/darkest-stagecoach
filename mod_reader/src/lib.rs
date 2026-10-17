@@ -16,7 +16,7 @@ pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
         }
         Err(e) => eprintln!("Failed to read all mod files: {}", e),
     }
-    return vec![];
+    vec![]
 }
 
 async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
@@ -32,7 +32,7 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
         } else {
             eprintln!(
                 "Mod couldn't be read: {}",
-                root.to_string_lossy().to_string()
+                root.to_string_lossy()
             );
         }
     }
@@ -45,7 +45,7 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
 async fn read_single(root: &Path) -> Option<ClassModInfo> {
     let name = root.file_name()?.to_str()?.to_string();
 
-    print!("\nReading class mod {:<20} ", &name);
+    print!("\nReading class mod {:<20} ", name);
 
     let mut mod_info = Default::default();
 
