@@ -20,6 +20,8 @@ npm run docs       # build and replace ../docs (the deployed GitHub Pages output
 npm test           # react-scripts/jest (no tests currently exist)
 ```
 
+The `start`/`build`/`docs` scripts set `NODE_OPTIONS=--openssl-legacy-provider` because react-scripts 4 (webpack 4) fails on Node 17+ without it.
+
 Rust (run from the repo root):
 
 ```sh
