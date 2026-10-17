@@ -16,7 +16,7 @@ export const Image = ({ imgData, className, style }: ImageProps) => {
             loading="lazy"
             src={
                 imgData.length > 0
-                    ? `${process.env.PUBLIC_URL}/${imgData}`
+                    ? `${import.meta.env.BASE_URL}${imgData}`
                     : imageNotFound
             }
         />

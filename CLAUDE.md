@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (deployed at https://dds.leoven.dev via GitHub Pages from `docs/`). The repo has two halves:
 
-- `darkest-stagecoach/`: the React 17 + TypeScript site (Create React App / `react-scripts` 4, Material-UI v4, styled-components).
+- `darkest-stagecoach/`: the React 17 + TypeScript site (Vite, Material-UI v4, styled-components).
 - A Cargo workspace at the root (`parser`, `root_finder`, `mod_reader`, `mod_parser`, `xml_parser`, `img_compr`, `mod_writer`). Together these crates read the class mod folders on disk and generate the TypeScript data files the site uses.
 
 ## Commands
@@ -14,13 +14,14 @@ Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (
 Frontend (run from `darkest-stagecoach/`):
 
 ```sh
-npm start          # dev server
-npm run build      # production build into build/
-npm run docs       # build and replace ../docs (the deployed GitHub Pages output, incl. CNAME)
-npm test           # react-scripts/jest (no tests currently exist)
+npm start          # Vite dev server
+npm run typecheck  # tsc --noEmit (Vite itself doesn't typecheck)
+npm run build      # typecheck + production build into build/
+npm run preview    # serve build/ locally
+npm run docs       # build and replace ../docs (the deployed GitHub Pages output)
 ```
 
-The `start`/`build`/`docs` scripts set `NODE_OPTIONS=--openssl-legacy-provider` because react-scripts 4 (webpack 4) fails on Node 17+ without it.
+There are no frontend tests. `index.html` lives at the project root (Vite convention); everything in `public/` (including `CNAME` for the custom domain and the generated `img/`) is copied into the build as-is.
 
 Rust (run from the repo root):
 
@@ -49,7 +50,7 @@ Formatting: Prettier settings live in `darkest-stagecoach/package.json` (4 space
 2. `mod_reader` reads each root's `<name>.info.darkest` and `<name>.art.darkest` files (parsed by `parser`), its localization XML (parsed by `xml_parser`), the roster portrait, skill icons, the guild header and the equipment icons. Images are re-encoded to JPEG quality 50 by `img_compr` (the crate is named `png_compr` in its Cargo.toml) and carried as raw bytes. Localization comes from the nearest `localization/` folder above the hero (DLC heroes are nested under `dlc/<id>/features/...`); mods that ship only compiled `.loc2` files get a name derived from the key. The Steam ID is the numeric workshop folder name; base game and DLC heroes have none and get no Steam source.
 3. `mod_parser` turns the raw `DarkestFile` (`Vec<(key, HashMap<field, Vec<String>>)>`) into `ClassInfo` (stats, resistances, skills, religious/transform tags, and the original-hero flag).
 4. `mod_writer` sorts by key (base game first), then `fixer.rs` replaces `-` with `_` in keys and appends a dedupe counter. Every key therefore ends in a number (`vestal1`, `2andb1`), and the generated files are named `Class_<key>.tsx`.
-5. `writer.rs` writes one `Class_<key>.tsx` per mod, exporting a `ClassModData`, plus an `index.tsx` exporting `classModDataIndex()`. `images.rs` saves each image once to `public/img/<content hash>.jpg`, and the data only holds that path (`''` when missing). The frontend `Image` component prefixes `PUBLIC_URL` and lazy-loads it. Don't embed images in the JS bundle again.
+5. `writer.rs` writes one `Class_<key>.tsx` per mod, exporting a `ClassModData`, plus an `index.tsx` exporting `classModDataIndex()`. `images.rs` saves each image once to `public/img/<content hash>.jpg`, and the data only holds that path (`''` when missing). The frontend `Image` component prefixes `import.meta.env.BASE_URL` and lazy-loads it. Don't embed images in the JS bundle again.
 
 **`darkest-stagecoach/src/data/data/` and `darkest-stagecoach/public/img/` are generated and committed.** Don't hand-edit those files; regenerate them. If the TS shape needs to change, change `make_code` in `mod_writer/src/writer.rs`, the types in `mod_parser/src/types.rs` (their `Display` impls emit the TS literals) and `ClassModData` in `src/data/ClassMod.tsx` together.
 
