@@ -2,7 +2,7 @@ import {
     Snackbar,
     SnackbarCloseReason,
     SnackbarContentProps
-} from '@material-ui/core'
+} from '@mui/material'
 
 interface SnackbarMessageProps {
     open: boolean

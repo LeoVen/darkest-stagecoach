@@ -1,9 +1,9 @@
-import { MenuItem, Paper } from '@material-ui/core'
+import { MenuItem, Paper } from '@mui/material'
 import styled from 'styled-components'
 
-export const BottomButton = styled(Paper)`
+export const BottomButton = styled(Paper)<{ $index: number }>`
     position: fixed;
-    right: calc(1rem + ${(props: { index: number }) => props.index * 80}px);
+    right: calc(1rem + ${props => props.$index * 80}px);
     bottom: 1rem;
     z-index: 2;
 `
@@ -20,15 +20,15 @@ export const MainSection = styled.div`
     width: 100%;
 `
 
-export const InnerItem = styled.div`
-    ${(props: { selected: boolean }) =>
-        props.selected ? 'padding: 0;' : 'padding: 0 0 0 20px;'}
+export const InnerItem = styled.div<{ $selected: boolean }>`
+    ${props =>
+        props.$selected ? 'padding: 0;' : 'padding: 0 0 0 20px;'}
     display: flex;
     align-items: center;
 `
 
 export const SortItem = styled(MenuItem)`
-    ${(props: { selected: boolean }) =>
+    ${props =>
         props.selected
             ? 'background-color: var(--bg-secondary);'
             : 'background-color: var(--bg-primary);'}

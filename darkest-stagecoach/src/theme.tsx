@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core'
+import { createTheme } from '@mui/material'
 
 export const AppTheme = {
     bgPrimary: '#2f3129',
@@ -12,96 +12,117 @@ export const AppTheme = {
     selectedGreen: '#00d7a2'
 }
 
-export const THEME = createMuiTheme({
-    overrides: {
+export const THEME = createTheme({
+    components: {
         MuiFormLabel: {
-            root: {
-                color: AppTheme.accentPrimary
+            styleOverrides: {
+                root: {
+                    color: AppTheme.accentPrimary
+                }
             }
         },
         MuiInputLabel: {
-            root: {
-                backgroundColor: AppTheme.bgPrimary,
-            },
-            shrink: {
-                color: `${AppTheme.accentHover} !important`,
+            styleOverrides: {
+                root: {
+                    backgroundColor: AppTheme.bgPrimary,
+                },
+                shrink: {
+                    color: `${AppTheme.accentHover} !important`,
+                }
             }
         },
         MuiInput: {
-            root: {
-                color: AppTheme.accentPrimary
-            },
-            underline: {
-                '&:before': {
-                    borderBottomColor: AppTheme.accentHover,
+            styleOverrides: {
+                root: {
+                    color: AppTheme.accentPrimary
                 },
-                '&:after': {
-                    borderBottomColor: AppTheme.accentHover,
+                underline: {
+                    '&:before': {
+                        borderBottomColor: AppTheme.accentHover,
+                    },
+                    '&:after': {
+                        borderBottomColor: AppTheme.accentHover,
+                    },
+                    '&:hover:before': {
+                        borderBottomColor: `${AppTheme.accentHover} !important`,
+                    },
                 },
-                '&:hover:before': {
-                    borderBottomColor: [AppTheme.accentHover, '!important'],
-                },
-            },
+            }
         },
         MuiAccordionSummary: {
-            root: {
-                padding: '0'
-            },
-            content: {
-                margin: '0'
-            },
-            expandIcon: {
-                marginRight: '8px'
+            styleOverrides: {
+                root: {
+                    padding: '0'
+                },
+                content: {
+                    margin: '0'
+                },
+                expandIconWrapper: {
+                    marginRight: '8px'
+                }
             }
         },
         MuiButtonBase: {
-            root: {
-                cursor: 'var(--cursor-pointer)'
+            styleOverrides: {
+                root: {
+                    cursor: 'var(--cursor-pointer)'
+                }
             }
         },
         MuiButton: {
-            label: {
-                color: AppTheme.fontPrimary
-            },
-            outlined: {
-                borderColor: AppTheme.accentPrimary
+            styleOverrides: {
+                root: {
+                    color: AppTheme.fontPrimary
+                },
+                outlined: {
+                    borderColor: AppTheme.accentPrimary
+                }
             }
         },
         MuiTooltip: {
-            tooltip: {
-                fontFamily: 'Mate SC',
-                fontSize: '0.8rem',
-                backgroundColor: AppTheme.bgPrimary
-            },
-            arrow: {
-                '&:before': {
+            styleOverrides: {
+                tooltip: {
+                    fontFamily: 'Mate SC',
+                    fontSize: '0.8rem',
                     backgroundColor: AppTheme.bgPrimary
+                },
+                arrow: {
+                    '&:before': {
+                        backgroundColor: AppTheme.bgPrimary
+                    }
                 }
             }
         },
         MuiMenu: {
-            list: {
-                padding: '0'
+            styleOverrides: {
+                list: {
+                    padding: '0'
+                }
             }
         },
         MuiDrawer: {
-            paperAnchorBottom: {
-                maxHeight: '50vh'
+            styleOverrides: {
+                paper: ({ ownerState }) =>
+                    ownerState.anchor === 'bottom' ? { maxHeight: '50vh' } : {}
             }
         },
         MuiTableCell: {
-            head: {
-                color: AppTheme.fontPrimary,
-                fontWeight: 'bold'
-            },
-            body: {
-                color: AppTheme.fontPrimary
+            styleOverrides: {
+                head: {
+                    color: AppTheme.fontPrimary,
+                    fontWeight: 'bold'
+                },
+                body: {
+                    color: AppTheme.fontPrimary
+                }
             }
         },
         MuiSnackbarContent: {
-            root: {
-                backgroundColor: AppTheme.bgPrimary,
-                color: AppTheme.fontPrimary
+            styleOverrides: {
+                root: {
+                    backgroundColor: AppTheme.bgPrimary,
+                    color: AppTheme.fontPrimary
+                }
             }
         }
     },

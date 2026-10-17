@@ -20,11 +20,11 @@ export const SkillSection = styled.div`
 `
 
 export const SkillContainer = styled.div<{
-    wrap: boolean
+    $wrap: boolean
 }>`
     display: flex;
-    flex-direction: ${props => props.wrap ? 'column' : 'row'};
-    gap: ${props => props.wrap ? '8px' : '1rem'};
+    flex-direction: ${props => props.$wrap ? 'column' : 'row'};
+    gap: ${props => props.$wrap ? '8px' : '1rem'};
 `
 
 export const LaunchContainer = styled.div`
@@ -39,22 +39,22 @@ export const TargetContainer = styled.div`
 `
 
 export const Circle = styled.div<{
-    color: string
-    blur: string
+    $color: string
+    $blur: string
 }>`
-    background-color: ${(props) => props.color };
-    ${props => (props.blur ? `box-shadow: 0px 0px 4px ${props.blur}` : '')};
+    background-color: ${(props) => props.$color };
+    ${props => (props.$blur ? `box-shadow: 0px 0px 4px ${props.$blur}` : '')};
     width: 10px;
     height: 10px;
     border-radius: 50%;
 `
 
 export const Square = styled.div<{
-    color: string
-    blur?: string
+    $color: string
+    $blur?: string
 }>`
-    background-color: ${(props) => props.color };
-    ${props => (props.blur ? `box-shadow: 0px 0px 4px ${props.blur}` : '')};
+    background-color: ${(props) => props.$color };
+    ${props => (props.$blur ? `box-shadow: 0px 0px 4px ${props.$blur}` : '')};
     width: 6px;
     height: 4px;
 `

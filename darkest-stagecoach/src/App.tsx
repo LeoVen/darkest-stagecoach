@@ -1,5 +1,5 @@
 import React from 'react'
-import { StylesProvider, ThemeProvider } from '@material-ui/core'
+import { StyledEngineProvider, ThemeProvider } from '@mui/material'
 import ClassMod from './data/ClassMod'
 import { ClassCardsContainer } from './styles'
 import { THEME } from './theme'
@@ -57,7 +57,7 @@ export const App = () => {
     }
 
     return (
-        <StylesProvider injectFirst>
+        <StyledEngineProvider injectFirst>
             <ThemeProvider theme={THEME}>
                 <SnackbarContext.Provider
                     value={{
@@ -98,6 +98,6 @@ export const App = () => {
                         handleCloseModal={handleCloseModal} />
                 </SnackbarContext.Provider>
             </ThemeProvider>
-        </StylesProvider>
+        </StyledEngineProvider>
     )
 }

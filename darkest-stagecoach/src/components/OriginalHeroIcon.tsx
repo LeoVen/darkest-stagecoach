@@ -1,4 +1,4 @@
-import { Tooltip } from '@material-ui/core'
+import { Tooltip } from '@mui/material'
 import { CSSProperties } from 'react'
 import originalHero from '../assets/img/stats/torch.png'
 

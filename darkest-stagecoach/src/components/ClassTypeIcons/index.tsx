@@ -1,4 +1,4 @@
-import { Tooltip } from '@material-ui/core'
+import { Tooltip } from '@mui/material'
 import { ClassModType, ClassModTypeValue } from '../../Types'
 import { ClassTypeSvg } from '../Svg/ClassTypeSvg'
 import { IconContainer, MainSection } from './styles'
@@ -41,9 +41,9 @@ export const ClassTypeIcons = ({ type }: ClassTypeIconsProps) => {
                 placement="top"
                 arrow={true}>
                 <IconContainer
-                    pad={padMap[idx]}
-                    dim={sizeMap[idx]}
-                    color={colorMap[value]}>
+                    $pad={padMap[idx]}
+                    $dim={sizeMap[idx]}
+                    $color={colorMap[value]}>
                     {ClassTypeSvg({
                         type: idxMap[idx],
                         fill: colorMap[value],

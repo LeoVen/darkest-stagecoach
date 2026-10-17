@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import styled from 'styled-components'
 
 export const MainSection = styled.div`
@@ -38,14 +38,14 @@ export const CharacteristicsSection = styled.div`
     max-width: 350px;
 `
 
-export const SelectionBox = styled.div<{ selected?: boolean }>`
+export const SelectionBox = styled.div<{ $selected?: boolean }>`
     margin: 0.2rem;
     border-radius: 4px;
     border: 1px solid
         ${props =>
-            props.selected === undefined
+            props.$selected === undefined
                 ? 'var(--bg-secondary)'
-                : props.selected
+                : props.$selected
                 ? 'var(--selected-green)'
                 : 'var(--selected-red)'};
     & * {

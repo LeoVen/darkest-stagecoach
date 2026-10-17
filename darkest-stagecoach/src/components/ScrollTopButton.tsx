@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { Fab } from '@material-ui/core'
+import { Fab } from '@mui/material'
 
 export const ScrollTopButton = () => {
     const handleClick = () => {

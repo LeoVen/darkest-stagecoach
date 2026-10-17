@@ -1,9 +1,9 @@
 import React from 'react'
-import { Drawer, Menu, Divider, Button } from '@material-ui/core'
+import { Drawer, Menu, Divider, Button } from '@mui/material'
 import { FilterBy, SortBy, SortingKeys } from '../../Types'
 import { BottomButton, InnerItem, SortItem, DrawerContent } from './styles'
 import { ModalCloseButton } from '../ModalCloseButton'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faFilter,
@@ -92,7 +92,7 @@ export const ActionButtons = ({
                 selected={selected}
                 className="cursor-pointer"
                 onClick={() => handleSortByKeyChange(value[1])}>
-                <InnerItem selected={selected}>
+                <InnerItem $selected={selected}>
                     {selected ? sortIcon(sort.sortDirection) : <></>}
                     {value[0]}
                 </InnerItem>
@@ -133,7 +133,7 @@ export const ActionButtons = ({
 
     return (
         <>
-            <BottomButton className="cursor-pointer" index={0}>
+            <BottomButton className="cursor-pointer" $index={0}>
                 <CustomIconButton onClick={handleOpenFilterModal}>
                     <FontAwesomeIcon icon={faFilter} size={'1x'} />
                 </CustomIconButton>
@@ -158,7 +158,7 @@ export const ActionButtons = ({
 
             <BottomButton
                 className="cursor-pointer"
-                index={1}
+                $index={1}
                 aria-controls="sort-button"
                 aria-haspopup="true">
                 <CustomIconButton onClick={handleSortMenuOpen}>
@@ -171,7 +171,6 @@ export const ActionButtons = ({
                 keepMounted
                 open={Boolean(anchorSort)}
                 onClose={handleSortMenuClose}
-                getContentAnchorEl={null}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
                 <LevelRefDisplay current={sort.levelRef} />
@@ -199,9 +198,9 @@ export const ActionButtons = ({
                     </div>
                 </div>
                 {sortBaseStats.map(sortItemTemplate)}
-                <Divider />
+                <Divider style={{ margin: 0 }} />
                 {sortResistances.map(sortItemTemplate)}
-                <Divider />
+                <Divider style={{ margin: 0 }} />
                 {sortDefault.map(sortItemTemplate)}
             </Menu>
         </>

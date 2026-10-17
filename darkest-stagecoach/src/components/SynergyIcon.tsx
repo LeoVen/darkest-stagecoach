@@ -33,7 +33,7 @@ import {
     TableRow,
     Tooltip,
     Typography
-} from '@material-ui/core'
+} from '@mui/material'
 import { CSSProperties } from 'react'
 import { sortSynergies, Synergies } from '../Synergy'
 

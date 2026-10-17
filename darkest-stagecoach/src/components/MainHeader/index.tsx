@@ -1,4 +1,4 @@
-import { Fade, Modal, Typography } from '@material-ui/core'
+import { Fade, Modal, Typography } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faInfo } from '@fortawesome/free-solid-svg-icons'

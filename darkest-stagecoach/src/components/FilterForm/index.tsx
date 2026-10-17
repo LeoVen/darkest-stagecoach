@@ -1,10 +1,10 @@
 import {
     Button,
     ButtonGroup,
-    createMuiTheme,
+    createTheme,
     TextField,
     ThemeProvider
-} from '@material-ui/core'
+} from '@mui/material'
 import React from 'react'
 import { Synergies } from '../../Synergy'
 import { AppTheme, THEME } from '../../theme'
@@ -23,10 +23,11 @@ import {
     SynergiesSection
 } from './styles'
 
-const FILTER_THEME = createMuiTheme(
-    {
-        overrides: {
-            MuiTooltip: {
+// Extends the app theme; these overrides take precedence
+const FILTER_THEME = createTheme(THEME, {
+    components: {
+        MuiTooltip: {
+            styleOverrides: {
                 tooltip: {
                     fontFamily: 'Mate SC',
                     fontSize: '0.8rem',
@@ -38,18 +39,17 @@ const FILTER_THEME = createMuiTheme(
                     }
                 }
             }
-        },
-        palette: {
-            primary: {
-                main: '#d3552e'
-            },
-            secondary: {
-                main: '#2f3129'
-            }
         }
     },
-    THEME
-)
+    palette: {
+        primary: {
+            main: '#d3552e'
+        },
+        secondary: {
+            main: '#2f3129'
+        }
+    }
+})
 
 interface FilterFormProps {
     filterBy: FilterBy
@@ -107,6 +107,7 @@ export const FilterForm = ({
                 <FormContainedSections>
                     <FormSection>
                         <TextField
+                            variant="standard"
                             onKeyUp={onTextFieldEnter}
                             id="filter-name"
                             label="Name"
@@ -121,7 +122,7 @@ export const FilterForm = ({
                         <CharacteristicsSection>
                             <SelectionBox
                                 onClick={handleReligiousChange}
-                                selected={filterBy.religious}>
+                                $selected={filterBy.religious}>
                                 <ClassProfileIcon
                                     type="religious"
                                     style={{
@@ -131,7 +132,7 @@ export const FilterForm = ({
                             </SelectionBox>
                             <SelectionBox
                                 onClick={handleTransformChange}
-                                selected={filterBy.transform}>
+                                $selected={filterBy.transform}>
                                 <ClassProfileIcon
                                     type="transform"
                                     style={{
@@ -141,7 +142,7 @@ export const FilterForm = ({
                             </SelectionBox>
                             <SelectionBox
                                 onClick={handleOriginalHeroChange}
-                                selected={filterBy.originalHero}>
+                                $selected={filterBy.originalHero}>
                                 <OriginalHeroIcon
                                     style={{
                                         padding: '6px 12px'
@@ -159,7 +160,7 @@ export const FilterForm = ({
                                 return (
                                     <SelectionBox
                                         key={`form-synergy-${s}`}
-                                        selected={filterBy.synergies.get(s)}
+                                        $selected={filterBy.synergies.get(s)}
                                         onClick={() => handleSynergyClick(s)}>
                                         <SynergyIcon
                                             icon={s}

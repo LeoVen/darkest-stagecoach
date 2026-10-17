@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Typography } from '@material-ui/core'
+import { Modal, Typography } from '@mui/material'
 import Author from '../../data/Author'
 import { Credits } from '../../Types'
 import {

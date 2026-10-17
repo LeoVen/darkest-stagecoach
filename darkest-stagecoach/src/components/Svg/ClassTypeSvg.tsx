@@ -1,9 +1,10 @@
+import React from 'react'
 import { ClassModType } from '../../Types'
 import { SvgProps } from '.'
 
 const iconMap: Map<
     ClassModType,
-    (props: SvgProps<ClassModType>) => JSX.Element
+    (props: SvgProps<ClassModType>) => React.JSX.Element
 > = new Map([
     [
         'damage',
@@ -88,6 +89,6 @@ const iconMap: Map<
 ])
 
 export const ClassTypeSvg = (props: SvgProps<ClassModType>) =>
-    (iconMap.get(props.type) as (props: SvgProps<ClassModType>) => JSX.Element)(
+    (iconMap.get(props.type) as (props: SvgProps<ClassModType>) => React.JSX.Element)(
         props
     )

@@ -1,7 +1,8 @@
+import React from 'react'
 import { ProfileType } from '../../Types'
 import { SvgProps } from '.'
 
-const iconMap: Map<ProfileType, (props: SvgProps<ProfileType>) => JSX.Element> =
+const iconMap: Map<ProfileType, (props: SvgProps<ProfileType>) => React.JSX.Element> =
     new Map([
         [
             'transform',
@@ -46,6 +47,6 @@ const iconMap: Map<ProfileType, (props: SvgProps<ProfileType>) => JSX.Element> =
     ])
 
 export const ProfileSvg = (props: SvgProps<ProfileType>) =>
-    (iconMap.get(props.type) as (props: SvgProps<ProfileType>) => JSX.Element)(
+    (iconMap.get(props.type) as (props: SvgProps<ProfileType>) => React.JSX.Element)(
         props
     )

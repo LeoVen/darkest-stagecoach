@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Fade,
     Modal,
-} from '@material-ui/core'
+} from '@mui/material'
 import ClassMod from '../../data/ClassMod'
 import { ModalWrapper } from '../../styles'
 import { ModalCloseButton } from '../ModalCloseButton'

@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from "@mui/material";
 import { Launch, Skill, Target } from "../../Types";
 import { Image } from "../Image";
 import { Circle, LaunchContainer, MainSection, SkillContainer, SkillSection, Square, TargetContainer } from "./styles";
@@ -9,13 +9,13 @@ interface SkillsProps {
 
 const circle = (key: string, color: string, blur: string) => {
     return (
-        <Circle key={key} color={color} blur={blur} />
+        <Circle key={key} $color={color} $blur={blur} />
     )
 }
 
 const square = (key: string, color: string, blur?: string) => {
     return (
-        <Square key={key} color={color} blur={blur} />
+        <Square key={key} $color={color} $blur={blur} />
     )
 }
 
@@ -69,14 +69,14 @@ const launch = (launch: Launch) => {
     )
 }
 
-const skillSlot = (skill: Skill) => {
+const skillSlot = (skill: Skill, key: string) => {
     return (
-        <SkillSection>
+        <SkillSection key={key}>
             <Typography variant="body1" style={{whiteSpace: 'nowrap'}}>
                 {skill.name}
             </Typography>
             <Image imgData={skill.image} style={{ width: '72px', height: '72px' }} />
-            <SkillContainer wrap={skill.target.mods.includes('@')}>
+            <SkillContainer $wrap={skill.target.mods.includes('@')}>
                 {launch(skill.launch)}
                 {target(skill.target)}
             </SkillContainer>
@@ -92,7 +92,7 @@ const skillSlot = (skill: Skill) => {
 export const SkillsSection = ({ skills }: SkillsProps) => {
     return (
         <MainSection>
-            {skills.map(skill => skillSlot(skill))}
+            {skills.map((skill, i) => skillSlot(skill, `skill-${i}`))}
         </MainSection>
     )
 }

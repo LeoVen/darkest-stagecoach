@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import Author from '../../data/Author'
 import { AuthorInfoMain, AuthorInfoLinkList } from './styles'
 

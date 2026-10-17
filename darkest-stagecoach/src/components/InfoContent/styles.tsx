@@ -1,4 +1,4 @@
-import { Paper, Typography } from '@material-ui/core'
+import { Paper, Typography } from '@mui/material'
 import styled from 'styled-components'
 
 export const MainSection = styled(Paper)`

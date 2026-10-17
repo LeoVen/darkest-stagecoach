@@ -10,13 +10,13 @@ export const MainSection = styled.div`
 `
 
 export const IconContainer = styled.div<{
-    pad: string
-    dim: string
-    color: string
+    $pad: string
+    $dim: string
+    $color: string
 }>`
-    width: ${props => props.dim};
-    height: ${props => props.dim};
-    padding: ${props => props.pad};
+    width: ${props => props.$dim};
+    height: ${props => props.$dim};
+    padding: ${props => props.$pad};
     border-radius: 50%;
-    background-color: ${props => props.color}15;
+    background-color: ${props => props.$color}15;
 `

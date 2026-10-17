@@ -4,7 +4,7 @@ import {
     AccordionDetails,
     AccordionSummary,
     Typography
-} from '@material-ui/core'
+} from '@mui/material'
 import ClassMod from '../../data/ClassMod'
 import { AuthorCard } from '../AuthorCard'
 import { MainModal, ClassCardBanner } from './styles'

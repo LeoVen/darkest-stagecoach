@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Darkest Stagecoach is a static website for browsing Darkest Dungeon class mods (deployed at https://dds.leoven.dev via GitHub Pages from `docs/`). The repo has two halves:
 
-- `darkest-stagecoach/`: the React 17 + TypeScript site (Vite, Material-UI v4, styled-components).
+- `darkest-stagecoach/`: the React 19 + TypeScript site (Vite, MUI v9, styled-components v6, FontAwesome).
 - A Cargo workspace at the root (`parser`, `root_finder`, `mod_reader`, `mod_parser`, `xml_parser`, `img_compr`, `mod_writer`). Together these crates read the class mod folders on disk and generate the TypeScript data files the site uses.
 
 ## Commands
@@ -64,5 +64,7 @@ Each `ClassMod` merges two independent sources, joined by the same key in `src/d
 Authors live in `src/data/authors/Author_<Name>.tsx` and are registered in `src/data/AuthorIndex.tsx`. They are referenced from `info.authors[].authorKey`.
 
 Enums such as `Synergy`, `OriginalHeroes` and `ClassModType` are string-literal unions in `src/Types.tsx`. The display order of synergies is defined in `src/Synergy.tsx`.
+
+Styling: MUI components are themed in `src/theme.tsx` (`components.<Name>.styleOverrides`); app-specific styles use styled-components in `styles.tsx` files, with colors from CSS variables in `index.css`. `StyledEngineProvider injectFirst` makes MUI's Emotion styles load first so styled-components can override them. Custom props on styled components must be transient (`$selected`), or styled-components v6 forwards them to the DOM.
 
 `App.tsx` holds the filter/sort state and a list of class keys. Filtering (`Filtering.tsx`) and sorting (`Sorting.tsx`) work on keys and look each class up in the global `ClassModIndex`. Components live in `src/components/<Name>/{index,styles}.tsx` (styled-components in `styles.tsx`). The theme is in `src/theme.tsx`. App-wide toasts go through `SnackbarContext`.

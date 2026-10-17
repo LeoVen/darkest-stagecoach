@@ -32,13 +32,13 @@ const circle = (idx: number, skills: number, total: number) => {
     return (
         <Circle
             key={`${idx}-positions`}
-            color={circleColors(
+            $color={circleColors(
                 skills / total
             )}
-            border={borderColors(
+            $border={borderColors(
                 skills / total
             )}
-            blur={ratio !== undefined && ratio === 1 ? true : false}>
+            $blur={ratio !== undefined && ratio === 1 ? true : false}>
             {skills}
         </Circle>
     )

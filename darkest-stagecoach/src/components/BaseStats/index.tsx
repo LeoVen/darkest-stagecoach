@@ -8,7 +8,7 @@ import {
     LevelSelection,
     StatsListing
 } from './styles'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { NumberSelection } from '../NumberSelection'
 import { Image } from '../Image'
 
@@ -26,7 +26,7 @@ export const BaseStats = ({ stats, icons }: BaseStatsProps) => {
 
     const template = (name: string, value: string, showPct: boolean) => {
         return (
-            <Typography variant="body1">
+            <Typography variant="body1" component="div">
                 <StatsRow>
                     <div>{name}</div>
                     <div>

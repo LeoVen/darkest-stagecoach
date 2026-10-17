@@ -7,7 +7,7 @@ import {
     ResRowSection
 } from './styles'
 import { ResistanceIcon } from '../ResistanceIcon'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 
 export const TextColors = {
     stun: '#F0CF5A',

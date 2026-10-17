@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import { SynergyIconsTable } from '../SynergyIcon'
 import { MainSection, Paragraph, SectionTitle } from './styles'
 

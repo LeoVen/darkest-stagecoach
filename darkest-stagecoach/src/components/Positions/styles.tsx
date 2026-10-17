@@ -12,13 +12,13 @@ export const MainSection = styled.div`
 `
 
 export const Circle = styled.div<{
-    color: string
-    border: string
-    blur: boolean
+    $color: string
+    $border: string
+    $blur: boolean
 }>`
-    background-color: ${props => props.color};
-    ${props => (props.blur ? `box-shadow: 0px 0px 4px #fff` : '')};
-    border: 1px ${props => props.border} solid;
+    background-color: ${props => props.$color};
+    ${props => (props.$blur ? `box-shadow: 0px 0px 4px #fff` : '')};
+    $border: 1px ${props => props.$border} solid;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -27,5 +27,5 @@ export const Circle = styled.div<{
     font-size: 9px;
     font-weight: bold;
     font-family: 'Mate SC';
-    color: var(--font-primary);
+    $color: var(--font-primary);
 `
