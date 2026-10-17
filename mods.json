@@ -1,0 +1,8877 @@
+{
+  "min_lifetime_subscriptions": 5000,
+  "tag_filter": true,
+  "mods": [
+    {
+      "id": "841088387",
+      "title": "Vamp - New Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1532277225,
+      "tags": [
+        "Class Mod",
+        "Vamp"
+      ]
+    },
+    {
+      "id": "847481187",
+      "title": "Black_Mage_Mod",
+      "creator": "76561197994761245",
+      "time_updated": 1513639531,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "868109272",
+      "title": "red_mage_Mod",
+      "creator": "76561197994761245",
+      "time_updated": 1493783531,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "885902143",
+      "title": "Androu1's Musketeer",
+      "creator": "76561198005029188",
+      "time_updated": 1530886560,
+      "tags": [
+        "Musketeer",
+        "Overhaul",
+        "character mod",
+        "heroes"
+      ]
+    },
+    {
+      "id": "886635500",
+      "title": "Pit Fighter - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529560269,
+      "tags": [
+        "Pit Figher",
+        "new class"
+      ]
+    },
+    {
+      "id": "899926001",
+      "title": "Assassin Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529988231,
+      "tags": [
+        "Assassin",
+        "Class Mod"
+      ]
+    },
+    {
+      "id": "899943437",
+      "title": "Good Girl - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529560522,
+      "tags": [
+        "Actionjack",
+        "Good Girl",
+        "new class"
+      ]
+    },
+    {
+      "id": "900069986",
+      "title": "The Vampire",
+      "creator": "76561198106319091",
+      "time_updated": 1529923396,
+      "tags": [
+        "Class Mod",
+        "Vampire"
+      ]
+    },
+    {
+      "id": "901045455",
+      "title": "Courtesan -  Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529558683,
+      "tags": [
+        "Class Mod",
+        "Courtesan"
+      ]
+    },
+    {
+      "id": "904172634",
+      "title": "Old Road Is Block - Disable Core Hero Classes",
+      "creator": "76561198010247678",
+      "time_updated": 1492057486,
+      "tags": [
+        "Stagecoach",
+        "class"
+      ]
+    },
+    {
+      "id": "905786110",
+      "title": "The Inquisitor",
+      "creator": "76561198106319091",
+      "time_updated": 1499614890,
+      "tags": [
+        "Class Mod",
+        "Inquisitor"
+      ]
+    },
+    {
+      "id": "906316834",
+      "title": "The Warden Class Mod",
+      "creator": "76561198038855958",
+      "time_updated": 1493679442,
+      "tags": [
+        "Balanced",
+        "Custom Skin",
+        "Warden",
+        "crusader",
+        "new class"
+      ]
+    },
+    {
+      "id": "912030977",
+      "title": "Cannoneer - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529558792,
+      "tags": [
+        "Actionjack",
+        "Cannoneer",
+        "new class"
+      ]
+    },
+    {
+      "id": "913178378",
+      "title": "Exaelus' Revenant Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1790237404,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "914254739",
+      "title": "The Crow",
+      "creator": "76561198106319091",
+      "time_updated": 1499618790,
+      "tags": [
+        "Crow",
+        "Hero",
+        "class"
+      ]
+    },
+    {
+      "id": "917421411",
+      "title": "Chosen Cultist Class Mod",
+      "creator": "76561198049458991",
+      "time_updated": 1728163738,
+      "tags": [
+        "Cultist",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "921874236",
+      "title": "Gerack's Alternate Hellion Skin",
+      "creator": "76561198065315727",
+      "time_updated": 1494457718,
+      "tags": [
+        "Hellion",
+        "Hero",
+        "skin"
+      ]
+    },
+    {
+      "id": "924245318",
+      "title": "Exaelus' Prodigy Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1787358837,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "929181195",
+      "title": "Vamp Palette Expansion",
+      "creator": "76561198200384857",
+      "time_updated": 1498196066,
+      "tags": [
+        "Class Mod",
+        "skin"
+      ]
+    },
+    {
+      "id": "929549650",
+      "title": "Trap Maker - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1531632712,
+      "tags": [
+        "Actionjack",
+        "new class"
+      ]
+    },
+    {
+      "id": "930627237",
+      "title": "Courtesan Palette Expansion",
+      "creator": "76561198200384857",
+      "time_updated": 1498195825,
+      "tags": [
+        "Class Mod",
+        "skin"
+      ]
+    },
+    {
+      "id": "930929791",
+      "title": "High Priestess Class Mod",
+      "creator": "76561198049458991",
+      "time_updated": 1728035281,
+      "tags": [
+        "Hero",
+        "High Priestess",
+        "new class"
+      ]
+    },
+    {
+      "id": "931167544",
+      "title": "Cannoneer Palette Expansion",
+      "creator": "76561198200384857",
+      "time_updated": 1498195621,
+      "tags": [
+        "Class Mod",
+        "skin"
+      ]
+    },
+    {
+      "id": "932344353",
+      "title": "Martyr - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1531382265,
+      "tags": [
+        "Actionjack",
+        "new class"
+      ]
+    },
+    {
+      "id": "934967620",
+      "title": "Exaelus' Seer Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1787358849,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "942851186",
+      "title": "Ronin - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1588130469,
+      "tags": [
+        "Actionjack",
+        "new class"
+      ]
+    },
+    {
+      "id": "945754207",
+      "title": "Ronin Palette Expansion",
+      "creator": "76561198200384857",
+      "time_updated": 1498195970,
+      "tags": [
+        "Class Mod",
+        "skin"
+      ]
+    },
+    {
+      "id": "945983081",
+      "title": "Warrior and Warlock Class Mods",
+      "creator": "76561198043804658",
+      "time_updated": 1532135318,
+      "tags": [
+        "Class Mod",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "947715735",
+      "title": "Exaelus' Scourge Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1789426399,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "948931447",
+      "title": "Reaver Class Mod",
+      "creator": "76561198049458991",
+      "time_updated": 1529523009,
+      "tags": [
+        "Hero",
+        "Reaver",
+        "new class"
+      ]
+    },
+    {
+      "id": "954141794",
+      "title": "OP Undead Dark Souls Guy",
+      "creator": "76561198185690379",
+      "time_updated": 1498595804,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "955795133",
+      "title": "Commissar - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529558908,
+      "tags": [
+        "Actionjack",
+        "Commissar",
+        "new class"
+      ]
+    },
+    {
+      "id": "955863292",
+      "title": "Fanatic Hero",
+      "creator": "76561198042372383",
+      "time_updated": 1714014902,
+      "tags": [
+        "Class Mod",
+        "Fanatic",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "963658853",
+      "title": "Shield Maiden - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529560970,
+      "tags": [
+        "Actionjack",
+        "new class"
+      ]
+    },
+    {
+      "id": "967618008",
+      "title": "Witcher Class Mod",
+      "creator": "76561197990930115",
+      "time_updated": 1499454760,
+      "tags": [
+        "Class Mod",
+        "Witcher",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "970030269",
+      "title": "Exaelus' Enigma Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1789415843,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "971313538",
+      "title": "Acolyte of Sun - New Class",
+      "creator": "76561197996211126",
+      "time_updated": 1759175609,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1061781600",
+      "title": "Skimpy Grave Robber Reskin",
+      "creator": "76561198011289378",
+      "time_updated": 1500276662,
+      "tags": [
+        "Skins",
+        "class"
+      ]
+    },
+    {
+      "id": "1082193921",
+      "title": "Onnabushi Class",
+      "creator": "76561198272717759",
+      "time_updated": 1529515378,
+      "tags": [
+        "Samurai",
+        "female",
+        "japanese",
+        "new class"
+      ]
+    },
+    {
+      "id": "1089257023",
+      "title": "Marvin Seo's Falconer Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1709284292,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1097287720",
+      "title": "Wyrd Pariah Class",
+      "creator": "76561198272717759",
+      "time_updated": 1590768426,
+      "tags": [
+        "Cultist",
+        "Demon",
+        "Eldritch",
+        "female",
+        "new class",
+        "occultist"
+      ]
+    },
+    {
+      "id": "1100230439",
+      "title": "Butcher Class Mod",
+      "creator": "76561198049458991",
+      "time_updated": 1598036654,
+      "tags": [
+        "Butcher",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "1100450515",
+      "title": "Exaelus' Fury Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1787358888,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1109179698",
+      "title": "The Fawn -  Remastered",
+      "creator": "76561197984892423",
+      "time_updated": 1582944850,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1110338003",
+      "title": "Druid - Class Mod",
+      "creator": "76561198039162229",
+      "time_updated": 1547566337,
+      "tags": [
+        "character mod",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "1114545692",
+      "title": "Conquistador Class",
+      "creator": "76561198272717759",
+      "time_updated": 1590768326,
+      "tags": [
+        "Musketeer",
+        "Swordsman",
+        "female",
+        "new class"
+      ]
+    },
+    {
+      "id": "1115865609",
+      "title": "The Hollow -  Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554499497,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1119908263",
+      "title": "The Offering 2.0 - Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554500281,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1122828159",
+      "title": "The Warrior of Sunlight",
+      "creator": "76561198046434526",
+      "time_updated": 1631826483,
+      "tags": [
+        "Class Mod",
+        "Dark Souls",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1123633838",
+      "title": "The Tusk - Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554501121,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1128338441",
+      "title": "The Tusk - CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1505543477,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1128408705",
+      "title": "The Hollow -  CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1505543411,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1128411084",
+      "title": "The Offering -  CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1505543431,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1129127265",
+      "title": "The Zealot Class (Crimson Court DLC Required)",
+      "creator": "76561198272717759",
+      "time_updated": 1590768245,
+      "tags": [
+        "Fanatic",
+        "Vestal",
+        "female",
+        "new class"
+      ]
+    },
+    {
+      "id": "1129894385",
+      "title": "Torchbearer - Class Mod",
+      "creator": "76561198039162229",
+      "time_updated": 1551028814,
+      "tags": [
+        "Torchbearer",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1130829365",
+      "title": "Marvin Seo's Lamia Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1724227339,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1133384392",
+      "title": "Tifa Lockhart -  Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554501761,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1133386000",
+      "title": "Tifa Lockhart - CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1505543463,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1135620886",
+      "title": "Werewolf - New Class",
+      "creator": "76561197996211126",
+      "time_updated": 1787693796,
+      "tags": [
+        "Ceci",
+        "Werewolf",
+        "new class"
+      ]
+    },
+    {
+      "id": "1138503289",
+      "title": "Exaelus' Harbinger Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1787358900,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1154908982",
+      "title": "The Twilight Knight",
+      "creator": "76561198052207165",
+      "time_updated": 1787660128,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1157520643",
+      "title": "The Hood -  Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554499974,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1157520943",
+      "title": "The Hood -  CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1507351284,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1163414571",
+      "title": "Adventurer - Class Mod",
+      "creator": "76561198039162229",
+      "time_updated": 1542058131,
+      "tags": [
+        "Adventurer",
+        "Legend of Zelda",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1173973397",
+      "title": "Lamia's Palette Expansion",
+      "creator": "76561198073614399",
+      "time_updated": 1509067547,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "1175904375",
+      "title": "Marvin Seo's Thrall Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1788363243,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1178355382",
+      "title": "SkeletonMan! (Class!)",
+      "creator": "76561198119880338",
+      "time_updated": 1538957533,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1181758316",
+      "title": "Shieldbreaker's Palette Expansion",
+      "creator": "76561198073614399",
+      "time_updated": 1509067568,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "1183389387",
+      "title": "Abysswalker Class",
+      "creator": "76561198001359537",
+      "time_updated": 1509822748,
+      "tags": [
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1185211485",
+      "title": "The Librarian",
+      "creator": "76561198052207165",
+      "time_updated": 1743174273,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1189535304",
+      "title": "The Hollow - SFW",
+      "creator": "76561197984892423",
+      "time_updated": 1509694317,
+      "tags": [
+        "Skins",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1189623020",
+      "title": "The Offering - SFW",
+      "creator": "76561197984892423",
+      "time_updated": 1509694441,
+      "tags": [
+        "Skins",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1189623470",
+      "title": "The Hood - SFW",
+      "creator": "76561197984892423",
+      "time_updated": 1509694503,
+      "tags": [
+        "Skins",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1189624502",
+      "title": "The Tusk - SFW",
+      "creator": "76561197984892423",
+      "time_updated": 1544629139,
+      "tags": [
+        "Skins",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1192738994",
+      "title": "Ironclad - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1532497969,
+      "tags": [
+        "Actionjack",
+        "Class Mod",
+        "Ironclad"
+      ]
+    },
+    {
+      "id": "1194638732",
+      "title": "Templar Arbalest class mod",
+      "creator": "76561198051901155",
+      "time_updated": 1550997834,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1195632927",
+      "title": "Guardsman Class Mod",
+      "creator": "76561198039453271",
+      "time_updated": 1514630598,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1196273779",
+      "title": "Morthell Prophete Class Mod",
+      "creator": "76561197973680735",
+      "time_updated": 1519759252,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1203644445",
+      "title": "The Shrapnel - SFW",
+      "creator": "76561197984892423",
+      "time_updated": 1511165462,
+      "tags": [
+        "Skins",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1203644800",
+      "title": "The Shrapnel -  CC Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1510952631,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1203645088",
+      "title": "The Shrapnel -  Class Mod",
+      "creator": "76561197984892423",
+      "time_updated": 1554500885,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1205784606",
+      "title": "Arachnid class mod",
+      "creator": "76561198051901155",
+      "time_updated": 1745156545,
+      "tags": [
+        "Blight",
+        "Block",
+        "Class Mod",
+        "Dodge",
+        "Guard",
+        "Restoration",
+        "Spider",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1207974198",
+      "title": "Dragonslayer",
+      "creator": "76561198030069592",
+      "time_updated": 1679797887,
+      "tags": [
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1209578556",
+      "title": "Dragonslayer Knight - Class Mod",
+      "creator": "76561198039162229",
+      "time_updated": 1591732231,
+      "tags": [
+        "Dark Souls",
+        "Dragonslayer",
+        "new class"
+      ]
+    },
+    {
+      "id": "1210387878",
+      "title": "Surgeon - Class Mod",
+      "creator": "76561198010247678",
+      "time_updated": 1529561120,
+      "tags": [
+        "Actionjack",
+        "Class Mod",
+        "Ironclad"
+      ]
+    },
+    {
+      "id": "1218520652",
+      "title": "Executioner class mod",
+      "creator": "76561198051901155",
+      "time_updated": 1549106155,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1221097087",
+      "title": "Marvin Seo's Seraph Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1788363601,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1225113804",
+      "title": "Abysswalker",
+      "creator": "76561198030069592",
+      "time_updated": 1675811019,
+      "tags": [
+        "Class Mod",
+        "Dark Souls"
+      ]
+    },
+    {
+      "id": "1235319270",
+      "title": "Cataphract Class Mod",
+      "creator": "76561198006585079",
+      "time_updated": 1595350381,
+      "tags": [
+        "Cataphract",
+        "Class Mod",
+        "Healer"
+      ]
+    },
+    {
+      "id": "1247612309",
+      "title": "Space Marine Class Mod",
+      "creator": "76561198039453271",
+      "time_updated": 1520156370,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1265562734",
+      "title": "Tactician - Class Mod",
+      "creator": "76561198039162229",
+      "time_updated": 1533426621,
+      "tags": [
+        "Tactician",
+        "new class"
+      ]
+    },
+    {
+      "id": "1281619108",
+      "title": "Darkwraith - Legacy Version",
+      "creator": "76561198046434526",
+      "time_updated": 1531718728,
+      "tags": [
+        "Class Mod",
+        "Dark Souls",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1289815222",
+      "title": "Omen Seeker Class Mod",
+      "creator": "76561198006585079",
+      "time_updated": 1529491515,
+      "tags": [
+        "Class Mod",
+        "Omen Seeker",
+        "Spurple"
+      ]
+    },
+    {
+      "id": "1332249328",
+      "title": "Paladin 2.0",
+      "creator": "76561198030069592",
+      "time_updated": 1590389519,
+      "tags": [
+        "Class Mod",
+        "WoW",
+        "crusader",
+        "new class"
+      ]
+    },
+    {
+      "id": "1342714768",
+      "title": "Daughters of the Fours Pack",
+      "creator": "76561198058424785",
+      "time_updated": 1539179189,
+      "tags": [
+        "Class Mod",
+        "First daughter",
+        "Fourth daughter",
+        "Pack",
+        "Second daughter",
+        "Third daughter",
+        "Waifest Dungeon",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1360707762",
+      "title": "The Condena Class Mod",
+      "creator": "76561198058424785",
+      "time_updated": 1537692074,
+      "tags": [
+        "AceroSteel",
+        "Class Mod",
+        "The Condena",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1376046058",
+      "title": "Remove Vanilla Heroes From The Stage Coach",
+      "creator": "76561198097239756",
+      "time_updated": 1570378899,
+      "tags": [
+        "Cheat",
+        "Class Tweaks",
+        "Gameplay Tweaks",
+        "Hero",
+        "Overhauls",
+        "Vanilla",
+        "class"
+      ]
+    },
+    {
+      "id": "1382315667",
+      "title": "Hypnotist Class Mod",
+      "creator": "76561198210213868",
+      "time_updated": 1526201807,
+      "tags": [
+        "Class Mod",
+        "Support",
+        "hypnotist",
+        "new class",
+        "stun"
+      ]
+    },
+    {
+      "id": "1384027216",
+      "title": "Abysswalker 3.0 Town Event (Massive Update!)",
+      "creator": "76561198030069592",
+      "time_updated": 1526127152,
+      "tags": [
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1390943153",
+      "title": "Riftwatcher - New Class",
+      "creator": "76561198046434526",
+      "time_updated": 1631825962,
+      "tags": [
+        "Class Mod",
+        "Dark Souls",
+        "Stealth",
+        "new class"
+      ]
+    },
+    {
+      "id": "1391514231",
+      "title": "Royal Aegis - New Class - Torchless Guardian",
+      "creator": "76561198030069592",
+      "time_updated": 1689688411,
+      "tags": [
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1400885970",
+      "title": "Dragonslayer 2.0 Town Event",
+      "creator": "76561198030069592",
+      "time_updated": 1527947111,
+      "tags": [
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1416381126",
+      "title": "ShindoL Hero Skins",
+      "creator": "76561197970673408",
+      "time_updated": 1540050456,
+      "tags": [
+        "Class Mod",
+        "Waifest Dungeon"
+      ]
+    },
+    {
+      "id": "1417061383",
+      "title": "The Profligates -  CoM Trinkets",
+      "creator": "76561197984892423",
+      "time_updated": 1529701563,
+      "tags": [
+        "Trinket",
+        "Trinkets",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1417602267",
+      "title": "Apothecary COMplete",
+      "creator": "76561198041116789",
+      "time_updated": 1530048090,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1421341425",
+      "title": "Esper COMplete",
+      "creator": "76561198041116789",
+      "time_updated": 1532535921,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1421987545",
+      "title": "The Evolutionary - New Class Mod",
+      "creator": "76561198097239756",
+      "time_updated": 1531844371,
+      "tags": [
+        "Abomination",
+        "Class Mod",
+        "New Hero",
+        "character mod",
+        "evolutionary",
+        "new class"
+      ]
+    },
+    {
+      "id": "1425243237",
+      "title": "Guts the Black Swordman - Class Mod",
+      "creator": "76561198158435487",
+      "time_updated": 1533517466,
+      "tags": [
+        "Berserk",
+        "Dragonslayer",
+        "guts",
+        "new class",
+        "swordman"
+      ]
+    },
+    {
+      "id": "1425442402",
+      "title": "All 7 Skills Usable (Flagellant DLC)",
+      "creator": "76561198134096356",
+      "time_updated": 1530331171,
+      "tags": [
+        "Class Tweaks",
+        "Classes",
+        "Gameplay Tweaks",
+        "Skills",
+        "dlc"
+      ]
+    },
+    {
+      "id": "1425442594",
+      "title": "All 7 Skills Usable (Musketeer DLC)",
+      "creator": "76561198134096356",
+      "time_updated": 1530331074,
+      "tags": [
+        "Class Tweaks",
+        "Classes",
+        "Gameplay Tweaks",
+        "Skills",
+        "dlc"
+      ]
+    },
+    {
+      "id": "1425442785",
+      "title": "All 7 Skills Usable (Shieldbreaker DLC)",
+      "creator": "76561198134096356",
+      "time_updated": 1530331942,
+      "tags": [
+        "Class Tweaks",
+        "Classes",
+        "Gameplay Tweaks",
+        "Skills",
+        "dlc"
+      ]
+    },
+    {
+      "id": "1428433085",
+      "title": "Overlord - Class Mod",
+      "creator": "76561198158435487",
+      "time_updated": 1536263005,
+      "tags": [
+        "Ainz",
+        "Lich",
+        "Momonga",
+        "Overlord",
+        "Skeleton",
+        "new class",
+        "undead"
+      ]
+    },
+    {
+      "id": "1429069819",
+      "title": "Slayer Class Mod",
+      "creator": "76561198006585079",
+      "time_updated": 1531139882,
+      "tags": [
+        "Class Mod",
+        "Slayer",
+        "Spurple"
+      ]
+    },
+    {
+      "id": "1433161277",
+      "title": "Lord's Blade",
+      "creator": "76561198030069592",
+      "time_updated": 1583394954,
+      "tags": [
+        "Dark Souls",
+        "Tactical",
+        "new class"
+      ]
+    },
+    {
+      "id": "1433533871",
+      "title": "Onnabushi Class Reworked",
+      "creator": "76561198272717759",
+      "time_updated": 1590768119,
+      "tags": [
+        "Samurai",
+        "female",
+        "japanese",
+        "new class"
+      ]
+    },
+    {
+      "id": "1439985666",
+      "title": "Arch-Devil - Class Mod",
+      "creator": "76561198158435487",
+      "time_updated": 1532454298,
+      "tags": [
+        "Demiurge",
+        "Devil",
+        "Guardian",
+        "Jaldabaoth",
+        "Nazarick",
+        "Overlord",
+        "new class"
+      ]
+    },
+    {
+      "id": "1440762499",
+      "title": "Dark Messiah Class",
+      "creator": "76561198065843396",
+      "time_updated": 1581449392,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1440822424",
+      "title": "Marvin Seo's Sisters Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1787071072,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1441036778",
+      "title": "Exaelus' Wraith Class Mod",
+      "creator": "76561197992133088",
+      "time_updated": 1787358912,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1441162859",
+      "title": "Musketeer Plus",
+      "creator": "76561198064244845",
+      "time_updated": 1789820736,
+      "tags": [
+        "Class Tweaks",
+        "Overhauls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1442225067",
+      "title": "Monk Class Mod",
+      "creator": "76561198003365610",
+      "time_updated": 1554779021,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1445902568",
+      "title": "Phantom - New Class",
+      "creator": "76561197996211126",
+      "time_updated": 1791400903,
+      "tags": [
+        "Phantom",
+        "new class"
+      ]
+    },
+    {
+      "id": "1446914431",
+      "title": "Guqin Class Mod",
+      "creator": "76561198201709328",
+      "time_updated": 1556798066,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1447972888",
+      "title": "Butcher Bird Class Mod",
+      "creator": "76561198420604910",
+      "time_updated": 1578582466,
+      "tags": [
+        "Butcher Bird",
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1456853110",
+      "title": "The Snake Charmer",
+      "creator": "76561198031371948",
+      "time_updated": 1613256193,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Snake Charmer",
+        "Sneks",
+        "Stress Healer",
+        "Support",
+        "new class"
+      ]
+    },
+    {
+      "id": "1470605144",
+      "title": "Sneak's Serpent - Class Mod",
+      "creator": "76561198339559991",
+      "time_updated": 1684930326,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1477078590",
+      "title": "Chad Houndmaster",
+      "creator": "76561198064875362",
+      "time_updated": 1535417835,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Cloud Strife",
+        "Dog",
+        "Handsome",
+        "Hero",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "heroes",
+        "houndmaster",
+        "skin"
+      ]
+    },
+    {
+      "id": "1484879416",
+      "title": "Bad Bich Shieldbreaker Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1534646197,
+      "tags": [
+        "AreUReadingThisLmao",
+        "Cardi B",
+        "Colors",
+        "Cosmetic",
+        "Hero",
+        "Recolors",
+        "Skins",
+        "Snakes",
+        "shieldbreaker",
+        "skin"
+      ]
+    },
+    {
+      "id": "1495539924",
+      "title": "Smexy Emo Boi Flagellant",
+      "creator": "76561198064875362",
+      "time_updated": 1535418109,
+      "tags": [
+        "Aesthetics",
+        "Crimson Court",
+        "Emo",
+        "Flagellant",
+        "Handsome",
+        "Hero",
+        "Skins",
+        "Smexy",
+        "Yaoi",
+        "blood",
+        "heroes",
+        "skin"
+      ]
+    },
+    {
+      "id": "1495645938",
+      "title": "Chad Occultist Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1536309091,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Deluxe",
+        "Handsome",
+        "Hero",
+        "POC",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "heroes",
+        "occultist",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1501846300",
+      "title": "Rich Bich Antiquarian Deluxe V2",
+      "creator": "76561198064875362",
+      "time_updated": 1538346264,
+      "tags": [
+        "AQ",
+        "Colors",
+        "Cosmetic",
+        "Deluxe",
+        "Hero",
+        "Hot",
+        "Recolors",
+        "Skins",
+        "antiquarian",
+        "money",
+        "palette",
+        "skin"
+      ]
+    },
+    {
+      "id": "1505448903",
+      "title": "Ys Adol Crusader",
+      "creator": "76561198064875362",
+      "time_updated": 1582947633,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Handsome",
+        "Hero",
+        "JRPG",
+        "Kawaii",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "Ys",
+        "crusader",
+        "heroes",
+        "skin"
+      ]
+    },
+    {
+      "id": "1510234483",
+      "title": "Daemon Man Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1538880701,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Deluxe",
+        "Demon",
+        "Handsome",
+        "Hero",
+        "Highwayman",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "heroes",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1514214970",
+      "title": "Alluring Grave Robber and Blonde Vestal Chroma Pack Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1576542576,
+      "tags": [
+        "Aesthetics",
+        "Beautiful",
+        "Boobs",
+        "Deluxe",
+        "Girl",
+        "Grave Robber",
+        "Hentai",
+        "Hero",
+        "Skins",
+        "Vestal",
+        "Yuri",
+        "graverobber",
+        "heroes",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1518538749",
+      "title": "Chad-at-Arms Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1537747870,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Deluxe",
+        "Handsome",
+        "Hero",
+        "Man at arms",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "heroes",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1524929339",
+      "title": "Bad Bitches Chroma Pack Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1538153136,
+      "tags": [
+        "Aesthetics",
+        "Arbalest",
+        "Beautiful",
+        "Boobs",
+        "Deluxe",
+        "Hellion",
+        "Hentai",
+        "Hero",
+        "Musketeer",
+        "Plague Doctor",
+        "Skins",
+        "Yuri",
+        "female",
+        "heroes",
+        "palette",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1526317226",
+      "title": "Maniacal Jester Chroma Pack Deluxe",
+      "creator": "76561198064875362",
+      "time_updated": 1538263897,
+      "tags": [
+        "Aesthetics",
+        "Colors",
+        "Deluxe",
+        "Hero",
+        "Jester",
+        "Skins",
+        "heroes",
+        "palette",
+        "skin"
+      ]
+    },
+    {
+      "id": "1533032528",
+      "title": "The Voivode - Reworked",
+      "creator": "76561198046434526",
+      "time_updated": 1631825294,
+      "tags": [
+        "Class Mod",
+        "Transformation",
+        "Vampire",
+        "new class"
+      ]
+    },
+    {
+      "id": "1540264875",
+      "title": "Spartan (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1787732888,
+      "tags": [
+        "Defensive",
+        "Fire's Edge Compatible",
+        "Herbs of the Wild Compatible",
+        "Mark",
+        "Pets Compatible",
+        "Spider Nests Compatible",
+        "character mod",
+        "new class",
+        "stun"
+      ]
+    },
+    {
+      "id": "1542315540",
+      "title": "Shadow Walker (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1789341769,
+      "tags": [
+        "Blight",
+        "Fire's Edge Compatible",
+        "Herbs of the Wild Compatible",
+        "Pets Compatible",
+        "Shuffler",
+        "Spider Nests Compatible",
+        "Stealth",
+        "Treasure Hunter",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1552517938",
+      "title": "Legacy Falconer Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1709285787,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1558105232",
+      "title": "Samurai",
+      "creator": "76561198030069592",
+      "time_updated": 1750615592,
+      "tags": [
+        "Dark Souls",
+        "Samurai",
+        "new class"
+      ]
+    },
+    {
+      "id": "1586965131",
+      "title": "Hero (LoZ - Link) (Custom Music)",
+      "creator": "76561198030069592",
+      "time_updated": 1750616203,
+      "tags": [
+        "Music",
+        "Zelda",
+        "new class"
+      ]
+    },
+    {
+      "id": "1595760408",
+      "title": "Drowner Class Mod BETA",
+      "creator": "76561198047713904",
+      "time_updated": 1592484564,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1596685165",
+      "title": "Ruler Class Mod",
+      "creator": "76561198077101806",
+      "time_updated": 1547984502,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1597176026",
+      "title": "The Succubus",
+      "creator": "76561198046434526",
+      "time_updated": 1702924252,
+      "tags": [
+        "Class Mod",
+        "Succubus",
+        "Transformation",
+        "new class"
+      ]
+    },
+    {
+      "id": "1600449003",
+      "title": "Barbarian (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1787724253,
+      "tags": [
+        "Bleed",
+        "Enraged Counterstrike",
+        "Fire's Edge Compatible",
+        "Guard",
+        "Herbs of the Wild Compatible",
+        "Multi Stun",
+        "Pets Compatible",
+        "Riposte",
+        "Spider Nests Compatible",
+        "Variable Tiered Buffs",
+        "character mod",
+        "new class",
+        "stun"
+      ]
+    },
+    {
+      "id": "1600696908",
+      "title": "Hero Town Event & Christmas Update",
+      "creator": "76561198030069592",
+      "time_updated": 1545667211,
+      "tags": [
+        "Legend of Zelda",
+        "Link",
+        "new class"
+      ]
+    },
+    {
+      "id": "1607991008",
+      "title": "The Exorcist Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1677148827,
+      "tags": [
+        "Class Mod",
+        "Exorcist",
+        "Hero",
+        "Memes",
+        "Religious",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1624470590",
+      "title": "Yet Another Musketeer Rework",
+      "creator": "76561197996211126",
+      "time_updated": 1787529884,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "1628622327",
+      "title": "The Heir Class Mod",
+      "creator": "76561198010238416",
+      "time_updated": 1550873972,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1649053641",
+      "title": "The Rightful Heir",
+      "creator": "76561198056183178",
+      "time_updated": 1597964985,
+      "tags": [
+        "Class Mod",
+        "Heir",
+        "New Character",
+        "new class"
+      ]
+    },
+    {
+      "id": "1658595868",
+      "title": "Hollow Knight Class Mod",
+      "creator": "76561198041718763",
+      "time_updated": 1566032945,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1665671496",
+      "title": "Homunculus / Class mod 1.7",
+      "creator": "76561198121724124",
+      "time_updated": 1560094476,
+      "tags": [
+        "Acero Steel",
+        "Class Mod",
+        "Complex",
+        "Eldritch",
+        "Homunculus",
+        "Pale",
+        "Transform Class",
+        "mimic"
+      ]
+    },
+    {
+      "id": "1686591937",
+      "title": "The Barbarian: by Ahmonza",
+      "creator": "76561198156041416",
+      "time_updated": 1573687063,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1688250816",
+      "title": "The Keeper Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1611571088,
+      "tags": [
+        "Condena",
+        "Horror",
+        "Keeper",
+        "Memes",
+        "New Hero",
+        "Religious",
+        "new class",
+        "nudity"
+      ]
+    },
+    {
+      "id": "1697037179",
+      "title": "Marvin Seo's Wraith Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1787071016,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1709484026",
+      "title": "Warden of the North",
+      "creator": "76561198030069592",
+      "time_updated": 1593584160,
+      "tags": [
+        "Game of Thrones",
+        "new class"
+      ]
+    },
+    {
+      "id": "1739004957",
+      "title": "Alraune - Modded Class",
+      "creator": "76561198132000618",
+      "time_updated": 1562537326,
+      "tags": [
+        "Custom Class",
+        "Hero",
+        "Pets Compatible",
+        "Stress Heal",
+        "Tank",
+        "new class"
+      ]
+    },
+    {
+      "id": "1744414212",
+      "title": "Duchess Class Mod",
+      "creator": "76561197961416883",
+      "time_updated": 1642608992,
+      "tags": [
+        "Class Mod",
+        "Duchess",
+        "Spurple"
+      ]
+    },
+    {
+      "id": "1747389796",
+      "title": "The Beastmaster",
+      "creator": "76561198143986901",
+      "time_updated": 1710268361,
+      "tags": [
+        "Class Mod",
+        "Stealth",
+        "Summoner",
+        "new class"
+      ]
+    },
+    {
+      "id": "1751539235",
+      "title": "The Windcaller.",
+      "creator": "76561198124880936",
+      "time_updated": 1587071551,
+      "tags": [
+        "Buffer",
+        "Debuffer",
+        "Puller",
+        "Pusher",
+        "Shuffle",
+        "new class"
+      ]
+    },
+    {
+      "id": "1759328270",
+      "title": "Conqueror Reborn",
+      "creator": "76561198339559991",
+      "time_updated": 1595365345,
+      "tags": [
+        "Class Tweaks",
+        "Conqueror",
+        "new class"
+      ]
+    },
+    {
+      "id": "1763011936",
+      "title": "The Fairy - New Class Mod",
+      "creator": "76561198097239756",
+      "time_updated": 1578674913,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "Zelda",
+        "character mod",
+        "ciela",
+        "new class"
+      ]
+    },
+    {
+      "id": "1785514611",
+      "title": "The Thorn",
+      "creator": "76561198031371948",
+      "time_updated": 1663025766,
+      "tags": [
+        "Class Mod",
+        "Thorn",
+        "new class"
+      ]
+    },
+    {
+      "id": "1786463222",
+      "title": "SCRAW - New Class Mod [Perfect Replication]",
+      "creator": "76561198097239756",
+      "time_updated": 1572131195,
+      "tags": [
+        "Class Mod",
+        "Crow",
+        "New Hero",
+        "Shrieker",
+        "character mod",
+        "new class",
+        "scraw"
+      ]
+    },
+    {
+      "id": "1800025310",
+      "title": "Arcanist",
+      "creator": "76561198030069592",
+      "time_updated": 1675713089,
+      "tags": [
+        "Mage",
+        "Utility",
+        "WoW",
+        "new class"
+      ]
+    },
+    {
+      "id": "1811578299",
+      "title": "The Mafe refactor for the Homunculus",
+      "creator": "76561198138816955",
+      "time_updated": 1677368727,
+      "tags": [
+        "Class Tweaks",
+        "Flesh",
+        "Hom",
+        "Homunculus",
+        "Refactor",
+        "new class",
+        "rework"
+      ]
+    },
+    {
+      "id": "1823497798",
+      "title": "The Struggler Class Mod",
+      "creator": "76561198058424785",
+      "time_updated": 1566903514,
+      "tags": [
+        "Abysswalker",
+        "AceroSteel",
+        "Artorias",
+        "Berserk",
+        "The Struggler",
+        "guts",
+        "new class"
+      ]
+    },
+    {
+      "id": "1825622538",
+      "title": "The Darkwraith",
+      "creator": "76561198046434526",
+      "time_updated": 1627513341,
+      "tags": [
+        "Class Mod",
+        "Dark Souls",
+        "new class"
+      ]
+    },
+    {
+      "id": "1834134425",
+      "title": "The Soothsayer Class Mod",
+      "creator": "76561198801083813",
+      "time_updated": 1579620802,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "1835237651",
+      "title": "Grove tender Class Mod",
+      "creator": "76561198420604910",
+      "time_updated": 1628560381,
+      "tags": [
+        "Class Mod",
+        "Grove tender",
+        "Healer",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1835274494",
+      "title": "Grove tender CC trinket",
+      "creator": "76561198420604910",
+      "time_updated": 1569753091,
+      "tags": [
+        "CC trinket",
+        "Crimson Court",
+        "Grove tender",
+        "Healer",
+        "new class"
+      ]
+    },
+    {
+      "id": "1835702185",
+      "title": "PIGLET - New Class Mod [Perfect Replication]",
+      "creator": "76561198097239756",
+      "time_updated": 1586884126,
+      "tags": [
+        "Class Mod",
+        "Crow",
+        "New Hero",
+        "character mod",
+        "new class",
+        "piglet",
+        "wilbur"
+      ]
+    },
+    {
+      "id": "1836051076",
+      "title": "Rebalanced spirit lancer",
+      "creator": "76561198082325322",
+      "time_updated": 1640391723,
+      "tags": [
+        "new class",
+        "tag1"
+      ]
+    },
+    {
+      "id": "1843497517",
+      "title": "Chad Vestal",
+      "creator": "76561198043133069",
+      "time_updated": 1569045065,
+      "tags": [
+        "Chad",
+        "Handsome",
+        "Hero",
+        "LGBT",
+        "Skins",
+        "Transgender",
+        "Vestal",
+        "heroes",
+        "male"
+      ]
+    },
+    {
+      "id": "1845068884",
+      "title": "The Divinity Class Mod",
+      "creator": "76561198058424785",
+      "time_updated": 1567777044,
+      "tags": [
+        "Class Mod",
+        "Divinity",
+        "Full-Support",
+        "Healer",
+        "Mitigator",
+        "Stress Healer",
+        "Support",
+        "Utility",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1845576994",
+      "title": "Chad Antiquarian",
+      "creator": "76561198043133069",
+      "time_updated": 1566783788,
+      "tags": [
+        "Chad",
+        "Handsome",
+        "Hero",
+        "Skins",
+        "antiquarian",
+        "heroes",
+        "male"
+      ]
+    },
+    {
+      "id": "1849364138",
+      "title": "The Wretch Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1611976172,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Memes",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1856292904",
+      "title": "Picaroon (Class Mod)",
+      "creator": "76561198032072324",
+      "time_updated": 1606851006,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1860840141",
+      "title": "Harlot (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1788300466,
+      "tags": [
+        "Bleed",
+        "Buffer",
+        "Forced Guard",
+        "Pets Compatible",
+        "Riposte",
+        "Spider Nests Compatible",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1865154690",
+      "title": "The Mambo Hero Class mod",
+      "creator": "76561198055661384",
+      "time_updated": 1607194949,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "1867479147",
+      "title": "The Clobber 2.0 Serious Update",
+      "creator": "76561198143986901",
+      "time_updated": 1623916203,
+      "tags": [
+        "Class Mod",
+        "Custom District",
+        "Small",
+        "new class"
+      ]
+    },
+    {
+      "id": "1876423255",
+      "title": "Iron Man",
+      "creator": "76561198056183178",
+      "time_updated": 1787079262,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "1890263557",
+      "title": "New Class - Lupine",
+      "creator": "76561198082325322",
+      "time_updated": 1636994767,
+      "tags": [
+        "new class",
+        "tag2"
+      ]
+    },
+    {
+      "id": "1895132201",
+      "title": "Monk Rework",
+      "creator": "76561198205073408",
+      "time_updated": 1660442997,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "1910957100",
+      "title": "Abysswalker: Legacy",
+      "creator": "76561198030069592",
+      "time_updated": 1573489666,
+      "tags": [
+        "Dark Souls",
+        "legacy",
+        "new class"
+      ]
+    },
+    {
+      "id": "1911413436",
+      "title": "Fragile Loyalty",
+      "creator": "76561198002599997",
+      "time_updated": 1685729079,
+      "tags": [
+        "Hero",
+        "Monster"
+      ]
+    },
+    {
+      "id": "1917819568",
+      "title": "The Apostate Class Mod",
+      "creator": "76561197963319508",
+      "time_updated": 1680202540,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1918232253",
+      "title": "Shinobi: BH Gameplay",
+      "creator": "76561198260597269",
+      "time_updated": 1574435175,
+      "tags": [
+        "Class Mod",
+        "skin"
+      ]
+    },
+    {
+      "id": "1921321071",
+      "title": "Rapturous Cultist Class",
+      "creator": "76561198440665697",
+      "time_updated": 1607530968,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "1922669061",
+      "title": "Divinity Remastered",
+      "creator": "76561198374253949",
+      "time_updated": 1638267857,
+      "tags": [
+        "Class Mod",
+        "Healer",
+        "Remastered",
+        "Supporter",
+        "character mod"
+      ]
+    },
+    {
+      "id": "1933508847",
+      "title": "(BETA) The Collected Heroes ( Class(s) Mod )",
+      "creator": "76561198192931842",
+      "time_updated": 1580954159,
+      "tags": [
+        "beta",
+        "new class"
+      ]
+    },
+    {
+      "id": "1935797249",
+      "title": "Human Duchess Class Mod Rework",
+      "creator": "76561198002599997",
+      "time_updated": 1761935014,
+      "tags": [
+        "Class Mod",
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "1938659073",
+      "title": "Devilman Crybaby Abomination",
+      "creator": "76561198064875362",
+      "time_updated": 1576542690,
+      "tags": [
+        "Abo",
+        "Abomination",
+        "Aesthetics",
+        "Beautiful",
+        "Crybaby",
+        "Devilman",
+        "Devilman Crybaby",
+        "Hero",
+        "Hot",
+        "Skins",
+        "Yaoi",
+        "heroes",
+        "male",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "1946681830",
+      "title": "Ashen Warrior - New Class",
+      "creator": "76561197996211126",
+      "time_updated": 1787701015,
+      "tags": [
+        "God of War",
+        "Kratos",
+        "new class"
+      ]
+    },
+    {
+      "id": "1956387011",
+      "title": "The Celt Class Mod",
+      "creator": "76561197984056566",
+      "time_updated": 1579476974,
+      "tags": [
+        "Celt",
+        "Dapper Jack",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "1960445714",
+      "title": "Beyond Mortality by Golden Yak",
+      "creator": "76561198064185426",
+      "time_updated": 1695439582,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "monsters",
+        "new class",
+        "ruins"
+      ]
+    },
+    {
+      "id": "1965654832",
+      "title": "The Privateer Class Mod",
+      "creator": "76561197984056566",
+      "time_updated": 1580790772,
+      "tags": [
+        "Dapper Jack",
+        "Privateer",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "1976300413",
+      "title": "Bogatyr Class Mod",
+      "creator": "76561198118860654",
+      "time_updated": 1709228034,
+      "tags": [
+        "Bogatyr",
+        "Class Mod",
+        "Spurple",
+        "new class"
+      ]
+    },
+    {
+      "id": "1978083682",
+      "title": "The Itinerant Cook",
+      "creator": "76561198031371948",
+      "time_updated": 1598189346,
+      "tags": [
+        "Class Mod",
+        "Cook",
+        "Healer",
+        "new class"
+      ]
+    },
+    {
+      "id": "1984429072",
+      "title": "The Condemned Shack District Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1588837504,
+      "tags": [
+        "Blight",
+        "Bloat",
+        "Disease",
+        "District",
+        "Hero",
+        "Memes",
+        "Wretch"
+      ]
+    },
+    {
+      "id": "1984808265",
+      "title": "Spirit Lancer - [REUPLOAD]",
+      "creator": "76561199018819013",
+      "time_updated": 1581286534,
+      "tags": [
+        "NSFW",
+        "Spirit Lancer",
+        "Thoth",
+        "forcelan",
+        "new class"
+      ]
+    },
+    {
+      "id": "1990986165",
+      "title": "The Bloat Class Mod",
+      "creator": "76561198143986901",
+      "time_updated": 1692467119,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Disease",
+        "Pets Compatible",
+        "new class"
+      ]
+    },
+    {
+      "id": "1999848432",
+      "title": "The Steel-Driver Class Mod",
+      "creator": "76561198055661384",
+      "time_updated": 1607196691,
+      "tags": [
+        "Class Mod",
+        "Color of Madness",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2001406494",
+      "title": "The Alchemist Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1610788665,
+      "tags": [
+        "Alchemist",
+        "Bleed",
+        "Blight",
+        "Class Mod",
+        "Summon",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2002184888",
+      "title": "Diamond Dogs",
+      "creator": "76561198064875362",
+      "time_updated": 1582158566,
+      "tags": [
+        "Aesthetics",
+        "Chad",
+        "Deluxe",
+        "Handsome",
+        "Hero",
+        "Hound",
+        "Master",
+        "Skins",
+        "Yaoi",
+        "Younger",
+        "heroes",
+        "houndmaster",
+        "sexy",
+        "skin"
+      ]
+    },
+    {
+      "id": "2016855256",
+      "title": "Darkest Dungeon Senua Mod",
+      "creator": "76561198052207165",
+      "time_updated": 1786562325,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2021307368",
+      "title": "The Rightful Heiress",
+      "creator": "76561198056183178",
+      "time_updated": 1607362995,
+      "tags": [
+        "Heirlooms",
+        "New Hero",
+        "Support",
+        "new class"
+      ]
+    },
+    {
+      "id": "2052675574",
+      "title": "The Lotus",
+      "creator": "76561198015169876",
+      "time_updated": 1598363229,
+      "tags": [
+        "Class Mod",
+        "Katarina",
+        "Lotus",
+        "new class"
+      ]
+    },
+    {
+      "id": "2053917390",
+      "title": "Rescuer (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1788309769,
+      "tags": [
+        "Bleed",
+        "Fire's Edge Compatible",
+        "Healer",
+        "Herbs of the Wild Compatible",
+        "Pets Compatible",
+        "Riposte",
+        "Spider Nests Compatible",
+        "Stress Healer",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2056696179",
+      "title": "Team 3 Lu--Class mod Mecha Jeanne--Monster girl leader--Slime girl",
+      "creator": "76561198316873653",
+      "time_updated": 1606491748,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2060478391",
+      "title": "The Bloodclot",
+      "creator": "76561199018460147",
+      "time_updated": 1598795962,
+      "tags": [
+        "Bleed",
+        "Blight",
+        "Class Mod",
+        "Crimson Court",
+        "bleed/blight",
+        "bloodclot",
+        "new class"
+      ]
+    },
+    {
+      "id": "2069248131",
+      "title": "Atalanta Class Mod",
+      "creator": "76561198316873653",
+      "time_updated": 1593329523,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2069937098",
+      "title": "Human Duchess Skins for Normal Duchess",
+      "creator": "76561198261998561",
+      "time_updated": 1587537228,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "2085895105",
+      "title": "The Bluesman Class Mod",
+      "creator": "76561198055661384",
+      "time_updated": 1589218961,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2090496171",
+      "title": "Sharpshooter class mod",
+      "creator": "76561198211535417",
+      "time_updated": 1611574472,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2091623708",
+      "title": "The Divinity Enhanced",
+      "creator": "76561198994938337",
+      "time_updated": 1790304064,
+      "tags": [
+        "Class Mod",
+        "Divinity",
+        "Enhanced",
+        "Full-Support",
+        "Healer",
+        "Mitigator",
+        "Stress Healer",
+        "Support",
+        "Utility",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2091777102",
+      "title": "The Claimants-Class Mod",
+      "creator": "76561198143986901",
+      "time_updated": 1707393268,
+      "tags": [
+        "Class Mod",
+        "Uniq Mechanics",
+        "new class"
+      ]
+    },
+    {
+      "id": "2101866853",
+      "title": "The Exile - Class Mod",
+      "creator": "76561198337495993",
+      "time_updated": 1624233416,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2104150657",
+      "title": "The Scarecrow (Class Mod)",
+      "creator": "76561198139843381",
+      "time_updated": 1593869353,
+      "tags": [
+        "Color of Madness",
+        "Farmstead",
+        "New Hero",
+        "character mod",
+        "new class",
+        "prank the miller",
+        "scarecrow"
+      ]
+    },
+    {
+      "id": "2111344032",
+      "title": "Zenith (Class Mod)",
+      "creator": "76561198186420275",
+      "time_updated": 1787771619,
+      "tags": [
+        "Guard",
+        "Pets Compatible",
+        "Riposte",
+        "Spider Nests Compatible",
+        "Stress Healer",
+        "acrobatic fighter",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2115212812",
+      "title": "Apothecary Class Vanilla",
+      "creator": "76561198041116789",
+      "time_updated": 1590960644,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2122287782",
+      "title": "Minstrel Class mod",
+      "creator": "76561198047713904",
+      "time_updated": 1604384422,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2132866409",
+      "title": "The Mender",
+      "creator": "76561198198935581",
+      "time_updated": 1604292746,
+      "tags": [
+        "Class Mod",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2146660621",
+      "title": "The Prince class mod",
+      "creator": "76561198118482873",
+      "time_updated": 1722649740,
+      "tags": [
+        "Anthro",
+        "Chinese",
+        "Class Mod",
+        "Divinity 2",
+        "English",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2149017929",
+      "title": "lucia class mod",
+      "creator": "76561198316873653",
+      "time_updated": 1625967152,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2149773228",
+      "title": "Banished Hunter (Class Variety Project)",
+      "creator": "76561198040189206",
+      "time_updated": 1619115297,
+      "tags": [
+        "Bloodborne",
+        "Soulsborne",
+        "new class"
+      ]
+    },
+    {
+      "id": "2166140788",
+      "title": "The Witch's Legion",
+      "creator": "76561198151985791",
+      "time_updated": 1595220916,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2166141580",
+      "title": "The Witch's Magical Crab",
+      "creator": "76561198151985791",
+      "time_updated": 1595143310,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2166510995",
+      "title": "The Witch's Void Priests",
+      "creator": "76561198151985791",
+      "time_updated": 1595186707,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2168009997",
+      "title": "The Blackguard Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1692250754,
+      "tags": [
+        "Blackguard",
+        "Class Mod",
+        "Doot",
+        "Healer",
+        "Knight",
+        "Memes",
+        "Religious",
+        "Skeleton",
+        "Tank",
+        "new class",
+        "undead"
+      ]
+    },
+    {
+      "id": "2168601201",
+      "title": "The Witch, Leader of the Legion",
+      "creator": "76561198151985791",
+      "time_updated": 1595146745,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2170826391",
+      "title": "Qipaofox Class",
+      "creator": "76561198093839763",
+      "time_updated": 1595243436,
+      "tags": [
+        "Chinese",
+        "Furry",
+        "female",
+        "new class"
+      ]
+    },
+    {
+      "id": "2172323199",
+      "title": "esper rework 2.0",
+      "creator": "76561198316873653",
+      "time_updated": 1603788148,
+      "tags": [
+        "Class Tweaks",
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "2182716765",
+      "title": "Blazing Lord Class",
+      "creator": "76561198056183178",
+      "time_updated": 1787827194,
+      "tags": [
+        "Anime",
+        "Hero",
+        "Ushiro",
+        "new class"
+      ]
+    },
+    {
+      "id": "2195799077",
+      "title": "The Iron Buddha",
+      "creator": "76561199018460147",
+      "time_updated": 1624900919,
+      "tags": [
+        "Class Mod",
+        "Tank",
+        "aegis",
+        "debuff",
+        "iron buddha",
+        "ironbuddha",
+        "new class"
+      ]
+    },
+    {
+      "id": "2195826550",
+      "title": "The Wanderer",
+      "creator": "76561197983056144",
+      "time_updated": 1696098561,
+      "tags": [
+        "Anime",
+        "Class Mod",
+        "Crits for Days",
+        "Damage dealer",
+        "Jack",
+        "Ronin",
+        "Samurai",
+        "Wanderer",
+        "sunward isles",
+        "weeb"
+      ]
+    },
+    {
+      "id": "2199841880",
+      "title": "The Eternal",
+      "creator": "76561198049787407",
+      "time_updated": 1787443266,
+      "tags": [
+        "Healer",
+        "Mummy",
+        "new class"
+      ]
+    },
+    {
+      "id": "2200558948",
+      "title": "Lilith class",
+      "creator": "76561199003271204",
+      "time_updated": 1626075912,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2202581979",
+      "title": "anaertailin musketeer Standalone",
+      "creator": "76561198455391685",
+      "time_updated": 1600615393,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2203158200",
+      "title": "The Practitioner",
+      "creator": "76561198118860654",
+      "time_updated": 1719726764,
+      "tags": [
+        "Class Mod",
+        "new class",
+        "sunward isles"
+      ]
+    },
+    {
+      "id": "2203171171",
+      "title": "The Practitioner (Vanilla Version)",
+      "creator": "76561198118860654",
+      "time_updated": 1625952716,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2204287440",
+      "title": "The Salamander Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1692267159,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Hero",
+        "Memes",
+        "Salamander",
+        "Steampunk",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2204393585",
+      "title": "Butcher Class Mod Redux",
+      "creator": "76561198049458991",
+      "time_updated": 1616368487,
+      "tags": [
+        "Butcher",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2205151952",
+      "title": "The Oceanborn - Class Mod",
+      "creator": "76561198155861584",
+      "time_updated": 1713652234,
+      "tags": [
+        "Crab",
+        "Damage reflection",
+        "Healer",
+        "Pets Compatible",
+        "Regeneration",
+        "Tank",
+        "Transformation",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2207614474",
+      "title": "The Maid By The Necromancer",
+      "creator": "76561197997630883",
+      "time_updated": 1681686107,
+      "tags": [
+        "Maid",
+        "Sakuya Izayoi",
+        "Touhou",
+        "new class"
+      ]
+    },
+    {
+      "id": "2211354847",
+      "title": "The Mistake",
+      "creator": "76561198178189415",
+      "time_updated": 1599837255,
+      "tags": [
+        "Class Mod",
+        "Cryptix's Septic Tank",
+        "Mistake",
+        "Partnered Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2237416237",
+      "title": "Abigail Class Mod",
+      "creator": "76561198261046711",
+      "time_updated": 1627808863,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2242815435",
+      "title": "Devilbird [Class Mod]",
+      "creator": "76561198123325815",
+      "time_updated": 1602101702,
+      "tags": [
+        "Bird",
+        "Class Mod",
+        "Devil",
+        "Hero",
+        "Monster",
+        "New Hero",
+        "Religious",
+        "devilbird",
+        "new class"
+      ]
+    },
+    {
+      "id": "2248772895",
+      "title": "The Powder Keg Class Mod",
+      "creator": "76561198141196103",
+      "time_updated": 1622886894,
+      "tags": [
+        "Bloodborne",
+        "hunter",
+        "new class"
+      ]
+    },
+    {
+      "id": "2250786761",
+      "title": "Atalanta Class Mod Rework",
+      "creator": "76561198316873653",
+      "time_updated": 1627609160,
+      "tags": [
+        "Atalanta",
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "2254738198",
+      "title": "Bogatyr: Additional Colors",
+      "creator": "76561198261998561",
+      "time_updated": 1602424748,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "2255822193",
+      "title": "The Arsonist Class Mod **RE-UPLOADED**",
+      "creator": "76561198055661384",
+      "time_updated": 1602514966,
+      "tags": [
+        "Arsonist",
+        "Class Mod",
+        "Fire",
+        "Hero Mod",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2268360314",
+      "title": "Goblin Huntress - Class Mod ver.β",
+      "creator": "76561198075271019",
+      "time_updated": 1635802369,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2271536747",
+      "title": "New hero class:A Elf liquor pedlar come from afar",
+      "creator": "76561198262650166",
+      "time_updated": 1611227084,
+      "tags": [
+        "Class Mod",
+        "new class",
+        "nicorote"
+      ]
+    },
+    {
+      "id": "2272580951",
+      "title": "The Count - Class Mod",
+      "creator": "76561198049787407",
+      "time_updated": 1631151913,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "Vampire",
+        "new class"
+      ]
+    },
+    {
+      "id": "2285880275",
+      "title": "Slayer: Additional Colors",
+      "creator": "76561198261998561",
+      "time_updated": 1605289158,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "2289239469",
+      "title": "Earth_Enchanter Beta",
+      "creator": "76561198211535417",
+      "time_updated": 1620116069,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2289487853",
+      "title": "Vultist Class Mod",
+      "creator": "76561198134773754",
+      "time_updated": 1608412833,
+      "tags": [
+        "Fusion",
+        "Modded Class",
+        "Vestal",
+        "new class",
+        "occultist"
+      ]
+    },
+    {
+      "id": "2296917572",
+      "title": "The Crystalline Herald",
+      "creator": "76561198044369512",
+      "time_updated": 1791740080,
+      "tags": [
+        "Crystalline",
+        "Farmstead",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2299977419",
+      "title": "The Hierophant",
+      "creator": "76561198178189415",
+      "time_updated": 1704739193,
+      "tags": [
+        "Class Mod",
+        "Cryptix's Septic Tank",
+        "Hierophant",
+        "new class"
+      ]
+    },
+    {
+      "id": "2306606465",
+      "title": "Abysssinker Class Mod",
+      "creator": "76561198104936608",
+      "time_updated": 1610959697,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2306912745",
+      "title": "Salamander: Additional Colors",
+      "creator": "76561198261998561",
+      "time_updated": 1606957985,
+      "tags": [
+        "Class Mod",
+        "Skins"
+      ]
+    },
+    {
+      "id": "2307597881",
+      "title": "The Hive",
+      "creator": "76561198046434526",
+      "time_updated": 1709133135,
+      "tags": [
+        "Class Mod",
+        "Crimson Court",
+        "Vampire",
+        "new class"
+      ]
+    },
+    {
+      "id": "2318789444",
+      "title": "The Philomath Class",
+      "creator": "76561198012886214",
+      "time_updated": 1730686144,
+      "tags": [
+        "English",
+        "Lore Friendly",
+        "Philomath",
+        "class",
+        "french",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "2319820535",
+      "title": "Cataphract Class Mod (RUS)",
+      "creator": "76561198247458860",
+      "time_updated": 1610737317,
+      "tags": [
+        "Cataphract",
+        "Class Mod",
+        "Healer",
+        "Russian",
+        "localization"
+      ]
+    },
+    {
+      "id": "2321328188",
+      "title": "The Chaplain",
+      "creator": "76561198337495993",
+      "time_updated": 1610288957,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2322247414",
+      "title": "Revenger class mod (incomplete)",
+      "creator": "76561198082325322",
+      "time_updated": 1608813464,
+      "tags": [
+        "Class Mod",
+        "Hero"
+      ]
+    },
+    {
+      "id": "2323592084",
+      "title": "skadi class mod",
+      "creator": "76561198883736186",
+      "time_updated": 1623927577,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2324577715",
+      "title": "Hepvier class mod",
+      "creator": "76561198211535417",
+      "time_updated": 1611467207,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2325415039",
+      "title": "The Ringmaster Class Mod",
+      "creator": "76561197963319508",
+      "time_updated": 1635202669,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2331075079",
+      "title": "Upuaut",
+      "creator": "76561198042931838",
+      "time_updated": 1610950332,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2332262050",
+      "title": "The Ringmaster Class Mod (LITE)",
+      "creator": "76561197963319508",
+      "time_updated": 1635202930,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2336153147",
+      "title": "Exterminator",
+      "creator": "76561198056183178",
+      "time_updated": 1757117619,
+      "tags": [
+        "Class Mod",
+        "Warren",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2339581104",
+      "title": "Bone Courtier Class Mod",
+      "creator": "76561198134773754",
+      "time_updated": 1615076597,
+      "tags": [
+        "Bone Courtier",
+        "Modded Class",
+        "Monster Class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2341439121",
+      "title": "The Herald",
+      "creator": "76561198337495993",
+      "time_updated": 1712507625,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2360027730",
+      "title": "The Stars Class Mod",
+      "creator": "76561198202570000",
+      "time_updated": 1632064724,
+      "tags": [
+        "Anime",
+        "Hero",
+        "new class",
+        "stars"
+      ]
+    },
+    {
+      "id": "2363386707",
+      "title": "The Corsair Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1620196898,
+      "tags": [
+        "Class Mod",
+        "Corsair",
+        "Hero",
+        "Memes",
+        "Pirate"
+      ]
+    },
+    {
+      "id": "2363387321",
+      "title": "The Stargazer Class Mod",
+      "creator": "76561198018137548",
+      "time_updated": 1627448554,
+      "tags": [
+        "Hero",
+        "Memes",
+        "Stargazer",
+        "new class",
+        "space"
+      ]
+    },
+    {
+      "id": "2371334111",
+      "title": "dragon's Duelist [Pre Fire's Edge]",
+      "creator": "76561198042089710",
+      "time_updated": 1700550469,
+      "tags": [
+        "Class Mod",
+        "Duelist",
+        "new class"
+      ]
+    },
+    {
+      "id": "2373253920",
+      "title": "WWII Polish Soldier Class Mod (Remastered)",
+      "creator": "76561198385647358",
+      "time_updated": 1622435744,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2376724921",
+      "title": "Lancer Class Mod",
+      "creator": "76561198081351182",
+      "time_updated": 1704842414,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2377934884",
+      "title": "Janissary Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1752518128,
+      "tags": [
+        "Gun",
+        "Meme",
+        "Ottoman",
+        "Sultan",
+        "new class"
+      ]
+    },
+    {
+      "id": "2378584809",
+      "title": "The Anointed Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1787108988,
+      "tags": [
+        "Anthro",
+        "Bird",
+        "English",
+        "Healer",
+        "Russian",
+        "czech",
+        "german",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "2384801499",
+      "title": "Magician Class mod",
+      "creator": "76561198082325322",
+      "time_updated": 1670352438,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2389396590",
+      "title": "The Milkmaid Class",
+      "creator": "76561198012886214",
+      "time_updated": 1622582261,
+      "tags": [
+        "Chinese (Simplified)",
+        "Color of Madness",
+        "English",
+        "Farmstead",
+        "Healer",
+        "Korean (A)",
+        "Lore Friendly",
+        "Mark",
+        "Russian",
+        "class",
+        "french",
+        "new class"
+      ]
+    },
+    {
+      "id": "2389811450",
+      "title": "The Babička Class Mod",
+      "creator": "76561199018460147",
+      "time_updated": 1613082209,
+      "tags": [
+        "Babicka",
+        "Battle Grandma",
+        "Class Mod",
+        "Guard",
+        "Gun",
+        "Gun Grandma",
+        "new class"
+      ]
+    },
+    {
+      "id": "2399684786",
+      "title": "Sword Bearer",
+      "creator": "76561198068936284",
+      "time_updated": 1777933890,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2401797230",
+      "title": "The Veiled Class Mod",
+      "creator": "76561198087675880",
+      "time_updated": 1711048013,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2402900924",
+      "title": "The Privateer Rework STANDALONE",
+      "creator": "76561198012886214",
+      "time_updated": 1613886756,
+      "tags": [
+        "Dapper Jack",
+        "English",
+        "Rebalance",
+        "Support",
+        "class",
+        "damage",
+        "new class",
+        "rework"
+      ]
+    },
+    {
+      "id": "2403716352",
+      "title": "The Buried Class Mod",
+      "creator": "76561198307052125",
+      "time_updated": 1617509829,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2408178386",
+      "title": "The Viper Class Mod",
+      "creator": "76561198117056201",
+      "time_updated": 1788731797,
+      "tags": [
+        "Viper",
+        "hero class",
+        "new class",
+        "snek"
+      ]
+    },
+    {
+      "id": "2414180617",
+      "title": "Templar",
+      "creator": "76561198030069592",
+      "time_updated": 1631279103,
+      "tags": [
+        "Deus Vult",
+        "Knight",
+        "Templar",
+        "new class"
+      ]
+    },
+    {
+      "id": "2418764393",
+      "title": "Golem Class Mod",
+      "creator": "76561198134773754",
+      "time_updated": 1618174772,
+      "tags": [
+        "Class Mod",
+        "Golem",
+        "Kraken Society",
+        "class"
+      ]
+    },
+    {
+      "id": "2419040138",
+      "title": "The Illuminator (Rekindled) Class Mod",
+      "creator": "76561198147429029",
+      "time_updated": 1711259880,
+      "tags": [
+        "Illuminator",
+        "Lumi",
+        "Rekindled",
+        "hero class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2420433566",
+      "title": "Time Controller - Class Mod",
+      "creator": "76561198395184416",
+      "time_updated": 1630704117,
+      "tags": [
+        "Dio",
+        "jojo",
+        "new class"
+      ]
+    },
+    {
+      "id": "2432424011",
+      "title": "sorrow_healer_beta",
+      "creator": "76561198041957297",
+      "time_updated": 1620551947,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2435798182",
+      "title": "The Chaplain REBALANCE",
+      "creator": "76561198012886214",
+      "time_updated": 1616780916,
+      "tags": [
+        "Class Mod",
+        "Religious",
+        "Support",
+        "Tank",
+        "damage",
+        "new class"
+      ]
+    },
+    {
+      "id": "2436153129",
+      "title": "WWII Winged Hussar Class Mod",
+      "creator": "76561198385647358",
+      "time_updated": 1622435898,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2442692668",
+      "title": "Omen Seeker Class Mod (RUS)",
+      "creator": "76561198247458860",
+      "time_updated": 1625779662,
+      "tags": [
+        "Class Mod",
+        "Omen Seeker",
+        "Russian",
+        "Spurple",
+        "localization"
+      ]
+    },
+    {
+      "id": "2442828091",
+      "title": "Slayer Class Mod (RUS)",
+      "creator": "76561198247458860",
+      "time_updated": 1617559492,
+      "tags": [
+        "Class Mod",
+        "Russian",
+        "Slayer",
+        "Spurple",
+        "localization"
+      ]
+    },
+    {
+      "id": "2443410554",
+      "title": "「殷红迷雾」The Red Mist",
+      "creator": "76561198202570000",
+      "time_updated": 1624628023,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2445871830",
+      "title": "The Baron: Full Class Conversion by Roderick",
+      "creator": "76561198120534999",
+      "time_updated": 1632883876,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2453490825",
+      "title": "「邵」Xiao Class Mod",
+      "creator": "76561198202570000",
+      "time_updated": 1628685870,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2461720119",
+      "title": "The Viscount: Full Class Conversion By Roderick",
+      "creator": "76561198120534999",
+      "time_updated": 1623879749,
+      "tags": [
+        "Crimson Court",
+        "new class"
+      ]
+    },
+    {
+      "id": "2464921617",
+      "title": "Banner Bearer (Class Variety Project)",
+      "creator": "76561198040189206",
+      "time_updated": 1619171100,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2467434523",
+      "title": "Weaken_Ruler_Mod",
+      "creator": "76561198831380980",
+      "time_updated": 1707404706,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2472629364",
+      "title": "The Commandant",
+      "creator": "76561198041899942",
+      "time_updated": 1753749212,
+      "tags": [
+        "Class Mod",
+        "Collab",
+        "Commandant",
+        "Commander",
+        "Comrade",
+        "Cryptix's Septic Tank",
+        "Guns",
+        "Terkmc",
+        "Wire",
+        "new class",
+        "soldier"
+      ]
+    },
+    {
+      "id": "2478154207",
+      "title": "The Esquire: Full Class Conversion By Roderick",
+      "creator": "76561198120534999",
+      "time_updated": 1625030046,
+      "tags": [
+        "Crimson Court",
+        "new class"
+      ]
+    },
+    {
+      "id": "2481566601",
+      "title": "The Boatswain Class Mod",
+      "creator": "76561198118998491",
+      "time_updated": 1620907416,
+      "tags": [
+        "Boatswain",
+        "Class Mod",
+        "Pirate",
+        "Sailor",
+        "new class"
+      ]
+    },
+    {
+      "id": "2487626836",
+      "title": "Assault Kunoichi Class",
+      "creator": "76561198316873653",
+      "time_updated": 1628592228,
+      "tags": [
+        "Kunoichi",
+        "Ninja",
+        "new class"
+      ]
+    },
+    {
+      "id": "2487724980",
+      "title": "Storm Enchanter Cauntha Class",
+      "creator": "76561198211535417",
+      "time_updated": 1660487640,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2487750624",
+      "title": "The Rugal Class Mod",
+      "creator": "76561198211535417",
+      "time_updated": 1621077557,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2488921583",
+      "title": "Duchess Class Mod (RUS)",
+      "creator": "76561198247458860",
+      "time_updated": 1621166217,
+      "tags": [
+        "Class Mod",
+        "Duchess",
+        "Russian",
+        "Spurple",
+        "localization"
+      ]
+    },
+    {
+      "id": "2489696999",
+      "title": "Assault Kunoichi Class No DLC version",
+      "creator": "76561198316873653",
+      "time_updated": 1621384716,
+      "tags": [
+        "Kunoichi",
+        "Ninja",
+        "new class"
+      ]
+    },
+    {
+      "id": "2493845919",
+      "title": "The Magus Class Mod",
+      "creator": "76561198307052125",
+      "time_updated": 1621633400,
+      "tags": [
+        "Loot",
+        "Rune",
+        "Runestone",
+        "new class"
+      ]
+    },
+    {
+      "id": "2494267161",
+      "title": "Commandant Recruitment Town Event",
+      "creator": "76561198041899942",
+      "time_updated": 1621717421,
+      "tags": [
+        "Class Mod",
+        "Collab",
+        "Commandant",
+        "Commander",
+        "Comrade",
+        "Cryptix's Septic Tank",
+        "Guns",
+        "Terkmc",
+        "Town",
+        "Town Event",
+        "Wire",
+        "event",
+        "new class",
+        "soldier"
+      ]
+    },
+    {
+      "id": "2495332714",
+      "title": "「帕梅莉&帕梅菈风格破盾重置」Pameli & Pamela Shieldbreaker Rework",
+      "creator": "76561198202570000",
+      "time_updated": 1648444936,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2497069197",
+      "title": "The Owlwing-Class Mod",
+      "creator": "76561198143986901",
+      "time_updated": 1711494642,
+      "tags": [
+        "Class Mod",
+        "NBB",
+        "Sasiji",
+        "new class"
+      ]
+    },
+    {
+      "id": "2500880141",
+      "title": "The Innocent Class Mod",
+      "creator": "76561198133870804",
+      "time_updated": 1693898067,
+      "tags": [
+        "Hero Mod",
+        "Innocent",
+        "new class"
+      ]
+    },
+    {
+      "id": "2502465345",
+      "title": "「帕梅莉&帕梅菈风格破盾皮肤」Pameli & Pamela Shieldbreaker Skin Only",
+      "creator": "76561198953529648",
+      "time_updated": 1648445436,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2504237934",
+      "title": "齐天大圣/The Monkey King Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1685612774,
+      "tags": [
+        "Class Mod",
+        "Monkey King",
+        "character mod",
+        "mythical characters",
+        "new class"
+      ]
+    },
+    {
+      "id": "2505955762",
+      "title": "The Choir Hunter Class Mod",
+      "creator": "76561198141196103",
+      "time_updated": 1673936639,
+      "tags": [
+        "Bloodborne",
+        "hunter",
+        "new class"
+      ]
+    },
+    {
+      "id": "2508921150",
+      "title": "The Courtesan: Full Class Conversion By Roderick",
+      "creator": "76561198120534999",
+      "time_updated": 1623868955,
+      "tags": [
+        "Crimson Court",
+        "new class"
+      ]
+    },
+    {
+      "id": "2514647919",
+      "title": "The Miko By The Necromancer",
+      "creator": "76561197997630883",
+      "time_updated": 1770204832,
+      "tags": [
+        "Miko",
+        "Reimu Hakurei",
+        "Touhou",
+        "new class"
+      ]
+    },
+    {
+      "id": "2518583774",
+      "title": "Cleric Errant",
+      "creator": "76561198337495993",
+      "time_updated": 1773636407,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2518868603",
+      "title": "Jeanne D'arc Rework mod /// Ruler Class",
+      "creator": "76561198348128025",
+      "time_updated": 1739478041,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2519100522",
+      "title": "「缪」The Rabbit Protocol",
+      "creator": "76561198202570000",
+      "time_updated": 1626268662,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2519382016",
+      "title": "Rabbit Protocol Class /// English Translation",
+      "creator": "76561198348128025",
+      "time_updated": 1727571688,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2525329346",
+      "title": "The Saw Hunter Hero Mod",
+      "creator": "76561198091661799",
+      "time_updated": 1780505950,
+      "tags": [
+        "Bloodborne",
+        "Class Mod",
+        "character mod",
+        "hunter",
+        "new class"
+      ]
+    },
+    {
+      "id": "2525601290",
+      "title": "The Sepulchre, Resurrected",
+      "creator": "76561198178189415",
+      "time_updated": 1675813911,
+      "tags": [
+        "Class Mod",
+        "Revamp",
+        "Sepulchre",
+        "The Misfortunates",
+        "new class"
+      ]
+    },
+    {
+      "id": "2529818577",
+      "title": "The Enil // Beta Non-Official English Patch",
+      "creator": "76561198348128025",
+      "time_updated": 1624832401,
+      "tags": [
+        "class",
+        "translation"
+      ]
+    },
+    {
+      "id": "2531791079",
+      "title": "The Legion",
+      "creator": "76561198178189415",
+      "time_updated": 1704739049,
+      "tags": [
+        "Class Mod",
+        "Cryptix's Septic Tank",
+        "Legion",
+        "new class"
+      ]
+    },
+    {
+      "id": "2537722480",
+      "title": "「MP40」Class",
+      "creator": "76561198202570000",
+      "time_updated": 1625472233,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2545246854",
+      "title": "The Rabbit Protocol Revamped!",
+      "creator": "76561198348128025",
+      "time_updated": 1766537739,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2549725341",
+      "title": "The Bowman Class Mod",
+      "creator": "76561198043199802",
+      "time_updated": 1670578065,
+      "tags": [
+        "Bowman",
+        "Class Mod",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2564269029",
+      "title": "William \"Bill\" Overbeck - Left 4 Dead",
+      "creator": "76561198036555752",
+      "time_updated": 1628910643,
+      "tags": [
+        "Class Mod",
+        "Left4Dead",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2564785375",
+      "title": "Grey hawk Class",
+      "creator": "76561198316873653",
+      "time_updated": 1665233133,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2569919638",
+      "title": "The Apostate - Black Reliquary Patch (0.3.1)",
+      "creator": "76561197963319508",
+      "time_updated": 1644084615,
+      "tags": [
+        "Black Reliquary",
+        "Black Reliquary Patch",
+        "Class Tweaks",
+        "Gameplay Tweaks",
+        "Overhauls",
+        "new class"
+      ]
+    },
+    {
+      "id": "2572011671",
+      "title": "The Hexer Class Mod",
+      "creator": "76561198043199802",
+      "time_updated": 1684754501,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "Hexer",
+        "new class"
+      ]
+    },
+    {
+      "id": "2572516217",
+      "title": "The Ringmaster - Black Reliquary Patch (0.3.1)",
+      "creator": "76561197963319508",
+      "time_updated": 1644084599,
+      "tags": [
+        "Black Reliquary",
+        "Black Reliquary Patch",
+        "Class Tweaks",
+        "Gameplay Tweaks",
+        "Overhauls",
+        "new class"
+      ]
+    },
+    {
+      "id": "2572649246",
+      "title": "「爱国者」The Patriot",
+      "creator": "76561198202570000",
+      "time_updated": 1635863838,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2575427235",
+      "title": "The Meister Class Mod",
+      "creator": "76561198250447832",
+      "time_updated": 1757784846,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "English",
+        "Russian",
+        "japanese",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "2576531364",
+      "title": "\"Francis\" Taylor Knox - Left 4 Dead",
+      "creator": "76561198036555752",
+      "time_updated": 1629114924,
+      "tags": [
+        "Class Mod",
+        "Left4Dead",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2578146685",
+      "title": "The heroes in the position 5 Pharmacist",
+      "creator": "76561198316873653",
+      "time_updated": 1643165214,
+      "tags": [
+        "Class Mod",
+        "Furry",
+        "Trinket",
+        "monster girl"
+      ]
+    },
+    {
+      "id": "2579320730",
+      "title": "The Shinobi - Class Mod",
+      "creator": "76561198337495993",
+      "time_updated": 1773023608,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2585273417",
+      "title": "「妖狐巫女」The Kitsune Miko",
+      "creator": "76561198202570000",
+      "time_updated": 1685287580,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2599623558",
+      "title": "The Land Dweller",
+      "creator": "76561198056183178",
+      "time_updated": 1757117665,
+      "tags": [
+        "Monster Girl Quest",
+        "Slug",
+        "monster girl",
+        "new class"
+      ]
+    },
+    {
+      "id": "2606931475",
+      "title": "Knight of Cain Class Mod",
+      "creator": "76561198075271019",
+      "time_updated": 1640363658,
+      "tags": [
+        "Bloodborne",
+        "new class"
+      ]
+    },
+    {
+      "id": "2608626994",
+      "title": "「守墓人」Tomb_keeper",
+      "creator": "76561198978810011",
+      "time_updated": 1634618507,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2609313053",
+      "title": "Eileen The Crow skins",
+      "creator": "76561198192676979",
+      "time_updated": 1632485313,
+      "tags": [
+        "Bloodborne",
+        "Hero"
+      ]
+    },
+    {
+      "id": "2615065841",
+      "title": "Swordmaiden Pearl Class",
+      "creator": "76561198211535417",
+      "time_updated": 1632994843,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "2615162542",
+      "title": "the Wargin 战争圣女",
+      "creator": "76561198333275255",
+      "time_updated": 1643959026,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2615190806",
+      "title": "The Rudiment Class Mod",
+      "creator": "76561198256397352",
+      "time_updated": 1717604998,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2617154109",
+      "title": "十字军加强",
+      "creator": "76561198979514521",
+      "time_updated": 1681826110,
+      "tags": [
+        "Chinese",
+        "Hero"
+      ]
+    },
+    {
+      "id": "2618638449",
+      "title": "The Nun",
+      "creator": "76561198138816955",
+      "time_updated": 1634406190,
+      "tags": [
+        "Class Mod",
+        "Control",
+        "Damage dealer",
+        "Religious",
+        "Tank",
+        "new class"
+      ]
+    },
+    {
+      "id": "2619132502",
+      "title": "「妖狐巫女」The Kitsune Miko Nerf",
+      "creator": "76561198191533941",
+      "time_updated": 1636618833,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2623442428",
+      "title": "Dungeon Master 地牢之主",
+      "creator": "76561198333275255",
+      "time_updated": 1673665578,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2627685328",
+      "title": "Gunslinger 枪手",
+      "creator": "76561198333275255",
+      "time_updated": 1655565351,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2631839961",
+      "title": "「殷红迷雾」The Red Mist Nerf Version",
+      "creator": "76561198080640961",
+      "time_updated": 1635013493,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "2634437056",
+      "title": "The Beekeeper Class Mod",
+      "creator": "76561198002837233",
+      "time_updated": 1724268689,
+      "tags": [
+        "Class Mod"
+      ]
+    },
+    {
+      "id": "2637269241",
+      "title": "Tomb Prospector -Class Mod-",
+      "creator": "76561198075271019",
+      "time_updated": 1635530812,
+      "tags": [
+        "Bloodborne",
+        "new class"
+      ]
+    },
+    {
+      "id": "2640101979",
+      "title": "Tomb Prospector Chinese localization",
+      "creator": "76561198096653034",
+      "time_updated": 1635556076,
+      "tags": [
+        "localization",
+        "new class"
+      ]
+    },
+    {
+      "id": "2640294598",
+      "title": "The Judicator (Black Reliquary Teaser)",
+      "creator": "76561198118860654",
+      "time_updated": 1761497596,
+      "tags": [
+        "Black Reliquary",
+        "new class"
+      ]
+    },
+    {
+      "id": "2643572817",
+      "title": "Immediate Judicator Town Event",
+      "creator": "76561198118860654",
+      "time_updated": 1635810679,
+      "tags": [
+        "Class Mod",
+        "Town Event"
+      ]
+    },
+    {
+      "id": "2656186963",
+      "title": "Fire Keeper 守火女",
+      "creator": "76561198333275255",
+      "time_updated": 1662542522,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2666759123",
+      "title": "Plain Doll 人偶",
+      "creator": "76561198333275255",
+      "time_updated": 1669779874,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2678438842",
+      "title": "The Bombard",
+      "creator": "76561198041899942",
+      "time_updated": 1771387609,
+      "tags": [
+        "Bombard",
+        "Class Mod",
+        "boom",
+        "character mod",
+        "damage",
+        "new class"
+      ]
+    },
+    {
+      "id": "2703319645",
+      "title": "The Paradox Class Mod",
+      "creator": "76561198064012892",
+      "time_updated": 1723655208,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2717003169",
+      "title": "Yet Another Musketeer but Buckshot inflicts Bleed",
+      "creator": "76561197996211126",
+      "time_updated": 1787529898,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "2731935606",
+      "title": "浊心斯卡蒂--Skadi the corrupting heart",
+      "creator": "76561198906878357",
+      "time_updated": 1732810822,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2734022187",
+      "title": "Skull Knight 骷髅骑士",
+      "creator": "76561198333275255",
+      "time_updated": 1655566678,
+      "tags": [
+        "Chinese",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2737382067",
+      "title": "The Graveborn",
+      "creator": "76561198169075935",
+      "time_updated": 1707507832,
+      "tags": [
+        "Class Mod",
+        "Dirt",
+        "Graveborn",
+        "Hero",
+        "character mod",
+        "new class",
+        "undead"
+      ]
+    },
+    {
+      "id": "2737755599",
+      "title": "阎罗王/The Yama Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1744636946,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "mythical characters",
+        "new class"
+      ]
+    },
+    {
+      "id": "2738094975",
+      "title": "Vigilante - New Class",
+      "creator": "76561198337495993",
+      "time_updated": 1770452964,
+      "tags": [
+        "Class Tweaks",
+        "new class",
+        "vigilante"
+      ]
+    },
+    {
+      "id": "2738095359",
+      "title": "Assaulter - New Class",
+      "creator": "76561198337495993",
+      "time_updated": 1746408231,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2740918129",
+      "title": "[Rebirth] Inquisitor 圣裁官",
+      "creator": "76561198333275255",
+      "time_updated": 1671332678,
+      "tags": [
+        "Chinese",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2761286369",
+      "title": "Task force class mod",
+      "creator": "76561198316873653",
+      "time_updated": 1648786336,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2773469293",
+      "title": "The Witcher 猎魔人",
+      "creator": "76561198333275255",
+      "time_updated": 1678206331,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2777823030",
+      "title": "The Ancestor 先祖",
+      "creator": "76561198333275255",
+      "time_updated": 1678975620,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2778108500",
+      "title": "「龙血继承者」The Draconblood Class",
+      "creator": "76561198202570000",
+      "time_updated": 1654399158,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2781833439",
+      "title": "the Sorceress 女术士",
+      "creator": "76561198333275255",
+      "time_updated": 1666551473,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2784732681",
+      "title": "Cult Priestess 邪教祭司",
+      "creator": "76561198333275255",
+      "time_updated": 1677311068,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2786772131",
+      "title": "塞雷娅/The Saria Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1661215716,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2789322604",
+      "title": "Standardbearer 掌旗官",
+      "creator": "76561198333275255",
+      "time_updated": 1677296822,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2792735077",
+      "title": "The Miller Mod Class",
+      "creator": "76561198834815335",
+      "time_updated": 1727765135,
+      "tags": [
+        "English",
+        "Mod Hero",
+        "Russian",
+        "french",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "2797508244",
+      "title": "「精灵酒贩」个人修改版",
+      "creator": "76561199093975210",
+      "time_updated": 1650620598,
+      "tags": [
+        "Class Mod",
+        "new class",
+        "nicorote"
+      ]
+    },
+    {
+      "id": "2799602303",
+      "title": "[Slay the Spire]The Ironclad Class MOD/杀戮尖塔铁甲战士职业MOD",
+      "creator": "76561199032985047",
+      "time_updated": 1651464242,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2811103318",
+      "title": "「凯尔希」Kal'tsit Class",
+      "creator": "76561198202570000",
+      "time_updated": 1653564471,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2811741582",
+      "title": "the Scavenger 粪海狂蛆",
+      "creator": "76561198333275255",
+      "time_updated": 1662172883,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2817045273",
+      "title": "「芙兰朵露」Flan Class",
+      "creator": "76561198202570000",
+      "time_updated": 1654420985,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2819565067",
+      "title": "Iron Maiden 铁处女",
+      "creator": "76561198333275255",
+      "time_updated": 1677300475,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2821755204",
+      "title": "the Disciple 门徒",
+      "creator": "76561198333275255",
+      "time_updated": 1658547967,
+      "tags": [
+        "Chinese",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2822357458",
+      "title": "Forlorn Class Mod",
+      "creator": "76561198143986901",
+      "time_updated": 1722466546,
+      "tags": [
+        "Bleed",
+        "Forlorn",
+        "new class"
+      ]
+    },
+    {
+      "id": "2822639786",
+      "title": "Hood Rework",
+      "creator": "76561198206290400",
+      "time_updated": 1678752108,
+      "tags": [
+        "Class Tweaks",
+        "Hood",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2823681766",
+      "title": "The Charlatan Class Mod",
+      "creator": "76561198087675880",
+      "time_updated": 1710680620,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2825636596",
+      "title": "the Sentry 哨卫",
+      "creator": "76561198333275255",
+      "time_updated": 1661680142,
+      "tags": [
+        "Chinese",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2826625720",
+      "title": "The Warlord",
+      "creator": "76561198117056201",
+      "time_updated": 1764666032,
+      "tags": [
+        "Class Mod",
+        "Warlord",
+        "new class",
+        "yak"
+      ]
+    },
+    {
+      "id": "2830677403",
+      "title": "The Privateer",
+      "creator": "76561198049787407",
+      "time_updated": 1695870999,
+      "tags": [
+        "CLASS MODS",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2832269965",
+      "title": "Assault Kunoichi Class - English translation",
+      "creator": "76561198034606984",
+      "time_updated": 1698992053,
+      "tags": [
+        "English",
+        "Kunoichi",
+        "Ninja",
+        "localization",
+        "new class",
+        "translation"
+      ]
+    },
+    {
+      "id": "2832452821",
+      "title": "Swordmaiden class English Translation + Rebalance",
+      "creator": "76561198034606984",
+      "time_updated": 1668637108,
+      "tags": [
+        "English",
+        "Pearl",
+        "Rebalance",
+        "Swordmaiden",
+        "class",
+        "localization",
+        "new class",
+        "translation"
+      ]
+    },
+    {
+      "id": "2836620789",
+      "title": "Botanist Optional Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1745954124,
+      "tags": [
+        "Botanist",
+        "Class Mod",
+        "Healer",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2837097062",
+      "title": "The Botanist",
+      "creator": "76561198041899942",
+      "time_updated": 1745953664,
+      "tags": [
+        "Botanist",
+        "Class Mod",
+        "Healer",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2847614903",
+      "title": "TF2 Engineer",
+      "creator": "76561198137011037",
+      "time_updated": 1777990678,
+      "tags": [
+        "Boss-Fight",
+        "Missions",
+        "TF2",
+        "monsters",
+        "new class"
+      ]
+    },
+    {
+      "id": "2852181134",
+      "title": "Whitemane new mod class",
+      "creator": "76561198972989023",
+      "time_updated": 1663094449,
+      "tags": [
+        "Class Mod",
+        "RoGNeZ",
+        "Whitemane",
+        "new class"
+      ]
+    },
+    {
+      "id": "2856497975",
+      "title": "The Prefect Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1787109156,
+      "tags": [
+        "Academic",
+        "Bird",
+        "Chinese",
+        "Class Mod",
+        "English",
+        "character mod",
+        "korean",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "2860665485",
+      "title": "Shuten酒吞童子",
+      "creator": "76561199162723332",
+      "time_updated": 1726310009,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2862907826",
+      "title": "生死簿/The Obituary Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1663645731,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "mythical characters",
+        "new class"
+      ]
+    },
+    {
+      "id": "2863068028",
+      "title": "Vigilante Minor Rebalance and Tooltip Patch",
+      "creator": "76561198043565400",
+      "time_updated": 1691431782,
+      "tags": [
+        "Class Tweaks",
+        "new class",
+        "vigilante"
+      ]
+    },
+    {
+      "id": "2863465026",
+      "title": "Cataphract Heals Like a Vestal",
+      "creator": "76561198043565400",
+      "time_updated": 1663289360,
+      "tags": [
+        "Cataphract",
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "2865308693",
+      "title": "The Dredge (Black Reliquary Teaser)",
+      "creator": "76561198118860654",
+      "time_updated": 1676006634,
+      "tags": [
+        "Black Reliquary",
+        "new class"
+      ]
+    },
+    {
+      "id": "2865396840",
+      "title": "「冈崎梦美」Okazaki Yumemi Class",
+      "creator": "76561198202570000",
+      "time_updated": 1664545846,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2865429202",
+      "title": "The Entrenched Class Mod",
+      "creator": "76561198117056201",
+      "time_updated": 1788394447,
+      "tags": [
+        "Trench Gang",
+        "new class"
+      ]
+    },
+    {
+      "id": "2866004139",
+      "title": "The Jiangshi",
+      "creator": "76561198049787407",
+      "time_updated": 1673055179,
+      "tags": [
+        "CLASS MODS",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2866006285",
+      "title": "The Jiangshi - Alternative Skin by anaertailin",
+      "creator": "76561198049787407",
+      "time_updated": 1663799367,
+      "tags": [
+        "CLASS MODS",
+        "Hero",
+        "Hero Skin"
+      ]
+    },
+    {
+      "id": "2868111900",
+      "title": "「MP40pro」Class",
+      "creator": "76561198005907996",
+      "time_updated": 1664640221,
+      "tags": [
+        "Gameplay Tweaks",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2869512638",
+      "title": "「契术师」 Warlock class",
+      "creator": "76561199003271204",
+      "time_updated": 1689398370,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2871297906",
+      "title": "The Monitor",
+      "creator": "76561198178189415",
+      "time_updated": 1708388214,
+      "tags": [
+        "Class Mod",
+        "Monitor",
+        "new class"
+      ]
+    },
+    {
+      "id": "2871377238",
+      "title": "The Celestial",
+      "creator": "76561198037041575",
+      "time_updated": 1703729004,
+      "tags": [
+        "Celestial",
+        "Tenshi Hinanawi",
+        "Touhou",
+        "new class"
+      ]
+    },
+    {
+      "id": "2874005062",
+      "title": "Gabriel but English",
+      "creator": "76561198136884904",
+      "time_updated": 1674336041,
+      "tags": [
+        "English",
+        "class",
+        "localization"
+      ]
+    },
+    {
+      "id": "2876261390",
+      "title": "Sven, The Rogue Knight - Class Mod - Reuploaded",
+      "creator": "76561198069745628",
+      "time_updated": 1665961696,
+      "tags": [
+        "Sven",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2881216132",
+      "title": "Livesey class mod",
+      "creator": "76561198336227359",
+      "time_updated": 1667174987,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2881423898",
+      "title": "Shishiro Botan Class Mod",
+      "creator": "76561198138274978",
+      "time_updated": 1688736170,
+      "tags": [
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "2882385295",
+      "title": "The Paracausalist - A Beyond Mortality Class Mod",
+      "creator": "76561198064185426",
+      "time_updated": 1695439587,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2882413165",
+      "title": "The Ectomorphs - A Beyond Mortality Monster Mod",
+      "creator": "76561198064185426",
+      "time_updated": 1695439585,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "monsters",
+        "new class",
+        "ruins"
+      ]
+    },
+    {
+      "id": "2883316501",
+      "title": "The Nosferatu",
+      "creator": "76561198049787407",
+      "time_updated": 1724664702,
+      "tags": [
+        "CLASS MODS",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "2887092482",
+      "title": "吉安娜/The Jaina Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1687437650,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2888259334",
+      "title": "(Legacy) Fire Attacks: Salamander Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1786114022,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Memes",
+        "Runaway",
+        "Salamander",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2890623284",
+      "title": "The Forsaken - Legacy",
+      "creator": "76561198040723710",
+      "time_updated": 1721048442,
+      "tags": [
+        "Hero",
+        "New Hero",
+        "class",
+        "hero class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2905730405",
+      "title": "Martyr Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1757117494,
+      "tags": [
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "2912640718",
+      "title": "Hepvier class mod - rebalance addition",
+      "creator": "76561198089922342",
+      "time_updated": 1672903948,
+      "tags": [
+        "Class Mod"
+      ]
+    },
+    {
+      "id": "2914569102",
+      "title": "The Solution Class Mod",
+      "creator": "76561199185700368",
+      "time_updated": 1708564766,
+      "tags": [
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "2914877703",
+      "title": "「加百列」The Gabriel Class Enhanced Version",
+      "creator": "76561198202570000",
+      "time_updated": 1776760212,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2919921868",
+      "title": "Porkin's Hero skin compliation",
+      "creator": "76561198099228924",
+      "time_updated": 1674051909,
+      "tags": [
+        "Hero",
+        "Skins"
+      ]
+    },
+    {
+      "id": "2928491130",
+      "title": "The Krakenslayer",
+      "creator": "76561198143986901",
+      "time_updated": 1702919503,
+      "tags": [
+        "Class Mod",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2931052996",
+      "title": "Armor Class Mod",
+      "creator": "76561199237268267",
+      "time_updated": 1695718773,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2931377798",
+      "title": "The Magician by The Necromancer - New Class Mod",
+      "creator": "76561197997630883",
+      "time_updated": 1770322229,
+      "tags": [
+        "Class Mod",
+        "Magician",
+        "Marisa Kirisame",
+        "Touhou",
+        "new class"
+      ]
+    },
+    {
+      "id": "2933308472",
+      "title": "「旧裔」The Ancient Ones Class",
+      "creator": "76561198202570000",
+      "time_updated": 1676368503,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2937739754",
+      "title": "Maenad Class Mod",
+      "creator": "76561198143986901",
+      "time_updated": 1718906483,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "Maenad",
+        "New Hero"
+      ]
+    },
+    {
+      "id": "2940987246",
+      "title": "Soul Of Mod's Dragon Mistress Class",
+      "creator": "76561198330496732",
+      "time_updated": 1682043235,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2941006600",
+      "title": "Soul Of Mod's Kunoichi Class",
+      "creator": "76561198330496732",
+      "time_updated": 1726853092,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2942144460",
+      "title": "「凯尔希削弱补丁」Kal'tsit Class",
+      "creator": "76561198124015457",
+      "time_updated": 1680024253,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2944364678",
+      "title": "Valeera Sanguinar new class mod",
+      "creator": "76561198972989023",
+      "time_updated": 1699193540,
+      "tags": [
+        "Class Mod",
+        "RoGNeZ",
+        "Valeera Sanguinar",
+        "new class"
+      ]
+    },
+    {
+      "id": "2950029348",
+      "title": "「莉薇娅」Livia Class",
+      "creator": "76561199003271204",
+      "time_updated": 1679977938,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2950519357",
+      "title": "The Revelations Knight",
+      "creator": "76561198104936608",
+      "time_updated": 1690981486,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2951297539",
+      "title": "The Phlebotomist (Spider's Court Teaser)",
+      "creator": "76561198049787407",
+      "time_updated": 1725219406,
+      "tags": [
+        "Class Mod",
+        "Spider's Court",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2953323847",
+      "title": "Modded Class: Axolotl, the Foreigner",
+      "creator": "76561198897294661",
+      "time_updated": 1775586864,
+      "tags": [
+        "Axolotl",
+        "new class"
+      ]
+    },
+    {
+      "id": "2955427995",
+      "title": "The Hedgeknight",
+      "creator": "76561198268657749",
+      "time_updated": 1760110996,
+      "tags": [
+        "Class Mod",
+        "Knight",
+        "new class"
+      ]
+    },
+    {
+      "id": "2956674159",
+      "title": "The Man o War Reforged",
+      "creator": "76561198178189415",
+      "time_updated": 1787078284,
+      "tags": [
+        "Man o' War",
+        "new class"
+      ]
+    },
+    {
+      "id": "2961054830",
+      "title": "(Legacy) Fire Attacks: Practitioner Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1786073249,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Fish",
+        "Memes",
+        "Practitioner",
+        "Runaway",
+        "character mod"
+      ]
+    },
+    {
+      "id": "2961235101",
+      "title": "「梅喧」Baiken Class",
+      "creator": "76561198202570000",
+      "time_updated": 1685430347,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2961889945",
+      "title": "The Sniper",
+      "creator": "76561198295501978",
+      "time_updated": 1757540761,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "2961942175",
+      "title": "Mysterious Heroine X",
+      "creator": "76561198127699813",
+      "time_updated": 1682864284,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2967336593",
+      "title": "Valeera Sanguinar - Black Reliquary",
+      "creator": "76561198972989023",
+      "time_updated": 1682480619,
+      "tags": [
+        "Class Mod",
+        "RoGNeZ",
+        "Valeera Sanguinar",
+        "new class"
+      ]
+    },
+    {
+      "id": "2971614345",
+      "title": "Royal agent - class mod",
+      "creator": "76561198418660674",
+      "time_updated": 1765684287,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "Hero",
+        "Religious",
+        "Royal",
+        "Royal agent",
+        "agent",
+        "character mod",
+        "new class",
+        "schinese"
+      ]
+    },
+    {
+      "id": "2975149661",
+      "title": "「风佑之狐」The Fuujin Kitsune",
+      "creator": "76561198202570000",
+      "time_updated": 1739953226,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2982167948",
+      "title": "The Vessel",
+      "creator": "76561198117056201",
+      "time_updated": 1712452427,
+      "tags": [
+        "Hollow Knight",
+        "bug",
+        "new class"
+      ]
+    },
+    {
+      "id": "2984123915",
+      "title": "The Dreamer",
+      "creator": "76561198091786007",
+      "time_updated": 1741652707,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "Eldritch",
+        "English",
+        "Hero Mod",
+        "Russian",
+        "french",
+        "korean",
+        "new class",
+        "two forms"
+      ]
+    },
+    {
+      "id": "2987682730",
+      "title": "「刻俄柏」Ceobe Class",
+      "creator": "76561198202570000",
+      "time_updated": 1686457068,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "2988627846",
+      "title": "The Arch Wizard - Megumin",
+      "creator": "76561198014019147",
+      "time_updated": 1717632243,
+      "tags": [
+        "Class Mod",
+        "English",
+        "Hero Mod",
+        "Konosuba",
+        "Megumin",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2990962336",
+      "title": "Shuten酒吞童子",
+      "creator": "76561199162723332",
+      "time_updated": 1726309928,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "2991603143",
+      "title": "血祭猎人BloodyHunter",
+      "creator": "76561199162723332",
+      "time_updated": 1713872996,
+      "tags": [
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "2998367658",
+      "title": "The Exanimate Class Mod",
+      "creator": "76561198268657749",
+      "time_updated": 1741641019,
+      "tags": [
+        "Blight",
+        "Boss",
+        "DD2",
+        "Death",
+        "Exanimate",
+        "Flagellant",
+        "new class"
+      ]
+    },
+    {
+      "id": "3002963032",
+      "title": "The Beastkin Class Mod **Re-Upload**",
+      "creator": "76561198050168650",
+      "time_updated": 1783552471,
+      "tags": [
+        "Anime",
+        "Art Update",
+        "Best Cat",
+        "Dungeon Meshi",
+        "Girlcat",
+        "Memes",
+        "New Hero",
+        "Not Furry",
+        "Re-Upload",
+        "Tastefully Lewd",
+        "Trinkets",
+        "Worst Girl",
+        "catgirl",
+        "new class"
+      ]
+    },
+    {
+      "id": "3003211991",
+      "title": "Wolf girl Camping  skin",
+      "creator": "76561198214552933",
+      "time_updated": 1689177647,
+      "tags": [
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3004638751",
+      "title": "The Dreamer Retexture",
+      "creator": "76561198393624818",
+      "time_updated": 1689417873,
+      "tags": [
+        "Class Mod",
+        "Eldritch",
+        "Hero Mod",
+        "Skins",
+        "new class",
+        "two forms"
+      ]
+    },
+    {
+      "id": "3009641299",
+      "title": "Astronomer Sidereal Retaliation Optional Patch",
+      "creator": "76561198285860629",
+      "time_updated": 1717961406,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3010189478",
+      "title": "The Astronomer",
+      "creator": "76561198285860629",
+      "time_updated": 1738529413,
+      "tags": [
+        "Astronomer",
+        "character mod",
+        "new class",
+        "stars"
+      ]
+    },
+    {
+      "id": "3010456600",
+      "title": "Knight of Cain Class Mod Redux",
+      "creator": "76561198225077724",
+      "time_updated": 1791193767,
+      "tags": [
+        "Bloodborne",
+        "Class Mod",
+        "hunter",
+        "new class"
+      ]
+    },
+    {
+      "id": "3015660773",
+      "title": "Beastar Class Mod",
+      "creator": "76561198200194438",
+      "time_updated": 1720585043,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3017953053",
+      "title": "「柳真」Yujin Class",
+      "creator": "76561198202570000",
+      "time_updated": 1691668716,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3019720528",
+      "title": "The Wizard Class mod",
+      "creator": "76561198834815335",
+      "time_updated": 1757784077,
+      "tags": [
+        "Brazilian Portuguese",
+        "Chinese",
+        "English",
+        "Mod Hero",
+        "german",
+        "japanese",
+        "korean",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3020154895",
+      "title": "暗黑骑士class",
+      "creator": "76561198385832810",
+      "time_updated": 1692559256,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3020541930",
+      "title": "静谧少女class",
+      "creator": "76561198385832810",
+      "time_updated": 1693325981,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3020598917",
+      "title": "哪吒class",
+      "creator": "76561198385832810",
+      "time_updated": 1693052313,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3022042649",
+      "title": "G41class",
+      "creator": "76561198385832810",
+      "time_updated": 1696170025,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3022117153",
+      "title": "Radiant Crusader Class",
+      "creator": "76561198830526910",
+      "time_updated": 1715504447,
+      "tags": [
+        "crusader",
+        "new class",
+        "skin"
+      ]
+    },
+    {
+      "id": "3022682266",
+      "title": "地狱女祭司class",
+      "creator": "76561198385832810",
+      "time_updated": 1692973144,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3025352993",
+      "title": "「幻术师 削弱版」The Mesmer Class For Vanilla",
+      "creator": "76561199003271204",
+      "time_updated": 1698810014,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3025596654",
+      "title": "「幻术师」The Mesmer Class",
+      "creator": "76561199003271204",
+      "time_updated": 1698810324,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3026772660",
+      "title": "The Half-Foot Class Mod",
+      "creator": "76561198050168650",
+      "time_updated": 1783551791,
+      "tags": [
+        "Anime",
+        "Duende",
+        "Dungeon Meshi",
+        "Manlets Rise Up",
+        "Memes",
+        "New Hero",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3030309036",
+      "title": "「亡国公主」薇尔维特 - Class Mod",
+      "creator": "76561198968403984",
+      "time_updated": 1787328146,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3031738556",
+      "title": "The Tryndamere/蛮族之王 mod",
+      "creator": "76561199146990904",
+      "time_updated": 1787574871,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3034902222",
+      "title": "The Monster Savant Mod **Re-Upload**",
+      "creator": "76561198050168650",
+      "time_updated": 1783552089,
+      "tags": [
+        "Anime",
+        "Dungeon Meshi",
+        "Memes",
+        "New Hero",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3045881665",
+      "title": "The Trophy Hunter Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1755123017,
+      "tags": [
+        "Anthro",
+        "Brazilian Portuguese",
+        "Chinese",
+        "Class Mod",
+        "Crocodile",
+        "English",
+        "Florida",
+        "Memes",
+        "Russian",
+        "character mod",
+        "czech",
+        "french",
+        "italian",
+        "korean",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3049487504",
+      "title": "The Silent Class mod",
+      "creator": "76561198041899942",
+      "time_updated": 1759130584,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Silent",
+        "character mod",
+        "new class",
+        "slay the spire",
+        "sts"
+      ]
+    },
+    {
+      "id": "3052303742",
+      "title": "「灾厄」Scourge Class",
+      "creator": "76561199003271204",
+      "time_updated": 1697473590,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3059321932",
+      "title": "The Sawtooth Class Mod",
+      "creator": "76561199185700368",
+      "time_updated": 1707876019,
+      "tags": [
+        "Skins",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3061374478",
+      "title": "「拉姆蕾萨尔」RAM Class",
+      "creator": "76561198202570000",
+      "time_updated": 1698709815,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3063258394",
+      "title": "Lawbringer Class Mod",
+      "creator": "76561198117056201",
+      "time_updated": 1701324506,
+      "tags": [
+        "Alcohol",
+        "Damage dealer",
+        "For Honor",
+        "new class"
+      ]
+    },
+    {
+      "id": "3073538018",
+      "title": "Curator Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1700259840,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3081931947",
+      "title": "2B Class Mod",
+      "creator": "76561198834815335",
+      "time_updated": 1758154905,
+      "tags": [
+        "2B",
+        "Chinese",
+        "Class Mod",
+        "English",
+        "Nier Automata",
+        "japanese",
+        "korean",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3082148687",
+      "title": "2B First Recruit Town Event",
+      "creator": "76561198834815335",
+      "time_updated": 1699893871,
+      "tags": [
+        "2B",
+        "Class Mod",
+        "Nier Automata",
+        "Town Event"
+      ]
+    },
+    {
+      "id": "3088253088",
+      "title": "卧槽呀！云欲星火 角色",
+      "creator": "76561198893775019",
+      "time_updated": 1707807147,
+      "tags": [
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3089081092",
+      "title": "The Arcane Scholar Class Mod",
+      "creator": "76561198050168650",
+      "time_updated": 1783552282,
+      "tags": [
+        "Anime",
+        "Best Girl",
+        "Class Mod",
+        "Dungeon Meshi",
+        "Memes",
+        "New Hero",
+        "Worst Elf",
+        "new class"
+      ]
+    },
+    {
+      "id": "3090726769",
+      "title": "The Draconblood Class ESP",
+      "creator": "76561199436924295",
+      "time_updated": 1703072531,
+      "tags": [
+        "ESP",
+        "class",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3091046106",
+      "title": "Black cat new class",
+      "creator": "76561198972989023",
+      "time_updated": 1719768517,
+      "tags": [
+        "Class Mod",
+        "RoGNeZ",
+        "black cat",
+        "new class"
+      ]
+    },
+    {
+      "id": "3093381718",
+      "title": "Goblin Huntress - Class Mod Redux ver.γ",
+      "creator": "76561198225077724",
+      "time_updated": 1788791366,
+      "tags": [
+        "ATF Sanctioned",
+        "Armor",
+        "Class Tweaks",
+        "English",
+        "GFL",
+        "Guns",
+        "Redux",
+        "Third Best Gun",
+        "new class"
+      ]
+    },
+    {
+      "id": "3095319981",
+      "title": "The Gourmet Class Mod",
+      "creator": "76561198043494132",
+      "time_updated": 1709403492,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "Pig",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3102095020",
+      "title": "The Necromancer: New Hero",
+      "creator": "76561198138816955",
+      "time_updated": 1732589992,
+      "tags": [
+        "Bones",
+        "Boss as Hero",
+        "New Hero",
+        "Wellington",
+        "necromancer"
+      ]
+    },
+    {
+      "id": "3112908204",
+      "title": "The Power Class: ENG",
+      "creator": "76561198200678898",
+      "time_updated": 1702465461,
+      "tags": [
+        "English",
+        "localization",
+        "new class"
+      ]
+    },
+    {
+      "id": "3114223399",
+      "title": "The Arbiter Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1787109049,
+      "tags": [
+        "Anthro",
+        "Bird",
+        "Brazilian Portuguese",
+        "Chinese",
+        "Class Mod",
+        "English",
+        "Russian",
+        "character mod",
+        "korean",
+        "new class",
+        "soldier"
+      ]
+    },
+    {
+      "id": "3119375257",
+      "title": "(Legacy) Fire Attacks: Crusader Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1785458083,
+      "tags": [
+        "Class Mod",
+        "Cursader",
+        "Fire",
+        "Fire Attack",
+        "Memes",
+        "Runaway",
+        "character mod"
+      ]
+    },
+    {
+      "id": "3119518705",
+      "title": "(Legacy) Fire Attacks: Vestal Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1785458066,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Memes",
+        "Runaway",
+        "Vestal",
+        "character mod"
+      ]
+    },
+    {
+      "id": "3120441222",
+      "title": "「鸦羽」Lucia: plume Class",
+      "creator": "76561198202570000",
+      "time_updated": 1703299746,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3121208259",
+      "title": "regicide",
+      "creator": "76561198194078989",
+      "time_updated": 1746215648,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3122060296",
+      "title": "Centurion Class Mod",
+      "creator": "76561198117056201",
+      "time_updated": 1711640536,
+      "tags": [
+        "Damage dealer",
+        "For Honor",
+        "INCREDIBILIS",
+        "Roman",
+        "new class"
+      ]
+    },
+    {
+      "id": "3124755746",
+      "title": "卧槽呀！追剧死士 独立角色",
+      "creator": "76561198893775019",
+      "time_updated": 1714397449,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3130801219",
+      "title": "The Dungeon Chef Mod",
+      "creator": "76561198050168650",
+      "time_updated": 1774098782,
+      "tags": [
+        "Anime",
+        "Dungeon Meshi",
+        "Manlets Rise Up",
+        "Memes",
+        "New Hero",
+        "Wok and Stone",
+        "manga",
+        "new class"
+      ]
+    },
+    {
+      "id": "3131289832",
+      "title": "class 血圣",
+      "creator": "76561198194078989",
+      "time_updated": 1746215891,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3132616946",
+      "title": "卧槽呀！兼职修女",
+      "creator": "76561198893775019",
+      "time_updated": 1714445451,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3137558662",
+      "title": "卧槽呀！ 血祭猎人 第三版",
+      "creator": "76561198893775019",
+      "time_updated": 1705062022,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3138217821",
+      "title": "Legacy Thrall Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1709285716,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3144299757",
+      "title": "「莫德凯撒」Mordekaiser Class",
+      "creator": "76561198202570000",
+      "time_updated": 1787633270,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3144426116",
+      "title": "赤焰军 RedFlameArmy",
+      "creator": "76561198296951313",
+      "time_updated": 1724090826,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3146094213",
+      "title": "The Resonant Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1729381133,
+      "tags": [
+        "Anthro",
+        "Bird",
+        "Chinese",
+        "Class Mod",
+        "English",
+        "Enlightened",
+        "character mod",
+        "czech",
+        "italian",
+        "korean",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3148368549",
+      "title": "卧槽呀！强化骷髅杂鱼-莉薇娅",
+      "creator": "76561198893775019",
+      "time_updated": 1706369347,
+      "tags": [
+        "monsters",
+        "new class"
+      ]
+    },
+    {
+      "id": "3152738823",
+      "title": "The Phantasma Class Mod",
+      "creator": "76561199596697483",
+      "time_updated": 1758037815,
+      "tags": [
+        "English",
+        "japanese",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3163227823",
+      "title": "「星火·灾星」",
+      "creator": "76561199079639185",
+      "time_updated": 1713370910,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3166564317",
+      "title": "Remilia class 蕾米莉亚 文档版",
+      "creator": "76561198930436144",
+      "time_updated": 1774957827,
+      "tags": [
+        "Crimson Court",
+        "new class"
+      ]
+    },
+    {
+      "id": "3168979292",
+      "title": "The Therapist Class Mod",
+      "creator": "76561199596697483",
+      "time_updated": 1758036144,
+      "tags": [
+        "Chinese",
+        "English",
+        "Mod Hero",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3170796124",
+      "title": "卧槽呀！武器A大小姐",
+      "creator": "76561198893775019",
+      "time_updated": 1709261765,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3170796947",
+      "title": "卧槽呀！血月大小姐",
+      "creator": "76561198893775019",
+      "time_updated": 1709261945,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3171796804",
+      "title": "季灾 jizai",
+      "creator": "76561198296951313",
+      "time_updated": 1721616060,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3172363455",
+      "title": "Arina——独立人物亚莉奈",
+      "creator": "76561199082091949",
+      "time_updated": 1709532379,
+      "tags": [
+        "New Hero",
+        "class"
+      ]
+    },
+    {
+      "id": "3173578329",
+      "title": "The Miscreant Mod Class - Remake",
+      "creator": "76561198225077724",
+      "time_updated": 1789283288,
+      "tags": [
+        "Guns",
+        "Mischief",
+        "miscreant",
+        "new class"
+      ]
+    },
+    {
+      "id": "3174516732",
+      "title": "卧槽呀！兼职修女 压缩包（ZIP）",
+      "creator": "76561198893775019",
+      "time_updated": 1714445626,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3179713703",
+      "title": "The Gem Hunter",
+      "creator": "76561199185700368",
+      "time_updated": 1781318265,
+      "tags": [
+        "Trinkets",
+        "Yip Yip!",
+        "new class"
+      ]
+    },
+    {
+      "id": "3181197308",
+      "title": "Mordekaiser Class Rebalanced",
+      "creator": "76561197994662704",
+      "time_updated": 1711001616,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3181881842",
+      "title": "The Gunwitch Class Mod",
+      "creator": "76561199596697483",
+      "time_updated": 1758222519,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "English",
+        "Russian",
+        "new class",
+        "witch"
+      ]
+    },
+    {
+      "id": "3182753700",
+      "title": "「玉藻前 新英雄玉藻巫女」Yuzao Witch",
+      "creator": "76561199230293941",
+      "time_updated": 1741000333,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3186785051",
+      "title": "The Rampart",
+      "creator": "76561198178189415",
+      "time_updated": 1787077806,
+      "tags": [
+        "Class Mod",
+        "Rampart",
+        "new class"
+      ]
+    },
+    {
+      "id": "3193998901",
+      "title": "The Mercenary Mod",
+      "creator": "76561198050168650",
+      "time_updated": 1789967520,
+      "tags": [
+        "Anime",
+        "Chonky Lass",
+        "Dungeon Meshi",
+        "Femlets Rise Up",
+        "I ain't sayin' she a Golddigger but she ain't hanging with no Half-Footer",
+        "Memes",
+        "New Hero",
+        "Okayest Girl",
+        "Shortstack",
+        "Wok and Stone",
+        "manga",
+        "new class"
+      ]
+    },
+    {
+      "id": "3199554096",
+      "title": "The Rampart (BR)",
+      "creator": "76561198178189415",
+      "time_updated": 1724878030,
+      "tags": [
+        "Black Reliquary",
+        "Class Mod",
+        "Rampart",
+        "new class"
+      ]
+    },
+    {
+      "id": "3199970205",
+      "title": "Onikenshi Class",
+      "creator": "76561198156015897",
+      "time_updated": 1727869538,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3204364836",
+      "title": "The Judge Mod",
+      "creator": "76561198094961842",
+      "time_updated": 1752588517,
+      "tags": [
+        "Blood Meridian",
+        "Class Mod",
+        "English",
+        "Memes",
+        "Mod Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3208448687",
+      "title": "Samsung Smart Refrigerator",
+      "creator": "76561199596697483",
+      "time_updated": 1711933200,
+      "tags": [
+        "April Fool's Day",
+        "Class Mod",
+        "New Hero"
+      ]
+    },
+    {
+      "id": "3215118837",
+      "title": "卧槽呀！苏丹王女",
+      "creator": "76561198893775019",
+      "time_updated": 1718966544,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3220013081",
+      "title": "Felina",
+      "creator": "76561198284500537",
+      "time_updated": 1720304709,
+      "tags": [
+        "CN",
+        "Hero",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3225805635",
+      "title": "卧槽呀！兼职丑角 独立角色",
+      "creator": "76561198893775019",
+      "time_updated": 1734444992,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3225971576",
+      "title": "卧槽呀！渊下舞女 独立角色 压缩包 (ZIP)",
+      "creator": "76561198893775019",
+      "time_updated": 1713457242,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3227030303",
+      "title": "Fugue Knight Class Mod: WenchLeper Standalone",
+      "creator": "76561198038382513",
+      "time_updated": 1738996628,
+      "tags": [
+        "Class Mod",
+        "Leper",
+        "new class"
+      ]
+    },
+    {
+      "id": "3227392849",
+      "title": "烈阳之眸",
+      "creator": "76561198802178060",
+      "time_updated": 1756996451,
+      "tags": [
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "3228747033",
+      "title": "卧槽呀！兼职战牧（二创人物）",
+      "creator": "76561198893775019",
+      "time_updated": 1735643759,
+      "tags": [
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "3232729723",
+      "title": "The Navigator",
+      "creator": "76561198065665035",
+      "time_updated": 1790766118,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "HeroClass",
+        "Navigator",
+        "new class"
+      ]
+    },
+    {
+      "id": "3233038895",
+      "title": "Rudolph Abomination Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1741883955,
+      "tags": [
+        "Abomination",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3233465820",
+      "title": "The Uncrowned",
+      "creator": "76561198040723710",
+      "time_updated": 1747332492,
+      "tags": [
+        "Chinese",
+        "English",
+        "Hero",
+        "NG+ Patch",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3238734310",
+      "title": "Understudy Class Mod: WenchJester Standalone",
+      "creator": "76561198038382513",
+      "time_updated": 1714784723,
+      "tags": [
+        "Class Mod",
+        "Jester",
+        "new class"
+      ]
+    },
+    {
+      "id": "3241910248",
+      "title": "「花间诗剑」The Flowery Poet Class",
+      "creator": "76561198202570000",
+      "time_updated": 1715132334,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3242079334",
+      "title": "卧槽呀！花间诗剑恶趣味图标",
+      "creator": "76561198893775019",
+      "time_updated": 1715160972,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3244578322",
+      "title": "Waylaid Pilgrim",
+      "creator": "76561198038382513",
+      "time_updated": 1768992763,
+      "tags": [
+        "Class Mod",
+        "crusader",
+        "new class"
+      ]
+    },
+    {
+      "id": "3249605054",
+      "title": "Broken Matron Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1722333878,
+      "tags": [
+        "Class Mod",
+        "Man at arms",
+        "man_at_arms",
+        "new class"
+      ]
+    },
+    {
+      "id": "3250596280",
+      "title": "G41classEX - For Hard Mode",
+      "creator": "76561198109909518",
+      "time_updated": 1716448126,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3250836455",
+      "title": "Miracle Occultist Rework Standalone Class",
+      "creator": "76561198144148965",
+      "time_updated": 1716220264,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3252136347",
+      "title": "inui's change class PameliPamela",
+      "creator": "76561198109909518",
+      "time_updated": 1716649885,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3253960166",
+      "title": "The Flowery Poet Class Tsubame-gaeshi",
+      "creator": "76561198109909518",
+      "time_updated": 1733159516,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3255766721",
+      "title": "Midnight Hunter Class",
+      "creator": "76561198109909518",
+      "time_updated": 1787498579,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3258191615",
+      "title": "Conductor Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1721386760,
+      "tags": [
+        "Class Mod",
+        "Leper",
+        "SwissArmyKnife",
+        "new class"
+      ]
+    },
+    {
+      "id": "3262202047",
+      "title": "「森蚺」Eunectes Class",
+      "creator": "76561198202570000",
+      "time_updated": 1717667750,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3265771115",
+      "title": "药剂师-妮艾尔NielYJS",
+      "creator": "76561199128078433",
+      "time_updated": 1734097025,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3266293876",
+      "title": "Yuzao Witch",
+      "creator": "76561198133187588",
+      "time_updated": 1718558119,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3270865440",
+      "title": "卧槽呀！ZIMIK系列独立人物更新包（zip）",
+      "creator": "76561198893775019",
+      "time_updated": 1719058089,
+      "tags": [
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3271019015",
+      "title": "The sycophant hero",
+      "creator": "76561198367032901",
+      "time_updated": 1720188473,
+      "tags": [
+        "new class",
+        "skin",
+        "sycophant"
+      ]
+    },
+    {
+      "id": "3275023905",
+      "title": "卧槽呀！槽血琴 独立角色",
+      "creator": "76561198893775019",
+      "time_updated": 1719299745,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3278110052",
+      "title": "The skeleton defender hero",
+      "creator": "76561198367032901",
+      "time_updated": 1719919963,
+      "tags": [
+        "new class",
+        "skeleton_defender",
+        "skin"
+      ]
+    },
+    {
+      "id": "3280184294",
+      "title": "卧槽呀！驭龙重置",
+      "creator": "76561198893775019",
+      "time_updated": 1719915961,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3280389755",
+      "title": "The Marauder",
+      "creator": "76561198049787407",
+      "time_updated": 1784156924,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "marauder",
+        "new class"
+      ]
+    },
+    {
+      "id": "3283618244",
+      "title": "Rancy Class",
+      "creator": "76561198284500537",
+      "time_updated": 1720750647,
+      "tags": [
+        "CN",
+        "Hero",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3289828533",
+      "title": "The Forsaken Returns",
+      "creator": "76561198040723710",
+      "time_updated": 1747332464,
+      "tags": [
+        "Chinese",
+        "Hero",
+        "New Hero",
+        "hero class",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3295545219",
+      "title": "「铃兰」 Suzuran 【明日方舟Arknights】",
+      "creator": "76561199010365358",
+      "time_updated": 1737108776,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3295725084",
+      "title": "「独角兽」Unicorn【碧蓝航线Azur Lane】",
+      "creator": "76561198156015897",
+      "time_updated": 1742652660,
+      "tags": [
+        "Class Mod",
+        "class"
+      ]
+    },
+    {
+      "id": "3295833233",
+      "title": "「独角兽」 Unicorn 语音补丁 Voice patch",
+      "creator": "76561198156015897",
+      "time_updated": 1721825352,
+      "tags": [
+        "Class Mod",
+        "class"
+      ]
+    },
+    {
+      "id": "3296165629",
+      "title": "The Oni - New Class",
+      "creator": "76561198037041575",
+      "time_updated": 1787622090,
+      "tags": [
+        "Oni",
+        "Touhou",
+        "Yuugi Hoshiguma",
+        "new class"
+      ]
+    },
+    {
+      "id": "3299295903",
+      "title": "The Storyteller",
+      "creator": "76561198117056201",
+      "time_updated": 1787078106,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Storyteller",
+        "new class"
+      ]
+    },
+    {
+      "id": "3301021603",
+      "title": "DeovolentClassBalance",
+      "creator": "76561198138846340",
+      "time_updated": 1722587167,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3301559781",
+      "title": "The Survivor Class",
+      "creator": "76561198056183178",
+      "time_updated": 1762826630,
+      "tags": [
+        "Class Mod",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3303417614",
+      "title": "The Tempest Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1787109199,
+      "tags": [
+        "Anthro",
+        "Chinese",
+        "Class Mod",
+        "Dragon",
+        "English",
+        "Memes",
+        "Russian",
+        "character mod",
+        "french",
+        "italian",
+        "lightning",
+        "new class"
+      ]
+    },
+    {
+      "id": "3304939861",
+      "title": "White Priestess Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224780,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3305185408",
+      "title": "Akofa_Taliris",
+      "creator": "76561199079639185",
+      "time_updated": 1734774738,
+      "tags": [
+        "class"
+      ]
+    },
+    {
+      "id": "3308841144",
+      "title": "The Abigail Williams Class",
+      "creator": "76561198994938337",
+      "time_updated": 1792163063,
+      "tags": [
+        "Abigail Williams",
+        "Fate",
+        "Fate Grand Order",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3309026393",
+      "title": "[New Class]明日方舟空弦Archetto",
+      "creator": "76561199197923904",
+      "time_updated": 1764468987,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3310476693",
+      "title": "The Tanker",
+      "creator": "76561198408373120",
+      "time_updated": 1761828488,
+      "tags": [
+        "English",
+        "Hero",
+        "New Hero",
+        "Tank",
+        "Tanker",
+        "new class"
+      ]
+    },
+    {
+      "id": "3315700072",
+      "title": "The Eye of the Sun Class Rebalance & Fixes",
+      "creator": "76561198838771095",
+      "time_updated": 1734007827,
+      "tags": [
+        "Chinese",
+        "Class Tweaks",
+        "English",
+        "Hero",
+        "New Hero",
+        "Overhaul",
+        "Rebalance",
+        "Russian",
+        "Skins",
+        "new class",
+        "spanish"
+      ]
+    },
+    {
+      "id": "3316487164",
+      "title": "Trench Doctor Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1790088449,
+      "tags": [
+        "Class Mod",
+        "Healer",
+        "Medic",
+        "new class"
+      ]
+    },
+    {
+      "id": "3325173032",
+      "title": "Duchess Reformed",
+      "creator": "76561198117056201",
+      "time_updated": 1766377858,
+      "tags": [
+        "Cerebral",
+        "Class Tweaks",
+        "Crimson Court",
+        "Duchess",
+        "S-purple",
+        "Soggy Pizza",
+        "new class"
+      ]
+    },
+    {
+      "id": "3327140717",
+      "title": "卧槽呀！阿洛娜",
+      "creator": "76561198893775019",
+      "time_updated": 1730988984,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3327345899",
+      "title": "The Legion Class Mod - Fire Emblem",
+      "creator": "76561198268657749",
+      "time_updated": 1737758465,
+      "tags": [
+        "Berserker",
+        "Boss",
+        "Legion",
+        "Meme",
+        "Nightmare",
+        "fire emblem",
+        "new class"
+      ]
+    },
+    {
+      "id": "3332073370",
+      "title": "Bonetaker Class",
+      "creator": "76561198403059574",
+      "time_updated": 1782905704,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3332549158",
+      "title": "卧槽呀！阿比 威廉姆斯 简化重置 ZIP",
+      "creator": "76561198893775019",
+      "time_updated": 1733198629,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3336504475",
+      "title": "White Priestess Class Stocking Skin MOD",
+      "creator": "76561198109909518",
+      "time_updated": 1727103466,
+      "tags": [
+        "new class",
+        "skin"
+      ]
+    },
+    {
+      "id": "3337718904",
+      "title": "The Bulwark Class Mod",
+      "creator": "76561198127278267",
+      "time_updated": 1744465540,
+      "tags": [
+        "A Little Religious",
+        "Big Woman",
+        "new class"
+      ]
+    },
+    {
+      "id": "3338803500",
+      "title": "Reaver Class Mod Redux",
+      "creator": "76561198049458991",
+      "time_updated": 1728037175,
+      "tags": [
+        "Hero",
+        "Reaver",
+        "new class"
+      ]
+    },
+    {
+      "id": "3340782584",
+      "title": "The Eye of Sun Skins",
+      "creator": "76561198838771095",
+      "time_updated": 1727999196,
+      "tags": [
+        "Hero",
+        "New Hero",
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3341035771",
+      "title": "Legacy Seraph Class Mod",
+      "creator": "76561198043173112",
+      "time_updated": 1727769364,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3341442324",
+      "title": "(Legacy) Fire Attacks: Seraph Patch",
+      "creator": "76561198041899942",
+      "time_updated": 1786114710,
+      "tags": [
+        "Class Mod",
+        "Fire",
+        "Memes",
+        "Runaway",
+        "Seraph",
+        "character mod"
+      ]
+    },
+    {
+      "id": "3341632263",
+      "title": "Levantine Enchantress Class",
+      "creator": "76561198403059574",
+      "time_updated": 1783063145,
+      "tags": [
+        "Black Reliquary",
+        "new class"
+      ]
+    },
+    {
+      "id": "3341649836",
+      "title": "「独角兽 削弱版」 Unicorn For Vanilla 【碧蓝航线Azur Lane】",
+      "creator": "76561198156015897",
+      "time_updated": 1727865809,
+      "tags": [
+        "Class Mod",
+        "class"
+      ]
+    },
+    {
+      "id": "3341653593",
+      "title": "airoucat",
+      "creator": "76561198283317423",
+      "time_updated": 1752625592,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3347307257",
+      "title": "Remedial Knight",
+      "creator": "76561198056183178",
+      "time_updated": 1753224718,
+      "tags": [
+        "Blue Archive",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3351655015",
+      "title": "DD2 Duelist Class Mod",
+      "creator": "76561199596697483",
+      "time_updated": 1759511734,
+      "tags": [
+        "Chinese",
+        "Class Mod",
+        "Darkest Dungeon 2",
+        "Project: Iron Crown",
+        "Russian",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3353163343",
+      "title": "Huohuo New Class",
+      "creator": "76561198109909518",
+      "time_updated": 1787146274,
+      "tags": [
+        "Star Rail",
+        "class"
+      ]
+    },
+    {
+      "id": "3356668677",
+      "title": "卧槽呀！ZIMIK系列角色 2024.11.3 捆绑更新包",
+      "creator": "76561198893775019",
+      "time_updated": 1730628518,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3357715659",
+      "title": "卧槽呀！恶魔小富婆",
+      "creator": "76561198893775019",
+      "time_updated": 1735901524,
+      "tags": [
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3359893971",
+      "title": "The Philomath UPDATE",
+      "creator": "76561198012886214",
+      "time_updated": 1730757394,
+      "tags": [
+        "English",
+        "Lore Friendly",
+        "Philomath",
+        "class",
+        "french",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3361012207",
+      "title": "「花间诗剑」重置版 The Flowery Poet Class Remastered",
+      "creator": "76561198850036782",
+      "time_updated": 1772523078,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3362800212",
+      "title": "The Trapper",
+      "creator": "76561198197124155",
+      "time_updated": 1748800758,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "HeroClass",
+        "Trapper",
+        "new class"
+      ]
+    },
+    {
+      "id": "3363967048",
+      "title": "Skeleton Maid",
+      "creator": "76561198109909518",
+      "time_updated": 1787148351,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "Maid",
+        "Skeleton",
+        "new class"
+      ]
+    },
+    {
+      "id": "3366899368",
+      "title": "The Historian Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1788252271,
+      "tags": [
+        "Blue Archive",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3369827338",
+      "title": "Goblin Huntress Class Mod Standalone",
+      "creator": "76561198225077724",
+      "time_updated": 1788791138,
+      "tags": [
+        "English",
+        "Guns",
+        "new class"
+      ]
+    },
+    {
+      "id": "3370050880",
+      "title": "卧槽呀！幽灵鲨 （独立角色）",
+      "creator": "76561198893775019",
+      "time_updated": 1734444857,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3371578144",
+      "title": "The Estranged",
+      "creator": "76561198117056201",
+      "time_updated": 1766103450,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Estranged",
+        "new class"
+      ]
+    },
+    {
+      "id": "3371578215",
+      "title": "The Estranged: Director's Cut",
+      "creator": "76561198117056201",
+      "time_updated": 1766103339,
+      "tags": [
+        "Blight",
+        "Class Mod",
+        "Estranged",
+        "new class"
+      ]
+    },
+    {
+      "id": "3372687509",
+      "title": "犁马 plowmare class",
+      "creator": "76561198968403984",
+      "time_updated": 1739354441,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3374712919",
+      "title": "卧槽呀！烈妃  (独立角色)",
+      "creator": "76561198893775019",
+      "time_updated": 1732977226,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3374894648",
+      "title": "The Vixen",
+      "creator": "76561199185700368",
+      "time_updated": 1773181214,
+      "tags": [
+        "Furry",
+        "Skins",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3378345529",
+      "title": "Juggernaut Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224758,
+      "tags": [
+        "NG+ Patch",
+        "arknights",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3378345708",
+      "title": "Juggernaut Alternate Skin",
+      "creator": "76561198117403105",
+      "time_updated": 1758503239,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3378560396",
+      "title": "卧槽呀！2025.1.1 ZIMIK 原版皮肤改角色 更新包",
+      "creator": "76561198893775019",
+      "time_updated": 1735661196,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3379208313",
+      "title": "LionHeart Class",
+      "creator": "76561198109909518",
+      "time_updated": 1787148468,
+      "tags": [
+        "Hero",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3381400345",
+      "title": "卧槽呀！生化搬运工（皮肤改角色）",
+      "creator": "76561198893775019",
+      "time_updated": 1736937231,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3393098890",
+      "title": "BRS Class 黑岩射手",
+      "creator": "76561199107723475",
+      "time_updated": 1772024094,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3397123751",
+      "title": "卧槽呀！李火旺",
+      "creator": "76561198893775019",
+      "time_updated": 1740813383,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3397134362",
+      "title": "卧槽呀！黑圣物特供 角色捆绑包",
+      "creator": "76561198893775019",
+      "time_updated": 1740888270,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3398783460",
+      "title": "「殷红迷雾」贴图重置 The Red Mist's texture remake",
+      "creator": "76561199523310746",
+      "time_updated": 1735826976,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3400834920",
+      "title": "Curious Lupine Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1738587004,
+      "tags": [
+        "Class Mod",
+        "Furry",
+        "monster girl",
+        "new class"
+      ]
+    },
+    {
+      "id": "3403329744",
+      "title": "「契术师」 Warlock class（reBalance Patch2.0）",
+      "creator": "76561198563908637",
+      "time_updated": 1739378524,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3409038793",
+      "title": "高松灯 - MyGO主唱",
+      "creator": "76561198095286162",
+      "time_updated": 1743769023,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3409701879",
+      "title": "The Aesthete Class Mod",
+      "creator": "76561198268657749",
+      "time_updated": 1754503691,
+      "tags": [
+        "Beauty",
+        "Class Mod",
+        "English",
+        "Healer",
+        "Holy",
+        "Religious",
+        "fire emblem",
+        "french",
+        "new class"
+      ]
+    },
+    {
+      "id": "3415493990",
+      "title": "Shadow of eternity",
+      "creator": "76561198316873653",
+      "time_updated": 1737951418,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3415611143",
+      "title": "「大海龙(女仆)」Ocean Dragon Maid Class",
+      "creator": "76561199003271204",
+      "time_updated": 1741762931,
+      "tags": [
+        "Custom",
+        "new class"
+      ]
+    },
+    {
+      "id": "3416142945",
+      "title": "千早爱音 - MyGO节奏吉他手",
+      "creator": "76561198095286162",
+      "time_updated": 1743834368,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3416185615",
+      "title": "Wusheng (Martial Saint) Class Mod",
+      "creator": "76561199596697483",
+      "time_updated": 1752971024,
+      "tags": [
+        "Chinese",
+        "English",
+        "Mod Hero",
+        "Romance of the Three Kingdoms",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3417575327",
+      "title": "THE Hornet",
+      "creator": "76561199046162863",
+      "time_updated": 1769275146,
+      "tags": [
+        "Skins",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3419308929",
+      "title": "「边狱巴士」但丁",
+      "creator": "76561198884153490",
+      "time_updated": 1739519673,
+      "tags": [
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3423314339",
+      "title": "若叶睦 - Ave Mujica节奏吉他手",
+      "creator": "76561198095286162",
+      "time_updated": 1740735650,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3424145711",
+      "title": "The Fox of Calamity",
+      "creator": "76561198056183178",
+      "time_updated": 1788441293,
+      "tags": [
+        "Blue Archive",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3424745688",
+      "title": "「契术师」 Warlock class（ReWork Patch3.0）",
+      "creator": "76561198563908637",
+      "time_updated": 1740072361,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3425790723",
+      "title": "卧槽呀！炽热铜刃 （独立角色）",
+      "creator": "76561198893775019",
+      "time_updated": 1755435015,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3427245711",
+      "title": "Wildlander Ripperkin Class 2.0",
+      "creator": "76561198403059574",
+      "time_updated": 1790024690,
+      "tags": [
+        "Black Reliquary",
+        "new class"
+      ]
+    },
+    {
+      "id": "3427924154",
+      "title": "Clara",
+      "creator": "76561198109909518",
+      "time_updated": 1787148657,
+      "tags": [
+        "Star Rail",
+        "class"
+      ]
+    },
+    {
+      "id": "3428212807",
+      "title": "Cheetah Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1762032937,
+      "tags": [
+        "Class Mod",
+        "Furry",
+        "monster girl",
+        "new class"
+      ]
+    },
+    {
+      "id": "3429073045",
+      "title": "The Prince of the Parade Class Mod",
+      "creator": "76561199002479619",
+      "time_updated": 1744611276,
+      "tags": [
+        "Class Mod",
+        "LimbusCompany",
+        "ProjectMoon",
+        "new class"
+      ]
+    },
+    {
+      "id": "3429149166",
+      "title": "「妖刀姬」Yoto Hime New class",
+      "creator": "76561198828722469",
+      "time_updated": 1770443814,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3432168693",
+      "title": "权天使-尤璃莎EureshyaLL",
+      "creator": "76561199128078433",
+      "time_updated": 1740805534,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3434706722",
+      "title": "长崎爽世 - MyGO贝斯手",
+      "creator": "76561198095286162",
+      "time_updated": 1743917746,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3439333048",
+      "title": "Charming witch Class",
+      "creator": "76561198109909518",
+      "time_updated": 1787119687,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3439907840",
+      "title": "Tomb Prospector -Class Mod Redux-",
+      "creator": "76561198225077724",
+      "time_updated": 1789236646,
+      "tags": [
+        "Bloodborne",
+        "Class Tweaks",
+        "English",
+        "Redux",
+        "new class"
+      ]
+    },
+    {
+      "id": "3440502939",
+      "title": "The playwright Class",
+      "creator": "76561199141536171",
+      "time_updated": 1742826744,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3444615661",
+      "title": "冥滩孤魂",
+      "creator": "76561198802178060",
+      "time_updated": 1774363721,
+      "tags": [
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "3450987382",
+      "title": "The Matriarch Class Mod",
+      "creator": "76561198091786007",
+      "time_updated": 1787109108,
+      "tags": [
+        "Anthro",
+        "Blight",
+        "Brazilian Portuguese",
+        "Chinese",
+        "Class Mod",
+        "Dragon",
+        "English",
+        "Healer",
+        "Memes",
+        "Mom",
+        "Mother",
+        "Russian",
+        "Stress Healer",
+        "character mod",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3454073726",
+      "title": "风神术士轻重做+大修",
+      "creator": "76561198242592940",
+      "time_updated": 1743572460,
+      "tags": [
+        "Hero",
+        "class"
+      ]
+    },
+    {
+      "id": "3455563349",
+      "title": "要乐奈与椎名立希 - MyGO主音吉他与鼓手",
+      "creator": "76561198095286162",
+      "time_updated": 1744189565,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3457756598",
+      "title": "【小提琴】独立英雄",
+      "creator": "76561199444038607",
+      "time_updated": 1780929473,
+      "tags": [
+        "Class Mod",
+        "class"
+      ]
+    },
+    {
+      "id": "3459861152",
+      "title": "The Ironclad",
+      "creator": "76561198041899942",
+      "time_updated": 1788874104,
+      "tags": [
+        "Class Mod",
+        "Demon",
+        "Fire",
+        "Guard",
+        "Ironclad",
+        "Utility",
+        "big damage",
+        "character mod",
+        "cross mod support",
+        "dragon install",
+        "metal song refrences",
+        "new class",
+        "self damage",
+        "slay",
+        "slay the spire",
+        "spire",
+        "sts",
+        "the"
+      ]
+    },
+    {
+      "id": "3460837438",
+      "title": "Tactician Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1772731277,
+      "tags": [
+        "Blue Archive",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3462586686",
+      "title": "柚鸟夏/YutoriNatsu/柚鳥ナツ",
+      "creator": "76561198109909518",
+      "time_updated": 1790555350,
+      "tags": [
+        "Blue Archive",
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3463971564",
+      "title": "Kamen Rider Kuuga / 假面骑士空我",
+      "creator": "76561198283317423",
+      "time_updated": 1744650773,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3467159384",
+      "title": "烈阳之眸_十字军皮肤",
+      "creator": "76561198802178060",
+      "time_updated": 1773561330,
+      "tags": [
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "3468559218",
+      "title": "Duchess Reformed - BR Port / Official",
+      "creator": "76561198072016937",
+      "time_updated": 1745389837,
+      "tags": [
+        "Black Reliquary",
+        "Class Tweaks",
+        "Duchess",
+        "S-purple",
+        "Soggy Pizza",
+        "new class"
+      ]
+    },
+    {
+      "id": "3470633966",
+      "title": "Eos「灾厄」Scourge Class",
+      "creator": "76561199003271204",
+      "time_updated": 1746340809,
+      "tags": [
+        "Custom",
+        "new class"
+      ]
+    },
+    {
+      "id": "3470960863",
+      "title": "The Squire",
+      "creator": "76561198162630505",
+      "time_updated": 1787089643,
+      "tags": [
+        "Agatha Gaming",
+        "Arthur",
+        "Chivalry 2",
+        "Class Mod",
+        "DPS",
+        "For Argon!",
+        "Healing",
+        "Hero",
+        "HeroClass",
+        "Kilted Was Here",
+        "KiltedDungeoneer",
+        "Precious Squire Boy",
+        "Redhead Enjoyer",
+        "Support",
+        "squire"
+      ]
+    },
+    {
+      "id": "3473569265",
+      "title": "「莉萝艾」Lilo · I Class",
+      "creator": "76561198202570000",
+      "time_updated": 1754132952,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3476262502",
+      "title": "蕾之忍者 lex_ninja",
+      "creator": "76561199076431392",
+      "time_updated": 1746988274,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3476482278",
+      "title": "White Priestess Class Original Skin MOD",
+      "creator": "76561199121297943",
+      "time_updated": 1747411672,
+      "tags": [
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3481828578",
+      "title": "Dredge: Fire Edition",
+      "creator": "76561198070931218",
+      "time_updated": 1761522942,
+      "tags": [
+        "Big Mech",
+        "Black Reliquary",
+        "Daze Mech",
+        "Fire Mech",
+        "Hero",
+        "Large Mech",
+        "new class"
+      ]
+    },
+    {
+      "id": "3482922464",
+      "title": "[绿藻头]Netzach_Class",
+      "creator": "76561198987214880",
+      "time_updated": 1750312539,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3485727389",
+      "title": "Lord of the Worgen",
+      "creator": "76561198047484973",
+      "time_updated": 1787140504,
+      "tags": [
+        "English",
+        "Hero",
+        "NG+ Patch",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3490076588",
+      "title": "Sibyl Class Mod by Sanagi Yuzu & Marvin Seo",
+      "creator": "76561198043173112",
+      "time_updated": 1788409921,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3490146563",
+      "title": "Cornor Stand Alone Class nude",
+      "creator": "76561199706924652",
+      "time_updated": 1749022373,
+      "tags": [
+        "NSFW",
+        "class"
+      ]
+    },
+    {
+      "id": "3490289903",
+      "title": "[Limbus Company] LCB Gregor",
+      "creator": "76561198137011037",
+      "time_updated": 1771665664,
+      "tags": [
+        "Project Moon",
+        "limbus company",
+        "new class"
+      ]
+    },
+    {
+      "id": "3493199293",
+      "title": "Kaname Madoka Class Mod",
+      "creator": "76561198968900356",
+      "time_updated": 1749128183,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3493216030",
+      "title": "卧槽呀！柯娜 独立角色",
+      "creator": "76561198893775019",
+      "time_updated": 1755435294,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3494598746",
+      "title": "[New Class]Lextning Ninja 蕾之忍者",
+      "creator": "76561198349835453",
+      "time_updated": 1750982788,
+      "tags": [
+        "Class Mod",
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3495138540",
+      "title": "Hospitaller Class Mod",
+      "creator": "76561198107272737",
+      "time_updated": 1788641598,
+      "tags": [
+        "Class Mod",
+        "New Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3505113870",
+      "title": "The Messiah",
+      "creator": "76561198433051716",
+      "time_updated": 1789188221,
+      "tags": [
+        "Class Mod",
+        "English",
+        "character mod",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3505562329",
+      "title": "Cloak and Dagger Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1757531584,
+      "tags": [
+        "Class Mod",
+        "Furry",
+        "monster girl",
+        "new class"
+      ]
+    },
+    {
+      "id": "3509511150",
+      "title": "「芙洛丝」Floss Class",
+      "creator": "76561198202570000",
+      "time_updated": 1754187453,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3510281797",
+      "title": "Dragonsaintess Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224707,
+      "tags": [
+        "NG+ Patch",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3514156990",
+      "title": "Grani class mod",
+      "creator": "76561199088328769",
+      "time_updated": 1752494493,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3516900111",
+      "title": "The Lunar Princess Class Mod",
+      "creator": "76561198834815335",
+      "time_updated": 1759511428,
+      "tags": [
+        "Elden Ring",
+        "English",
+        "Mod Hero",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3523410739",
+      "title": "Scapegoat",
+      "creator": "76561198870572909",
+      "time_updated": 1783074280,
+      "tags": [
+        "Class Mod",
+        "English",
+        "heroes",
+        "new class",
+        "simplified Chinese"
+      ]
+    },
+    {
+      "id": "3523632107",
+      "title": "The Rogue",
+      "creator": "76561198225077724",
+      "time_updated": 1789236808,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3527258116",
+      "title": "The Nurse Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1789053829,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3527833173",
+      "title": "「缄默德克萨斯」Texas the Omertosa Class",
+      "creator": "76561198412165799",
+      "time_updated": 1752743940,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3531576668",
+      "title": "「遐蝶」 Castoris",
+      "creator": "76561199014631367",
+      "time_updated": 1763389889,
+      "tags": [
+        "English",
+        "koreana",
+        "new class",
+        "schinese"
+      ]
+    },
+    {
+      "id": "3532910651",
+      "title": "「N公司中锤」The N Corp. Mittehammer Class",
+      "creator": "76561199062214203",
+      "time_updated": 1753537332,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3535411590",
+      "title": "The Seeker",
+      "creator": "76561199185700368",
+      "time_updated": 1787197447,
+      "tags": [
+        "Furry",
+        "Skins",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3538819157",
+      "title": "Mr.Pepper's Slayer Rework",
+      "creator": "76561198342182255",
+      "time_updated": 1753974128,
+      "tags": [
+        "Class Mod",
+        "Mr.Pepper",
+        "Slayer",
+        "rework"
+      ]
+    },
+    {
+      "id": "3539954403",
+      "title": "铁甲战士class",
+      "creator": "76561198968403984",
+      "time_updated": 1787328820,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3549395034",
+      "title": "Instructor Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1768734480,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3550713033",
+      "title": "卧槽呀！薄暮猎人",
+      "creator": "76561198893775019",
+      "time_updated": 1755434524,
+      "tags": [
+        "Class Tweaks",
+        "new class"
+      ]
+    },
+    {
+      "id": "3551696837",
+      "title": "The Songbird",
+      "creator": "76561198117056201",
+      "time_updated": 1757833030,
+      "tags": [
+        "HBH",
+        "Hawaiian shirt octopus",
+        "new class"
+      ]
+    },
+    {
+      "id": "3556953160",
+      "title": "Voice Pack of The Lunar Princess Class Mod",
+      "creator": "76561198052254041",
+      "time_updated": 1762083885,
+      "tags": [
+        "Elden Ring",
+        "English",
+        "Mod Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3558118422",
+      "title": "The Hwarang Class Mod",
+      "creator": "76561198834815335",
+      "time_updated": 1759511605,
+      "tags": [
+        "Class Mod",
+        "English",
+        "Sinra Dynasty",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3560981532",
+      "title": "The Guru",
+      "creator": "76561198435808882",
+      "time_updated": 1775991322,
+      "tags": [
+        "M O N K E Y",
+        "new class"
+      ]
+    },
+    {
+      "id": "3562306415",
+      "title": "Library Of Ruina Binah",
+      "creator": "76561199244507584",
+      "time_updated": 1758965578,
+      "tags": [
+        "Binah",
+        "Class Mod",
+        "Library Of Ruina"
+      ]
+    },
+    {
+      "id": "3572495538",
+      "title": "Impress Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1766352455,
+      "tags": [
+        "Class Mod",
+        "Succubus",
+        "new class"
+      ]
+    },
+    {
+      "id": "3577605870",
+      "title": "「末日使者」Doombringer Class",
+      "creator": "76561198202570000",
+      "time_updated": 1775632191,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3578244694",
+      "title": "龙裔 Dragonborn class",
+      "creator": "76561198953529648",
+      "time_updated": 1764676387,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3579940644",
+      "title": "Fugue Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224728,
+      "tags": [
+        "Honkai Star Rail",
+        "NG+ Patch",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3580776814",
+      "title": "【Texas】basic_class",
+      "creator": "76561199026189245",
+      "time_updated": 1761405363,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3581849691",
+      "title": "【Texas】advanced_class",
+      "creator": "76561199026189245",
+      "time_updated": 1761405457,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3589158425",
+      "title": "Library Of Ruina Roland",
+      "creator": "76561199244507584",
+      "time_updated": 1785150019,
+      "tags": [
+        "Class Mod",
+        "Library Of Ruina",
+        "Roland"
+      ]
+    },
+    {
+      "id": "3592178519",
+      "title": "Ciao Min Class Mod",
+      "creator": "76561198346113708",
+      "time_updated": 1762955559,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3594656542",
+      "title": "Kamen Rider Kuuga EX / 假面骑士空我 EX",
+      "creator": "76561198930436144",
+      "time_updated": 1774954073,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3596474822",
+      "title": "Halo Sangheili Ultra Class Mod",
+      "creator": "76561198170619945",
+      "time_updated": 1765108464,
+      "tags": [
+        "Covenant",
+        "Elite",
+        "Halo",
+        "new class"
+      ]
+    },
+    {
+      "id": "3597055116",
+      "title": "The Pelagic Idol",
+      "creator": "76561198799167029",
+      "time_updated": 1768074521,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3597091126",
+      "title": "Springtrap Class Mod",
+      "creator": "76561198038382513",
+      "time_updated": 1789276993,
+      "tags": [
+        "Class Mod",
+        "FNAF",
+        "Springtrap",
+        "new class"
+      ]
+    },
+    {
+      "id": "3604209591",
+      "title": "「ZIMIK」SHU Class Mod",
+      "creator": "76561198104936608",
+      "time_updated": 1769012032,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3607014604",
+      "title": "Miyaki's The Initiator",
+      "creator": "76561198383098797",
+      "time_updated": 1773808957,
+      "tags": [
+        "Miyaki",
+        "new class"
+      ]
+    },
+    {
+      "id": "3615603795",
+      "title": "The Pureheart",
+      "creator": "76561198050168650",
+      "time_updated": 1774098171,
+      "tags": [
+        "A Healer But...",
+        "Anime",
+        "Best Girl",
+        "Class Mod",
+        "Dungeon Meshi",
+        "Memes",
+        "New Hero",
+        "She Cute",
+        "new class"
+      ]
+    },
+    {
+      "id": "3617577009",
+      "title": "class_hiro_二阶堂希罗",
+      "creator": "76561199512441077",
+      "time_updated": 1779970171,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3618290121",
+      "title": "Surtr Class",
+      "creator": "76561198109909518",
+      "time_updated": 1788608170,
+      "tags": [
+        "Arknight",
+        "new class"
+      ]
+    },
+    {
+      "id": "3618373549",
+      "title": "Dark Priest Class",
+      "creator": "76561198403059574",
+      "time_updated": 1787137789,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3619658130",
+      "title": "「拉菲」class 【碧蓝航线Azur Lane】",
+      "creator": "76561199444038607",
+      "time_updated": 1788839374,
+      "tags": [
+        "Class Mod",
+        "class"
+      ]
+    },
+    {
+      "id": "3623996260",
+      "title": "Red Lotus for hardest mods",
+      "creator": "76561199557663438",
+      "time_updated": 1766171827,
+      "tags": [
+        "Enhanced",
+        "class"
+      ]
+    },
+    {
+      "id": "3630756885",
+      "title": "Der Fluchschütze Class Mod",
+      "creator": "76561199002479619",
+      "time_updated": 1766804285,
+      "tags": [
+        "Class Mod",
+        "LimbusCompany",
+        "ProjectMoon",
+        "new class"
+      ]
+    },
+    {
+      "id": "3632659144",
+      "title": "「ZIMIK」黍 TE强化补丁",
+      "creator": "76561198930436144",
+      "time_updated": 1774952465,
+      "tags": [
+        "Class Improve",
+        "class"
+      ]
+    },
+    {
+      "id": "3636094667",
+      "title": "Marchioness Class",
+      "creator": "76561198041899942",
+      "time_updated": 1788748738,
+      "tags": [
+        "Bleed",
+        "Bug but Cute",
+        "Class Mod",
+        "Crimson Court",
+        "Support",
+        "character mod",
+        "moth"
+      ]
+    },
+    {
+      "id": "3654694771",
+      "title": "The Lodestar",
+      "creator": "76561198822891417",
+      "time_updated": 1788554865,
+      "tags": [
+        "Class Mod",
+        "Support",
+        "Tank",
+        "new class"
+      ]
+    },
+    {
+      "id": "3655423209",
+      "title": "class_sherry_橘雪莉",
+      "creator": "76561199512441077",
+      "time_updated": 1779970156,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3656355827",
+      "title": "The Patriot Remake",
+      "creator": "76561199557663438",
+      "time_updated": 1769731579,
+      "tags": [
+        "Class Remake",
+        "class"
+      ]
+    },
+    {
+      "id": "3659966915",
+      "title": "「莫德凯撒」Mordekaiser Class 补丁",
+      "creator": "76561199153257292",
+      "time_updated": 1770690711,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3661161068",
+      "title": "Miyaki's The Mediator",
+      "creator": "76561198383098797",
+      "time_updated": 1773808598,
+      "tags": [
+        "Miyaki",
+        "new class"
+      ]
+    },
+    {
+      "id": "3661454250",
+      "title": "「妖刀姬」Yoto Hime New class(R18)",
+      "creator": "76561198828722469",
+      "time_updated": 1770444213,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3665420208",
+      "title": "「深海猎人 幽灵鲨」SpecterClass",
+      "creator": "76561198828722469",
+      "time_updated": 1786348894,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3665438215",
+      "title": "「深海猎人 幽灵鲨」SpecterClassNsfw",
+      "creator": "76561198828722469",
+      "time_updated": 1786348921,
+      "tags": [
+        "Class Mod",
+        "Hero",
+        "new class"
+      ]
+    },
+    {
+      "id": "3665487344",
+      "title": "Livia Enhancement patch",
+      "creator": "76561199557663438",
+      "time_updated": 1771968829,
+      "tags": [
+        "Class Rework",
+        "class"
+      ]
+    },
+    {
+      "id": "3666727765",
+      "title": "血咒Polarisfd",
+      "creator": "76561199128078433",
+      "time_updated": 1775139388,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3667223750",
+      "title": "玉兔/The Jade Rabbit Class Mod",
+      "creator": "76561198831108370",
+      "time_updated": 1771204434,
+      "tags": [
+        "Class Mod",
+        "Jade Rabbit",
+        "character mod",
+        "mythical characters",
+        "new class"
+      ]
+    },
+    {
+      "id": "3670010994",
+      "title": "Kamen Rider Delta / 假面骑士德尔塔",
+      "creator": "76561198930436144",
+      "time_updated": 1792222993,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3677444468",
+      "title": "The Miscreant - Fan Continuation",
+      "creator": "76561198210414329",
+      "time_updated": 1774824963,
+      "tags": [
+        "Chinese",
+        "English",
+        "Millie Lives",
+        "Reupload",
+        "french",
+        "japanese",
+        "korean",
+        "new class"
+      ]
+    },
+    {
+      "id": "3683945035",
+      "title": "S Murphy Custom Class",
+      "creator": "76561199060850259",
+      "time_updated": 1774808432,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3684901795",
+      "title": "The Vermilion",
+      "creator": "76561199185700368",
+      "time_updated": 1781315316,
+      "tags": [
+        "Furry",
+        "Skins",
+        "Trinkets",
+        "new class"
+      ]
+    },
+    {
+      "id": "3701608532",
+      "title": "监工",
+      "creator": "76561198968403984",
+      "time_updated": 1789487872,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3701898527",
+      "title": "灵魂祭祀",
+      "creator": "76561198968403984",
+      "time_updated": 1775572140,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3704461511",
+      "title": "Stellar Brawler Class Mod",
+      "creator": "76561198056183178",
+      "time_updated": 1785404498,
+      "tags": [
+        "Class Mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3706541068",
+      "title": "Mockingbird Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224743,
+      "tags": [
+        "NG+ Patch",
+        "Zenless Zone Zero",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3707874770",
+      "title": "「埃尔德里奇」class 【碧蓝航线Azur Lane】",
+      "creator": "76561199444038607",
+      "time_updated": 1777825443,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3713659437",
+      "title": "New Class:Disgraced Knight",
+      "creator": "76561198349835453",
+      "time_updated": 1792167282,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3724584552",
+      "title": "Drowner Class Mod Rework",
+      "creator": "76561198116618908",
+      "time_updated": 1779642624,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3730183936",
+      "title": "Maidknight Class 女仆骑士",
+      "creator": "76561198953529648",
+      "time_updated": 1779375966,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3736405997",
+      "title": "Re:CREATORS Altair EGO",
+      "creator": "76561199244507584",
+      "time_updated": 1785960430,
+      "tags": [
+        "Re:CREATORS",
+        "new class"
+      ]
+    },
+    {
+      "id": "3736771972",
+      "title": "The Immortal Witch Class",
+      "creator": "76561199062214203",
+      "time_updated": 1792221798,
+      "tags": [
+        "Overhauls",
+        "monsters",
+        "new class"
+      ]
+    },
+    {
+      "id": "3737892998",
+      "title": "「Alex」Alex Class",
+      "creator": "76561198331838935",
+      "time_updated": 1785658220,
+      "tags": [
+        "Alex",
+        "Class Tweaks",
+        "Gameplay Tweaks",
+        "Minecraft",
+        "Overhauls",
+        "Trinkets",
+        "heroes",
+        "new class"
+      ]
+    },
+    {
+      "id": "3738431553",
+      "title": "「酒狐」Wine Fox Class",
+      "creator": "76561199080519571",
+      "time_updated": 1781406634,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3746001956",
+      "title": "The Milkmaid Reconstructed",
+      "creator": "76561198342182255",
+      "time_updated": 1789684477,
+      "tags": [
+        "Chinese (Simplified)",
+        "Color of Madness",
+        "English",
+        "Farmstead",
+        "Healer",
+        "Korean (A)",
+        "Korean (B)",
+        "Lore Friendly",
+        "Mark",
+        "Milkmaid",
+        "Russian",
+        "class",
+        "french",
+        "japanese",
+        "new class",
+        "rework",
+        "skin"
+      ]
+    },
+    {
+      "id": "3747683481",
+      "title": "RatK Class",
+      "creator": "76561198953529648",
+      "time_updated": 1781865882,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3751315139",
+      "title": "永怖",
+      "creator": "76561198363864076",
+      "time_updated": 1783685971,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3752066214",
+      "title": "The Starwarder Class",
+      "creator": "76561198285595771",
+      "time_updated": 1782803568,
+      "tags": [
+        "Overhauls",
+        "new class"
+      ]
+    },
+    {
+      "id": "3756193519",
+      "title": "「长风」class【碧蓝航线Azur Lane】",
+      "creator": "76561199444038607",
+      "time_updated": 1787061136,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3761129859",
+      "title": "「黍」明日方舟 额外皮肤 N版",
+      "creator": "76561199444038607",
+      "time_updated": 1783607679,
+      "tags": [
+        "Skins",
+        "new class"
+      ]
+    },
+    {
+      "id": "3766203587",
+      "title": "Chaos Ranger",
+      "creator": "76561198117403105",
+      "time_updated": 1792224770,
+      "tags": [
+        "Chaos Zero Nightmare",
+        "NG+ Patch",
+        "Nightmare",
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3773471381",
+      "title": "Satyr Class Mod",
+      "creator": "76561198878342643",
+      "time_updated": 1791309409,
+      "tags": [
+        "new class"
+      ]
+    },
+    {
+      "id": "3776861247",
+      "title": "「萨恩 · 乌祖尔」Sahn_Uzal Class",
+      "creator": "76561198202570000",
+      "time_updated": 1785752865,
+      "tags": [
+        "class",
+        "new class"
+      ]
+    },
+    {
+      "id": "3786371991",
+      "title": "The Miscreant Mod Class - Remastered",
+      "creator": "76561198225077724",
+      "time_updated": 1789154437,
+      "tags": [
+        "English",
+        "Guns",
+        "miscreant",
+        "new class"
+      ]
+    },
+    {
+      "id": "3788704782",
+      "title": "The Reckoning",
+      "creator": "76561198040723710",
+      "time_updated": 1790003237,
+      "tags": [
+        "Burn",
+        "Chinese",
+        "Fires Edge",
+        "new class"
+      ]
+    },
+    {
+      "id": "3799942709",
+      "title": "Melina-The Kindling Maiden Class",
+      "creator": "76561198112680087",
+      "time_updated": 1792246851,
+      "tags": [
+        "Class Mod",
+        "English",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3804953128",
+      "title": "Laevatein Class",
+      "creator": "76561198109909518",
+      "time_updated": 1790850222,
+      "tags": [
+        "Arknight:Endfield",
+        "new class"
+      ]
+    },
+    {
+      "id": "3809030748",
+      "title": "Miyaki's The Enforcer",
+      "creator": "76561198383098797",
+      "time_updated": 1790619226,
+      "tags": [
+        "Miyaki",
+        "new class"
+      ]
+    },
+    {
+      "id": "3811317150",
+      "title": "失心剑诡",
+      "creator": "76561198802178060",
+      "time_updated": 1791697491,
+      "tags": [
+        "Class Mod",
+        "character mod",
+        "new class"
+      ]
+    },
+    {
+      "id": "3816448220",
+      "title": "Eventide Class",
+      "creator": "76561198117403105",
+      "time_updated": 1792224717,
+      "tags": [
+        "NG+ Patch",
+        "class",
+        "new class"
+      ]
+    }
+  ]
+}

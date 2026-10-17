@@ -1,11 +1,18 @@
 # Run `just` to list recipes
 
+# Loads STEAM_API_KEY from a local .env (gitignored)
+set dotenv-load
+
 web := "darkest-stagecoach"
 
 # Darkest Dungeon install and workshop folders (WSL paths), override with
 # `just game=... workshop=... generate`
 game := "/mnt/c/Program Files (x86)/Steam/steamapps/common/DarkestDungeon"
 workshop := "/mnt/c/Program Files (x86)/Steam/steamapps/workshop/content/262060"
+
+# Where SteamCMD puts mods downloaded by `just download`
+steam_dir := env("HOME") / ".cache/darkest-stagecoach/steam"
+steam_workshop := steam_dir / "steamapps/workshop/content/262060"
 
 default:
     @just --list
@@ -51,6 +58,20 @@ generate:
         "{{game}}" \
         "{{workshop}}" \
         {{web}}/src/data/data
+
+# List popular hero mods from the Steam workshop into mods.json (needs STEAM_API_KEY)
+fetch min_subs="5000":
+    cargo run --release --bin workshop_fetch -- query --min-subs {{min_subs}}
+
+# Download every mod in mods.json with SteamCMD (needs an account that owns the game)
+download steam_user:
+    mkdir -p "{{steam_dir}}"
+    cargo run --release --bin workshop_fetch -- script --out "{{steam_dir}}/downloads.txt"
+    steamcmd +force_install_dir "{{steam_dir}}" +login {{steam_user}} +runscript "{{steam_dir}}/downloads.txt" +quit
+
+# Fetch, download and generate data from the downloaded mods
+sync steam_user min_subs="5000": (fetch min_subs) (download steam_user)
+    {{just_executable()}} workshop="{{steam_workshop}}" generate
 
 # Rebuild docs/ for GitHub Pages (commit and push to publish)
 deploy:

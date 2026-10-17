@@ -42,6 +42,8 @@ cargo run --release --bin mod_writer -- \
   darkest-stagecoach/src/data/data
 ```
 
+Workshop fetching (`workshop_fetch` crate, `just fetch` / `download` / `sync`): `query` pages through Steam's `IPublishedFileService/QueryFiles` (needs `STEAM_API_KEY`, loaded from a gitignored `.env` by the justfile) sorted by lifetime unique subscriptions, keeps mods above a threshold whose tags look like hero mods (`HERO_TAGS`, case-insensitive; only a pre-filter, `root_finder` decides after download) and writes the committed manifest `mods.json` (no subscription counts, to keep diffs meaningful). `script` turns the manifest into SteamCMD `workshop_download_item` commands; `just download` runs them into `~/.cache/darkest-stagecoach/steam` (SteamCMD needs an account that owns the game; anonymous login doesn't work). `details <id>...` uses the keyless `GetPublishedFileDetails` for debugging.
+
 `mod_writer --images <image_dir> <input_dir>... <output_dir>` is the real entry point for data generation. Once the mods have been read, it replaces the previously generated `.jpg` files in the image dir and `Class_*.tsx`/`index.tsx` in the output dir, so removed mods disappear; if reading fails, nothing is touched. The `main.rs` files in `root_finder`, `parser`, `xml_parser` and `img_compr` are scratch drivers with hardcoded Windows paths, not real CLIs.
 
 Formatting: Prettier settings live in `darkest-stagecoach/package.json` (4 spaces, no semicolons, single quotes, `arrowParens: avoid`, `jsxBracketSameLine`). The Rust code is `cargo fmt` clean.
