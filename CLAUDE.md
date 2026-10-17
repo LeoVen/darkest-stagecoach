@@ -42,7 +42,7 @@ cargo run --release --bin mod_writer -- \
   darkest-stagecoach/src/data/data
 ```
 
-`mod_writer --images <image_dir> <input_dir>... <output_dir>` is the real entry point for data generation. It clears old `.jpg` files from the image dir, but only overwrites `.tsx` files in the output dir, so clear that folder first to drop removed mods. The `main.rs` files in `root_finder`, `parser`, `xml_parser` and `img_compr` are scratch drivers with hardcoded Windows paths, not real CLIs.
+`mod_writer --images <image_dir> <input_dir>... <output_dir>` is the real entry point for data generation. Once the mods have been read, it replaces the previously generated `.jpg` files in the image dir and `Class_*.tsx`/`index.tsx` in the output dir, so removed mods disappear; if reading fails, nothing is touched. The `main.rs` files in `root_finder`, `parser`, `xml_parser` and `img_compr` are scratch drivers with hardcoded Windows paths, not real CLIs.
 
 Formatting: Prettier settings live in `darkest-stagecoach/package.json` (4 spaces, no semicolons, single quotes, `arrowParens: avoid`, `jsxBracketSameLine`). The Rust code is `cargo fmt` clean.
 

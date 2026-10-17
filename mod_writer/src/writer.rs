@@ -15,6 +15,8 @@ pub fn write_files(output: &str, images: &mut ImageStore, mods: Vec<ClassModInfo
     let root = PathBuf::from_str(output).expect("failed to get path from output str");
     let mods = fix_classes(mods.into_iter().map(proc_class_mod).collect());
 
+    remove_generated(&root);
+
     let result = mods.into_iter().map(|class| make_code(class, images));
     let mut classes = vec![];
 
@@ -40,6 +42,27 @@ pub fn write_files(output: &str, images: &mut ImageStore, mods: Vec<ClassModInfo
     }
 
     make_index(&root, classes);
+}
+
+// Removes previously generated files so classes of removed mods don't linger.
+// Only runs once mods were read successfully.
+fn remove_generated(root: &Path) {
+    let Ok(entries) = std::fs::read_dir(root) else {
+        return;
+    };
+
+    for path in entries.flatten().map(|entry| entry.path()) {
+        let generated = path
+            .file_name()
+            .and_then(|n| n.to_str())
+            .is_some_and(|name| {
+                name == "index.tsx" || (name.starts_with("Class_") && name.ends_with(".tsx"))
+            });
+
+        if generated && let Err(e) = std::fs::remove_file(&path) {
+            eprintln!("Failed to remove {}: {}", path.display(), e);
+        }
+    }
 }
 
 fn make_index(root: &Path, classes: Vec<String>) {

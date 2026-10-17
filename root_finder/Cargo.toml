@@ -5,5 +5,4 @@ edition.workspace = true
 
 [dependencies]
 tokio.workspace = true
-tokio-stream.workspace = true
 futures.workspace = true

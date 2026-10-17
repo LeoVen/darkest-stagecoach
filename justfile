@@ -46,7 +46,6 @@ check: typecheck
 
 # Regenerate class data and images from the game and workshop folders
 generate:
-    rm -f {{web}}/src/data/data/*.tsx
     cargo run --release --bin mod_writer -- \
         --images {{web}}/public/img \
         "{{game}}" \
