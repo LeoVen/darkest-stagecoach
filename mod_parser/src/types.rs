@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+use mod_reader::types::Image;
+
 #[derive(Debug, Default)]
 pub struct ClassResistances {
     pub stun: f32,
@@ -49,7 +51,7 @@ pub struct Target {
 #[derive(Debug, Default)]
 pub struct SkillInfo {
     pub name: String,
-    pub img: String, // base64 encoded image
+    pub img: Image,
     pub launch: Launch,
     pub target: Target,
 }
@@ -66,15 +68,14 @@ pub struct ClassInfo {
     pub religious: bool,
     pub transform: bool,
 
-    pub portrait: String, // base64 encoded image
-    pub guild: String,    // base64 encoded image
+    pub portrait: Image,
 
     pub skills: Vec<SkillInfo>,
 
     pub steam_id: String,
 
-    pub armour_icons: [String; 5],
-    pub weapon_icons: [String; 5],
+    pub armour_icons: [Image; 5],
+    pub weapon_icons: [Image; 5],
 }
 
 impl Display for ClassResistances {
@@ -119,22 +120,6 @@ impl Display for ClassStats {
             self.weapon[2],
             self.weapon[3],
             self.weapon[4]
-        )
-    }
-}
-
-impl Display for SkillInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            r"
-        {{
-            name: `{}`,
-            launch: {},
-            target: {},
-            image: `{}`,
-        }}",
-            self.name, self.launch, self.target, self.img,
         )
     }
 }

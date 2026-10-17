@@ -4,7 +4,7 @@ use parser::DarkestFile;
 use tokio::{fs, io};
 use xml_parser::LocFile;
 
-use crate::types::{ClassModInfo, SkillData};
+use crate::types::{ClassModInfo, Image, SkillData};
 
 pub struct ModReader<'a> {
     name: &'a str,
@@ -49,7 +49,7 @@ impl<'a> ModReader<'a> {
             candidates.into_iter().next().unwrap_or(default)
         };
 
-        match image_to_base64(&file).await {
+        match read_image(&file).await {
             Ok(data) => mod_info.portrait = data,
             Err(e) => {
                 print!("portrait failed. ");
@@ -162,20 +162,6 @@ impl<'a> ModReader<'a> {
         Ok(())
     }
 
-    pub async fn read_guild_header(&self, mod_info: &mut ClassModInfo) -> anyhow::Result<()> {
-        let mut path = self.root.to_path_buf();
-        path.push(format!("{}_guild_header.png", self.name));
-
-        if let Ok(data) = image_to_base64(&path).await {
-            mod_info.guild = data;
-            print!("guild found. ");
-        } else {
-            print!("guild fail . ");
-        }
-
-        Ok(())
-    }
-
     // Workshop mods live in /<steam_id>/heroes/<name>/. Base game and DLC
     // heroes don't have a numeric folder there, so they get no steam ID.
     pub fn read_steam_id(&self, mod_info: &mut ClassModInfo) {
@@ -268,14 +254,14 @@ impl<'a> ModReader<'a> {
             let mut armour = path.to_path_buf();
             armour.push(format!("{}.png", name));
 
-            let result = match image_to_base64(&armour).await {
+            let result = match read_image(&armour).await {
                 Ok(data) => {
                     found += 1;
                     data
                 }
                 Err(_) => {
                     err += 1;
-                    String::new()
+                    Image::new()
                 }
             };
 
@@ -286,14 +272,14 @@ impl<'a> ModReader<'a> {
             let mut armour = path.to_path_buf();
             armour.push(format!("{}.png", name));
 
-            let result = match image_to_base64(&armour).await {
+            let result = match read_image(&armour).await {
                 Ok(data) => {
                     found += 1;
                     data
                 }
                 Err(_) => {
                     err += 1;
-                    String::new()
+                    Image::new()
                 }
             };
 
@@ -311,11 +297,11 @@ pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {
     anyhow::Ok(parser::parse_darkest(info_data))
 }
 
-pub async fn get_icon(root: &Path, name: &str, icon: &str) -> io::Result<String> {
+pub async fn get_icon(root: &Path, name: &str, icon: &str) -> io::Result<Image> {
     let mut path = root.to_path_buf();
     path.push(format!("{}.ability.{}.png", name, icon));
 
-    image_to_base64(&path).await
+    read_image(&path).await
 }
 
 // Edge case: art and info files might not have the same skills
@@ -329,7 +315,7 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
                     key: skill_name.to_string(),
                     name: String::new(),
                     icon: skill_icon.to_string(),
-                    img: String::new(),
+                    img: Image::new(),
                 });
             }
         }
@@ -338,10 +324,9 @@ pub fn get_all_skills(info: &DarkestFile) -> Vec<SkillData> {
     result
 }
 
-pub async fn image_to_base64(path: &Path) -> io::Result<String> {
+pub async fn read_image(path: &Path) -> io::Result<Image> {
     let file = fs::read(path).await?;
-    let file = png_compr::compress(file);
-    Ok(base64::encode(file))
+    Ok(png_compr::compress(file))
 }
 
 fn merge_xml(source: &mut LocFile, input: LocFile) {

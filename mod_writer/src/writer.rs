@@ -3,17 +3,19 @@ use std::{fs::File, io::Write, path::PathBuf, str::FromStr};
 
 use mod_parser::proc_class_mod;
 use mod_parser::types::{ClassInfo, SkillInfo};
+use mod_reader::types::Image;
 use mod_reader::types::ClassModInfo;
 
 use crate::fixer::fix_classes;
+use crate::images::ImageStore;
 
 const AUTO_GENERATED: &str = "// THIS FILE WAS AUTO-GENERATED\n";
 
-pub fn write_files(output: &str, mods: Vec<ClassModInfo>) {
+pub fn write_files(output: &str, images: &mut ImageStore, mods: Vec<ClassModInfo>) {
     let root = PathBuf::from_str(output).expect("failed to get path from output str");
     let mods = fix_classes(mods.into_iter().map(proc_class_mod).collect());
 
-    let result = mods.into_iter().map(make_code);
+    let result = mods.into_iter().map(|class| make_code(class, images));
     let mut classes = vec![];
 
     for (name, data) in result {
@@ -83,7 +85,7 @@ fn make_index(root: &Path, classes: Vec<String>) {
     }
 }
 
-fn make_code(class_info: ClassInfo) -> (String, String) {
+fn make_code(class_info: ClassInfo, images: &mut ImageStore) -> (String, String) {
     let a = &class_info.stats.armour;
     let w = &class_info.stats.weapon;
     (
@@ -114,14 +116,13 @@ export const Class_{key}: ClassModData = {{
         armour: {equip_armour},
         weapon: {equip_weapon},
     }},
-    portrait: `{portrait}`,
-    guild: `{guild}`,
+    portrait: '{portrait}',
 }}
 ",
             key = class_info.key,
             name = class_info.name,
             original_hero = class_info.original_hero,
-            portrait = class_info.portrait,
+            portrait = images.save(&class_info.portrait),
             armours = format!(
                 "{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{},\n{s:<12}{}",
                 a[0],
@@ -144,32 +145,40 @@ export const Class_{key}: ClassModData = {{
             religious = class_info.religious,
             transform = class_info.transform,
             sources = sources(&class_info.steam_id),
-            skills = format_skills(&class_info.skills),
-            guild = class_info.guild,
-            equip_armour = format_equip(&class_info.armour_icons),
-            equip_weapon = format_equip(&class_info.weapon_icons),
+            skills = format_skills(&class_info.skills, images),
+            equip_armour = format_equip(&class_info.armour_icons, images),
+            equip_weapon = format_equip(&class_info.weapon_icons, images),
         ),
     )
 }
 
-fn format_skills(skills: &[SkillInfo]) -> String {
-    let mut result = String::with_capacity(5_000 * skills.len());
-
+fn format_skills(skills: &[SkillInfo], images: &mut ImageStore) -> String {
     skills
         .iter()
-        .for_each(|skill| result += &(skill.to_string() + ","));
-
-    result
+        .map(|skill| {
+            format!(
+                r"
+        {{
+            name: `{}`,
+            launch: {},
+            target: {},
+            image: '{}',
+        }},",
+                skill.name,
+                skill.launch,
+                skill.target,
+                images.save(&skill.img),
+            )
+        })
+        .collect()
 }
 
-fn format_equip(equip: &[String]) -> String {
-    let mut result = String::with_capacity(2_000 * equip.len());
+fn format_equip(equip: &[Image], images: &mut ImageStore) -> String {
+    let mut result = String::from("[\n");
 
-    result += "[\n";
-
-    equip
-        .iter()
-        .for_each(|equip| result += &format!("            '{}',\n", equip));
+    for image in equip {
+        result += &format!("            '{}',\n", images.save(image));
+    }
 
     result += "        ]";
 

@@ -45,8 +45,7 @@ export interface ClassModData {
         link: string
     }[]
     skills: Skill[]
-    portrait: string
-    guild: string
+    portrait: string // path relative to the public folder
     equip: EquipIcons
 }
 
@@ -100,7 +99,6 @@ export const defaultClassModData = (): ClassModData => {
         sources: [],
         skills: [],
         portrait: '',
-        guild: '',
         equip: {
             armour: ['', '', '', '', ''],
             weapon: ['', '', '', '', ''],
