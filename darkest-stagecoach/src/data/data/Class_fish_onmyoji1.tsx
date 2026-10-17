@@ -48,7 +48,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/256daafe33c98751.jpg',
+            image: 'img/9ae39b915fb07c90.jpg',
         },
         {
             name: `Self-Immolation`,
@@ -57,7 +57,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/59c0e0bc351ecbd8.jpg',
+            image: 'img/5ae18ad6963bcbbb.jpg',
         },
         {
             name: `Invoke Enenra`,
@@ -66,7 +66,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/03e4d99d7912c253.jpg',
+            image: 'img/84ddd56cb4f01ab5.jpg',
         },
         {
             name: `Bustling Gale`,
@@ -75,7 +75,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/ef2cdcf2e37a7a5e.jpg',
+            image: 'img/fb81efe6cd00b98c.jpg',
         },
         {
             name: `Calm Mind`,
@@ -84,7 +84,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/62245e034cfe4292.jpg',
+            image: 'img/29b6de4b718e866c.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -94,7 +94,7 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/d36b909a538a311e.jpg',
+            image: 'img/3a4924a1b9c07b7c.jpg',
         },
         {
             name: `Strike the Earth`,
@@ -103,24 +103,24 @@ export const Class_fish_onmyoji1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: `~`,
             },
-            image: 'img/f683bd3226c9ba1f.jpg',
+            image: 'img/498d5702b75df265.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/74789212b5b65d57.jpg',
-            'img/243da68f48ec4ccb.jpg',
-            'img/ccdd26b1be2e22ca.jpg',
-            'img/2e93d8acff52522e.jpg',
-            'img/34f94a46f3e09339.jpg',
+            'img/a791b51f50c9d701.jpg',
+            'img/cd7446a551b5e658.jpg',
+            'img/25b4ff87598a01f8.jpg',
+            'img/bd8f86b596c98a72.jpg',
+            'img/5c16a7d6a93426ed.jpg',
         ],
         weapon: [
-            'img/efc19abd9a90cced.jpg',
-            'img/31890476205259e0.jpg',
-            'img/78dddcba6aa5bc42.jpg',
-            'img/c5a3c37ea124c738.jpg',
-            'img/e21cb805ce693c77.jpg',
+            'img/c19d3dff4dafa05f.jpg',
+            'img/8cda2bf42d01d267.jpg',
+            'img/9ee83f266836dc74.jpg',
+            'img/d93c3e96f2a8aeb3.jpg',
+            'img/13e2c5062d8f91e6.jpg',
         ],
     },
-    portrait: 'img/3821a4da9720793f.jpg',
+    portrait: 'img/5661ccd79a934c38.jpg',
 }

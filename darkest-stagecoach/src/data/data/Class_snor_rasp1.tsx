@@ -48,7 +48,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/567cbc816479b56d.jpg',
+            image: 'img/68cef24eb72970f2.jpg',
         },
         {
             name: `Embrace`,
@@ -57,7 +57,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/577024a03c3fb656.jpg',
+            image: 'img/a390d7028203cbe4.jpg',
         },
         {
             name: `Swipe`,
@@ -66,7 +66,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: `~`,
             },
-            image: 'img/c5d61d8600ec075e.jpg',
+            image: 'img/53208a0858623c0c.jpg',
         },
         {
             name: `Revival`,
@@ -75,7 +75,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/5d2ed79e2a8a8a44.jpg',
+            image: 'img/f5e13033bd1b6c27.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -85,7 +85,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/b5b8b6c2e05d24e5.jpg',
+            image: 'img/1ff12e7b6a9cfcd1.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -95,7 +95,7 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/24d947af9fa7dfbb.jpg',
+            image: 'img/7c71ca52fe03ef0f.jpg',
         },
         {
             name: `Martyrdom`,
@@ -104,24 +104,24 @@ export const Class_snor_rasp1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/e6fc5be866175fe4.jpg',
+            image: 'img/3d85649e91f63653.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/7170a0836072b888.jpg',
-            'img/78b4fea57df491a8.jpg',
-            'img/cd4d334219495b1b.jpg',
-            'img/0be86dc8219db518.jpg',
-            'img/15574cc7c9455498.jpg',
+            'img/2671825e103e9f1b.jpg',
+            'img/239d88e077942650.jpg',
+            'img/071150fd0dcf83ce.jpg',
+            'img/85a4aa4fc4eaf5e5.jpg',
+            'img/eaac8b893aa68145.jpg',
         ],
         weapon: [
-            'img/075c84688a0e2612.jpg',
-            'img/50b86c4dd81648f0.jpg',
-            'img/1e391ac5c4fcbf56.jpg',
-            'img/6e5c9dff239535fe.jpg',
-            'img/581f35e02e6aa0f3.jpg',
+            'img/c0bc1af149ef926d.jpg',
+            'img/625ed0d21da41e85.jpg',
+            'img/8688aa3f3f66e90d.jpg',
+            'img/aa055ea97173ae3d.jpg',
+            'img/3e40594a2281f02f.jpg',
         ],
     },
-    portrait: 'img/c1c95ddf5dee3486.jpg',
+    portrait: 'img/0772a04c48c0e29e.jpg',
 }

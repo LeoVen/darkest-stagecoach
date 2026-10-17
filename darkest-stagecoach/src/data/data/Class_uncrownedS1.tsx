@@ -48,7 +48,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/4cc1ad0c79821a31.jpg',
+            image: 'img/4bc83dba7122a3f3.jpg',
         },
         {
             name: `Poisoned Knife`,
@@ -57,7 +57,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/10625781886717e5.jpg',
+            image: 'img/4165949292d76c1c.jpg',
         },
         {
             name: `FINISHER
@@ -67,7 +67,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/f7c83a93e1f71a42.jpg',
+            image: 'img/2acfdf3926fe1261.jpg',
         },
         {
             name: `FINISHER
@@ -77,7 +77,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/e8d874ddad50d4c5.jpg',
+            image: 'img/ccfd03ce2a5147aa.jpg',
         },
         {
             name: `Ambush`,
@@ -86,7 +86,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/59430b9f00b169ff.jpg',
+            image: 'img/d84102b47bd388a3.jpg',
         },
         {
             name: `Garrote`,
@@ -95,7 +95,7 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/4ec9cf33b8b80e6f.jpg',
+            image: 'img/19c1bd22e1f3c218.jpg',
         },
         {
             name: ` Cheap Shot`,
@@ -104,24 +104,24 @@ export const Class_uncrownedS1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/a49c7ff43aa6c638.jpg',
+            image: 'img/92d51cc84ca22e6f.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/1a6a33a0bbaf2733.jpg',
-            'img/de64cb2017e5f782.jpg',
-            'img/65f258f1d5821116.jpg',
-            'img/a25e1272210f096f.jpg',
-            'img/58cb220ee27d26f0.jpg',
+            'img/2e4797645d7f57e5.jpg',
+            'img/816859ec9d053106.jpg',
+            'img/a756060b22cda3e2.jpg',
+            'img/3f770040f87daf6a.jpg',
+            'img/0acc12bdbc64b779.jpg',
         ],
         weapon: [
-            'img/f32813db343f222f.jpg',
-            'img/b9084d086c8a61db.jpg',
-            'img/9a95b6c111c7dbc6.jpg',
-            'img/ffe66900c9ca58b5.jpg',
-            'img/8dae0df1ca941285.jpg',
+            'img/0191140fadfc3175.jpg',
+            'img/fba5cb68aa305c09.jpg',
+            'img/e853e685b41f81a4.jpg',
+            'img/cc5350146cb2f6c2.jpg',
+            'img/aee7deb2f338ac3d.jpg',
         ],
     },
-    portrait: 'img/b956d822c4888153.jpg',
+    portrait: 'img/51f258bf457bf028.jpg',
 }

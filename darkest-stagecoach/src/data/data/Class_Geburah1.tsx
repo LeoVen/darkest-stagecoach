@@ -48,7 +48,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/08c0f7fb0f0cf9e4.jpg',
+            image: 'img/605aa512b2de5833.jpg',
         },
         {
             name: `大刀直刺`,
@@ -57,7 +57,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: `~`,
             },
-            image: 'img/043995a64c1e6c26.jpg',
+            image: 'img/7bac9990524a6c7f.jpg',
         },
         {
             name: `屏息凝神`,
@@ -66,7 +66,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/1a57a5bce1712864.jpg',
+            image: 'img/53835a4b6563a86d.jpg',
         },
         {
             name: `陷阵之志`,
@@ -75,7 +75,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/680ea3cb2b1d8915.jpg',
+            image: 'img/c3026df8ea731ee2.jpg',
         },
         {
             name: `守护他人的决意`,
@@ -84,7 +84,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/e9b0abd1ed34edd5.jpg',
+            image: 'img/03de3b66c7b7bd72.jpg',
         },
         {
             name: ``,
@@ -102,7 +102,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@~`,
             },
-            image: 'img/5da1a6fde8e82a53.jpg',
+            image: 'img/950b5a9d5a30b32c.jpg',
         },
         {
             name: `小红帽雇佣兵`,
@@ -111,7 +111,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/5b93389eec4ecfa7.jpg',
+            image: 'img/7e393466c0bdfa0b.jpg',
         },
         {
             name: `大坏狼`,
@@ -120,7 +120,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/edcd18836674b788.jpg',
+            image: 'img/aa8bf0aef1326f98.jpg',
         },
         {
             name: `微笑的尸山`,
@@ -129,7 +129,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/bd3b6091735683b7.jpg',
+            image: 'img/a56f69bf37604692.jpg',
         },
         {
             name: `诺斯费拉图`,
@@ -138,7 +138,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/2cb546d049664de5.jpg',
+            image: 'img/74bea95828b50e53.jpg',
         },
         {
             name: `一无所有`,
@@ -147,7 +147,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/424f69032c2a5d05.jpg',
+            image: 'img/2b08f061e6824e43.jpg',
         },
         {
             name: `血雾弥漫`,
@@ -156,7 +156,7 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/1a77e58f394a6c55.jpg',
+            image: 'img/3a0a8ecc7acb8423.jpg',
         },
         {
             name: `尸横遍野`,
@@ -165,24 +165,24 @@ export const Class_Geburah1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/d54512953c8a3189.jpg',
+            image: 'img/fcdb9a5b40fc11a5.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/1799bbb127b1408c.jpg',
-            'img/851df5e378b0bb22.jpg',
-            'img/cefb8f11aac9ec5b.jpg',
-            'img/c58880dc7b904837.jpg',
-            'img/bcfe27dfeb1ff3ee.jpg',
+            'img/fc2e850f020f6f58.jpg',
+            'img/99c19a57f5f67274.jpg',
+            'img/7ddef6412f70c34d.jpg',
+            'img/cc32c9baf80094e5.jpg',
+            'img/edcbede500cef2f6.jpg',
         ],
         weapon: [
-            'img/4d40fe46f301b8b1.jpg',
-            'img/441ccc62a0e0b527.jpg',
-            'img/6cba6e47edce2dd0.jpg',
-            'img/e6f9dccea56f431b.jpg',
-            'img/9e9ffda8911f9e77.jpg',
+            'img/4e1032646a7ff81b.jpg',
+            'img/cd93f5daa0316625.jpg',
+            'img/94477d50907c78cc.jpg',
+            'img/df975b76f5a6f2ac.jpg',
+            'img/f015b18d6ac55ee8.jpg',
         ],
     },
-    portrait: 'img/77719e59fa82edd8.jpg',
+    portrait: 'img/0aedcda45f12e6e7.jpg',
 }

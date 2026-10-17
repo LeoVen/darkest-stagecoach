@@ -48,7 +48,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/2f1a3d4be96c5ff3.jpg',
+            image: 'img/6b414a18dcaa3f4c.jpg',
         },
         {
             name: `Create potential`,
@@ -57,7 +57,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/4de659b13e8c465a.jpg',
+            image: 'img/6987c12e0191f84e.jpg',
         },
         {
             name: `Slowly, gently`,
@@ -66,7 +66,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/56886c30e254b913.jpg',
+            image: 'img/8143cb54680b4038.jpg',
         },
         {
             name: `False insight`,
@@ -75,7 +75,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/bf3ed3503515b23e.jpg',
+            image: 'img/1dc7a41f68a163c7.jpg',
         },
         {
             name: `Release`,
@@ -84,7 +84,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/f6bcac6417bb3e3f.jpg',
+            image: 'img/4aaf285641f6dc15.jpg',
         },
         {
             name: `Unknown touch`,
@@ -93,7 +93,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/8dc60036e4e2a6b4.jpg',
+            image: 'img/d116f24f9be40a36.jpg',
         },
         {
             name: `Mark of the Codena`,
@@ -102,7 +102,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/412312128bbae5b5.jpg',
+            image: 'img/17da71cf7ed1112c.jpg',
         },
         {
             name: `On Its Own`,
@@ -111,7 +111,7 @@ export const Class_the_condena1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/dc4df84d5f5174e3.jpg',
+            image: 'img/46486df343cd8ef3.jpg',
         },
         {
             name: `True insight`,
@@ -120,24 +120,24 @@ export const Class_the_condena1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/a9362bed6490d28b.jpg',
+            image: 'img/9f66e7086dc92c6d.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/300df05818ff02cd.jpg',
-            'img/ab921bf19bda02b0.jpg',
-            'img/6d9e516582703415.jpg',
-            'img/c394a787948aea9c.jpg',
-            'img/81adb7d62671debb.jpg',
+            'img/17a186b32620c137.jpg',
+            'img/3d01c9bf2abec097.jpg',
+            'img/23ae908598434f7b.jpg',
+            'img/2a4637892fe6df01.jpg',
+            'img/1e6c0709e554ff9b.jpg',
         ],
         weapon: [
-            'img/ef58241e24904d61.jpg',
-            'img/c92f175ba02b0c6e.jpg',
-            'img/d640cf6a1f3f94d9.jpg',
-            'img/4613f87201fbc077.jpg',
-            'img/dbc1c6b2b38b0dc5.jpg',
+            'img/e30cdc29ca4486b5.jpg',
+            'img/dfb4e7c4e7487d91.jpg',
+            'img/b270298b84a962a0.jpg',
+            'img/2480dd681d89cf84.jpg',
+            'img/691ba8576c50db45.jpg',
         ],
     },
-    portrait: 'img/4674e00abc79656c.jpg',
+    portrait: 'img/713614dcac52f1fc.jpg',
 }

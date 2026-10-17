@@ -48,7 +48,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/d22b7f8ac91af4dc.jpg',
+            image: 'img/fba968369a5d04a1.jpg',
         },
         {
             name: `Thin the Herd`,
@@ -57,7 +57,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [false,true,true,false],
                 mods: `~`,
             },
-            image: 'img/afb5e050829d1c86.jpg',
+            image: 'img/73cfdebcc31c95c9.jpg',
         },
         {
             name: `Tempered Slash`,
@@ -66,7 +66,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/dcf9e61728009320.jpg',
+            image: 'img/987a25f7e4247f8c.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -76,7 +76,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/4d4aefd01c895c74.jpg',
+            image: 'img/46f56d67031cc916.jpg',
         },
         {
             name: `Brace the Gun`,
@@ -85,7 +85,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/588d449a977f16a0.jpg',
+            image: 'img/ba8de0cf0ecaeb49.jpg',
         },
         {
             name: ` ¤¦¤¦¤¦¤
@@ -95,7 +95,7 @@ export const Class_janissary1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~@`,
             },
-            image: 'img/f5813333ca2b44ea.jpg',
+            image: 'img/8f4bbbd07257dca1.jpg',
         },
         {
             name: ` ¤¦¤¦¤¦¤
@@ -105,24 +105,24 @@ export const Class_janissary1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~@`,
             },
-            image: 'img/07f497d3a4d74659.jpg',
+            image: 'img/64e7f1a4d45b4b85.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/9bd49d3cfa4b81c1.jpg',
-            'img/31ca92d77ddf7499.jpg',
-            'img/3f4264645484ecf4.jpg',
-            'img/a1f91eb0846f2c6c.jpg',
-            'img/7f7a32c7abae4f71.jpg',
+            'img/3c9eefb2c945ec19.jpg',
+            'img/2a42a109495241d7.jpg',
+            'img/fd8b6d29372a71eb.jpg',
+            'img/4e0099d74b35b967.jpg',
+            'img/233c87b5e3a9da6e.jpg',
         ],
         weapon: [
-            'img/9d2e6ac5cb0c9b6b.jpg',
-            'img/eb89f5688501402f.jpg',
-            'img/896682bb38832899.jpg',
-            'img/664536a469518174.jpg',
-            'img/5f9e32de211948db.jpg',
+            'img/d05efff4a34426af.jpg',
+            'img/c35a4229fc59af27.jpg',
+            'img/910b1cad683b5f55.jpg',
+            'img/3a2f150768cb6005.jpg',
+            'img/ed2dab03479f840b.jpg',
         ],
     },
-    portrait: 'img/233533b00c4da688.jpg',
+    portrait: 'img/db953758597ed538.jpg',
 }

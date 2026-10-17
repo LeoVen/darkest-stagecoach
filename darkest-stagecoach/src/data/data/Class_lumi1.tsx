@@ -48,7 +48,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/6eb70ce6e033ed6b.jpg',
+            image: 'img/4ff1ce7e9e31a2cb.jpg',
         },
         {
             name: `Empyrean Halo`,
@@ -57,7 +57,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/9b34f5f5b9778744.jpg',
+            image: 'img/42f06026c2f9d199.jpg',
         },
         {
             name: `Pilgrim's March`,
@@ -66,7 +66,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/2244d145042a9da0.jpg',
+            image: 'img/ec3ca209a35a718c.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -76,7 +76,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/1fb667a720df6c55.jpg',
+            image: 'img/6649786252e69c6e.jpg',
         },
         {
             name: `Denounce`,
@@ -85,7 +85,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/e0602b2e28db573f.jpg',
+            image: 'img/d849f43bf7ccf488.jpg',
         },
         {
             name: ` ¤-¤-¤-¤
@@ -95,7 +95,7 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@~`,
             },
-            image: 'img/5067bc7fb5157cf3.jpg',
+            image: 'img/b6507bb28e368960.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -105,24 +105,24 @@ export const Class_lumi1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/42486414ffe08601.jpg',
+            image: 'img/d0a3809cb0c08bd2.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/b4601401ca7f36af.jpg',
-            'img/fc82e22d1df5c9ba.jpg',
-            'img/50ae15363f2d543a.jpg',
-            'img/78066edee4a00689.jpg',
-            'img/c0cf3a4d8459b470.jpg',
+            'img/b02cb8e635a94223.jpg',
+            'img/b49059b1999af4ba.jpg',
+            'img/da3672bf3cd4430f.jpg',
+            'img/960ee02763462690.jpg',
+            'img/496a3a2d88f76b34.jpg',
         ],
         weapon: [
-            'img/da390082e43052d8.jpg',
-            'img/b84221c82d2f3ddd.jpg',
-            'img/3d91abc3b925d9e4.jpg',
-            'img/f8c7493f6ca69362.jpg',
-            'img/38888c886c192a22.jpg',
+            'img/89c0267b27d3562d.jpg',
+            'img/141ecb6800eb0723.jpg',
+            'img/2d28bc3fc777d911.jpg',
+            'img/6e153c62ff8b2aac.jpg',
+            'img/a765878b287a0ab8.jpg',
         ],
     },
-    portrait: 'img/c1320a90c98be218.jpg',
+    portrait: 'img/40fac467fd60d7b2.jpg',
 }

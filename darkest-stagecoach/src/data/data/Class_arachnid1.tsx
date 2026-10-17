@@ -48,7 +48,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/c5e78206c85f7e45.jpg',
+            image: 'img/91aba004a6868696.jpg',
         },
         {
             name: `Sting`,
@@ -57,7 +57,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/3e5b3f1b97b31629.jpg',
+            image: 'img/3edab9afe4a9d6a2.jpg',
         },
         {
             name: `Capture`,
@@ -66,7 +66,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/b7ba1f482add4851.jpg',
+            image: 'img/d2ad552f1a12e5e0.jpg',
         },
         {
             name: `Own Territory`,
@@ -75,7 +75,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [false,false,true,true],
                 mods: `~@`,
             },
-            image: 'img/a75a142741127ec6.jpg',
+            image: 'img/6d5e392444ae4784.jpg',
         },
         {
             name: `Chrysalis`,
@@ -84,7 +84,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/d71aa891e2c3a174.jpg',
+            image: 'img/f0007124fc4c0dd5.jpg',
         },
         {
             name: `Dark Ritual`,
@@ -93,7 +93,7 @@ export const Class_arachnid1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/185f5b6a90fee52c.jpg',
+            image: 'img/416e036d77d8788e.jpg',
         },
         {
             name: `Perception`,
@@ -102,24 +102,24 @@ export const Class_arachnid1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/dd81fdb6d4259e24.jpg',
+            image: 'img/04f24b7fc6c50dc8.jpg',
         },
     ],
     equip: {
         armour: [
             'img/21ab890c934befcf.jpg',
-            'img/336889b808fa0f1e.jpg',
-            'img/53add16454f56279.jpg',
-            'img/74f46bc813f52e19.jpg',
-            'img/e238a564d18619e1.jpg',
+            'img/4bce494ed265ff57.jpg',
+            'img/45d8a5d3dce99ae1.jpg',
+            'img/38271ebf3c82c1b6.jpg',
+            'img/7f05b38764457581.jpg',
         ],
         weapon: [
             'img/0000f522de65fad8.jpg',
-            'img/2d4ef5ad48fa93b8.jpg',
-            'img/c475095e66aec81a.jpg',
-            'img/41a889de30a232ef.jpg',
-            'img/af3b2e19e046c886.jpg',
+            'img/8511450ce93ace86.jpg',
+            'img/307c22acc9cbe753.jpg',
+            'img/28fffd90c6b95b2f.jpg',
+            'img/be588699d63a8769.jpg',
         ],
     },
-    portrait: 'img/0dd68ee5ca4a468e.jpg',
+    portrait: 'img/92881d3e4cc21ab3.jpg',
 }

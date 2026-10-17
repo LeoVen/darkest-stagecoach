@@ -48,7 +48,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/bcacff6b48c2ebc2.jpg',
+            image: 'img/13a41f24f7d4e69e.jpg',
         },
         {
             name: `Volver a la forma física`,
@@ -57,7 +57,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/be51bc9a24c675d8.jpg',
+            image: 'img/ad6ecf64fd41e7db.jpg',
         },
         {
             name: `Oscuridad`,
@@ -66,7 +66,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/ea45d68c10b0fcdd.jpg',
+            image: 'img/d9fb25f4b138b4a9.jpg',
         },
         {
             name: `Anochecer`,
@@ -75,7 +75,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [false,false,true,true],
                 mods: `~`,
             },
-            image: 'img/9f69011cbdbf1a4e.jpg',
+            image: 'img/459b65f6f2025d76.jpg',
         },
         {
             name: `Piedad demoniaca`,
@@ -84,7 +84,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/302c4e0ecdbee0de.jpg',
+            image: 'img/c6d4dd5bf26182ee.jpg',
         },
         {
             name: `Amanecer`,
@@ -93,7 +93,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/c3814e9ac510be66.jpg',
+            image: 'img/937daf03607fb469.jpg',
         },
         {
             name: `Lluvia de estrellas`,
@@ -102,7 +102,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: `~`,
             },
-            image: 'img/1cb9cfd77fdf92be.jpg',
+            image: 'img/a9bb0e1034f296de.jpg',
         },
         {
             name: `Vino de arrogancia`,
@@ -111,7 +111,7 @@ export const Class_deovolente1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/25c639e02a0bcd8d.jpg',
+            image: 'img/a80fc1c4a6ffddf0.jpg',
         },
         {
             name: `Eco efímero`,
@@ -120,24 +120,24 @@ export const Class_deovolente1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/5635cb315b432eca.jpg',
+            image: 'img/06143c5e247f1d99.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/d772c4dd196c6106.jpg',
-            'img/53d3a7f3b13328f3.jpg',
-            'img/08930ec8df28d41e.jpg',
-            'img/6f8c1ad6fbfbc7fc.jpg',
-            'img/21a975c871831bd8.jpg',
+            'img/45bc14f64739fd75.jpg',
+            'img/8c7b35b9474111c7.jpg',
+            'img/23ff1936b6e8c51d.jpg',
+            'img/9d12c30ac19d71cd.jpg',
+            'img/50c874641042565f.jpg',
         ],
         weapon: [
-            'img/80e5abfad0239f67.jpg',
-            'img/587f43e67fac5502.jpg',
-            'img/e74ee9607c266daf.jpg',
-            'img/40ad2251f10514a1.jpg',
-            'img/9992ca69d080837e.jpg',
+            'img/807e63c54b57affd.jpg',
+            'img/7d6c16449182a52b.jpg',
+            'img/f3e80d6088e9be90.jpg',
+            'img/00ed71673107a7a7.jpg',
+            'img/a1dae4301f866fd9.jpg',
         ],
     },
-    portrait: 'img/bd09b7f845ca442e.jpg',
+    portrait: 'img/4a5720892bba151d.jpg',
 }

@@ -48,7 +48,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/beec738be5ae5c31.jpg',
+            image: 'img/d40c066e572b7ff5.jpg',
         },
         {
             name: `Whiplash`,
@@ -57,7 +57,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,false,false,true],
                 mods: ``,
             },
-            image: 'img/064134f8b77ff516.jpg',
+            image: 'img/9d28153752f2732e.jpg',
         },
         {
             name: `Terreno perigoso`,
@@ -66,7 +66,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/6f12fc77b1b8f36a.jpg',
+            image: 'img/cc01628ba1cd81dd.jpg',
         },
         {
             name: `Stranglethorn`,
@@ -75,7 +75,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/9a926cd9da77953b.jpg',
+            image: 'img/c559426d8581e8c0.jpg',
         },
         {
             name: ` ¤¦¤¦¤¦¤
@@ -85,7 +85,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@~`,
             },
-            image: 'img/3b9f2e6b4bac6f82.jpg',
+            image: 'img/6ef2ad840215f583.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -95,7 +95,7 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/e77bd5f3c63025e5.jpg',
+            image: 'img/3b9b185209f93d44.jpg',
         },
         {
             name: `On My Target`,
@@ -104,24 +104,24 @@ export const Class_commandant1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/c2b4f2e21d2bf874.jpg',
+            image: 'img/c1bd6a83ec2cb937.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/1acdb2e09836acc3.jpg',
-            'img/19baff534c8e6c6c.jpg',
-            'img/3258ccc1bb149b0a.jpg',
-            'img/ef18642ea9e357cd.jpg',
-            'img/7195c4eaab710869.jpg',
+            'img/79d82b95519db184.jpg',
+            'img/88920753b5b2e59d.jpg',
+            'img/39ec7ed83526e76f.jpg',
+            'img/79e054b08ea93a88.jpg',
+            'img/4499be56b1967be6.jpg',
         ],
         weapon: [
-            'img/b679b0c8ef48da71.jpg',
-            'img/da297fb1feb83f43.jpg',
-            'img/b7af00b698cd6665.jpg',
-            'img/9b928824b4c53606.jpg',
-            'img/a07dd1e257bb07ea.jpg',
+            'img/c35edf8d5b883abd.jpg',
+            'img/1e2e37700ccd1850.jpg',
+            'img/a9b49862d39dfa6e.jpg',
+            'img/164ed7a89f09a696.jpg',
+            'img/9dd36e45d4cf8153.jpg',
         ],
     },
-    portrait: 'img/c9afb5c8fa17b0d9.jpg',
+    portrait: 'img/02e69e7418b500b8.jpg',
 }

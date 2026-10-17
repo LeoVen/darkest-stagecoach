@@ -48,7 +48,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/93836c81ba752c13.jpg',
+            image: 'img/405f76932f888395.jpg',
         },
         {
             name: `Assumptio`,
@@ -57,7 +57,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/858001ecf0bd947e.jpg',
+            image: 'img/3d5bc8063d22d98e.jpg',
         },
         {
             name: `Kyrie Eleison`,
@@ -66,7 +66,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: `~@`,
             },
-            image: 'img/8e36facb34951c07.jpg',
+            image: 'img/aa352cdae3489696.jpg',
         },
         {
             name: `Metropathy`,
@@ -75,7 +75,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/ebb07ce2bca6d057.jpg',
+            image: 'img/39a35db4323fff58.jpg',
         },
         {
             name: `Rule of Nature`,
@@ -84,7 +84,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: `?`,
             },
-            image: 'img/2aa9cf383617db80.jpg',
+            image: 'img/5e9e55094846805e.jpg',
         },
         {
             name: `Oblation`,
@@ -93,7 +93,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/25018475927b9443.jpg',
+            image: 'img/664786df7f4674be.jpg',
         },
         {
             name: `Redemptio`,
@@ -102,7 +102,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/9f6099fe1e3d41b5.jpg',
+            image: 'img/bfb7221190600bdb.jpg',
         },
         {
             name: `Equilibrium`,
@@ -111,7 +111,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/ef15b919396610a7.jpg',
+            image: 'img/6992b757bdcd4eed.jpg',
         },
         {
             name: `Awakening`,
@@ -120,7 +120,7 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/a9656020fc59e23f.jpg',
+            image: 'img/487645f5a72e1df8.jpg',
         },
         {
             name: `Martyrize`,
@@ -129,24 +129,24 @@ export const Class_theDivinity1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/fa53571ae367ba32.jpg',
+            image: 'img/2741abd1cef6c42c.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/20bd53fe7d455f8c.jpg',
-            'img/0a04067b06858ffe.jpg',
-            'img/e98c28fbcc157a8a.jpg',
-            'img/848c239ceb544104.jpg',
-            'img/d0945b8f6a40daf8.jpg',
+            'img/d45e95b98fbf9fa2.jpg',
+            'img/0d2a72fac478994a.jpg',
+            'img/dffc17385b393835.jpg',
+            'img/caa9c1a197e2624f.jpg',
+            'img/58179dcb9884f9d1.jpg',
         ],
         weapon: [
-            'img/557272c4ddf7942c.jpg',
-            'img/8033305b8ec7ae76.jpg',
-            'img/bd97e6636233c06d.jpg',
-            'img/6429b99a5814e2d1.jpg',
-            'img/6f813862ce28e508.jpg',
+            'img/8a6dc85988252df7.jpg',
+            'img/8b93006799c44347.jpg',
+            'img/f0b2cb4847e84af4.jpg',
+            'img/7b99d14bafb6363d.jpg',
+            'img/748044284d092582.jpg',
         ],
     },
-    portrait: 'img/2d61272cb61ba729.jpg',
+    portrait: 'img/50c9c31ee91b210a.jpg',
 }

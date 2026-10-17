@@ -48,7 +48,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/e44f36db952e46d8.jpg',
+            image: 'img/f576d491b0754da1.jpg',
         },
         {
             name: `Infectious Bravado`,
@@ -57,7 +57,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@~`,
             },
-            image: 'img/96b7096d6157a9bf.jpg',
+            image: 'img/81533afc9e23ba33.jpg',
         },
         {
             name: `Gratuitous Acrobatics`,
@@ -66,7 +66,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/e104424fc7c1b45d.jpg',
+            image: 'img/d5dc2e6ac6246911.jpg',
         },
         {
             name: `Where-is-Doom Inquisition`,
@@ -75,7 +75,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/766136b5c7225b99.jpg',
+            image: 'img/e6f9ddddbeaaaadd.jpg',
         },
         {
             name: `Rotten Leaf Arrested`,
@@ -84,7 +84,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: ``,
             },
-            image: 'img/7d84c4274c1dea95.jpg',
+            image: 'img/82bbf5507506006e.jpg',
         },
         {
             name: `Cleansing Flame Strike`,
@@ -93,7 +93,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/da648e54107e969e.jpg',
+            image: 'img/a92f03c23a07c9d7.jpg',
         },
         {
             name: `Demon Slaying Spear Dance`,
@@ -102,7 +102,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: `~`,
             },
-            image: 'img/57ae43286f2a0481.jpg',
+            image: 'img/15024d0cdab055fc.jpg',
         },
         {
             name: `Combustion Imbuement`,
@@ -111,7 +111,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/3fee0f87be19bc1e.jpg',
+            image: 'img/b56ecb66a465d05f.jpg',
         },
         {
             name: `Light-On-Dark Shield`,
@@ -120,7 +120,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/706b362f570cc6ae.jpg',
+            image: 'img/d19fa06c6f66979c.jpg',
         },
         {
             name: `Lone Spark Lights the Conflaguration`,
@@ -129,7 +129,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/7910cdb8fb9380aa.jpg',
+            image: 'img/491d95d48bff80cd.jpg',
         },
         {
             name: `Faster Than Self`,
@@ -138,7 +138,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/13fb3eb4427c3df4.jpg',
+            image: 'img/618dde2fb9e4363d.jpg',
         },
         {
             name: `Golden Janissary Style`,
@@ -147,7 +147,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/d1809487ef2c5184.jpg',
+            image: 'img/78b71c6768951dea.jpg',
         },
         {
             name: `Loosen Up`,
@@ -156,7 +156,7 @@ export const Class_zenith1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/063a5a0c39a3ffe2.jpg',
+            image: 'img/50301cd9c1efa547.jpg',
         },
         {
             name: `End Battle: Revert to Heroic Stance`,
@@ -165,24 +165,24 @@ export const Class_zenith1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/a87e1f17b54d8a26.jpg',
+            image: 'img/01e1ab14cd8e16d3.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/6b3f129c0f54cd8e.jpg',
-            'img/d28ad988af7f6c76.jpg',
-            'img/d038749b94293034.jpg',
-            'img/5d893d4fb12ab386.jpg',
-            'img/c8d2c15475bac186.jpg',
+            'img/69f552b5016ff14d.jpg',
+            'img/01901d93bd98a8d4.jpg',
+            'img/f141b5ec7a3e14f1.jpg',
+            'img/5df86ca9f1d0429e.jpg',
+            'img/71c81bd5793c0f75.jpg',
         ],
         weapon: [
-            'img/b3a12f15e77a069f.jpg',
-            'img/1a1b9ffa5ca281bc.jpg',
-            'img/342d8595cf847371.jpg',
-            'img/56d1fe7cb90a03f3.jpg',
-            'img/5113f61d35c28ccb.jpg',
+            'img/f67351aef42eaf62.jpg',
+            'img/7be9ab417806b9d2.jpg',
+            'img/49875f021347af8b.jpg',
+            'img/d6829788b96afe5a.jpg',
+            'img/f9c39691ef0ec41e.jpg',
         ],
     },
-    portrait: 'img/e698617a7e966ac1.jpg',
+    portrait: 'img/767d1d3c9363537e.jpg',
 }

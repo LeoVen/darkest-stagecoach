@@ -48,7 +48,7 @@ export const Class_musketeer2: ClassModData = {
                 targets: [false,true,true,true],
                 mods: ``,
             },
-            image: 'img/e9b60eee7dd860c4.jpg',
+            image: 'img/1c1dfccfc230a7a7.jpg',
         },
         {
             name: ``,
@@ -57,7 +57,7 @@ export const Class_musketeer2: ClassModData = {
                 targets: [true,true,true,false],
                 mods: `~`,
             },
-            image: 'img/8d55b6d3886025ff.jpg',
+            image: 'img/9621b429cdec0008.jpg',
         },
         {
             name: `Piercing Round`,
@@ -66,7 +66,7 @@ export const Class_musketeer2: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/5e5a74ce6a91dfea.jpg',
+            image: 'img/8ecbd4d770135125.jpg',
         },
         {
             name: ``,
@@ -75,7 +75,7 @@ export const Class_musketeer2: ClassModData = {
                 targets: [false,true,true,false],
                 mods: `~`,
             },
-            image: 'img/89435f825c096e70.jpg',
+            image: 'img/020331b4fc7e0a78.jpg',
         },
         {
             name: `Retreating Shot`,
@@ -84,7 +84,7 @@ export const Class_musketeer2: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/482e2e43d92df5ec.jpg',
+            image: 'img/b25d0b7e10849533.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -94,7 +94,7 @@ Embolden`,
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/c49f7fdab422b298.jpg',
+            image: 'img/d632bbef1940d0d3.jpg',
         },
         {
             name: ``,
@@ -103,7 +103,7 @@ Embolden`,
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/4e0d2b7e9a276c5e.jpg',
+            image: 'img/ba81a6b99f662d24.jpg',
         },
     ],
     equip: {

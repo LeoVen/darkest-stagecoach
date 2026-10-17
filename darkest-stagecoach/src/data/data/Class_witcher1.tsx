@@ -48,7 +48,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/626a5148f5fb4937.jpg',
+            image: 'img/deaf55bbda070a7e.jpg',
         },
         {
             name: `Swords Dance`,
@@ -57,7 +57,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: `~`,
             },
-            image: 'img/7a79a904300c68cc.jpg',
+            image: 'img/08a89148d9aeac5b.jpg',
         },
         {
             name: `Samum·MoonDust`,
@@ -66,7 +66,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [false,false,true,true],
                 mods: `~`,
             },
-            image: 'img/77c6e5383636fc9f.jpg',
+            image: 'img/ca25ca7cfdba112a.jpg',
         },
         {
             name: `Vigor Outburst`,
@@ -75,7 +75,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/c90d847a3f02f6ab.jpg',
+            image: 'img/7abb27331f026fcc.jpg',
         },
         {
             name: `Sign of Axii`,
@@ -84,7 +84,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/41c932aecdbc7978.jpg',
+            image: 'img/5e91b2a0c0d87b6e.jpg',
         },
         {
             name: `Sign of Aard`,
@@ -93,7 +93,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: `~`,
             },
-            image: 'img/68867fd8ae064211.jpg',
+            image: 'img/3189aa1e1ba1d869.jpg',
         },
         {
             name: `Sign of Yrden`,
@@ -102,7 +102,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/1df128710504844c.jpg',
+            image: 'img/d9d0fe594a5a1afd.jpg',
         },
         {
             name: `Sign of Quen`,
@@ -111,7 +111,7 @@ export const Class_witcher1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/b82878717f7a9c27.jpg',
+            image: 'img/7dbeafc9a1c53c68.jpg',
         },
         {
             name: `Sign of Igni`,
@@ -120,24 +120,24 @@ export const Class_witcher1: ClassModData = {
                 targets: [true,true,true,false],
                 mods: ``,
             },
-            image: 'img/0535aad4eb5a5252.jpg',
+            image: 'img/1d5bac5af0f9e103.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/e2ad66ece5d1f134.jpg',
-            'img/9f33175f364e334b.jpg',
-            'img/0696408a171f884a.jpg',
-            'img/8dcf58a5cb00d028.jpg',
-            'img/009162402585bf9f.jpg',
+            'img/15386b40435a0917.jpg',
+            'img/3203c9425a40d6ff.jpg',
+            'img/7b42122f09d2979c.jpg',
+            'img/a9a6e2d77b867ae2.jpg',
+            'img/91996a04d7c50255.jpg',
         ],
         weapon: [
-            'img/b0acd2747d6ee8ca.jpg',
-            'img/a364e13b7dc6e882.jpg',
-            'img/60f25e76617ad631.jpg',
-            'img/9da9d383f2d9b023.jpg',
-            'img/081caab68bf99f5e.jpg',
+            'img/f66470ab56ee685d.jpg',
+            'img/7a3172390643e289.jpg',
+            'img/c1a0910876ed5987.jpg',
+            'img/65957352a753fe58.jpg',
+            'img/8c2d5b8c1dfd53ad.jpg',
         ],
     },
-    portrait: 'img/1717dff51a7acacf.jpg',
+    portrait: 'img/7a867bda7faba30c.jpg',
 }

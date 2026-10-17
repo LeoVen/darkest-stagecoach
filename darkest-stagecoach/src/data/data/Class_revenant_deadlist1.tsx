@@ -48,7 +48,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/ceac7a0b1067cc06.jpg',
+            image: 'img/091598925bf0b41c.jpg',
         },
         {
             name: ` ¤ ¤ ¤ ¤
@@ -58,7 +58,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@`,
             },
-            image: 'img/23b1ed1f306449ff.jpg',
+            image: 'img/f7d0177cb04563e5.jpg',
         },
         {
             name: `Reality Bend`,
@@ -67,7 +67,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/c7648f72c403e5ba.jpg',
+            image: 'img/5a224b0d6bc22b39.jpg',
         },
         {
             name: `Beyond Time and Space`,
@@ -76,7 +76,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `~`,
             },
-            image: 'img/8772ac13e66c77c7.jpg',
+            image: 'img/a6f61e51fb14753e.jpg',
         },
         {
             name: `Calming Crystals`,
@@ -85,7 +85,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/824ee2094aef5351.jpg',
+            image: 'img/bc9c0ff7317c182b.jpg',
         },
         {
             name: `Temporal Crystals`,
@@ -94,7 +94,7 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/e735718f26cbb83d.jpg',
+            image: 'img/1fef2bfa17c758e1.jpg',
         },
         {
             name: `Crystalline Resonance`,
@@ -103,24 +103,24 @@ export const Class_revenant_deadlist1: ClassModData = {
                 targets: [false,true,false,true],
                 mods: `~`,
             },
-            image: 'img/b25d198db8abfb00.jpg',
+            image: 'img/7a0dd24243b87c47.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/14217b19cf5ab33c.jpg',
-            'img/6bea32af3c893a72.jpg',
-            'img/f330ec715c59fbff.jpg',
-            'img/dc13fab0798285d0.jpg',
-            'img/269af146cc406ec7.jpg',
+            'img/c528c8bde3f88e8c.jpg',
+            'img/f7e81339a183daf7.jpg',
+            'img/109a493039fa9bf4.jpg',
+            'img/8cf0e2c874f8f474.jpg',
+            'img/72ed1cb7b0df29e7.jpg',
         ],
         weapon: [
-            'img/8dfcc9045c9213d5.jpg',
-            'img/f127b247ecade7a2.jpg',
-            'img/deee390d6b78b489.jpg',
-            'img/c10ad65d7b0e7f09.jpg',
-            'img/c9acf8073c5fdde9.jpg',
+            'img/6e22c7df5489f24f.jpg',
+            'img/5bada83c093086b3.jpg',
+            'img/88170597b7974fb7.jpg',
+            'img/4e33ca6366927ebd.jpg',
+            'img/900fb600bf9934c6.jpg',
         ],
     },
-    portrait: 'img/1a2e9f551b127b97.jpg',
+    portrait: 'img/372ed79d46fff800.jpg',
 }

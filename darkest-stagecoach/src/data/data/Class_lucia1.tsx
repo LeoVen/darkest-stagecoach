@@ -48,7 +48,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/d1bbd74816164e48.jpg',
+            image: 'img/6cceca2240f965f0.jpg',
         },
         {
             name: `Padma Slash | Two`,
@@ -57,7 +57,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/d1bbd74816164e48.jpg',
+            image: 'img/6cceca2240f965f0.jpg',
         },
         {
             name: `Padma Sword Dance | One`,
@@ -66,7 +66,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/92593910a459d0d8.jpg',
+            image: 'img/93f7f4b9ccec842a.jpg',
         },
         {
             name: `Padma Sword Dance | Two`,
@@ -75,7 +75,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/92593910a459d0d8.jpg',
+            image: 'img/93f7f4b9ccec842a.jpg',
         },
         {
             name: `Padma Sword Dance | Three`,
@@ -84,7 +84,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/92593910a459d0d8.jpg',
+            image: 'img/93f7f4b9ccec842a.jpg',
         },
         {
             name: `Padma Sword Dance | Four`,
@@ -93,7 +93,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/92593910a459d0d8.jpg',
+            image: 'img/93f7f4b9ccec842a.jpg',
         },
         {
             name: `???`,
@@ -102,7 +102,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,false,false,false],
                 mods: ``,
             },
-            image: 'img/ea1960a6e7175678.jpg',
+            image: 'img/96d890e0cbbee87a.jpg',
         },
         {
             name: `Padma Lightning Field`,
@@ -111,7 +111,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,true,false,false],
                 mods: `~`,
             },
-            image: 'img/b33e0926d318a70f.jpg',
+            image: 'img/0f2a4553c73d4ecb.jpg',
         },
         {
             name: `Padma Arc | One`,
@@ -120,7 +120,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/1628711cd8c0ba0e.jpg',
+            image: 'img/00a0afd8d0c35182.jpg',
         },
         {
             name: `Padma Arc | Two`,
@@ -129,7 +129,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: ``,
             },
-            image: 'img/1628711cd8c0ba0e.jpg',
+            image: 'img/00a0afd8d0c35182.jpg',
         },
         {
             name: `Dawn Guide`,
@@ -138,7 +138,7 @@ export const Class_lucia1: ClassModData = {
                 targets: [true,true,true,true],
                 mods: `@~`,
             },
-            image: 'img/4a4f87547c0a7da8.jpg',
+            image: 'img/550e328acc977fbc.jpg',
         },
         {
             name: `Combo Reset`,
@@ -147,24 +147,24 @@ export const Class_lucia1: ClassModData = {
                 targets: [false,false,false,false],
                 mods: ``,
             },
-            image: 'img/a9a9bbaa5b40d664.jpg',
+            image: 'img/9e8909fb8625f762.jpg',
         },
     ],
     equip: {
         armour: [
-            'img/3948870990027e54.jpg',
-            'img/a6151a71392eed11.jpg',
-            'img/e1b5ecc3dd9c3530.jpg',
-            'img/ab381e3213c3b136.jpg',
-            'img/6022ccb62fbeb780.jpg',
+            'img/310416b356e82063.jpg',
+            'img/1c6287babb2358d2.jpg',
+            'img/ab566205d0208098.jpg',
+            'img/d3b9ac7a29e8e2fe.jpg',
+            'img/b9a06b6fa3024fda.jpg',
         ],
         weapon: [
-            'img/4d278b91971bb2d3.jpg',
-            'img/008892aa76e0a620.jpg',
-            'img/e69f75a486e6d122.jpg',
-            'img/3835dec482717a5f.jpg',
-            'img/7d23a4333d8fc0de.jpg',
+            'img/94741e700b0915ff.jpg',
+            'img/39b5f5e77411e6d6.jpg',
+            'img/56170d6b8557f0ad.jpg',
+            'img/84bdacc3dee07a16.jpg',
+            'img/636e1c8680f2777b.jpg',
         ],
     },
-    portrait: 'img/c92749f63fb9ec84.jpg',
+    portrait: 'img/3ea19aa1a3df61dc.jpg',
 }
