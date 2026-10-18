@@ -1,0 +1,28 @@
+- name: Swap file exists and is formatted as swap
+  ansible.builtin.shell: fallocate -l {{ base_swap_size }} {{ base_swap_file }} && chmod 600 {{ base_swap_file }} && mkswap {{ base_swap_file }}
+  args:
+    creates: "{{ base_swap_file }}"   # skipped if the file already exists
+
+- name: Swap file is only readable by root
+  ansible.builtin.file:
+    path: "{{ base_swap_file }}"
+    owner: root
+    group: root
+    mode: "0600"
+
+- name: Read active swap
+  ansible.builtin.command: swapon --show=NAME --noheadings
+  register: base_swap_active
+  changed_when: false
+  check_mode: false
+
+- name: Swap is on
+  ansible.builtin.command: swapon {{ base_swap_file }}
+  when: base_swap_file not in base_swap_active.stdout_lines
+  changed_when: true   # only runs when swap was off
+
+- name: Swap is enabled at boot
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    regexp: '^{{ base_swap_file }}\s'
+    line: "{{ base_swap_file }} none swap sw 0 0"

@@ -1,0 +1,16 @@
+# jail.local should only hold overrides; the defaults stay in jail.conf and
+# jail.d/, so package updates to them still apply
+- name: Fail2ban overrides
+  ansible.builtin.template:
+    src: jail.local.j2
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart fail2ban
+
+- name: Fail2ban is running and starts at boot
+  ansible.builtin.service:
+    name: fail2ban
+    state: started
+    enabled: true

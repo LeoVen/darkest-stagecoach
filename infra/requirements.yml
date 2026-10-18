@@ -1,0 +1,5 @@
+# Collections used by the roles (ansible-core only ships ansible.builtin)
+# Install with: ansible-galaxy collection install -r requirements.yml
+collections:
+  - name: ansible.posix       # authorized_key, mount
+  - name: community.general   # ufw

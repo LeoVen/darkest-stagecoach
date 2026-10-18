@@ -1,0 +1,9 @@
+# Installs security updates daily (Debian's 50unattended-upgrades limits it to
+# the security archive). Kernel updates still need a manual reboot.
+- name: Unattended upgrades run daily
+  ansible.builtin.copy:
+    src: 20auto-upgrades
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    owner: root
+    group: root
+    mode: "0644"

@@ -73,6 +73,19 @@ download steam_user:
 sync steam_user min_subs="5000": (fetch min_subs) (download steam_user)
     {{just_executable()}} workshop="{{steam_workshop}}" generate
 
+# One-time: install what Ansible's apt module needs on the VPS. Uses the raw
+# module (a plain command over SSH), which works before python3-apt exists.
+infra-bootstrap:
+    cd infra && ansible servers -m ansible.builtin.raw -a "apt-get install -y python3-apt" --become --ask-become-pass
+
+# Preview what Ansible would change on the VPS (asks for your sudo password)
+infra-check:
+    cd infra && ansible-playbook site.yml --check --diff --ask-become-pass
+
+# Apply the Ansible configuration to the VPS
+infra-apply:
+    cd infra && ansible-playbook site.yml --diff --ask-become-pass
+
 # Rebuild docs/ for GitHub Pages (commit and push to publish)
 deploy:
     cd {{web}} && npm run docs

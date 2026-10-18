@@ -1,0 +1,7 @@
+# Main playbook: ansible-playbook site.yml --check --diff --ask-become-pass
+- name: Configure the VPS
+  hosts: servers
+  # Run tasks with sudo; --ask-become-pass prompts for your sudo password
+  become: true
+  roles:
+    - base

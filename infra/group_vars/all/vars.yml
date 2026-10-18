@@ -1,0 +1,5 @@
+# Variables for every host. Role defaults live in roles/*/defaults/main.yml;
+# values here override them.
+
+# Your login user on the VPS (also set in ~/.ssh/config for vps1)
+admin_user: leoven

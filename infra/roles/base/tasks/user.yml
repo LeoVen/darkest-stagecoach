@@ -1,0 +1,14 @@
+- name: Admin user exists and is in the sudo group
+  ansible.builtin.user:
+    name: "{{ admin_user }}"
+    groups: sudo
+    append: true   # add to sudo without removing other groups
+
+# Your key comes from the repo, so changing keys in the provider's portal
+# (which only updates root's authorized_keys) no longer matters.
+- name: Admin user's SSH key is authorized
+  ansible.posix.authorized_key:
+    user: "{{ admin_user }}"
+    key: "{{ lookup('ansible.builtin.file', 'admin_authorized_key.pub') }}"
+    state: present
+    # exclusive: true would remove every other key; left off on purpose

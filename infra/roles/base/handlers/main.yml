@@ -1,0 +1,11 @@
+# Handlers run once at the end of the play (or at flush_handlers), and only
+# if a task that notifies them changed something
+- name: Reload ssh
+  ansible.builtin.service:
+    name: ssh
+    state: reloaded
+
+- name: Restart fail2ban
+  ansible.builtin.service:
+    name: fail2ban
+    state: restarted

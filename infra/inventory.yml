@@ -1,0 +1,7 @@
+# The machines Ansible manages, grouped. "vps1" is the Host alias from
+# ~/.ssh/config, so the IP, user and key come from there.
+all:
+  children:
+    servers:
+      hosts:
+        vps1:

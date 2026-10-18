@@ -1,0 +1,12 @@
+# {{ ansible_managed }} (infra/roles/base)
+# Only overrides go here; defaults are in jail.conf and jail.d/.
+
+[DEFAULT]
+bantime = {{ base_fail2ban_bantime }}
+findtime = {{ base_fail2ban_findtime }}
+maxretry = {{ base_fail2ban_maxretry }}
+
+[sshd]
+enabled = true
+# Debian 13 logs SSH to the systemd journal, not /var/log/auth.log
+backend = systemd

@@ -1,0 +1,21 @@
+# Entry point of the role: each concern lives in its own file
+- name: Packages
+  ansible.builtin.import_tasks: packages.yml
+
+- name: Admin user and SSH key
+  ansible.builtin.import_tasks: user.yml
+
+- name: SSH hardening
+  ansible.builtin.import_tasks: ssh.yml
+
+- name: Firewall
+  ansible.builtin.import_tasks: firewall.yml
+
+- name: Swap
+  ansible.builtin.import_tasks: swap.yml
+
+- name: Fail2ban
+  ansible.builtin.import_tasks: fail2ban.yml
+
+- name: Automatic security updates
+  ansible.builtin.import_tasks: updates.yml

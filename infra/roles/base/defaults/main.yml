@@ -1,0 +1,25 @@
+# Defaults for the base role; override in group_vars/all/vars.yml
+
+base_packages:
+  - python3-apt       # needed by Ansible's apt module (see just infra-bootstrap)
+  - sudo
+  - vim
+  - man-db
+  - ufw
+  - fail2ban
+  - python3-systemd   # lets fail2ban read SSH logins from the systemd journal
+  - unattended-upgrades
+
+# Incoming ports open in the firewall (everything else is denied)
+base_ufw_allowed_ports:
+  - { port: "22", proto: tcp, comment: SSH }
+  - { port: "80", proto: tcp, comment: HTTP (Caddy, certificate challenges + redirect) }
+  - { port: "443", proto: tcp, comment: HTTPS (Caddy) }
+
+base_swap_file: /swapfile
+base_swap_size: 2G
+
+# fail2ban: same values as the packaged defaults, tune here
+base_fail2ban_bantime: 10m
+base_fail2ban_findtime: 10m
+base_fail2ban_maxretry: 5
