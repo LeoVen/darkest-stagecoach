@@ -47,6 +47,11 @@ export interface ClassModData {
         name: string
         link: string
     }[]
+    // Who uploaded the workshop mod (from mods.json), if known
+    uploader?: {
+        name: string
+        link: string // Steam profile
+    }
     skills: Skill[]
     portrait: string // path relative to the public folder
     equip: EquipIcons

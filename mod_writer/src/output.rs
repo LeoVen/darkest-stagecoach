@@ -6,6 +6,7 @@ use mod_parser::types::{ClassInfo, ClassResistances, ClassStats};
 use serde::Serialize;
 
 use crate::images::ImageStore;
+use crate::uploaders::Uploaders;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -19,6 +20,9 @@ pub struct ClassModData {
     resistances: Resistances,
     stats: GearStats,
     sources: Vec<Source>,
+    /// Who uploaded the workshop mod, if known
+    #[serde(skip_serializing_if = "Option::is_none")]
+    uploader: Option<Uploader>,
     skills: Vec<Skill>,
     equip: EquipIcons,
     portrait: String,
@@ -67,6 +71,12 @@ struct Source {
 }
 
 #[derive(Serialize)]
+struct Uploader {
+    name: String,
+    link: String,
+}
+
+#[derive(Serialize)]
 struct Skill {
     name: String,
     launch: [bool; 4],
@@ -88,9 +98,13 @@ struct EquipIcons {
 
 impl ClassModData {
     /// Converts a parsed class, saving its images into `images`
-    pub fn new(class: ClassInfo, images: &mut ImageStore) -> Self {
+    pub fn new(class: ClassInfo, images: &mut ImageStore, uploaders: &Uploaders) -> Self {
         Self {
             sources: sources(&class.steam_id),
+            uploader: uploaders.get(&class.steam_id).map(|u| Uploader {
+                name: u.name.clone(),
+                link: format!("https://steamcommunity.com/profiles/{}", u.steam_id),
+            }),
             resistances: Resistances::from(&class.res),
             stats: GearStats::from(&class.stats),
             skills: class

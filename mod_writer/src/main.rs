@@ -2,16 +2,17 @@ use std::{fs::symlink_metadata, path::PathBuf};
 
 use exclusions::Exclusions;
 
-use crate::{images::ImageStore, writer::write_files};
+use crate::{images::ImageStore, uploaders::Uploaders, writer::write_files};
 
 mod fixer;
 mod images;
 mod output;
 mod report;
+mod uploaders;
 mod writer;
 
 const USAGE: &str = "Usage: mod_writer --images <image_dir> [--exclude <exclusions.json>] \
-[--report <incomplete.json>] <input_dir>... <output_dir>";
+[--report <incomplete.json>] [--manifest <mods.json>] <input_dir>... <output_dir>";
 
 /// Removes `--name <value>` from `args` and returns the value
 fn take_option(args: &mut Vec<String>, name: &str) -> Option<String> {
@@ -40,6 +41,13 @@ fn main() {
         None => Exclusions::default(),
     };
     let report = take_option(&mut args, "--report").map(PathBuf::from);
+    let uploaders = match take_option(&mut args, "--manifest") {
+        Some(path) => Uploaders::read(path.as_ref()).unwrap_or_else(|e| {
+            eprintln!("{}", e);
+            std::process::exit(1);
+        }),
+        None => Uploaders::default(),
+    };
 
     if args.len() < 2 {
         eprintln!("{}", USAGE);
@@ -79,6 +87,7 @@ fn main() {
         &mut images,
         infos,
         &exclusions,
+        &uploaders,
         report.as_deref(),
     );
     println!("Wrote {} unique images", images.len());

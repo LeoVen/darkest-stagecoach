@@ -102,7 +102,22 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                     handleAccordionChange={handleAccordionChange(1)}>
                     <div style={{ width: '100%' }}>
                         {classMod.info.authors === undefined ? (
-                            <Typography variant="body1">Unavailable</Typography>
+                            classMod.data.uploader === undefined ? (
+                                <Typography variant="body1">Unavailable</Typography>
+                            ) : (
+                                <AuthorCard
+                                    author={{
+                                        name: classMod.data.uploader.name,
+                                        links: [
+                                            {
+                                                name: 'Steam',
+                                                link: classMod.data.uploader.link
+                                            }
+                                        ]
+                                    }}
+                                    credits={['Uploader']}
+                                />
+                            )
                         ) : (
                             classMod.info.authors.map((auth, i) => {
                                 const author = AuthorIndex.get(auth.authorKey)

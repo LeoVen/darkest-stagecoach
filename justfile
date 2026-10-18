@@ -57,6 +57,7 @@ generate:
         --images {{web}}/public/img \
         --exclude exclusions.json \
         --report incomplete.json \
+        --manifest mods.json \
         "{{game}}" \
         "{{workshop}}" \
         {{web}}/src/data/data

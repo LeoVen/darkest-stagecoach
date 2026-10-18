@@ -8,6 +8,7 @@ use crate::fixer::fix_classes;
 use crate::images::ImageStore;
 use crate::output::ClassModData;
 use crate::report;
+use crate::uploaders::Uploaders;
 
 /// Name of the generated data file inside the output folder
 pub const CLASSES_FILE: &str = "classes.json";
@@ -17,6 +18,7 @@ pub fn write_files(
     images: &mut ImageStore,
     mods: Vec<ClassModInfo>,
     exclusions: &Exclusions,
+    uploaders: &Uploaders,
     report_path: Option<&Path>,
 ) {
     let mut excluded = std::collections::BTreeMap::<&str, usize>::new();
@@ -60,7 +62,7 @@ pub fn write_files(
 
     let classes: Vec<ClassModData> = classes
         .into_iter()
-        .map(|class| ClassModData::new(class, images))
+        .map(|class| ClassModData::new(class, images, uploaders))
         .collect();
 
     remove_generated(output);
