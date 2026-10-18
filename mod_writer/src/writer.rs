@@ -1,7 +1,7 @@
 use std::path::Path;
 
 use exclusions::Exclusions;
-use mod_parser::{proc_class_mod, types::ClassInfo};
+use mod_parser::{is_vanilla_hero_key, proc_class_mod, types::ClassInfo};
 use mod_reader::types::ClassModInfo;
 
 use crate::fixer::fix_classes;
@@ -68,14 +68,20 @@ fn exclusion_reason(class: &ClassInfo, exclusions: &Exclusions) -> Option<&'stat
         Some("excluded mod")
     } else if exclusions.excludes_class(&class.key) {
         Some("excluded class")
-    } else if exclusions.exclude_vanilla_reworks
-        && class.original_hero
-        && !class.steam_id.is_empty()
-    {
+    } else if exclusions.exclude_vanilla_reworks && is_vanilla_rework(class) {
         Some("rework of a vanilla hero")
     } else {
         None
     }
+}
+
+// The keys are already fixed here, so workshop keys end in their Steam ID
+fn is_vanilla_rework(class: &ClassInfo) -> bool {
+    !class.steam_id.is_empty()
+        && class
+            .key
+            .strip_suffix(&format!("_{}", class.steam_id))
+            .is_some_and(is_vanilla_hero_key)
 }
 
 // Removes previously generated files (including the TS modules older versions

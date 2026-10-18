@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 use mod_reader::types::{ClassModInfo, SkillData};
 
 use crate::types::*;
@@ -25,31 +23,38 @@ pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
     result
 }
 
+/// Folder names of the base game and DLC heroes
+const VANILLA_HEROES: [&str; 20] = [
+    "abomination",
+    "antiquarian",
+    "bounty_hunter",
+    "arbalest",
+    "crusader",
+    "grave_robber",
+    "hellion",
+    "highwayman",
+    "flagellant",
+    "houndmaster",
+    "jester",
+    "leper",
+    "man_at_arms",
+    "musketeer",
+    "occultist",
+    "plague_doctor",
+    "shieldbreaker",
+    "vestal",
+    "duelist",
+    "runaway",
+];
+
+/// Whether `key` (a hero folder name) is one of the vanilla heroes. Workshop
+/// mods reusing such a folder name are reworks or reskins, not the originals.
+pub fn is_vanilla_hero_key(key: &str) -> bool {
+    VANILLA_HEROES.contains(&key)
+}
+
 // Proc any other info
 pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
-    let original_heroes = HashSet::from([
-        "abomination",
-        "antiquarian",
-        "bounty_hunter",
-        "arbalest",
-        "crusader",
-        "grave_robber",
-        "hellion",
-        "highwayman",
-        "flagellant",
-        "houndmaster",
-        "jester",
-        "leper",
-        "man_at_arms",
-        "musketeer",
-        "occultist",
-        "plague_doctor",
-        "shieldbreaker",
-        "vestal",
-        "duelist",
-        "runaway",
-    ]);
-
     let key = format!("hero_class_name_{}", info.key);
     if let Some(name) = info.locs.get(&key)
         && let Some(name) = name.first()
@@ -63,7 +68,8 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
         result.name_from_key = true;
     }
 
-    result.original_hero = original_heroes.contains(result.key.as_str());
+    // Only the base game and DLC heroes, which have no Steam ID
+    result.original_hero = info.steam_id.is_empty() && is_vanilla_hero_key(&result.key);
 }
 
 pub fn proc_resistances(info: &ClassModInfo) -> ClassResistances {
@@ -290,6 +296,27 @@ mod tests {
     fn names_from_key() {
         assert_eq!(name_from_key("lamia"), "Lamia");
         assert_eq!(name_from_key("man_at_arms"), "Man At Arms");
+    }
+
+    #[test]
+    fn only_vanilla_heroes_are_original() {
+        let original = |key: &str, steam_id: &str| {
+            let info = ClassModInfo {
+                key: key.into(),
+                steam_id: steam_id.into(),
+                ..Default::default()
+            };
+            let mut result = ClassInfo {
+                key: key.into(),
+                ..Default::default()
+            };
+            proc_infos(&info, &mut result);
+            result.original_hero
+        };
+
+        assert!(original("shieldbreaker", ""));
+        assert!(!original("shieldbreaker", "2495332714"));
+        assert!(!original("lamia", ""));
     }
 
     #[test]
