@@ -308,12 +308,18 @@ impl<'a> ModReader<'a> {
 /// and DLC folders (`DarkestDungeon`, `445700_musketeer`) aren't numeric, so
 /// those heroes get none.
 fn steam_id_from_path(hero_root: &Path) -> Option<String> {
-    hero_root
-        .ancestors()
-        .skip(1)
-        .filter_map(|dir| dir.file_name()?.to_str())
-        .find(|name| !name.is_empty() && name.chars().all(|c| c.is_ascii_digit()))
-        .map(String::from)
+    let dir = steam_dir_from_path(hero_root)?;
+    Some(dir.file_name()?.to_str()?.to_string())
+}
+
+/// The workshop folder (`<steam_id>/`) a hero belongs to, see
+/// [`steam_id_from_path`]
+pub fn steam_dir_from_path(hero_root: &Path) -> Option<&Path> {
+    hero_root.ancestors().skip(1).find(|dir| {
+        dir.file_name()
+            .and_then(|name| name.to_str())
+            .is_some_and(|name| !name.is_empty() && name.chars().all(|c| c.is_ascii_digit()))
+    })
 }
 
 pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {

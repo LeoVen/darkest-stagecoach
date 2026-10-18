@@ -1,10 +1,12 @@
-use mod_reader::types::{ClassModInfo, SkillData};
+use mod_reader::types::{ClassModInfo, ModEffects, SkillData};
 
 use crate::types::*;
 
+pub mod synergy;
 pub mod types;
 
-pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
+/// `base` holds the base game's effects, which mods can apply too
+pub fn proc_class_mod(info: ClassModInfo, base: &ModEffects) -> ClassInfo {
     let mut result = ClassInfo::default();
 
     result.key = info.key.clone();
@@ -13,6 +15,7 @@ pub fn proc_class_mod(info: ClassModInfo) -> ClassInfo {
     result.res = proc_resistances(&info);
     result.stats = proc_stats(&info);
     (result.religious, result.transform) = proc_tag(&info);
+    result.synergies = synergy::proc_synergies(&info, base);
     result.skills = proc_skills(&info.info, info.skills);
 
     result.portrait = info.portrait;

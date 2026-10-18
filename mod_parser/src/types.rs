@@ -1,4 +1,8 @@
+use std::collections::BTreeSet;
+
 use mod_reader::types::Image;
+
+use crate::synergy::Synergy;
 
 #[derive(Debug, Default)]
 pub struct ClassResistances {
@@ -67,6 +71,8 @@ pub struct ClassInfo {
 
     pub religious: bool,
     pub transform: bool,
+
+    pub synergies: BTreeSet<Synergy>,
 
     pub portrait: Image,
 

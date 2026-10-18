@@ -1,9 +1,17 @@
-use std::path::{Path, PathBuf};
+use std::{
+    collections::HashMap,
+    path::{Path, PathBuf},
+    sync::Arc,
+};
 
 use tokio::io;
 
-use crate::{reader::ModReader, types::ClassModInfo};
+use crate::{
+    reader::{ModReader, steam_dir_from_path},
+    types::{ClassModInfo, ModEffects},
+};
 
+mod effects;
 mod reader;
 pub mod types;
 
@@ -20,14 +28,24 @@ pub fn read_mods(root: &Path) -> Vec<ClassModInfo> {
 }
 
 async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
-    let mut roots = root_finder::find_roots(path).await?;
+    let mut roots = root_finder::find_roots(path.clone()).await?;
 
     roots.sort();
 
     let mut result = vec![];
+    // Effects by mod root: the workshop folder, or the input folder for the
+    // base game, whose DLC heroes also use its base effects
+    let mut effects: HashMap<PathBuf, Arc<ModEffects>> = HashMap::new();
 
     for root in roots {
-        if let Some(info) = read_single(&root).await {
+        let mod_root = steam_dir_from_path(&root).unwrap_or(&path).to_path_buf();
+        let effects = effects
+            .entry(mod_root)
+            .or_insert_with_key(|mod_root| Arc::new(effects::read_effects(mod_root)))
+            .clone();
+
+        if let Some(mut info) = read_single(&root).await {
+            info.effects = effects;
             result.push(info);
         } else {
             eprintln!("Mod couldn't be read: {}", root.to_string_lossy());

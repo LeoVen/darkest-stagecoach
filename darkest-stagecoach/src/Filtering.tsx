@@ -32,10 +32,8 @@ export class ClassModFilter {
 
     filterBySynergy = (a: string): boolean => {
         let classA = ClassModIndex.get(a) as ClassMod
-        if (classA.info.synergy === undefined)
-            return this.filterState.synergies.size === 0
         for (const [key, value] of this.filterState.synergies.entries()) {
-            if (classA.info.synergy.has(key) !== value) return false
+            if (classA.synergies.has(key) !== value) return false
         }
         return true
     }

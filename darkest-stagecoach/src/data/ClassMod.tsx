@@ -15,6 +15,8 @@ import {
 export default interface ClassMod {
     info: ClassModInfo
     data: ClassModData
+    // The hand-written info.synergy if any, otherwise the generated ones
+    synergies: Set<Synergy>
 }
 
 export interface ClassModInfo {
@@ -38,6 +40,7 @@ export interface ClassModData {
     originalHero: boolean
     religious: boolean
     transform: boolean
+    synergies: Synergy[] // derived from the skills' effects
     resistances: Resistances
     stats: GearStats
     sources: {
@@ -54,6 +57,7 @@ export const defaultClassMod = (): ClassMod => {
     return {
         data: defaultClassModData(),
         info: defaultClassModInfo(),
+        synergies: new Set(),
     }
 }
 
@@ -82,6 +86,7 @@ export const defaultClassModData = (): ClassModData => {
         originalHero: false,
         religious: false,
         transform: false,
+        synergies: [],
         resistances: {
             stun: 0,
             blight: 0,

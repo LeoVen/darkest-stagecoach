@@ -59,7 +59,7 @@ export const ClassCard = React.memo(function ClassCard({
                     )}
                 </TopIcons>
                 <BottomIcons>
-                    <SynergyIcons synergies={classInfo.info.synergy} />
+                    <SynergyIcons synergies={classInfo.synergies} />
                 </BottomIcons>
             </CardInner>
         </CardWrapper>

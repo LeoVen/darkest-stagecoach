@@ -15,6 +15,7 @@ pub struct ClassModData {
     original_hero: bool,
     religious: bool,
     transform: bool,
+    synergies: Vec<&'static str>,
     resistances: Resistances,
     stats: GearStats,
     sources: Vec<Source>,
@@ -115,6 +116,7 @@ impl ClassModData {
             original_hero: class.original_hero,
             religious: class.religious,
             transform: class.transform,
+            synergies: class.synergies.iter().map(|s| s.as_str()).collect(),
         }
     }
 }

@@ -20,7 +20,17 @@ pub fn write_files(
     report_path: Option<&Path>,
 ) {
     let mut excluded = std::collections::BTreeMap::<&str, usize>::new();
-    let classes: Vec<ClassInfo> = fix_classes(mods.into_iter().map(proc_class_mod).collect())
+    // The base game's effects: those of any class without a Steam ID
+    let base = mods
+        .iter()
+        .find(|info| info.steam_id.is_empty())
+        .map(|info| info.effects.clone())
+        .unwrap_or_default();
+    let classes: Vec<ClassInfo> = mods
+        .into_iter()
+        .map(|info| proc_class_mod(info, &base))
+        .collect();
+    let classes: Vec<ClassInfo> = fix_classes(classes)
         .into_iter()
         .filter(|class| match exclusion_reason(class, exclusions) {
             Some(reason) => {

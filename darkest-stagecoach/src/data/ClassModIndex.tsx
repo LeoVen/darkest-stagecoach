@@ -22,9 +22,11 @@ export async function loadClassModIndex(): Promise<void> {
     ClassModIndex.clear()
     for (const data of classes) {
         const key = `Class_${data.key}`
+        const info = infoIndex.get(key) ?? defaultClassModInfo()
         ClassModIndex.set(key, {
             data,
-            info: infoIndex.get(key) ?? defaultClassModInfo()
+            info,
+            synergies: info.synergy ?? new Set(data.synergies)
         })
     }
 }

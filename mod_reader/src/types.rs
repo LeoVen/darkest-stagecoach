@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, sync::Arc};
 
 /// A compressed JPEG image, empty if it couldn't be read
 pub type Image = Vec<u8>;
@@ -14,7 +14,9 @@ pub struct ClassModInfo {
     pub steam_id: String,
     pub equip_armour: [Image; 5],
     pub equip_weapon: [Image; 5],
-    // TODO effects
+    /// The effects and buffs of the mod this class belongs to, shared by all
+    /// its classes
+    pub effects: Arc<ModEffects>,
     // TODO camping skills
 }
 
@@ -23,4 +25,20 @@ pub struct SkillData {
     pub name: String,
     pub icon: String,
     pub img: Image,
+}
+
+/// Every effect and buff a mod defines. Skills refer to effects by name and
+/// effects to buffs by id.
+#[derive(Default)]
+pub struct ModEffects {
+    /// `effect:` rows by `.name`
+    pub effects: HashMap<String, parser::DarkestRow>,
+    /// Buff `stat_type` by buff id
+    pub buffs: HashMap<String, String>,
+}
+
+impl ModEffects {
+    pub fn is_empty(&self) -> bool {
+        self.effects.is_empty() && self.buffs.is_empty()
+    }
 }
