@@ -17,11 +17,18 @@
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <title>Darkest Stagecoach</title>
-      <script type="module" crossorigin src="/assets/index-CtRIsZn7.js"></script>
+        <!-- Loading screen, shown until the class data is loaded (see src/index.tsx) -->
+        <style>body{background-color:#2f3129;margin:0}.loading{color:#ccc;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem;min-height:100vh;font-family:Mate SC,serif;display:flex}.loading img{width:96px;height:96px;animation:1.6s ease-in-out infinite loading-pulse}.loading-failed img{opacity:.4;animation:none}.loading-failed .loading-message{color:#d3552e}@keyframes loading-pulse{0%,to{opacity:.4}50%{opacity:1}}@media (prefers-reduced-motion:reduce){.loading img{animation:none}}</style>
+      <script type="module" crossorigin src="/assets/index-CvvlWkbh.js"></script>
       <link rel="stylesheet" crossorigin href="/assets/index-DAj6NZby.css">
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
+        <div id="root">
+            <div class="loading" role="status">
+                <img src="/logo.png" alt="" />
+                <div class="loading-message">Loading the stagecoach…</div>
+            </div>
+        </div>
     </body>
 </html>
