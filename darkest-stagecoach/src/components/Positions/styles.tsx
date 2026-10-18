@@ -9,7 +9,7 @@ export const MainSection = styled('div')`
     gap: 6px;
     align-items: center;
     width: 100%;
-    margin: 8px 0 22px 0;
+    margin: 8px 0 4px 0;
 `
 
 export const Circle = styled('div', transient)<{

@@ -30,6 +30,7 @@ export const CardInner = styled('div')`
 export const HeroCard = styled(Paper)`
     padding: 1em;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     width: 300px;
 
@@ -57,10 +58,13 @@ export const TopLeftIcons = styled('div')`
     top: 0.5rem;
 `
 
+// A full-width last row of the card, so many synergies wrap onto more rows
+// (making the card taller) instead of overlapping the positions
 export const BottomIcons = styled('div')`
-    position: absolute;
-    right: 1rem;
-    bottom: 2px;
+    flex-basis: 100%;
+    margin-bottom: -0.5em;
+    text-align: right;
+    line-height: 0;
 `
 
 export const ImageAndIcons = styled('div')`

@@ -49,6 +49,9 @@ export const ClassCard = React.memo(function ClassCard({
                         </ImageAndPositions>
                     </ImageAndIcons>
                     <ClassName variant="h3">{classInfo.data.name}</ClassName>
+                    <BottomIcons>
+                        <SynergyIcons synergies={classInfo.synergies} />
+                    </BottomIcons>
                 </HeroCard>
                 <TopLeftIcons>
                     {classInfo.data.originalHero ? <OriginalHeroIcon /> : null}
@@ -58,9 +61,6 @@ export const ClassCard = React.memo(function ClassCard({
                         <ClassTypeIcons type={classInfo.info.classType} />
                     )}
                 </TopIcons>
-                <BottomIcons>
-                    <SynergyIcons synergies={classInfo.synergies} />
-                </BottomIcons>
             </CardInner>
         </CardWrapper>
     )
