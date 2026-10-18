@@ -46,6 +46,9 @@ async fn read_all(path: PathBuf) -> io::Result<Vec<ClassModInfo>> {
 
         if let Some(mut info) = read_single(&root).await {
             info.effects = effects;
+            if let Some(steam_dir) = steam_dir_from_path(&root) {
+                info.description = reader::read_description(steam_dir);
+            }
             result.push(info);
         } else {
             eprintln!("Mod couldn't be read: {}", root.to_string_lossy());

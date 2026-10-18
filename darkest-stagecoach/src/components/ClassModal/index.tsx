@@ -102,21 +102,21 @@ export const ClassModal = ({ classMod }: ClassModalProps) => {
                     handleAccordionChange={handleAccordionChange(1)}>
                     <div style={{ width: '100%' }}>
                         {classMod.info.authors === undefined ? (
-                            classMod.data.uploader === undefined ? (
+                            classMod.data.authors.length === 0 ? (
                                 <Typography variant="body1">Unavailable</Typography>
                             ) : (
-                                <AuthorCard
-                                    author={{
-                                        name: classMod.data.uploader.name,
-                                        links: [
-                                            {
-                                                name: 'Steam',
-                                                link: classMod.data.uploader.link
-                                            }
-                                        ]
-                                    }}
-                                    credits={['Uploader']}
-                                />
+                                classMod.data.authors.map((author, i) => (
+                                    <AuthorCard
+                                        key={`${author.name}-${i}`}
+                                        author={{
+                                            name: author.name,
+                                            links: author.link
+                                                ? [{ name: 'Steam', link: author.link }]
+                                                : []
+                                        }}
+                                        credits={author.credits}
+                                    />
+                                ))
                             )
                         ) : (
                             classMod.info.authors.map((auth, i) => {

@@ -47,11 +47,12 @@ export interface ClassModData {
         name: string
         link: string
     }[]
-    // Who uploaded the workshop mod (from mods.json), if known
-    uploader?: {
+    // Parsed from the workshop description's credits, plus the uploader
+    authors: {
         name: string
-        link: string // Steam profile
-    }
+        credits: Credits
+        link?: string // Steam profile
+    }[]
     skills: Skill[]
     portrait: string // path relative to the public folder
     equip: EquipIcons
@@ -107,6 +108,7 @@ export const defaultClassModData = (): ClassModData => {
             weapons: [weapon, weapon, weapon, weapon, weapon]
         },
         sources: [],
+        authors: [],
         skills: [],
         portrait: '',
         equip: {

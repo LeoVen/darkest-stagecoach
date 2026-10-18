@@ -2,6 +2,7 @@ use mod_reader::types::{ClassModInfo, ModEffects, SkillData};
 
 use crate::types::*;
 
+pub mod credits;
 pub mod synergy;
 pub mod types;
 
@@ -16,6 +17,7 @@ pub fn proc_class_mod(info: ClassModInfo, base: &ModEffects) -> ClassInfo {
     result.stats = proc_stats(&info);
     (result.religious, result.transform) = proc_tag(&info);
     result.synergies = synergy::proc_synergies(&info, base);
+    result.credits = credits::parse_credits(&info.description);
     result.skills = proc_skills(&info.info, info.skills);
 
     result.portrait = info.portrait;

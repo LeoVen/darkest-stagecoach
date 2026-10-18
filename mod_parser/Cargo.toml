@@ -6,3 +6,4 @@ edition.workspace = true
 [dependencies]
 mod_reader.workspace = true
 parser.workspace = true
+regex.workspace = true

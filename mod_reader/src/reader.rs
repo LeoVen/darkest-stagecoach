@@ -322,6 +322,29 @@ pub fn steam_dir_from_path(hero_root: &Path) -> Option<&Path> {
     })
 }
 
+/// The `<ItemDescription>` of the mod's `project.xml` (written by the
+/// workshop uploader), with XML entities decoded
+pub fn read_description(steam_dir: &Path) -> String {
+    let Ok(data) = std::fs::read(steam_dir.join("project.xml")) else {
+        return String::new();
+    };
+    let data = String::from_utf8_lossy(&data);
+    let description = data
+        .split_once("<ItemDescription>")
+        .and_then(|(_, rest)| rest.split_once("</ItemDescription>"))
+        .map(|(description, _)| description)
+        .unwrap_or_default();
+
+    description
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+        .replace("&quot;", "\"")
+        .replace("&apos;", "'")
+        .replace("&#xA;", "\n")
+        .replace("&#xD;", "")
+        .replace("&amp;", "&")
+}
+
 pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {
     let info_data = fs::read_to_string(&path).await?;
     anyhow::Ok(parser::parse_darkest(info_data))

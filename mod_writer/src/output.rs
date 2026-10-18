@@ -2,11 +2,14 @@
 //! array of `ClassModData` (see `src/data/ClassMod.tsx`). Field names and
 //! shapes must match the TS types.
 
-use mod_parser::types::{ClassInfo, ClassResistances, ClassStats};
+use mod_parser::{
+    credits::Credit,
+    types::{ClassInfo, ClassResistances, ClassStats},
+};
 use serde::Serialize;
 
 use crate::images::ImageStore;
-use crate::uploaders::Uploaders;
+use crate::uploaders::{Uploader, Uploaders};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -20,9 +23,8 @@ pub struct ClassModData {
     resistances: Resistances,
     stats: GearStats,
     sources: Vec<Source>,
-    /// Who uploaded the workshop mod, if known
-    #[serde(skip_serializing_if = "Option::is_none")]
-    uploader: Option<Uploader>,
+    /// The credits of the workshop description and the uploader
+    authors: Vec<Author>,
     skills: Vec<Skill>,
     equip: EquipIcons,
     portrait: String,
@@ -70,10 +72,13 @@ struct Source {
     link: String,
 }
 
-#[derive(Serialize)]
-struct Uploader {
+#[derive(Serialize, Debug, PartialEq)]
+struct Author {
     name: String,
-    link: String,
+    credits: Vec<&'static str>,
+    /// Steam profile
+    #[serde(skip_serializing_if = "Option::is_none")]
+    link: Option<String>,
 }
 
 #[derive(Serialize)]
@@ -101,10 +106,7 @@ impl ClassModData {
     pub fn new(class: ClassInfo, images: &mut ImageStore, uploaders: &Uploaders) -> Self {
         Self {
             sources: sources(&class.steam_id),
-            uploader: uploaders.get(&class.steam_id).map(|u| Uploader {
-                name: u.name.clone(),
-                link: format!("https://steamcommunity.com/profiles/{}", u.steam_id),
-            }),
+            authors: authors(&class.credits, uploaders.get(&class.steam_id)),
             resistances: Resistances::from(&class.res),
             stats: GearStats::from(&class.stats),
             skills: class
@@ -177,6 +179,73 @@ impl From<&ClassStats> for GearStats {
     }
 }
 
+/// The credited authors with the uploader marked (credited as "Me", or under
+/// their Steam name), or added first if the credits don't name them
+fn authors(credits: &[Credit], uploader: Option<&Uploader>) -> Vec<Author> {
+    let uploader_link =
+        uploader.map(|u| format!("https://steamcommunity.com/profiles/{}", u.steam_id));
+    let mut result: Vec<Author> = vec![];
+    let mut uploader_found = false;
+
+    for credit in credits {
+        let is_uploader = uploader
+            .is_some_and(|u| credit.is_uploader || credit.name.eq_ignore_ascii_case(&u.name));
+        let name = match uploader {
+            Some(u) if credit.name.is_empty() => u.name.clone(),
+            _ => credit.name.clone(),
+        };
+        if name.is_empty() {
+            continue; // "Me", but the uploader is unknown
+        }
+
+        let mut author = Author {
+            name,
+            credits: credit.roles.clone(),
+            link: credit.link.clone(),
+        };
+        if is_uploader {
+            uploader_found = true;
+            author.credits.push("Uploader");
+            author.link = uploader_link.clone();
+        }
+
+        // "Me" and the uploader's name in the same credits
+        match result
+            .iter_mut()
+            .find(|a| a.name.eq_ignore_ascii_case(&author.name))
+        {
+            Some(existing) => {
+                for credit in author.credits {
+                    if !existing.credits.contains(&credit) {
+                        existing.credits.push(credit);
+                    }
+                }
+                existing.link = existing.link.take().or(author.link);
+            }
+            None => result.push(author),
+        }
+    }
+
+    if let Some(u) = uploader
+        && !uploader_found
+    {
+        result.insert(
+            0,
+            Author {
+                name: u.name.clone(),
+                credits: vec!["Uploader"],
+                link: uploader_link,
+            },
+        );
+    }
+
+    // Keep "Uploader" last
+    for author in &mut result {
+        author.credits.sort_by_key(|credit| *credit == "Uploader");
+    }
+    result
+}
+
 fn sources(steam_id: &str) -> Vec<Source> {
     if steam_id.is_empty() {
         return vec![];
@@ -185,4 +254,69 @@ fn sources(steam_id: &str) -> Vec<Source> {
         name: "Steam".to_string(),
         link: format!("https://steamcommunity.com/sharedfiles/filedetails/?id={steam_id}"),
     }]
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn credit(name: &str, roles: &[&'static str], is_uploader: bool) -> Credit {
+        Credit {
+            name: name.to_string(),
+            roles: roles.to_vec(),
+            link: None,
+            is_uploader,
+        }
+    }
+
+    fn names(authors: &[Author]) -> Vec<(&str, Vec<&str>)> {
+        authors
+            .iter()
+            .map(|a| (a.name.as_str(), a.credits.clone()))
+            .collect()
+    }
+
+    #[test]
+    fn marks_the_uploader_among_the_credits() {
+        let uploader = Uploader {
+            name: "Sahlo Qah".to_string(),
+            steam_id: "765".to_string(),
+        };
+        let credits = [
+            credit("", &["Scripting"], true),
+            credit("Sahlo Qah", &["Writing"], false),
+            credit("Hestrir", &["Art"], false),
+        ];
+        let authors = authors(&credits, Some(&uploader));
+
+        assert_eq!(
+            names(&authors),
+            [
+                ("Sahlo Qah", vec!["Scripting", "Writing", "Uploader"]),
+                ("Hestrir", vec!["Art"])
+            ]
+        );
+        assert_eq!(
+            authors[0].link.as_deref(),
+            Some("https://steamcommunity.com/profiles/765")
+        );
+    }
+
+    #[test]
+    fn adds_an_uncredited_uploader_first() {
+        let uploader = Uploader {
+            name: "Moon/Void Slime".to_string(),
+            steam_id: "765".to_string(),
+        };
+        let credits = [credit("Void Slime", &["Scripting"], false)];
+
+        assert_eq!(
+            names(&authors(&credits, Some(&uploader))),
+            [
+                ("Moon/Void Slime", vec!["Uploader"]),
+                ("Void Slime", vec!["Scripting"])
+            ]
+        );
+        assert_eq!(names(&authors(&[credit("", &["Art"], true)], None)), []);
+    }
 }

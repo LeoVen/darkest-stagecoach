@@ -2,7 +2,7 @@ use std::collections::BTreeSet;
 
 use mod_reader::types::Image;
 
-use crate::synergy::Synergy;
+use crate::{credits::Credit, synergy::Synergy};
 
 #[derive(Debug, Default)]
 pub struct ClassResistances {
@@ -73,6 +73,8 @@ pub struct ClassInfo {
     pub transform: bool,
 
     pub synergies: BTreeSet<Synergy>,
+    /// From the workshop description, see `credits`
+    pub credits: Vec<Credit>,
 
     pub portrait: Image,
 

@@ -17,6 +17,9 @@ pub struct ClassModInfo {
     /// The effects and buffs of the mod this class belongs to, shared by all
     /// its classes
     pub effects: Arc<ModEffects>,
+    /// The workshop description (`project.xml`), BBCode with XML entities
+    /// decoded. Empty for base game heroes and mods that don't ship one.
+    pub description: String,
     // TODO camping skills
 }
 
