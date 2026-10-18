@@ -6,10 +6,34 @@ const QUERY_FILES_URL: &str = "https://api.steampowered.com/IPublishedFileServic
 const DETAILS_URL: &str =
     "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/";
 
-// k_PublishedFileQueryType_RankedByTotalUniqueSubscriptions, see
-// EPublishedFileQueryType in SteamDatabase/Protobufs steam/enums.proto
-const RANKED_BY_TOTAL_UNIQUE_SUBSCRIPTIONS: &str = "9";
 const PER_PAGE: &str = "100";
+
+/// Order of the QueryFiles listing
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Sort {
+    /// Most lifetime subscriptions first
+    Subscriptions,
+    /// Newest first
+    Recent,
+}
+
+impl Sort {
+    pub fn parse(value: &str) -> anyhow::Result<Self> {
+        match value {
+            "subs" => Ok(Self::Subscriptions),
+            "recent" => Ok(Self::Recent),
+            _ => anyhow::bail!("unknown sort {:?}, expected subs or recent", value),
+        }
+    }
+
+    // EPublishedFileQueryType in SteamDatabase/Protobufs steam/enums.proto
+    fn query_type(self) -> &'static str {
+        match self {
+            Self::Subscriptions => "9", // RankedByTotalUniqueSubscriptions
+            Self::Recent => "1",        // RankedByPublicationDate
+        }
+    }
+}
 
 /// A workshop item as returned by QueryFiles and GetPublishedFileDetails.
 /// Fields missing from a response default to empty/zero.
@@ -46,13 +70,13 @@ struct Envelope<T> {
     response: T,
 }
 
-/// One page of all items of the app, most subscribed first. Pass `*` as the
-/// cursor for the first page and `next_cursor` afterwards.
-pub fn query_files(key: &str, cursor: &str) -> anyhow::Result<Page> {
+/// One page of all items of the app in `sort` order. Pass `*` as the cursor
+/// for the first page and `next_cursor` afterwards.
+pub fn query_files(key: &str, sort: Sort, cursor: &str) -> anyhow::Result<Page> {
     let envelope: Envelope<Page> = ureq::get(QUERY_FILES_URL)
         .query("key", key)
         .query("appid", APP_ID)
-        .query("query_type", RANKED_BY_TOTAL_UNIQUE_SUBSCRIPTIONS)
+        .query("query_type", sort.query_type())
         .query("cursor", cursor)
         .query("numperpage", PER_PAGE)
         .query("return_tags", "true")
@@ -84,20 +108,21 @@ pub fn get_details(ids: &[String]) -> anyhow::Result<Vec<Item>> {
     Ok(envelope.response.publishedfiledetails)
 }
 
-/// Pages through `fetch_page` (most subscribed first) and keeps the items
-/// with at least `min_subscriptions` lifetime subscriptions. Stops after the
-/// first page where every item is below the threshold, so a slightly unsorted
-/// response doesn't cut the listing short.
-pub fn collect_popular(
+/// Pages through `fetch_page` (in `sort` order, at most `max_pages` pages) and
+/// keeps the items with at least `min_subscriptions` lifetime subscriptions.
+/// When sorted by subscriptions it also stops after the first page where every
+/// item is below the threshold (rather than the first such item, so a
+/// slightly unsorted response doesn't cut the listing short).
+pub fn collect(
     min_subscriptions: u64,
+    sort: Sort,
+    max_pages: usize,
     mut fetch_page: impl FnMut(&str) -> anyhow::Result<Page>,
 ) -> anyhow::Result<Vec<Item>> {
-    const MAX_PAGES: usize = 1000;
-
     let mut result = vec![];
     let mut cursor = "*".to_string();
 
-    for _ in 0..MAX_PAGES {
+    for _ in 0..max_pages {
         let page = fetch_page(&cursor)?;
         if page.publishedfiledetails.is_empty() {
             break;
@@ -111,7 +136,11 @@ pub fn collect_popular(
         );
 
         match page.next_cursor {
-            Some(next) if result.len() > before && !next.is_empty() && next != cursor => {
+            Some(next)
+                if !next.is_empty()
+                    && next != cursor
+                    && (sort == Sort::Recent || result.len() > before) =>
+            {
                 cursor = next
             }
             _ => break,
@@ -152,7 +181,7 @@ mod tests {
         .into_iter();
         let mut cursors = vec![];
 
-        let items = collect_popular(100, |cursor| {
+        let items = collect(100, Sort::Subscriptions, 1000, |cursor| {
             cursors.push(cursor.to_string());
             Ok(pages.next().unwrap_or_default())
         })
@@ -161,6 +190,25 @@ mod tests {
         let ids: Vec<&str> = items.iter().map(|i| i.publishedfileid.as_str()).collect();
         assert_eq!(ids, ["1", "2", "3"]);
         assert_eq!(cursors, ["*", "b", "c"]);
+    }
+
+    #[test]
+    fn recent_keeps_paging_until_max_pages() {
+        let mut pages = vec![
+            page(vec![item("1", 10), item("2", 900)], "b"),
+            page(vec![item("3", 5)], "c"),
+            page(vec![item("4", 800)], "d"),
+            page(vec![item("5", 9000)], "e"), // beyond max_pages
+        ]
+        .into_iter();
+
+        let items = collect(100, Sort::Recent, 3, |_| {
+            Ok(pages.next().unwrap_or_default())
+        })
+        .unwrap();
+
+        let ids: Vec<&str> = items.iter().map(|i| i.publishedfileid.as_str()).collect();
+        assert_eq!(ids, ["2", "4"]);
     }
 
     #[test]

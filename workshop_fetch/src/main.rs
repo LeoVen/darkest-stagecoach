@@ -1,22 +1,29 @@
 use std::{collections::HashSet, path::PathBuf};
 
+use exclusions::Exclusions;
+
 use crate::manifest::{Manifest, steamcmd_script};
 
 mod manifest;
 mod steam;
 
 const USAGE: &str = "Usage:
-  workshop_fetch query [--min-subs <n>] [--no-tag-filter] [--out <mods.json>]
-      List popular hero mods into a manifest. Needs STEAM_API_KEY.
-  workshop_fetch script [--manifest <mods.json>] [--out <file>]
-                        [--skip-present <dir>] [--limit <n>]
+  workshop_fetch query [--sort subs|recent] [--min-subs <n>] [--max-pages <n>]
+                       [--no-tag-filter] [--replace] [--manifest <mods.json>]
+                       [--exclude <exclusions.json>]
+      Add hero mods matching the search to the manifest (keeps the mods
+      already in it unless --replace). Needs STEAM_API_KEY.
+  workshop_fetch script [--manifest <mods.json>] [--exclude <exclusions.json>]
+                        [--skip-present <dir>] [--limit <n>] [--out <file>]
       Write SteamCMD commands downloading the manifest's mods, leaving out
-      those with a folder in <dir> and stopping after <n> mods.
+      excluded ones and those with a folder in <dir>, at most <n> mods.
   workshop_fetch details <id>...
       Print details of workshop items (no API key needed).";
 
 const DEFAULT_MANIFEST: &str = "mods.json";
+const DEFAULT_EXCLUSIONS: &str = "exclusions.json";
 const DEFAULT_MIN_SUBS: u64 = 5000;
+const DEFAULT_MAX_PAGES: usize = 1000;
 
 fn main() {
     let args: Vec<String> = std::env::args().skip(1).collect();
@@ -44,58 +51,86 @@ fn option(args: &[String], name: &str) -> Option<String> {
         .and_then(|i| args.get(i + 1).cloned())
 }
 
+fn exclusions(args: &[String]) -> anyhow::Result<Exclusions> {
+    Exclusions::read(
+        option(args, "--exclude")
+            .unwrap_or(DEFAULT_EXCLUSIONS.into())
+            .as_ref(),
+    )
+}
+
 fn query(args: &[String]) -> anyhow::Result<()> {
     let key = std::env::var("STEAM_API_KEY").map_err(|_| {
         anyhow::anyhow!("set STEAM_API_KEY (https://steamcommunity.com/dev/apikey)")
     })?;
+    let sort = steam::Sort::parse(&option(args, "--sort").unwrap_or("subs".into()))?;
     let min_subs = match option(args, "--min-subs") {
         Some(n) => n.parse()?,
         None => DEFAULT_MIN_SUBS,
     };
+    let max_pages = match option(args, "--max-pages") {
+        Some(n) => n.parse()?,
+        None => DEFAULT_MAX_PAGES,
+    };
     let tag_filter = !args.iter().any(|arg| arg == "--no-tag-filter");
-    let out = PathBuf::from(option(args, "--out").unwrap_or(DEFAULT_MANIFEST.into()));
+    let replace = args.iter().any(|arg| arg == "--replace");
+    let path = PathBuf::from(option(args, "--manifest").unwrap_or(DEFAULT_MANIFEST.into()));
+    let exclusions = exclusions(args)?;
 
     let mut pages = 0;
-    let items = steam::collect_popular(min_subs, |cursor| {
+    let items = steam::collect(min_subs, sort, max_pages, |cursor| {
         pages += 1;
         eprint!("\rFetching page {}...", pages);
-        steam::query_files(&key, cursor)
+        steam::query_files(&key, sort, cursor)
     })?;
     eprintln!();
 
-    let manifest = Manifest::new(min_subs, tag_filter, &items);
+    let mut manifest = if replace {
+        Manifest::default()
+    } else {
+        Manifest::read(&path).unwrap_or_default()
+    };
+    let before = manifest.mods.len();
+    let merged = manifest.merge(&items, tag_filter);
+    let excluded = manifest.remove_excluded(&exclusions);
+
     println!(
-        "{} items with at least {} lifetime subscriptions, {} kept{}",
+        "{} items with at least {} lifetime subscriptions",
         items.len(),
-        min_subs,
+        min_subs
+    );
+    for m in &merged.added {
+        if !exclusions.excludes_mod(&m.id) {
+            println!("  + {} {}", m.id, m.title);
+        }
+    }
+    for m in &excluded {
+        println!("  - {} {} (excluded)", m.id, m.title);
+    }
+    println!(
+        "{} -> {} mods: {} added, {} updated, {} excluded",
+        before,
         manifest.mods.len(),
-        if tag_filter { " by hero tags" } else { "" }
+        merged.added.len()
+            - merged
+                .added
+                .iter()
+                .filter(|m| exclusions.excludes_mod(&m.id))
+                .count(),
+        merged.updated,
+        excluded.len()
     );
 
-    // Show what changed compared to the current manifest
-    let old = Manifest::read(&out).unwrap_or_default();
-    let old_ids: HashSet<&str> = old.mods.iter().map(|m| m.id.as_str()).collect();
-    let new_ids: HashSet<&str> = manifest.mods.iter().map(|m| m.id.as_str()).collect();
-    for m in manifest
-        .mods
-        .iter()
-        .filter(|m| !old_ids.contains(m.id.as_str()))
-    {
-        println!("  + {} {}", m.id, m.title);
-    }
-    for m in old.mods.iter().filter(|m| !new_ids.contains(m.id.as_str())) {
-        println!("  - {} {}", m.id, m.title);
-    }
-
-    manifest.write(&out)?;
-    println!("Wrote {}", out.display());
+    manifest.write(&path)?;
+    println!("Wrote {}", path.display());
     Ok(())
 }
 
 fn script(args: &[String]) -> anyhow::Result<()> {
     let manifest_path = option(args, "--manifest").unwrap_or(DEFAULT_MANIFEST.into());
-    let manifest = Manifest::read(manifest_path.as_ref())
+    let mut manifest = Manifest::read(manifest_path.as_ref())
         .map_err(|e| anyhow::anyhow!("failed to read {}: {}", manifest_path, e))?;
+    manifest.remove_excluded(&exclusions(args)?);
     let limit = match option(args, "--limit") {
         Some(n) => n.parse()?,
         None => usize::MAX,

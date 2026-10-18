@@ -55,13 +55,19 @@ check: typecheck
 generate:
     cargo run --release --bin mod_writer -- \
         --images {{web}}/public/img \
+        --exclude exclusions.json \
+        --report incomplete.json \
         "{{game}}" \
         "{{workshop}}" \
         {{web}}/src/data/data
 
-# List popular hero mods from the Steam workshop into mods.json (needs STEAM_API_KEY)
-fetch min_subs="5000":
-    cargo run --release --bin workshop_fetch -- query --min-subs {{min_subs}}
+# Examples:
+#   just fetch                                               most subscribed, >= 5000
+#   just fetch --sort recent --min-subs 300 --max-pages 5    new mods
+# Merges into the existing list; excluded mods are left out.
+# Add hero mods from a Steam workshop search to mods.json (needs STEAM_API_KEY)
+fetch *args:
+    cargo run --release --bin workshop_fetch -- query {{args}}
 
 # Download mods from mods.json that aren't downloaded yet, at most `batch` per
 # SteamCMD session (long sessions get throttled). Run again for the next batch.
@@ -72,7 +78,7 @@ download steam_user batch="100":
     if [ -s "{{steam_dir}}/downloads.txt" ]; then steamcmd +force_install_dir "{{steam_dir}}" +login {{steam_user}} +runscript "{{steam_dir}}/downloads.txt" +quit; else echo "Nothing left to download"; fi
 
 # Fetch, download and generate data from the downloaded mods
-sync steam_user min_subs="5000": (fetch min_subs) (download steam_user) generate
+sync steam_user: fetch (download steam_user) generate
 
 # One-time: install what Ansible's apt module needs on the VPS. Uses the raw
 # module (a plain command over SSH), which works before python3-apt exists.

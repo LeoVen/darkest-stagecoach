@@ -1,0 +1,7 @@
+{
+  "exclude_vanilla_reworks": true,
+  "mods": [
+    { "id": "3701608532", "reason": "监工: SteamCMD download fails with access denied" }
+  ],
+  "classes": []
+}

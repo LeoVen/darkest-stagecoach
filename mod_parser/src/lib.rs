@@ -60,6 +60,7 @@ pub fn proc_infos(info: &ClassModInfo, result: &mut ClassInfo) {
     // Some mods only ship compiled .loc2 files, which can't be read
     if result.name.is_empty() {
         result.name = name_from_key(&result.key);
+        result.name_from_key = true;
     }
 
     result.original_hero = original_heroes.contains(result.key.as_str());

@@ -137,6 +137,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "00d174d5400e5e8fd687ad1049e2f578285fa914201b1af7e8b112a4546bd826"
 
 [[package]]
+name = "exclusions"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "fdeflate"
 version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -501,6 +510,7 @@ dependencies = [
 name = "mod_writer"
 version = "0.1.0"
 dependencies = [
+ "exclusions",
  "mod_parser",
  "mod_reader",
  "serde",
@@ -996,6 +1006,7 @@ name = "workshop_fetch"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "exclusions",
  "serde",
  "serde_json",
  "ureq",

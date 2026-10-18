@@ -1,5 +1,6 @@
 use std::{collections::HashSet, path::Path};
 
+use exclusions::Exclusions;
 use serde::{Deserialize, Serialize};
 
 use crate::steam::Item;
@@ -26,16 +27,15 @@ pub fn has_hero_tag(item: &Item) -> bool {
     })
 }
 
-/// The committed list of mods to download. Subscription counts are left out
-/// on purpose: they change all the time and would make every run a diff.
+/// The committed list of mods to download. It grows with every query (see
+/// `merge`). Subscription counts are left out on purpose: they change all the
+/// time and would make every run a diff.
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct Manifest {
-    pub min_lifetime_subscriptions: u64,
-    pub tag_filter: bool,
     pub mods: Vec<ModEntry>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ModEntry {
     pub id: String,
     pub title: String,
@@ -58,22 +58,50 @@ impl From<&Item> for ModEntry {
     }
 }
 
+/// What a `merge` changed
+#[derive(Debug, Default)]
+pub struct MergeResult {
+    pub added: Vec<ModEntry>,
+    pub updated: usize,
+}
+
 impl Manifest {
-    pub fn new(min_lifetime_subscriptions: u64, tag_filter: bool, items: &[Item]) -> Self {
-        let mut mods: Vec<ModEntry> = items
+    /// Adds the queried items (those with a hero tag, unless `tag_filter` is
+    /// off) that aren't in the manifest yet, and refreshes the metadata of
+    /// those that are. Never removes anything, so different queries add up.
+    pub fn merge(&mut self, items: &[Item], tag_filter: bool) -> MergeResult {
+        let mut result = MergeResult::default();
+
+        for item in items
             .iter()
             .filter(|item| !tag_filter || has_hero_tag(item))
-            .map(ModEntry::from)
-            .collect();
-        // Numeric order, so new uploads (higher IDs) are appended
-        mods.sort_by_key(|m| (m.id.len(), m.id.clone()));
-        mods.dedup_by(|a, b| a.id == b.id);
-
-        Self {
-            min_lifetime_subscriptions,
-            tag_filter,
-            mods,
+        {
+            let entry = ModEntry::from(item);
+            match self.mods.iter_mut().find(|m| m.id == entry.id) {
+                Some(existing) if *existing != entry => {
+                    *existing = entry;
+                    result.updated += 1;
+                }
+                Some(_) => {}
+                None => {
+                    self.mods.push(entry.clone());
+                    result.added.push(entry);
+                }
+            }
         }
+
+        // Numeric order, so new uploads (higher IDs) end up at the bottom
+        self.mods.sort_by_key(|m| (m.id.len(), m.id.clone()));
+        result
+    }
+
+    /// Removes the excluded mods and returns them
+    pub fn remove_excluded(&mut self, exclusions: &Exclusions) -> Vec<ModEntry> {
+        let (removed, kept) = std::mem::take(&mut self.mods)
+            .into_iter()
+            .partition(|m| exclusions.excludes_mod(&m.id));
+        self.mods = kept;
+        removed
     }
 
     pub fn read(path: &Path) -> anyhow::Result<Self> {
@@ -126,17 +154,35 @@ mod tests {
             item("300", &["New Class"]),
         ];
 
-        let ids = |m: Manifest| m.mods.into_iter().map(|m| m.id).collect::<Vec<_>>();
-        assert_eq!(ids(Manifest::new(0, true, &items)), ["20", "300"]);
-        assert_eq!(
-            ids(Manifest::new(0, false, &items)),
-            ["20", "300", "1000", "4000"]
-        );
+        let ids = |tag_filter| {
+            let mut manifest = Manifest::default();
+            manifest.merge(&items, tag_filter);
+            manifest.mods.into_iter().map(|m| m.id).collect::<Vec<_>>()
+        };
+        assert_eq!(ids(true), ["20", "300"]);
+        assert_eq!(ids(false), ["20", "300", "1000", "4000"]);
+    }
+
+    #[test]
+    fn merges_queries_without_removing_mods() {
+        let mut manifest = Manifest::default();
+        manifest.merge(&[item("2", &["New Class"]), item("5", &["Hero"])], true);
+
+        let mut renamed = item("5", &["Hero"]);
+        renamed.title = "Renamed".to_string();
+        let result = manifest.merge(&[item("9", &["class mod"]), renamed], true);
+
+        let ids: Vec<&str> = manifest.mods.iter().map(|m| m.id.as_str()).collect();
+        assert_eq!(ids, ["2", "5", "9"]);
+        assert_eq!(result.added.len(), 1);
+        assert_eq!(result.updated, 1);
+        assert_eq!(manifest.mods[1].title, "Renamed");
     }
 
     #[test]
     fn writes_steamcmd_script_for_missing_mods() {
-        let manifest = Manifest::new(0, false, &[item("3", &[]), item("2", &[]), item("1", &[])]);
+        let mut manifest = Manifest::default();
+        manifest.merge(&[item("3", &[]), item("2", &[]), item("1", &[])], false);
         let present = HashSet::from(["2".to_string()]);
 
         assert_eq!(

@@ -4,6 +4,7 @@ version.workspace = true
 edition.workspace = true
 
 [dependencies]
+exclusions.workspace = true
 mod_reader.workspace = true
 mod_parser.workspace = true
 serde.workspace = true

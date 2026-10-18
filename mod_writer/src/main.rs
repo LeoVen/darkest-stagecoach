@@ -1,28 +1,45 @@
 use std::{fs::symlink_metadata, path::PathBuf};
 
+use exclusions::Exclusions;
+
 use crate::{images::ImageStore, writer::write_files};
 
 mod fixer;
 mod images;
 mod output;
+mod report;
 mod writer;
 
-const USAGE: &str = "Usage: mod_writer --images <image_dir> <input_dir>... <output_dir>";
+const USAGE: &str = "Usage: mod_writer --images <image_dir> [--exclude <exclusions.json>] \
+[--report <incomplete.json>] <input_dir>... <output_dir>";
+
+/// Removes `--name <value>` from `args` and returns the value
+fn take_option(args: &mut Vec<String>, name: &str) -> Option<String> {
+    let i = args.iter().position(|arg| arg == name)?;
+    if i + 1 >= args.len() {
+        eprintln!("{}", USAGE);
+        std::process::exit(1);
+    }
+    let value = args.remove(i + 1);
+    args.remove(i);
+    Some(value)
+}
 
 fn main() {
     let mut args: Vec<String> = std::env::args().skip(1).collect();
 
-    let image_dir = match args.iter().position(|arg| arg == "--images") {
-        Some(i) if i + 1 < args.len() => {
-            let dir = args.remove(i + 1);
-            args.remove(i);
-            dir
-        }
-        _ => {
-            eprintln!("{}", USAGE);
-            std::process::exit(1);
-        }
+    let Some(image_dir) = take_option(&mut args, "--images") else {
+        eprintln!("{}", USAGE);
+        std::process::exit(1);
     };
+    let exclusions = match take_option(&mut args, "--exclude") {
+        Some(path) => Exclusions::read(path.as_ref()).unwrap_or_else(|e| {
+            eprintln!("{}", e);
+            std::process::exit(1);
+        }),
+        None => Exclusions::default(),
+    };
+    let report = take_option(&mut args, "--report").map(PathBuf::from);
 
     if args.len() < 2 {
         eprintln!("{}", USAGE);
@@ -57,6 +74,12 @@ fn main() {
 
     let mut images =
         ImageStore::new(&PathBuf::from(image_dir)).expect("failed to prepare image dir");
-    write_files(output.as_ref(), &mut images, infos);
+    write_files(
+        output.as_ref(),
+        &mut images,
+        infos,
+        &exclusions,
+        report.as_deref(),
+    );
     println!("Wrote {} unique images", images.len());
 }

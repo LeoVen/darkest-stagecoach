@@ -58,6 +58,8 @@ pub struct SkillInfo {
 pub struct ClassInfo {
     pub key: String,
     pub name: String,
+    /// No localized name was found, so `name` was derived from the key
+    pub name_from_key: bool,
     pub original_hero: bool,
 
     pub res: ClassResistances,
