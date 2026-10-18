@@ -182,19 +182,9 @@ impl<'a> ModReader<'a> {
         Ok(())
     }
 
-    // Workshop mods live in /<steam_id>/heroes/<name>/. Base game and DLC
-    // heroes don't have a numeric folder there, so they get no steam ID.
     pub fn read_steam_id(&self, mod_info: &mut ClassModInfo) {
-        let id = self
-            .root
-            .parent()
-            .and_then(Path::parent)
-            .and_then(Path::file_name)
-            .and_then(|id| id.to_str())
-            .filter(|id| !id.is_empty() && id.chars().all(|c| c.is_ascii_digit()));
-
-        if let Some(id) = id {
-            mod_info.steam_id = id.to_string();
+        if let Some(id) = steam_id_from_path(self.root) {
+            mod_info.steam_id = id;
         }
 
         print!("{:>11} ", mod_info.steam_id);
@@ -312,6 +302,20 @@ impl<'a> ModReader<'a> {
     }
 }
 
+/// Workshop mods live in `<steam_id>/heroes/<name>/`, but some nest
+/// everything one folder deeper (`<steam_id>/<mod name>/heroes/<name>/`), so
+/// the Steam ID is the nearest purely numeric folder above the hero. Base game
+/// and DLC folders (`DarkestDungeon`, `445700_musketeer`) aren't numeric, so
+/// those heroes get none.
+fn steam_id_from_path(hero_root: &Path) -> Option<String> {
+    hero_root
+        .ancestors()
+        .skip(1)
+        .filter_map(|dir| dir.file_name()?.to_str())
+        .find(|name| !name.is_empty() && name.chars().all(|c| c.is_ascii_digit()))
+        .map(String::from)
+}
+
 pub async fn parse_darkest(path: &Path) -> anyhow::Result<DarkestFile> {
     let info_data = fs::read_to_string(&path).await?;
     anyhow::Ok(parser::parse_darkest(info_data))
@@ -352,5 +356,33 @@ pub async fn read_image(path: &Path) -> io::Result<Image> {
 fn merge_xml(source: &mut LocFile, input: LocFile) {
     for (key, val) in input {
         _ = source.entry(key).or_insert(val);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn finds_steam_id_of_workshop_mods() {
+        let id = |p: &str| steam_id_from_path(Path::new(p));
+        assert_eq!(
+            id("/w/262060/1130829365/heroes/lamia").as_deref(),
+            Some("1130829365")
+        );
+        assert_eq!(
+            id("/w/262060/2202581979/anaertailin musketeer Standalone/heroes/sharpshooter")
+                .as_deref(),
+            Some("2202581979")
+        );
+        assert_eq!(id("/c/DarkestDungeon/heroes/vestal"), None);
+        assert_eq!(
+            id("/c/DarkestDungeon/dlc/445700_musketeer/heroes/musketeer"),
+            None
+        );
+        assert_eq!(
+            id("/c/DarkestDungeon/dlc/580100_crimson_court/features/flagellant/heroes/flagellant"),
+            None
+        );
     }
 }

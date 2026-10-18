@@ -5,14 +5,14 @@ set dotenv-load
 
 web := "darkest-stagecoach"
 
-# Darkest Dungeon install and workshop folders (WSL paths), override with
-# `just game=... workshop=... generate`
-game := "/mnt/c/Program Files (x86)/Steam/steamapps/common/DarkestDungeon"
-workshop := "/mnt/c/Program Files (x86)/Steam/steamapps/workshop/content/262060"
-
 # Where SteamCMD puts mods downloaded by `just download`
 steam_dir := env("HOME") / ".cache/darkest-stagecoach/steam"
 steam_workshop := steam_dir / "steamapps/workshop/content/262060"
+
+# Inputs of `just generate`: the game (base and DLC heroes) and the downloaded
+# workshop mods. Override with `just game=... workshop=... generate`
+game := "/mnt/c/Program Files (x86)/Steam/steamapps/common/DarkestDungeon"
+workshop := steam_workshop
 
 default:
     @just --list
@@ -72,8 +72,7 @@ download steam_user batch="100":
     if [ -s "{{steam_dir}}/downloads.txt" ]; then steamcmd +force_install_dir "{{steam_dir}}" +login {{steam_user}} +runscript "{{steam_dir}}/downloads.txt" +quit; else echo "Nothing left to download"; fi
 
 # Fetch, download and generate data from the downloaded mods
-sync steam_user min_subs="5000": (fetch min_subs) (download steam_user)
-    {{just_executable()}} workshop="{{steam_workshop}}" generate
+sync steam_user min_subs="5000": (fetch min_subs) (download steam_user) generate
 
 # One-time: install what Ansible's apt module needs on the VPS. Uses the raw
 # module (a plain command over SSH), which works before python3-apt exists.

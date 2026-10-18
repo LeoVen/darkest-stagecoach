@@ -34,11 +34,11 @@ cargo clippy --workspace --all-targets
 cargo fmt --all
 cargo test -p parser <test_name>  # single test
 
-# Regenerate the site data (WSL paths; base game + DLC heroes, then workshop mods)
+# Regenerate the site data (base game + DLC heroes, then the SteamCMD-downloaded workshop mods)
 cargo run --release --bin mod_writer -- \
   --images darkest-stagecoach/public/img \
   "/mnt/c/Program Files (x86)/Steam/steamapps/common/DarkestDungeon" \
-  "/mnt/c/Program Files (x86)/Steam/steamapps/workshop/content/262060" \
+  ~/.cache/darkest-stagecoach/steam/steamapps/workshop/content/262060 \
   darkest-stagecoach/src/data/data
 ```
 
