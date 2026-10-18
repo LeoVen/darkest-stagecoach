@@ -36,9 +36,10 @@ export const App = () => {
         string | undefined
     >(undefined)
 
-    const handleOpenModal = (classMod: ClassMod) => {
+    // Stable identity, so the memoized cards don't re-render when App does
+    const handleOpenModal = React.useCallback((classMod: ClassMod) => {
         setSelectedClass(classMod)
-    }
+    }, [])
     const handleCloseModal = () => {
         setSelectedClass(undefined)
     }
@@ -79,13 +80,13 @@ export const App = () => {
                         />
                         <ScrollTopButton />
                         <ClassCardsContainer>
-                            {classMods.map((classKey, i) =>
-                                ClassCard({
-                                    classKey: classKey,
-                                    index: i,
-                                    handleOpenModal: handleOpenModal,
-                                })
-                            )}
+                            {classMods.map(classKey => (
+                                <ClassCard
+                                    key={classKey}
+                                    classKey={classKey}
+                                    handleOpenModal={handleOpenModal}
+                                />
+                            ))}
                         </ClassCardsContainer>
                         <SnackbarMessage
                             open={!!snackbarMessage}

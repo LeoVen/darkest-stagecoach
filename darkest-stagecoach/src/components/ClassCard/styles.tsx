@@ -9,6 +9,24 @@ export const ClassCardsContainer = styled('div')`
     margin: 1rem;
 `
 
+// content-visibility lets the browser skip layout and paint of cards that are
+// off screen; contain-intrinsic-size is their placeholder size until rendered
+// once ("auto" then remembers the real size). It also clips painting to the
+// element, so the padding leaves room for the card's shadow and hover glow
+// (~16px), and the negative margin keeps the layout unchanged. Cards are
+// 332px wide and about 183px tall with the portrait loaded.
+export const CardWrapper = styled('div')`
+    content-visibility: auto;
+    contain-intrinsic-size: auto 372px auto 223px;
+    padding: 20px;
+    margin: -20px;
+`
+
+// Positioning context for the icons overlaid on the card
+export const CardInner = styled('div')`
+    position: relative;
+`
+
 export const HeroCard = styled(Paper)`
     padding: 1em;
     display: flex;
