@@ -1,6 +1,7 @@
 import armor from '../assets/img/stats/armor.png'
 import bleed from '../assets/img/stats/bleed.png'
 import blight from '../assets/img/stats/blight.png'
+import burn from '../assets/img/stats/burn.png'
 import block from '../assets/img/stats/block.png'
 import buff from '../assets/img/stats/buff.png'
 import clear from '../assets/img/stats/buffPlus.png'
@@ -46,6 +47,7 @@ const iconMap: Record<Synergy, string> = {
     armor: armor,
     bleed: bleed,
     blight: blight,
+    burn: burn,
     block: block,
     buff: buff,
     clear: clear,
@@ -73,10 +75,11 @@ const iconDescription: Record<Synergy, string> = {
     armor: 'Armor piercing',
     bleed: 'Causes bleed DoT',
     blight: 'Causes blight DoT',
+    burn: 'Causes burn DoT',
     block: 'Add block ally',
     buff: 'Buffs ally',
     clear: 'Clears stun, debuff or mark',
-    cure: 'Cures bleed/blight',
+    cure: 'Cures bleed/blight/burn',
     debuff: 'Debuffs enemy',
     deStealth: 'Bypass or de-stealth enemy',
     guard: 'Guard ally or self',

@@ -3,6 +3,7 @@ import { Synergy } from './Types'
 export const Synergies: Synergy[] = [
     'bleed', // Causes dot bleed
     'blight', // Causes dot blight
+    'burn', // Causes dot burn
     'stun', // Stuns enemy
     'buff', // Buffs ally
     'debuff', // Debuffs enemy
@@ -20,7 +21,7 @@ export const Synergies: Synergy[] = [
     'armor', // Armor piercing
     'stealth', // Activates stealth
     'deStealth', // Bypass or de-stealth enemy
-    'cure', // Cure blight/bleed
+    'cure', // Cure bleed/blight/burn
     'clear', // Clear stun/debuff/mark
     'reflect', // Adds damage reflection
     'back', // Moves selfback

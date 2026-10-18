@@ -11,6 +11,7 @@ use parser::DarkestRow;
 pub enum Synergy {
     Bleed,
     Blight,
+    Burn,
     Stun,
     Buff,
     Debuff,
@@ -41,6 +42,7 @@ impl Synergy {
         match self {
             Synergy::Bleed => "bleed",
             Synergy::Blight => "blight",
+            Synergy::Burn => "burn",
             Synergy::Stun => "stun",
             Synergy::Buff => "buff",
             Synergy::Debuff => "debuff",
@@ -213,6 +215,7 @@ fn effect_synergies<'a>(
         Side::Enemy => {
             add(Synergy::Bleed, has("dotBleed"));
             add(Synergy::Blight, has("dotPoison"));
+            add(Synergy::Burn, has("dotBurn"));
             add(Synergy::Stun, has("stun"));
             add(Synergy::Mark, has("tag"));
             add(Synergy::Knockback, has("push"));
@@ -244,7 +247,7 @@ fn effect_synergies<'a>(
             add(Synergy::Stealth, has("stealth"));
             add(
                 Synergy::Cure,
-                has("cure") || has("cure_bleed") || has("cure_poison"),
+                has("cure") || has("cure_bleed") || has("cure_poison") || has("cure_burn"),
             );
             add(
                 Synergy::Clear,
@@ -390,10 +393,11 @@ mod tests {
     #[test]
     fn falls_back_to_base_game_effects() {
         let result = synergies(
-            r#"combat_skill: .id "smite" .target 12 .effect "Stun 1" "Weak""#,
-            r#"effect: .name "Weak" .target "target" .combat_stat_buff 1 .attack_rating_add -10%"#,
+            r#"combat_skill: .id "smite" .target 12 .effect "Stun 1" "Weak" "Ignite""#,
+            r#"effect: .name "Weak" .target "target" .combat_stat_buff 1 .attack_rating_add -10%
+            effect: .name "Ignite" .target "target" .dotBurn 2"#,
             r#"effect: .name "Stun 1" .target "target" .stun 1"#,
         );
-        assert_eq!(result, ["stun", "debuff"]);
+        assert_eq!(result, ["burn", "stun", "debuff"]);
     }
 }
