@@ -1,4 +1,7 @@
-use std::{collections::HashSet, path::Path};
+use std::{
+    collections::{HashMap, HashSet},
+    path::Path,
+};
 
 use exclusions::Exclusions;
 use serde::{Deserialize, Serialize};
@@ -40,6 +43,9 @@ pub struct ModEntry {
     pub id: String,
     pub title: String,
     pub creator: String,
+    /// The creator's Steam display name, refreshed by `set_creator_names`
+    #[serde(default)]
+    pub creator_name: String,
     pub time_updated: u64,
     pub tags: Vec<String>,
 }
@@ -52,6 +58,7 @@ impl From<&Item> for ModEntry {
             id: item.publishedfileid.clone(),
             title: item.title.trim().to_string(),
             creator: item.creator.clone(),
+            creator_name: String::new(),
             time_updated: item.time_updated,
             tags,
         }
@@ -76,8 +83,16 @@ impl Manifest {
             .iter()
             .filter(|item| !tag_filter || has_hero_tag(item))
         {
-            let entry = ModEntry::from(item);
+            let mut entry = ModEntry::from(item);
             match self.mods.iter_mut().find(|m| m.id == entry.id) {
+                // Items don't carry the name, so keep the known one
+                Some(existing) if existing.creator == entry.creator => {
+                    entry.creator_name = existing.creator_name.clone();
+                    if *existing != entry {
+                        *existing = entry;
+                        result.updated += 1;
+                    }
+                }
                 Some(existing) if *existing != entry => {
                     *existing = entry;
                     result.updated += 1;
@@ -93,6 +108,28 @@ impl Manifest {
         // Numeric order, so new uploads (higher IDs) end up at the bottom
         self.mods.sort_by_key(|m| (m.id.len(), m.id.clone()));
         result
+    }
+
+    /// The distinct creator Steam IDs, sorted
+    pub fn creators(&self) -> Vec<String> {
+        let creators: std::collections::BTreeSet<&str> =
+            self.mods.iter().map(|m| m.creator.as_str()).collect();
+        creators.into_iter().map(String::from).collect()
+    }
+
+    /// Sets `creator_name` from `names` (by creator Steam ID), keeping the
+    /// old name of creators missing from it. Returns how many changed.
+    pub fn set_creator_names(&mut self, names: &HashMap<String, String>) -> usize {
+        let mut changed = 0;
+        for m in &mut self.mods {
+            if let Some(name) = names.get(&m.creator)
+                && *name != m.creator_name
+            {
+                m.creator_name = name.clone();
+                changed += 1;
+            }
+        }
+        changed
     }
 
     /// Removes the excluded mods and returns them
@@ -177,6 +214,23 @@ mod tests {
         assert_eq!(result.added.len(), 1);
         assert_eq!(result.updated, 1);
         assert_eq!(manifest.mods[1].title, "Renamed");
+    }
+
+    #[test]
+    fn keeps_creator_names_across_merges() {
+        let mut uploaded = item("5", &["Hero"]);
+        uploaded.creator = "765".to_string();
+        let mut manifest = Manifest::default();
+        manifest.merge(std::slice::from_ref(&uploaded), true);
+
+        let names = HashMap::from([("765".to_string(), "MoonKanin".to_string())]);
+        assert_eq!(manifest.set_creator_names(&names), 1);
+        assert_eq!(manifest.set_creator_names(&names), 0);
+
+        let result = manifest.merge(&[uploaded], true);
+        assert_eq!(result.updated, 0);
+        assert_eq!(manifest.mods[0].creator_name, "MoonKanin");
+        assert_eq!(manifest.creators(), ["765"]);
     }
 
     #[test]

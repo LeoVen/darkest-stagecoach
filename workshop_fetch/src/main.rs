@@ -12,7 +12,11 @@ const USAGE: &str = "Usage:
                        [--no-tag-filter] [--replace] [--manifest <mods.json>]
                        [--exclude <exclusions.json>]
       Add hero mods matching the search to the manifest (keeps the mods
-      already in it unless --replace). Needs STEAM_API_KEY.
+      already in it unless --replace), then refresh the creator names.
+      Needs STEAM_API_KEY.
+  workshop_fetch names [--manifest <mods.json>]
+      Refresh only the creators' Steam display names in the manifest.
+      Needs STEAM_API_KEY.
   workshop_fetch script [--manifest <mods.json>] [--exclude <exclusions.json>]
                         [--skip-present <dir>] [--limit <n>] [--out <file>]
       Write SteamCMD commands downloading the manifest's mods, leaving out
@@ -30,6 +34,7 @@ fn main() {
 
     let result = match args.first().map(String::as_str) {
         Some("query") => query(&args[1..]),
+        Some("names") => names(&args[1..]),
         Some("script") => script(&args[1..]),
         Some("details") => details(&args[1..]),
         _ => {
@@ -59,10 +64,40 @@ fn exclusions(args: &[String]) -> anyhow::Result<Exclusions> {
     )
 }
 
+fn api_key() -> anyhow::Result<String> {
+    std::env::var("STEAM_API_KEY")
+        .map_err(|_| anyhow::anyhow!("set STEAM_API_KEY (https://steamcommunity.com/dev/apikey)"))
+}
+
+/// Fetches the display names of all creators in the manifest
+fn refresh_creator_names(key: &str, manifest: &mut Manifest) -> anyhow::Result<()> {
+    let creators = manifest.creators();
+    let names = steam::get_player_names(key, &creators)?;
+    let changed = manifest.set_creator_names(&names);
+    println!(
+        "Creator names: {} of {} found, {} changed",
+        names.len(),
+        creators.len(),
+        changed
+    );
+    Ok(())
+}
+
+fn names(args: &[String]) -> anyhow::Result<()> {
+    let key = api_key()?;
+    let path = PathBuf::from(option(args, "--manifest").unwrap_or(DEFAULT_MANIFEST.into()));
+    let mut manifest = Manifest::read(&path)
+        .map_err(|e| anyhow::anyhow!("failed to read {}: {}", path.display(), e))?;
+
+    refresh_creator_names(&key, &mut manifest)?;
+
+    manifest.write(&path)?;
+    println!("Wrote {}", path.display());
+    Ok(())
+}
+
 fn query(args: &[String]) -> anyhow::Result<()> {
-    let key = std::env::var("STEAM_API_KEY").map_err(|_| {
-        anyhow::anyhow!("set STEAM_API_KEY (https://steamcommunity.com/dev/apikey)")
-    })?;
+    let key = api_key()?;
     let sort = steam::Sort::parse(&option(args, "--sort").unwrap_or("subs".into()))?;
     let min_subs = match option(args, "--min-subs") {
         Some(n) => n.parse()?,
@@ -120,6 +155,8 @@ fn query(args: &[String]) -> anyhow::Result<()> {
         merged.updated,
         excluded.len()
     );
+
+    refresh_creator_names(&key, &mut manifest)?;
 
     manifest.write(&path)?;
     println!("Wrote {}", path.display());

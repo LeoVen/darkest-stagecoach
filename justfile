@@ -69,6 +69,11 @@ generate:
 fetch *args:
     cargo run --release --bin workshop_fetch -- query {{args}}
 
+# Refresh the creators' Steam display names in mods.json (needs STEAM_API_KEY;
+# `just fetch` does this too)
+names:
+    cargo run --release --bin workshop_fetch -- names
+
 # Download mods from mods.json that aren't downloaded yet, at most `batch` per
 # SteamCMD session (long sessions get throttled). Run again for the next batch.
 # Needs an account that owns the game.

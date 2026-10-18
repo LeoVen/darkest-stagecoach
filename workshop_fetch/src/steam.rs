@@ -5,6 +5,7 @@ pub const APP_ID: &str = "262060";
 const QUERY_FILES_URL: &str = "https://api.steampowered.com/IPublishedFileService/QueryFiles/v1/";
 const DETAILS_URL: &str =
     "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/";
+const PLAYER_SUMMARIES_URL: &str = "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/";
 
 const PER_PAGE: &str = "100";
 
@@ -106,6 +107,45 @@ pub fn get_details(ids: &[String]) -> anyhow::Result<Vec<Item>> {
         .read_json()?;
 
     Ok(envelope.response.publishedfiledetails)
+}
+
+/// The display names (persona names) of Steam users by 64-bit Steam ID.
+/// Users that don't exist anymore are left out.
+pub fn get_player_names(
+    key: &str,
+    steam_ids: &[String],
+) -> anyhow::Result<std::collections::HashMap<String, String>> {
+    #[derive(Deserialize)]
+    struct Players {
+        #[serde(default)]
+        players: Vec<Player>,
+    }
+    #[derive(Deserialize)]
+    struct Player {
+        steamid: String,
+        personaname: String,
+    }
+
+    let mut result = std::collections::HashMap::new();
+
+    // The API takes at most 100 IDs per call
+    for chunk in steam_ids.chunks(100) {
+        let envelope: Envelope<Players> = ureq::get(PLAYER_SUMMARIES_URL)
+            .query("key", key)
+            .query("steamids", chunk.join(","))
+            .call()?
+            .body_mut()
+            .read_json()?;
+        result.extend(
+            envelope
+                .response
+                .players
+                .into_iter()
+                .map(|p| (p.steamid, p.personaname)),
+        );
+    }
+
+    Ok(result)
 }
 
 /// Pages through `fetch_page` (in `sort` order, at most `max_pages` pages) and
