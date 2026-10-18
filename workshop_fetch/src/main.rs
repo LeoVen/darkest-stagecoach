@@ -1,6 +1,6 @@
 use std::{collections::HashSet, path::PathBuf};
 
-use crate::manifest::Manifest;
+use crate::manifest::{Manifest, steamcmd_script};
 
 mod manifest;
 mod steam;
@@ -9,7 +9,9 @@ const USAGE: &str = "Usage:
   workshop_fetch query [--min-subs <n>] [--no-tag-filter] [--out <mods.json>]
       List popular hero mods into a manifest. Needs STEAM_API_KEY.
   workshop_fetch script [--manifest <mods.json>] [--out <file>]
-      Write SteamCMD commands downloading every mod in the manifest.
+                        [--skip-present <dir>] [--limit <n>]
+      Write SteamCMD commands downloading the manifest's mods, leaving out
+      those with a folder in <dir> and stopping after <n> mods.
   workshop_fetch details <id>...
       Print details of workshop items (no API key needed).";
 
@@ -94,13 +96,37 @@ fn script(args: &[String]) -> anyhow::Result<()> {
     let manifest_path = option(args, "--manifest").unwrap_or(DEFAULT_MANIFEST.into());
     let manifest = Manifest::read(manifest_path.as_ref())
         .map_err(|e| anyhow::anyhow!("failed to read {}: {}", manifest_path, e))?;
-    let script = manifest.steamcmd_script();
+    let limit = match option(args, "--limit") {
+        Some(n) => n.parse()?,
+        None => usize::MAX,
+    };
+
+    // Folder names in the SteamCMD content folder are workshop IDs
+    let present: HashSet<String> = match option(args, "--skip-present") {
+        Some(dir) => match std::fs::read_dir(&dir) {
+            Ok(entries) => entries
+                .flatten()
+                .filter_map(|entry| entry.file_name().into_string().ok())
+                .collect(),
+            Err(_) => HashSet::new(), // nothing downloaded yet
+        },
+        None => HashSet::new(),
+    };
+
+    let missing = manifest.missing(&present).count();
+    let batch = missing.min(limit);
+    let script = steamcmd_script(manifest.missing(&present).take(limit));
+
+    eprintln!(
+        "{} of {} mods already present, {} in this batch, {} left after it",
+        manifest.mods.len() - missing,
+        manifest.mods.len(),
+        batch,
+        missing - batch
+    );
 
     match option(args, "--out") {
-        Some(out) => {
-            std::fs::write(&out, script)?;
-            eprintln!("Wrote {} downloads to {}", manifest.mods.len(), out);
-        }
+        Some(out) => std::fs::write(&out, script)?,
         None => print!("{}", script),
     }
     Ok(())

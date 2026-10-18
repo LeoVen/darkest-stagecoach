@@ -63,11 +63,13 @@ generate:
 fetch min_subs="5000":
     cargo run --release --bin workshop_fetch -- query --min-subs {{min_subs}}
 
-# Download every mod in mods.json with SteamCMD (needs an account that owns the game)
-download steam_user:
+# Download mods from mods.json that aren't downloaded yet, at most `batch` per
+# SteamCMD session (long sessions get throttled). Run again for the next batch.
+# Needs an account that owns the game.
+download steam_user batch="100":
     mkdir -p "{{steam_dir}}"
-    cargo run --release --bin workshop_fetch -- script --out "{{steam_dir}}/downloads.txt"
-    steamcmd +force_install_dir "{{steam_dir}}" +login {{steam_user}} +runscript "{{steam_dir}}/downloads.txt" +quit
+    cargo run --release --bin workshop_fetch -- script --skip-present "{{steam_workshop}}" --limit {{batch}} --out "{{steam_dir}}/downloads.txt"
+    if [ -s "{{steam_dir}}/downloads.txt" ]; then steamcmd +force_install_dir "{{steam_dir}}" +login {{steam_user}} +runscript "{{steam_dir}}/downloads.txt" +quit; else echo "Nothing left to download"; fi
 
 # Fetch, download and generate data from the downloaded mods
 sync steam_user min_subs="5000": (fetch min_subs) (download steam_user)

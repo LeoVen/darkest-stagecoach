@@ -1,4 +1,4 @@
-use std::path::Path;
+use std::{collections::HashSet, path::Path};
 
 use serde::{Deserialize, Serialize};
 
@@ -85,14 +85,22 @@ impl Manifest {
         Ok(())
     }
 
-    /// SteamCMD commands downloading every mod, for `steamcmd +login <user>
-    /// +runscript <file> +quit`
-    pub fn steamcmd_script(&self) -> String {
-        self.mods
-            .iter()
-            .map(|m| format!("workshop_download_item {} {}\n", crate::steam::APP_ID, m.id))
-            .collect()
+    /// Mods whose ID isn't in `present` (e.g. already downloaded), in
+    /// manifest order
+    pub fn missing<'a>(
+        &'a self,
+        present: &'a HashSet<String>,
+    ) -> impl Iterator<Item = &'a ModEntry> {
+        self.mods.iter().filter(|m| !present.contains(&m.id))
     }
+}
+
+/// SteamCMD commands downloading `mods`, for `steamcmd +login <user>
+/// +runscript <file> +quit`
+pub fn steamcmd_script<'a>(mods: impl IntoIterator<Item = &'a ModEntry>) -> String {
+    mods.into_iter()
+        .map(|m| format!("workshop_download_item {} {}\n", crate::steam::APP_ID, m.id))
+        .collect()
 }
 
 #[cfg(test)]
@@ -127,11 +135,17 @@ mod tests {
     }
 
     #[test]
-    fn writes_steamcmd_script() {
-        let manifest = Manifest::new(0, false, &[item("2", &[]), item("1", &[])]);
+    fn writes_steamcmd_script_for_missing_mods() {
+        let manifest = Manifest::new(0, false, &[item("3", &[]), item("2", &[]), item("1", &[])]);
+        let present = HashSet::from(["2".to_string()]);
+
         assert_eq!(
-            manifest.steamcmd_script(),
-            "workshop_download_item 262060 1\nworkshop_download_item 262060 2\n"
+            steamcmd_script(manifest.missing(&present)),
+            "workshop_download_item 262060 1\nworkshop_download_item 262060 3\n"
+        );
+        assert_eq!(
+            steamcmd_script(manifest.missing(&present).take(1)),
+            "workshop_download_item 262060 1\n"
         );
     }
 }
